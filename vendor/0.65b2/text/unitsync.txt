@@ -1,0 +1,71 @@
+Todo:
+------
+Add a way to have the dll provide the restrictions to spring
+Implement obeying the restrictions into spring
+
+Sync interface:
+------------------
+int Init(bool isServer, int id)
+int ProcessUnits(void)
+char *GetCurrentList(void)
+void AddClient(int id, char *unitList)
+void RemoveClient(int id)
+char *GetClientDiff(int id)
+void InstallClientDiff(char *diff)
+
+Info interface:
+-------------------
+int GetUnitCount()
+char *GetUnitName(int unit)
+char *GetFullUnitName(int unit)
+int IsUnitDisabled(int unit)
+int IsUnitDisabledByClient(int unit, int clientId)
+
+Usage:
+------
+First, call Init. One of the game clients (perhaps the one that created the battleroom) should be the server.
+The server in this context is just a regular client that gets the duty of coordinating the unit sync.
+If Init returns 1, this went ok. Every participant in the synchronization should provide a unique id
+that is also provided to Init (and used by some other calls as well).
+
+After this ProcessUnits should be called repeatedly until it returns 0. (It will return the remaining number
+of required calls until it reaches 0). This call performs unit parsing and checksum calculation, and is thus
+somewhat slow. So in this way it could be called in a background thread or at least in a loop that allows
+the windows message handling to be run between each call.
+
+Now the actual synchronization can take place. 
+
+As long as the server is alone it considers itself synchronized. When a client joins, the client calls
+GetCurrentList and sends the result to the server. The server calls AddClient with this list. The server must
+then immediately after call GetClientDiff for each of the client id's that has been provided. The result of this
+call is sent to the correct client, which calls InstallClientDiff.
+
+If a client leaves, the server calls RemoveClient with the appropriate id. After that, it should again call
+GetClientDiff for each remaining client and send this to the clients who perform InstallClientDiff.
+
+A client is considered synced when it has called InstallClientDiff the same number of times that an event has
+occured. An event is either a new client joining or a client leaving. This means that when a new client joins, 
+all clients should now consider themselves unsynced until they have called InstallClientDiff. The server is
+synced when it has called either AddClient or RemoveClient.
+
+Care must be taken to install client differences in the correct order. The unitsync dll could perhaps handle 
+this itself though, by serializing the differencess and buffering until it has received missing updates.
+
+Usage of the info interface:
+----------------------------
+It is of interest that the clients can determine why a certain unit is disabled, i.e. who are missing it.
+This means that the sync server will provide information about which client caused the unit to be disabled
+in the diff information. This also means that a client leaving can be handled independently by all the
+clients..
+
+Do not call any of the information routines until ProcessUnits() has completed.
+
+To retreive unit information, the clients (and the server) can start with calling GetUnitCount() to figure
+out the available unit ids, which are from 0 to GetUnitCount() - 1. The client can then call GetUnitName(id)
+for each units to gather a list of the units that this client knows about. To find out if a particular unit
+is disabled, it can call IsUnitDisabled(id). If a unit is disabled, it can also call (for each client in
+the game) IsUnitDisabledByClient(id, client) to find out which client(s) caused this unit to be disabled.
+The IsUnit.. calls returns 1 for true, and 0 for false.
+
+GetUnitName returns the internal name, which is the one that should be put in a restriction list. 
+GetFullUnitName returns the name suitable for displaying in a list of units that should be read by a human.

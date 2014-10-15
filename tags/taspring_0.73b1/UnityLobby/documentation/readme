@@ -1,0 +1,130 @@
+#======================================================
+			To Run
+#======================================================
+
+
+Remove any previous Profiles from older versions
+
+Get unitsync.so / unitsync.dll (windows support still to be coded).
+
+	If u using svn
+		scons configure
+		scons omni
+	Or if u are using gentoo
+		add the useflag UnityLobby
+
+U will need to make the following files excutable
+	./Unity.py
+	./Profile.py
+	./client/main.py
+
+In Profile Setup the datadir should be set to your (rw) datadir.
+	If u leave this blank it will use what unitsync reports as being datadirs.
+
+
+By default UnityLobby will skip Profile Selector if Profile Numbers == 1
+To startup Profile Selector Anyway type
+	python /path/to/UnityLobby/Unity -s
+
+
+#======================================================
+		Supported Lobby Protocols
+
+ note all - represent unsupported lobby protocols
+ also no mod support in any of list protocols below
+#======================================================
+	
+
+
+
+PING
+PONG
+-
+-
+REGISTER
+REGISTRATIONDENIED
+REGISTRATIONACCEPTED
+-
+-
+LOGIN
+ACCEPTED
+DENIED
+AGREEMENT
+AGREEMENTEND
+CONFIRMAGREEMENT
+MOTD
+-
+-
+-
+-
+SERVERMSG
+SERVERMSGBOX
+ADDUSER
+REMOVEUSER
+JOIN
+-
+-
+-
+-
+-
+-
+-
+JOINFAILED
+CHANNELTOPIC
+CLIENTS
+JOINED
+LEAVE
+LEFT
+FORCELEAVECHANNEL
+CHANNELMESSAGE
+SAY
+SAID
+-
+-
+SAYPRIVATE
+SAIDPRIVATE
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+CLIENTSTATUS
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+BROADCAST
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-

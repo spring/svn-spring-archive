@@ -1,0 +1,453 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PPGENERAL DIALOGEX 0, 0, 235, 156
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "General"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "&Player",IDC_STATIC,7,7,221,30
+    LTEXT           "&Name:",IDC_STATIC,14,19,22,8
+    EDITTEXT        IDC_PPGENERAL_EDIT_PLAYERNAME,53,17,160,12,
+                    ES_AUTOHSCROLL
+    GROUPBOX        "&Screen",IDC_STATIC,7,46,221,64
+    LTEXT           "&Resolution:",IDC_STATIC,14,61,37,8
+    COMBOBOX        IDC_PPGENERAL_COMBO_RES,53,59,160,112,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_PPGENERAL_EDIT_XRESOLUTION,53,75,72,13,
+                    ES_AUTOHSCROLL
+    CTEXT           "x",IDC_STATIC,127,75,12,12,NOT WS_GROUP
+    EDITTEXT        IDC_PPGENERAL_EDIT_YRESOLUTION,141,75,72,13,
+                    ES_AUTOHSCROLL
+    CONTROL         "Run &Fullscreen",IDC_PPGENERAL_CHECK_FULLSCREEN,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,53,93,161,10
+    GROUPBOX        "&Mouse",IDC_STATIC,7,119,221,30
+    CONTROL         "&Invert mouse",IDC_PPGENERAL_CHECK_INVERTMOUSE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,53,131,161,10
+END
+
+IDD_PPMAP DIALOGEX 0, 0, 235, 156
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Map"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    CONTROL         "3D Trees (need Vertex_Program)",IDC_PPMAP_CHECK_3DTREES,
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,7,7,122,
+                    10
+    LTEXT           "Tree view distance:",IDC_STATIC,7,29,64,8
+    LTEXT           "600",IDC_STATIC,79,29,13,8
+    CONTROL         "",IDC_PPMAP_SCRL_TREERADIUS,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOOLTIPS | WS_TABSTOP,98,25,102,16
+    LTEXT           "3000",IDC_STATIC,207,29,17,8
+    LTEXT           "Grass detail:",IDC_STATIC,30,56,41,8
+    LTEXT           "0",IDC_STATIC,84,56,8,8
+    CONTROL         "",IDC_PPMAP_SCRL_GRASSDETAIL,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOOLTIPS | WS_TABSTOP,98,52,102,16
+    LTEXT           "10",IDC_STATIC,207,56,9,8
+    LTEXT           "Terrain LOD:",IDC_STATIC,29,83,42,8
+    LTEXT           "20",IDC_STATIC,83,83,9,8
+    CONTROL         "",IDC_PPMAP_SCRL_GROUNDDETAIL,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOOLTIPS | WS_TABSTOP,98,79,102,16
+    LTEXT           "120",IDC_STATIC,207,83,13,8
+    LTEXT           "Ground decals:",IDC_STATIC,22,110,49,8
+    LTEXT           "Off",IDC_STATIC,80,110,12,8
+    CONTROL         "",IDC_PPMAP_SCRL_GROUNDDECALS,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOOLTIPS | WS_TABSTOP,98,106,102,16
+    LTEXT           "Max",IDC_STATIC,207,110,14,8
+    LTEXT           "Max particles:",IDC_STATIC,25,137,46,8
+    LTEXT           "1000",IDC_STATIC,75,137,17,8
+    CONTROL         "",IDC_PPMAP_SCRL_MAXPARTICLES,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOOLTIPS | WS_TABSTOP,98,133,102,16
+    LTEXT           "20000",IDC_STATIC,207,137,21,8
+END
+
+IDD_PPENVIRONMENT DIALOGEX 0, 0, 235, 156
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Environment"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    CONTROL         "&High Res Clouds (need fragment_program)",
+                    IDC_PPENVIRONMENT_CHECK_ADVSKY,"Button",BS_AUTOCHECKBOX | 
+                    WS_GROUP | WS_TABSTOP,7,7,153,10
+    CONTROL         "&Dynamic clouds (slow)",
+                    IDC_PPENVIRONMENT_CHECK_DYNAMICSKY,"Button",
+                    BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,7,33,86,10
+    CONTROL         "&Reflective water (fragment_program, slow)",
+                    IDC_PPENVIRONMENT_CHECK_REFLECTIVEWATER,"Button",
+                    BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,7,59,155,10
+    CONTROL         "&Colorized elevation map",
+                    IDC_PPENVIRONMENT_CHECK_COLORELEV,"Button",
+                    BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,7,85,92,10
+    CONTROL         "&Shadows (slow)",IDC_PPENVIRONMENT_CHECK_SHADOWS,"Button",
+                    BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,7,111,66,10
+    LTEXT           "Shadow &map size:",IDC_STATIC,27,127,58,8
+    CONTROL         "&1024",IDC_PPENVIRONMENT_RADIO_SHADOWMAPSIZE_1048,
+                    "Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,93,
+                    127,32,10
+    CONTROL         "&2048",IDC_PPENVIRONMENT_RADIO_SHADOWMAPSIZE_2048,
+                    "Button",BS_AUTORADIOBUTTON,133,127,32,10
+END
+
+IDD_PPUNITS DIALOGEX 0, 0, 235, 156
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Units"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LTEXT           "Unit &LOD distance:",IDC_STATIC,7,11,60,8
+    LTEXT           "100",IDC_STATIC,90,11,13,8
+    CONTROL         "",IDC_PPUNITS_SCRL_UNITLODDIST,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOOLTIPS | WS_TABSTOP,109,7,102,16
+    LTEXT           "600",IDC_STATIC,215,11,13,8
+    LTEXT           "Unit &texture quality:",IDC_STATIC,7,33,66,8
+    CONTROL         "&1x",IDC_PPUNITS_RADIO_UNITTEXTUREQUALITY_1,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,90,32,24,10
+    CONTROL         "&2xSaI",IDC_PPUNITS_RADIO_UNITTEXTUREQUALITY_2SAI,
+                    "Button",BS_AUTORADIOBUTTON,117,32,35,10
+    CONTROL         "2x&HQ",IDC_PPUNITS_RADIO_UNITTEXTUREQUALITY_2HQ,"Button",
+                    BS_AUTORADIOBUTTON,155,32,34,10
+    CONTROL         "&4xHQ",IDC_PPUNITS_RADIO_UNITTEXTUREQUALITY_4HQ,"Button",
+                    BS_AUTORADIOBUTTON,192,32,34,10
+END
+
+IDD_PPSOUND DIALOGEX 0, 0, 235, 156
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Sound"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LTEXT           "Max simultaneous sounds:",IDC_STATIC,7,11,85,8
+    RTEXT           "8",IDC_STATIC,98,11,8,8
+    CONTROL         "",IDC_PPSOUND_SCRL_MAXSOUNDS,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOOLTIPS | WS_TABSTOP,109,7,102,16
+    LTEXT           "128",IDC_STATIC,215,11,13,8
+    CTEXT           "Hey, it be neat if there was more sound options XD\nOk... Ok...\nIt would fill this page up if there was more sound options d:",
+                    IDC_STATIC,7,63,221,29
+END
+
+IDD_PPTEMPLATE DIALOGEX 0, 0, 235, 156
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Template"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LTEXT           "Meh, coming soon XD",IDC_STATIC,63,62,69,8
+END
+
+IDD_PPTWEAKS DIALOGEX 0, 0, 235, 156
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Tweaks"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    CONTROL         "Show clock durring games.",IDC_PPTWEAKS_CHECK_SHOWCLOCK,
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,7,7,101,
+                    10
+    CONTROL         "Show player information durring games.",
+                    IDC_PPTWEAKS_CHECK_SHOWPLAYERINFO,"Button",
+                    BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,7,24,143,10
+    LTEXT           "Store settings in: (to be implemented...)",IDC_STATIC,7,
+                    41,130,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 0,2,0,0
+ PRODUCTVERSION 0,2,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "FileDescription", "http://taspring.clan-sy.com/"
+            VALUE "FileVersion", "0.2.0.0"
+            VALUE "InternalName", "Settings.exe"
+            VALUE "LegalCopyright", "GNU GPL"
+            VALUE "OriginalFilename", "Settings.exe"
+            VALUE "ProductVersion", "0.2.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_PPGENERAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 149
+    END
+
+    IDD_PPMAP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 149
+    END
+
+    IDD_PPENVIRONMENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 149
+    END
+
+    IDD_PPUNITS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 149
+    END
+
+    IDD_PPSOUND, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 149
+    END
+
+    IDD_PPTEMPLATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 149
+    END
+
+    IDD_PPTWEAKS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 149
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_MAIN                ICON                    "settings.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_APP_TITLE           "TA Spring Settings"
+    IDS_STRING131           "\nCheck this to use the registry to store your settings. When unchecked a file, ""init.ini"", will be created to store your settings."
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_PPGENERAL_EDIT_PLAYERNAME 
+                            "\nType the name you would like to use while playing TA Spring."
+    IDC_PPGENERAL_COMBO_RES "\nSelect a screen resolution; lower numbers are faster, higher numbers have more detailed graphics."
+    IDC_PPGENERAL_EDIT_XRESOLUTION "\nType your desired custom screen width."
+    IDC_PPGENERAL_EDIT_YRESOLUTION "\nType your desired custom screen height."
+    IDC_PPGENERAL_CHECK_FULLSCREEN 
+                            "\nWhen checked, this will cause the game to take up the whole computer screen."
+    IDC_PPGENERAL_CHECK_INVERTMOUSE 
+                            "\nWhen checked, moving the mouse towards the screen, will cause the 'ingame' mouse to move towards the ground."
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_PPMAP_CHECK_3DTREES "\nWhen checked, trees are drawn in 3D. Otherwise they are drawn in 2D."
+    IDC_PPMAP_SCRL_TREERADIUS 
+                            "\nLower numbers are faster, higher numbers have more detailed graphics."
+    IDC_PPMAP_SCRL_GRASSDETAIL 
+                            "\nLower numbers are faster, higher numbers have more detailed graphics."
+    IDC_PPMAP_SCRL_GROUNDDETAIL 
+                            "\nLOD = Level of details. Lower numbers are faster, higher numbers have more detailed graphics."
+    IDC_PPMAP_SCRL_GROUNDDECALS 
+                            "\nLower numbers are faster, higher numbers have more detailed graphics."
+    IDC_PPMAP_SCRL_MAXPARTICLES 
+                            "\nLower numbers are faster, higher numbers have more detailed graphics."
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_PPENVIRONMENT_CHECK_ADVSKY 
+                            "\nWhen checked, hi-resolution skins are used to draw the sky."
+    IDC_PPENVIRONMENT_CHECK_DYNAMICSKY 
+                            "\nWhen checked, random cloud patterns are formed."
+    IDC_PPENVIRONMENT_CHECK_REFLECTIVEWATER 
+                            "\nThis will enable reflextions to show in the water."
+    IDC_PPENVIRONMENT_CHECK_COLORELEV "\nI don't know, and can't guess..."
+    IDC_PPENVIRONMENT_CHECK_SHADOWS "\nEnable shadows"
+    IDC_PPENVIRONMENT_RADIO_SHADOWMAPSIZE_1048 "\nUse fast shadows"
+    IDC_PPENVIRONMENT_RADIO_SHADOWMAPSIZE_2048 "\nUse slow shadows"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_PPUNITS_SCRL_UNITLODDIST 
+                            "\nLower numbers are faster, higher numbers have more detailed graphics."
+    IDC_PPUNITS_RADIO_UNITTEXTUREQUALITY_1 "\nUnit Texture Quality 1"
+    IDC_PPUNITS_RADIO_UNITTEXTUREQUALITY_2SAI "\nUnit Texture Quality 2SaI"
+    IDC_PPUNITS_RADIO_UNITTEXTUREQUALITY_2HQ "\nUnit Texture Quality 2HQ"
+    IDC_PPUNITS_RADIO_UNITTEXTUREQUALITY_4HQ "\nUnit Texture Quality 4HQ"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_PPSOUND_SCRL_MAXSOUNDS 
+                            "\nNumber of simualtanious sounds, played at one time."
+END
+
+STRINGTABLE 
+BEGIN
+    IDOK                    "\nClick here to close the settings dialog and save all your changes."
+    IDCANCEL                "\nClick here to discard changes made to your settings."
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APPLY_NOW            "\nClick here save your settings."
+    ID_WIZBACK              "\nClick here to see the previous series of settings."
+    ID_WIZNEXT              "\nClick here to see the next series of settings."
+    ID_WIZFINISH            "\nClick here to close the settings dialog and save all your changes."
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_PPTWEAKS_RADIO_USEREGISTRY 
+                            "\nUse the windows registry to store your settings (This is the default)."
+    IDC_PPTWEAKS_RADIO_USEFILE 
+                            "\nUse the file, "".\\settings.ini"", to store your settings (Recommended for advanced users only). This requires the drspring.exe binary, located at ""http://members.fortunecity.com/2069""."
+    IDC_PPTWEAKS_CHECK_SHOWCLOCK 
+                            "\nThis is displayed when you type "".clock"" durring a game. It will display the game time, since the start of a game, in the bottom right corner of the screen."
+    IDC_PPTWEAKS_CHECK_SHOWPLAYERINFO 
+                            "\nThis is displayed when you type "".info"" durring a game. It will display player information in the bottom right corner of the screen. (Someone, please tell me what the two numbers actually meen. I think the second number is ""ping"" time, or ""sync data offset"".)"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Swedish resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_SVE)
+#ifdef _WIN32
+LANGUAGE LANG_SWEDISH, SUBLANG_DEFAULT
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Swedish resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

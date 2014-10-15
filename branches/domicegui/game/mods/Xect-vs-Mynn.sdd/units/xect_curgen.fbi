@@ -1,0 +1,63 @@
+[UNITINFO]
+{
+	Name=Tidal Turbine;
+	UnitName=xect_curgen;
+	
+	//    Required Tags
+	BuildCostEnergy=868;
+	BuildCostMetal=91;
+	BuildTime=2087;
+	Category=xect energy level1 noweapon notair notsub ;
+	Description=Produces Energy;
+	FootprintX=3;
+	FootprintZ=3;
+	MaxDamage=385;
+	ObjectName=xect_curgen;
+	Side=Xect;
+	SoundCategory=mynn_ext;
+	TEDClass=water;
+	
+	//    Movement
+	MaxSlope=10;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=wwwwwwwwwwwwwwww;
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=0;
+	EnergyUse=0;
+	MetalStorage=0;
+	TidalGenerator=1;
+	
+	//    Abilities
+	CanFly=0;
+	ActivateWhenBuilt=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=150;
+	SonarDistance=0;
+	
+	//    Weapons
+	ExplodeAs=small_death;
+	SelfDestructAs=small_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MinWaterDepth=20;
+	Waterline=8;
+	
+	//    Misc
+	Corpse=xect_curgen_dead;
+	SmoothAnim=1;
+	Buildpic=mynn_curgen.jpg;
+	
+	//    Not Used By TASpring
+}

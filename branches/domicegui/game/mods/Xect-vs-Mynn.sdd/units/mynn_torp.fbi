@@ -1,0 +1,67 @@
+[UNITINFO]
+{
+	Name=Torpedo Turret;
+	UnitName=mynn_torp;
+	
+	//    Required Tags
+	BuildCostEnergy=3158;
+	BuildCostMetal=767;
+	BuildTime=8030;
+	Category=mynn special weapon torp level2 notair notsub ;
+	Description= ;
+	FootprintX=3;
+	FootprintZ=3;
+	MaxDamage=2459;
+	ObjectName=mynn_torp;
+	Side=Mynn;
+	SoundCategory=mynn_llt;
+	TEDClass=water;
+	
+	//    Movement
+	MaxSlope=10;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=wwwwwwwww;
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyMake=0.2;
+	EnergyStorage=0;
+	EnergyUse=0.2;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	ActivateWhenBuilt=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=225;
+	SonarDistance=445;
+	
+	//    Weapons
+	Weapon1=MYNNTORP_LUANCH;
+	DamageModifier=1.56;
+	ExplodeAs=small_death;
+	SelfDestructAs=small_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MinWaterDepth=1;
+	Waterline=10;
+	
+	//    Misc
+	Corpse=mynn_torp_dead;
+	SmoothAnim=1;
+	Buildpic=mynn_torp.jpg;
+	
+	//    Not Used By TASpring
+}

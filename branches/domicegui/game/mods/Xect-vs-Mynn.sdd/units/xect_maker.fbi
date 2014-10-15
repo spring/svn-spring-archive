@@ -1,0 +1,64 @@
+[UNITINFO]
+{
+	Name=Metal Maker;
+	UnitName=xect_maker;
+	
+	//    Required Tags
+	BuildCostEnergy=750;
+	BuildCostMetal=1;
+	BuildTime=1726;
+	Category=xect energy level1 noweapon notair notsub ;
+	Description=Creates Metal;
+	FootprintX=4;
+	FootprintZ=4;
+	MaxDamage=18;
+	ObjectName=xect_maker;
+	Side=Xect;
+	SoundCategory=xcllab;
+	TEDClass=energy;
+	
+	//    Movement
+	MaxSlope=10;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=oo oo;
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyMake=0;
+	EnergyStorage=0;
+	EnergyUse=60;
+	MakesMetal=1;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanFly=0;
+	OnOffable=1;
+	ActivateWhenBuilt=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=300;
+	
+	//    Weapons
+	DamageModifier=0.33333;
+	ExplodeAs=SMALL_BUILDINGEX;
+	SelfDestructAs=SMALL_BUILDING;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	Corpse=xect_maker_dead;
+	SmoothAnim=1;
+	Buildpic=xect_maker.jpg;
+	
+	//    Not Used By TASpring
+}

@@ -1,0 +1,63 @@
+[oilspill1]
+	{
+	world=all worlds;
+	description=Oil;
+	category=blood;
+	animating=0;
+	footprintx=2;
+	footprintz=2;
+	height=0;
+	filename=oilspill;
+	seqname=OIL1;
+	seqnameshad=;
+	featuredead=oilspill1;
+	energy=10;
+
+	seqnameburn=oilburn;
+	burnmin=5;
+	burnmax=15;
+	sparktime=5;
+	spreadchance=30;
+	burnweapon=OilBurn;
+
+	animtrans=0;
+	shadtrans=1;
+	flamable=1;
+	reclaimable=1;
+	reproduce=0;
+	reproducearea=6;
+	hitdensity=10;
+	blocking=0;
+	}
+
+[oilspill2]
+	{
+	world=all worlds;
+	description=Oil;
+	category=blood;
+	animating=0;
+	footprintx=2;
+	footprintz=2;
+	height=0;
+	filename=oilspill;
+	seqname=OIL2;
+	seqnameshad=;
+	featuredead=oilspill2;
+	energy=10;
+
+	seqnameburn=oilburn;
+	burnmin=5;
+	burnmax=15;
+	sparktime=5;
+	spreadchance=30;
+	burnweapon=OilBurn;
+
+	animtrans=0;
+	shadtrans=1;
+	flamable=1;
+	reclaimable=1;
+	reproduce=0;
+	reproducearea=6;
+	hitdensity=10;
+	blocking=0;
+	}

@@ -1,0 +1,37 @@
+[xect_bertha_dead]
+	{
+	world=All Worlds;
+	description=Wreckage;
+	category=xect_corpses;
+	object=xect_bertha_dead;
+	featuredead=xect_bertha_heap;
+	footprintx=4;
+	footprintz=4;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=1966;
+	damage=1600;
+	reclaimable=1;
+	featurereclamate=oilspill1;
+	seqnamereclamate=tree1reclamate;
+	}
+
+[xect_bertha_heap]
+	{
+	world=All Worlds;
+	description=Wreckage;
+	category=xect_heaps;
+	object=2x2rub;
+	footprintx=4;
+	footprintz=4;
+	height=4;
+	blocking=0;
+	hitdensity=100;
+	metal=1342;
+	damage=900;
+	reclaimable=1;
+
+	featurereclamate=oilspill1;
+	seqnamereclamate=tree1reclamate;
+	}

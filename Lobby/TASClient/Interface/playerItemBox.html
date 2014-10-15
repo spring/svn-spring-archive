@@ -1,0 +1,79 @@
+<div id="box[PlayerId]" onmouseover="boxOver('box[PlayerId]');" onmouseout="boxOut('box[PlayerId]');" style="border:3px solid black; overflow:hidden;color:black;position: absolute;background-color: #5a835a;width: 26px; height: 26px; left: [LOBBY:LOADPARAM:box[PlayerUniqueId]:0:0]px; top: [LOBBY:LOADPARAM:box[PlayerUniqueId]:1:0]px;">
+	<div style="width:130px;height: 26px; background-image: url(images/boxgrandiant_player.gif);background-repeat: repeat-x; ">
+		<div class="nameSpan" style="width:26px;height:26px;padding: 2px;cursor: move;" onmousedown="startMovingBox('box[PlayerId]',[PlayerId],[PlayerUniqueId]);"><b>[PlayerName]</b></div>
+	</div>
+	<div>
+		<table cellpadding="2" cellspacing="2" style="border: 0">
+			<tr>
+				<td>Team:</td>
+				<td>
+					<select style="width:70px;" id="idBox[PlayerId]" onfocus="suspendBoxOut();" onblur="enableBoxOut();boxOut('box[PlayerId]');" onchange="boxOut('box[PlayerId]');sendData('changeid:[PlayerId]:'+getSelectedValue('idBox[PlayerId]'));selectedIdList[[PlayerId]-1] = getSelectedValue('idBox[PlayerId]');selectTeams();">
+						<option value="0">1</option>
+						<option value="1">2</option>
+						<option value="2">3</option>
+						<option value="3">4</option>
+						<option value="4">5</option>
+						<option value="5">6</option>
+						<option value="6">7</option>
+						<option value="7">8</option>
+						<option value="8">9</option>
+						<option value="9">10</option>
+						<option value="10">11</option>
+						<option value="11">12</option>
+						<option value="12">13</option>
+						<option value="13">14</option>
+						<option value="14">15</option>
+						<option value="15">16</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Side:</td>
+				<td>
+					<select style="width:70px;" id="sideBox[PlayerId]" onfocus="suspendBoxOut();" onblur="enableBoxOut();boxOut('box[PlayerId]');" onchange="boxOut('box[PlayerId]');sendData('changeside:[PlayerId]:'+getSelectedValue('sideBox[PlayerId]'));selectedSideList[[PlayerId]-1] = getSelectedValue('sideBox[PlayerId]');selectSides();">
+						[SideList]
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Bonus:</td>
+				<td>
+					<div id="handicapContainerBox[PlayerId]" class="spinBox">
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<script type="text/javascript">
+	function handicapSpinBoxChanged[PlayerId](sender, newVal)
+	{
+		sendData('changehandicap:[PlayerId]:'+newVal);
+		handicapSpinCtrl[PlayerId].SetCurrentValue(newVal);
+	}
+
+	function inputFocus[PlayerId](){
+		suspendBoxOut();
+	}
+	function inputBlur[PlayerId](){
+		enableBoxOut();
+		boxOut('box[PlayerId]');
+	}
+
+	var handicapSpinBoxCtrl[PlayerId] = new SpinControl();
+	handicapSpinBoxCtrl[PlayerId].SetMaxValue(100);
+	handicapSpinBoxCtrl[PlayerId].SetMinValue(0);
+	handicapSpinBoxCtrl[PlayerId].SetIncrement(1);
+	handicapSpinBoxCtrl[PlayerId].SetCurrentValue([Handicap]);
+	handicapSpinBoxCtrl[PlayerId].GetAccelerationCollection().Add(new SpinControlAcceleration(1, 500));
+	handicapSpinBoxCtrl[PlayerId].GetAccelerationCollection().Add(new SpinControlAcceleration(10, 1750));
+	handicapSpinBoxCtrl[PlayerId].AttachValueChangedListener(handicapSpinBoxChanged[PlayerId]);
+	document.getElementById('handicapContainerBox[PlayerId]').appendChild(handicapSpinBoxCtrl[PlayerId].GetContainer());
+	handicapSpinBoxCtrl[PlayerId].StartListening();
+
+	x = handicapSpinBoxCtrl[PlayerId].GetInputBox();
+
+	x.onfocus = inputFocus[PlayerId];
+	x.onblur = inputBlur[PlayerId];
+
+</script>

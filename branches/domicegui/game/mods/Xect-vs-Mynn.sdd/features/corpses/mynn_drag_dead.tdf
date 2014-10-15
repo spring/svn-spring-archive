@@ -1,0 +1,44 @@
+[DragonsTeeth_mynn_e]
+	{
+	world=allworld;
+	description=Carbon Barrier;
+	category=dragonteeth;
+	object=mynn_drag;
+	footprintx=2;
+	footprintz=2;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=7;
+	damage=3200;
+	reclaimable=1;
+	autoreclaimable=0;
+	featurereclamate=oilspill2;
+	featuredead=RockTeethmynn_e;
+	seqnamereclamate=tree1reclamate;
+	}
+[RockTeethmynn_e]
+	{
+	world=greenworld;
+	description=Carbon Barrier;
+	category=rocks;
+	animating=0;
+	footprintx=2;
+	footprintz=2;
+	height=20;
+	filename=oilspill;
+	seqname=greenrubble;
+	seqnameshad=greenrubbleshad;
+	seqnamereclamate=rock04brec;
+	metal=15;
+
+	featurereclamate=greenrubbleshad;
+	featuredead=greenrubble;
+
+	animtrans=0;
+	shadtrans=1;
+	reclaimable=1;
+	blocking=1;
+	hitdensity=100;
+	damage=2000;
+	}

@@ -1,0 +1,47 @@
+- Get JavaScript to work cross-browser (again).
+	Language and Theme menu don't display correctly. (make them slide in/out to?)
+
+- The banner will still need some more work.
+	New and better images.
+
+- Translation system.
+	Use versions.
+	Check username/password.
+	Make links "remember" language choice.
+	Make translation page look good?
+	Make it possible to remove strings with "development" language.
+	Prevent resubmit with page refresh last stage of translation.php
+	Expand and optimize spring_language class.
+	Install PHPBB subSilver language files.
+	Wiki localizations?
+	Make static entry pages that use content negotiation.
+
+- News from phpbb.
+	Read news and highlight from phpbb. (think about PHPBB3!)
+
+- Getting the text final and translated.
+	What sections need to be displayed on the sub-pages?
+	Translation needs to be done by community members.
+	Getting started and Player Guide need work.
+	
+- Theme support working across the board
+	Some javascript in header.
+	Some CSS definitions are still inside the HTML.
+	Lots of duplicate CSS definitions in CSS files.
+	Allow themes to change vid's and screenshots.
+	Make links "remember" theme choice.
+	Get people excited about making theme's for mods.
+
+- PHPBB and Wiki integration
+	Wiki has some problems with the banner.
+
+- New video's for the features
+	Cabbage is looking at this but need more.
+
+- Screenshots
+	Need to pick a few high res good looking pic from several mods.
+	Make pic's fade.
+	Lightbox?
+
+- More?
+	Word filter like with Smoth's forum?

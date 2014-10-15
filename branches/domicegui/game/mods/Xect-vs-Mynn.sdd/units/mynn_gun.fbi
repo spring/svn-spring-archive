@@ -1,0 +1,73 @@
+[UNITINFO]
+{
+	Name=Batty;
+	UnitName=mynn_gun;
+	
+	//    Required Tags
+	BuildCostEnergy=3257;
+	BuildCostMetal=182;
+	BuildTime=7673;
+	Category=mynn vtol ctrl_v level1 weapon  notsub ;
+	Description=Light Attack Ship;
+	FootprintX=3;
+	FootprintZ=3;
+	MaxDamage=317;
+	ObjectName=mynn_gun;
+	Side=Mynn;
+	SoundCategory=mynn_vtol;
+	TEDClass=vtol;
+	
+	//    Movement
+	BrakeRate=3;
+	Acceleration=0.1;
+	CanMove=1;
+	MaxVelocity=7.85;
+	MaxSlope=10;
+	TurnRate=920;
+	
+	//    Airplane Moventment
+	Cruisealt=85;
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyMake=0.7;
+	EnergyStorage=0;
+	EnergyUse=0.7;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=1;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=525;
+	SonarDistance=0;
+	
+	//    Weapons
+	Weapon1=STREAM;
+	wpri_badTargetCategory=NOTAIR;
+	BadTargetCategory=NOTAIR;
+	DamageModifier=0.77;
+	ExplodeAs=small_death;
+	HoverAttack=1;
+	SelfDestructAs=small_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	SmoothAnim=1;
+	Upright=1;
+	Buildpic=mynn_gun.jpg;
+	
+	//    Not Used By TASpring
+}

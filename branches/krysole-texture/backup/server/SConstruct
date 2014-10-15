@@ -1,0 +1,21 @@
+TargetSignatures('content')
+SetOption('implicit_cache', 1)
+
+print 'Platform:', Environment()['PLATFORM']
+
+objs = Split("""BattleRoomManager.cpp
+                ChatRoom.cpp
+                ChatroomManager.cpp
+                CrashDumpHandler.cpp
+                Dbase.cpp
+                Log.cpp
+                Net.cpp
+                ServerSettings.cpp
+                SunParser.cpp
+                User.cpp
+                float3.cpp
+                main.cpp
+                netfuncs.cpp""")
+                
+Program('server', objs, LIBS = ['mysqlclient', 'pthread'], CPPPATH = '.')
+

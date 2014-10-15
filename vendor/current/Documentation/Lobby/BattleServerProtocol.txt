@@ -1,0 +1,13 @@
+Battle server protocol specification
+
+First, when connecting to the battle server, the user credentials need to be sent.  This MUST be the first packet sent
+
+struct Credentials
+{
+	int ID;
+	char Password[MAXPASSWORD];
+	char Clan[MAXCLAN];
+	char Name[MAXNAME];
+};
+
+Provided the user is not already in the room and the password (if needed) is correct, the login is made and PACK_BATTLELOGGEDIN is sent back to the user.

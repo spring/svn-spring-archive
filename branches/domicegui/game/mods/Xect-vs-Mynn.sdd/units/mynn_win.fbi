@@ -1,0 +1,60 @@
+[UNITINFO]
+{
+	Name=Wind Turbine;
+	UnitName=mynn_win;
+	
+	//    Required Tags
+	BuildCostEnergy=500;
+	BuildCostMetal=50;
+	BuildTime=1200;
+	Category=mynn energy level1 noweapon notair notsub ;
+	Description=Converts Wind to Energy;
+	FootprintX=4;
+	FootprintZ=4;
+	MaxDamage=156;
+	ObjectName=mynn_win;
+	Side=Mynn;
+	SoundCategory=mynn_wind;
+	TEDClass=energy;
+	
+	//    Movement
+	MaxSlope=10;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=ooooooooo;
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=0;
+	EnergyUse=0;
+	MetalStorage=0;
+	WindGenerator=30;
+	
+	//    Abilities
+	CanFly=0;
+	ActivateWhenBuilt=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=315;
+	
+	//    Weapons
+	ExplodeAs=small_death;
+	SelfDestructAs=small_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	SmoothAnim=1;
+	Buildpic=mynn_win.jpg;
+	
+	//    Not Used By TASpring
+}

@@ -1,0 +1,69 @@
+[UNITINFO]
+{
+	Name=Storm;
+	UnitName=xect_cloud;
+	
+	//    Required Tags
+	BuildCostEnergy=417;
+	BuildCostMetal=417;
+	BuildTime=1376;
+	Category=xect vtol ctrl_f level1 weapon  notsub ;
+	Description=Thunder Cloud;
+	FootprintX=1;
+	FootprintZ=1;
+	MaxDamage=278;
+	ObjectName=xect_cloud;
+	Side=Xect;
+	SoundCategory=mth_mec;
+	TEDClass=vtol;
+	
+	//    Movement
+	BrakeRate=1;
+	Acceleration=0.1;
+	CanMove=1;
+	MaxVelocity=3;
+	MaxSlope=35;
+	TurnRate=150;
+	
+	//    Airplane Moventment
+	Cruisealt=50;
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=1;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=375;
+	
+	//    Weapons
+	Weapon1=XLIGHTNING;
+	wpri_badTargetCategory=NOTAIR;
+	BadTargetCategory=NOTAIR;
+	DamageModifier=0.42;
+	ExplodeAs=SMALL_UNITEX;
+	HoverAttack=1;
+	SelfDestructAs=SMALL_UNIT;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	SmoothAnim=1;
+	Buildpic=xect_cloud.jpg;
+	
+	//    Not Used By TASpring
+}

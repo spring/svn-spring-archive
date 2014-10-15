@@ -1,0 +1,67 @@
+[UNITINFO]
+{
+	Name=Bow;
+	UnitName=xect_bow;
+	
+	//    Required Tags
+	BuildCostEnergy=1263;
+	BuildCostMetal=105;
+	BuildTime=3010;
+	Category=xect troop level1 weapon notair notsub ctrl_m;
+	Description=Missile Bot;
+	FootprintX=1;
+	FootprintZ=1;
+	MaxDamage=481;
+	ObjectName=xect_bow;
+	Side=Xect;
+	SoundCategory=mth_sold;
+	TEDClass=troop;
+	
+	//    Movement
+	BrakeRate=0.183105469;
+	MovementClass=TANKsh2;
+	Acceleration=0.091552734;
+	CanMove=1;
+	MaxVelocity=2.29;
+	MaxSlope=10;
+	TurnRate=600;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=375;
+	
+	//    Weapons
+	Weapon1=MTH_ARROW;
+	DamageModifier=0.36;
+	ExplodeAs=bug_death;
+	SelfDestructAs=bug_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=5;
+	
+	//    Misc
+	Corpse=xect_bow_dead;
+	SmoothAnim=1;
+	Buildpic=xect_bow.jpg;
+	
+	//    Not Used By TASpring
+}

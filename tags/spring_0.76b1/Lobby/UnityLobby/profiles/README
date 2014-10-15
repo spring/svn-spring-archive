@@ -1,0 +1,8 @@
+This mainly for package maintainers.
+
+To automatic setup for UnityLobby, and avoid user having to run the setup wizard.
+
+U can create a file in this directory called
+default.profile
+
+Look @ example.profile  for an example.

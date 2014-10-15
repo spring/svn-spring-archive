@@ -1,0 +1,37 @@
+[mynn_b_trp_dead]
+	{
+	world=All Worlds;
+	description=Mutilated Cyborg;
+	category=mynn_e_corpses;
+	object=mynn_b_trp_dead;
+	featuredead=mynn_b_trp_heap;
+	footprintx=2;
+	footprintz=2;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=78;
+	damage=380;
+	reclaimable=1;
+	featurereclamate=bloodscar3;
+        seqnamereclamate=tree1reclamate;
+	}
+
+[mynn_b_trp_heap]
+	{
+	world=All Worlds;
+	description=Mutilated Cyborg;
+	category=mynn_e_heaps;
+	object=mynn_b_trp_dead;
+	footprintx=2;
+	footprintz=2;
+	height=4;
+	blocking=0;
+	hitdensity=100;
+	metal=60;
+	damage=240;
+	reclaimable=1;
+
+	featurereclamate=bloodscar3;
+	seqnamereclamate=tree1reclamate;
+	}

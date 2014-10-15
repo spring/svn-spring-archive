@@ -1,0 +1,152 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<STYLE type="text/css">
+			body {
+				padding: 0;
+				margin: 0;
+				background-color: #cdcdcd;
+				width: 100%;
+			}
+			a,a:visited{
+				color: #474747;
+				text-decoration: none;
+				font-family: Arial;
+				font-size: 12px;
+				font-weight: bold;
+			}
+			a:hover {
+				color: white;
+			}
+			
+			a .newNews,a:hover .newNews,a:visited .newNews{
+				color: #e1ce70;
+				text-decoration: none;
+				font-family: Arial;
+				font-size: 12px;
+				font-weight: bold;
+			}
+			
+			.newNews{
+				background-image: url('newNewsItemBg.png');
+				margin-right:10px;
+				margin-bottom:8px;
+				float: left;
+				height: 28px;
+			}
+			.newNewsContent{
+				background-image: url('newNewsItemLeftBg.png');
+				background-repeat: no-repeat;
+				height: 28px;
+				padding: 6px;
+				float: left;
+				white-space: nowrap;
+			}
+			.newNewsRightBorder{
+				background-image: url('newNewsItemRightBg.png');
+				background-repeat: no-repeat;
+				height: 28px;
+				width: 2px;
+				float: left;
+			}
+			a:hover .newNews{
+				background-image: url('newNewsItemSelBg.png');
+				margin-right:10px;
+				float: left;
+				height: 28px;
+			}
+			a:hover .newNewsContent{
+				background-image: url('newNewsItemSelLeftBg.png');
+				background-repeat: no-repeat;
+				height: 28px;
+				padding: 6px;
+				float: left;
+			}
+			a:hover .newNewsRightBorder{
+				background-image: url('newNewsItemSelRightBg.png');
+				background-repeat: no-repeat;
+				height: 28px;
+				width: 2px;
+				float: left;
+			}
+			.news{
+				background-image: url('newsItemBg.png');
+				margin-right:10px;
+				margin-bottom:8px;
+				float: left;
+				height: 28px;
+			}
+			.newsContent{
+				background-image: url('newsItemLeftBg.png');
+				background-repeat: no-repeat;
+				height: 28px;
+				padding: 6px;
+				float: left;
+				white-space: nowrap;
+			}
+			.newsRightBorder{
+				background-image: url('newsItemRightBg.png');
+				background-repeat: no-repeat;
+				height: 28px;
+				width: 2px;
+				float: left;
+			}
+			a:hover .news{
+				background-image: url('newsItemSelBg.png');
+				margin-right:10px;
+				float: left;
+				height: 28px;
+			}
+			a:hover .newsContent{
+				background-image: url('newsItemSelLeftBg.png');
+				background-repeat: no-repeat;
+				height: 28px;
+				padding: 6px;
+				float: left;
+			}
+			a:hover .newsRightBorder{
+				background-image: url('newsItemSelRightBg.png');
+				background-repeat: no-repeat;
+				height: 28px;
+				width: 2px;
+				float: left;
+			}
+			#scrollingDiv{
+				position: absolute;
+				left: 0px;
+				top: 0;
+				margin: 4px;
+				height: 0px;
+				overflow: hidden;
+			}
+			.content{
+				float: left;
+			}
+			#debug{
+				position: absolute;
+				top: 30px;
+				left: 0;
+				background-color: red;
+			}
+		</STYLE>
+		<script type="text/javascript">
+			function debug(msg){
+				document.getElementById('debug').innerHTML = msg;
+			}
+			function onNewNewsClick(div){
+				divs = div.getElementsByTagName('div');
+				divs[0].style.display = 'none';
+				divs[3].style.display = 'block';
+			}
+		</script>
+	</head>
+	<body>
+		<div id="scrollingDiv">
+			<div id="content1" class="content">
+[newsItems]
+			</div>
+		</div>
+		<div id="debug">
+		</div>
+	</body>
+</html>

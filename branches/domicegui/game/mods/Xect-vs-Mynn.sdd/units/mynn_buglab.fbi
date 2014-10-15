@@ -1,0 +1,61 @@
+[UNITINFO]
+{
+	Name=Bot Plant;
+	UnitName=mynn_buglab;
+	
+	//    Required Tags
+	BuildCostEnergy=1130;
+	BuildCostMetal=705;
+	BuildTime=3304;
+	Category=rac PLANT ctrl_f level1 noweapon notair notsub ;
+	Description=Builds Bots;
+	FootprintX=5;
+	FootprintZ=6;
+	MaxDamage=1650;
+	ObjectName=mynn_buglab;
+	Side=Mynn;
+	SoundCategory=grah_plant;
+	TEDClass=PLANT;
+	
+	//    Movement
+	CanMove=1;
+	MaxSlope=10;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=occco occco occco occco occco occco;
+	
+	//    Construction
+	Builder=1;
+	WorkerTime=100;
+	
+	//    Resources
+	EnergyStorage=100;
+	EnergyUse=0;
+	MetalStorage=100;
+	
+	//    Abilities
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=335;
+	
+	//    Weapons
+	ExplodeAs=crawler_death;
+	SelfDestructAs=crawler_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	Corpse=mynn_buglab_dead;
+	SmoothAnim=1;
+	Buildpic=mynn_buglab.jpg;
+	
+	//    Not Used By TASpring
+}

@@ -1,0 +1,253 @@
+#include "StdAfx.h"
+// InfoConsole.cpp: implementation of the CInfoConsole class.
+//
+//////////////////////////////////////////////////////////////////////
+
+#include "InfoConsole.h"
+#include "Rendering/GL/myGL.h"
+#include <fstream>
+#include "Rendering/glFont.h"
+#include "NewGuiDefine.h"
+#ifdef NEW_GUI
+	#include "GUI/GUIcontroller.h"
+#endif
+
+#ifdef WIN32
+#include "Platform/Win/win32.h"
+#endif
+ 
+#include "SyncTracer.h"
+#include "Platform/ConfigHandler.h"
+
+#include "mmgr.h"
+
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
+CInfoConsole* info=0;
+static std::ofstream* filelog;
+
+CInfoConsole::CInfoConsole()
+: lastMsgPos(0,0,0)
+{
+	lastTime=0;
+	lifetime=400;
+
+	lifetime=configHandler.GetInt("InfoMessageTime",400);
+	xpos=0.26f;
+	verboseLevel=configHandler.GetInt("VerboseLevel",0);
+	ypos=0.946f;
+	width=0.41f;
+	height=0.2f;
+	numLines = 7;
+
+	assert(!filelog); // multiple infologs can't exist together!
+	filelog = new std::ofstream("infolog.txt");
+}
+
+CInfoConsole::~CInfoConsole()
+{
+	delete filelog;
+}
+
+void CInfoConsole::Draw()
+{
+	boost::recursive_mutex::scoped_lock scoped_lock(infoConsoleMutex);
+	glPushMatrix();
+	glDisable(GL_TEXTURE_2D);
+	glColor4f(0,0,0.5f,0.5f);
+	if(!data.empty()){
+		glBegin(GL_TRIANGLE_STRIP);
+			glVertex3f(xpos,ypos,0);
+			glVertex3f(xpos+width,ypos,0);
+			glVertex3f(xpos,ypos-height,0);
+			glVertex3f(xpos+width,ypos-height,0);
+		glEnd();
+	}
+	glTranslatef(xpos+0.01,ypos-0.026f,0);
+	glScalef(0.015f,0.02f,0.02f);
+	glColor4f(1,1,1,1);
+
+	glEnable(GL_TEXTURE_2D);
+
+	std::deque<InfoLine>::iterator ili;
+	for(ili=data.begin();ili!=data.end();ili++){
+		font->glPrint("%s",ili->text.c_str());
+		glTranslatef(0,-1.2f,0);
+	}
+	glPopMatrix();
+}
+
+void CInfoConsole::Update()
+{
+	boost::recursive_mutex::scoped_lock scoped_lock(infoConsoleMutex);
+	if(lastTime>0)
+		lastTime--;
+	if(!data.empty()){
+		data.begin()->time--;
+		if(data[0].time<=0)
+			data.pop_front();
+	}
+}
+
+
+void CInfoConsole::AddLine(int priority, const char *fmt, ...)
+{
+	char text[500];
+	va_list		ap;										// Pointer To List Of Arguments
+
+	if (fmt == NULL)									// If There's No Text
+		return;											// Do Nothing
+
+	va_start(ap, fmt);									// Parses The String For Variables
+	VSNPRINTF(text, sizeof(text), fmt, ap);				// And Converts Symbols To Actual Numbers
+	va_end(ap);											// Results Are Stored In Text
+
+	AddLineHelper (priority,text);
+}
+
+void CInfoConsole::AddLine(const char *fmt, ...)
+{
+	char text[1500];
+	va_list		ap;										// Pointer To List Of Arguments
+
+	if (fmt == NULL)									// If There's No Text
+		return;											// Do Nothing
+
+	va_start(ap, fmt);									// Parses The String For Variables
+	VSNPRINTF(text, sizeof(text), fmt, ap);				// And Converts Symbols To Actual Numbers
+	va_end(ap);											// Results Are Stored In Text
+
+	AddLineHelper (0,text);
+}
+
+void CInfoConsole::AddLine (const std::string& text)
+{
+	AddLineHelper (0, text.c_str());
+}
+
+
+void CInfoConsole::AddLine (int priority, const std::string& text)
+{
+	AddLineHelper (priority, text.c_str());
+}
+
+
+CInfoConsole& CInfoConsole::operator<< (int i)
+{
+	char t[50];
+	sprintf(t,"%d ",i);
+	tempstring+=t;
+	return *this;
+}
+
+
+CInfoConsole& CInfoConsole::operator<< (float f)
+{
+	boost::recursive_mutex::scoped_lock scoped_lock(infoConsoleMutex);
+	char t[50];
+	sprintf(t,"%f ",f);
+	tempstring+=t;
+	return *this;
+}
+
+CInfoConsole& CInfoConsole::operator<< (const char* c)
+{
+	boost::recursive_mutex::scoped_lock scoped_lock(infoConsoleMutex);
+	for(unsigned int a=0;a<strlen(c);a++){
+		if(c[a]!='\n'){
+			tempstring+=c[a];
+		} else {
+			AddLine(tempstring);
+			tempstring="";
+			break;
+		}
+	}
+	return *this;
+}
+
+#ifndef NEW_GUI
+ 
+void CInfoConsole::AddLineHelper (int priority, const char *text)
+{
+	if (priority > verboseLevel)
+		return;
+
+	PUSH_CODE_MODE;
+	ENTER_MIXED;
+	boost::recursive_mutex::scoped_lock scoped_lock(infoConsoleMutex);
+
+	(*filelog) << text << "\n";
+	filelog->flush();
+
+#ifdef WIN32
+	OutputDebugString(text);
+	OutputDebugString("\n");
+#endif
+
+	float maxWidth = 25.0f;
+	int pos=0, line_start=0;
+
+	while (text[pos]) {
+		// iterate through text until maxWidth width is reached
+		char temp[120];
+		float w = 0.0f;
+		for (;text[pos] && pos-line_start < sizeof(temp) - 1 && w <= maxWidth;pos++) {
+			w += font->CalcCharWidth (text[pos]);
+			temp[pos-line_start] = text[pos];
+		}
+
+		// if needed, find a breaking position
+		if (w > maxWidth) {
+			int break_pos = pos-line_start;
+			while (break_pos >= 0 && temp[break_pos] != ' ')
+				break_pos --;
+
+			if (break_pos <= 0) break_pos = pos-line_start;
+			line_start += break_pos + (temp[break_pos] == ' ' ? 1 : 0);
+			pos = line_start;
+			temp[break_pos] = 0;
+		} else {
+			temp[pos-line_start] = 0;
+			line_start = pos;
+		}
+
+		// add the line to the console
+		InfoLine l;
+		if((int)data.size()>(numLines-1)){
+			data[1].time+=data[0].time;
+			data.pop_front();
+		}
+		data.push_back(l);
+		data.back().text=temp;
+		data.back().time=lifetime-lastTime;
+		lastTime=lifetime;
+	}
+	POP_CODE_MODE;
+}
+
+void CInfoConsole::SetLastMsgPos(float3 pos)
+{
+	lastMsgPos=pos;
+}
+
+#endif
+
+#ifdef NEW_GUI
+
+void CInfoConsole::AddLineHelper (int priority, const char *text)
+{
+	if (priority > verboseLevel)
+		return;
+
+	if (guicontroller) 
+		guicontroller->AddText(text);
+}
+
+void CInfoConsole::SetLastMsgPos(float3 pos)
+{
+	if (guicontroller)
+	guicontroller->SetLastMsgPos(pos);
+}
+
+#endif 

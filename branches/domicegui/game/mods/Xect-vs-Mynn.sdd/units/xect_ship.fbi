@@ -1,0 +1,70 @@
+[UNITINFO]
+{
+	Name=Mynnion;
+	UnitName=xect_ship;
+	
+	//    Required Tags
+	BuildCostEnergy=5628;
+	BuildCostMetal=1583;
+	BuildTime=14527;
+	Category=xect SHIP level2 weapon notair notsub ;
+	Description=Medium Attack HydroJet;
+	FootprintX=4;
+	FootprintZ=4;
+	MaxDamage=4831;
+	ObjectName=xect_ship;
+	Side=Xect;
+	SoundCategory=mynn_ship;
+	TEDClass=SHIP;
+	
+	//    Movement
+	BrakeRate=0.018310547;
+	MovementClass=BOATd6;
+	Acceleration=0.009155273;
+	CanMove=1;
+	MaxVelocity=1.53;
+	TurnRate=128;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyMake=0.9;
+	EnergyStorage=0;
+	EnergyUse=0.9;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	Floater=1;
+	
+	//    Sight/Radar
+	RadarDistance=1050;
+	SightDistance=368;
+	
+	//    Weapons
+	Weapon1=MYN_CRUS;
+	wsec_badTargetCategory=NOTAIR;
+	DamageModifier=2.98;
+	ExplodeAs=crawler_death;
+	SelfDestructAs=crawler_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MinWaterDepth=12;
+	
+	//    Misc
+	Corpse=xect_ship_dead;
+	SmoothAnim=1;
+	Buildpic=mynn_ship.jpg;
+	
+	//    Not Used By TASpring
+}

@@ -1,0 +1,397 @@
+object PreferencesForm: TPreferencesForm
+  Left = 784
+  Top = 296
+  BorderStyle = bsDialog
+  Caption = 'Preferences'
+  ClientHeight = 262
+  ClientWidth = 321
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  Scaled = False
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object ApplyAndCloseButton: TButton
+    Left = 16
+    Top = 200
+    Width = 289
+    Height = 25
+    Caption = 'Apply and close'
+    TabOrder = 0
+    OnClick = ApplyAndCloseButtonClick
+  end
+  object PageControl1: TPageControl
+    Left = 16
+    Top = 16
+    Width = 289
+    Height = 177
+    ActivePage = TabSheet1
+    TabOrder = 1
+    object TabSheet1: TTabSheet
+      Caption = 'Server'
+      object Label1: TLabel
+        Left = 16
+        Top = 24
+        Width = 74
+        Height = 13
+        Caption = 'Server address:'
+      end
+      object Label2: TLabel
+        Left = 16
+        Top = 48
+        Width = 55
+        Height = 13
+        Caption = 'Server port:'
+      end
+      object AddressSpeedButton: TSpeedButton
+        Left = 232
+        Top = 24
+        Width = 23
+        Height = 21
+        Caption = '>>'
+        OnClick = AddressSpeedButtonClick
+      end
+      object ServerAddressEdit: TEdit
+        Left = 96
+        Top = 24
+        Width = 137
+        Height = 21
+        TabOrder = 0
+        Text = '127.0.0.1'
+      end
+      object ServerPortEdit: TEdit
+        Left = 96
+        Top = 48
+        Width = 41
+        Height = 21
+        TabOrder = 1
+        Text = '8200'
+      end
+      object CheckBox2: TCheckBox
+        Left = 16
+        Top = 96
+        Width = 153
+        Height = 17
+        Caption = 'Connect on startup'
+        TabOrder = 2
+      end
+      object CheckBox7: TCheckBox
+        Left = 16
+        Top = 112
+        Width = 249
+        Height = 17
+        Caption = 'Join #main once connected (recommended)'
+        TabOrder = 3
+      end
+      object JvXPButton1: TJvXPButton
+        Left = 184
+        Top = 56
+        Caption = 'Perform ...'
+        TabOrder = 4
+        OnClick = JvXPButton1Click
+      end
+      object CheckBox10: TCheckBox
+        Left = 16
+        Top = 80
+        Width = 249
+        Height = 17
+        Caption = 'Connect to backup host if primary one fails'
+        Checked = True
+        State = cbChecked
+        TabOrder = 5
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Account'
+      ImageIndex = 1
+      object Label4: TLabel
+        Left = 24
+        Top = 32
+        Width = 51
+        Height = 13
+        Caption = 'Username:'
+      end
+      object Label5: TLabel
+        Left = 24
+        Top = 64
+        Width = 49
+        Height = 13
+        Caption = 'Password:'
+      end
+      object SpeedButton1: TSpeedButton
+        Left = 88
+        Top = 96
+        Width = 121
+        Height = 33
+        Caption = 'Register this account'
+        OnClick = SpeedButton1Click
+      end
+      object UsernameEdit: TEdit
+        Left = 88
+        Top = 32
+        Width = 121
+        Height = 21
+        TabOrder = 0
+      end
+      object PasswordEdit: TEdit
+        Left = 88
+        Top = 64
+        Width = 121
+        Height = 21
+        PasswordChar = '*'
+        TabOrder = 1
+      end
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'Program'
+      ImageIndex = 2
+      object Label6: TLabel
+        Left = 16
+        Top = 24
+        Width = 46
+        Height = 13
+        Caption = 'Tab style:'
+      end
+      object GameSettingsButton: TSpeedButton
+        Left = 152
+        Top = 72
+        Width = 113
+        Height = 22
+        Caption = 'Game settings'
+        OnClick = GameSettingsButtonClick
+      end
+      object SpeedButton2: TSpeedButton
+        Left = 16
+        Top = 112
+        Width = 113
+        Height = 22
+        Caption = 'Reset registry data'
+        OnClick = SpeedButton2Click
+      end
+      object SpeedButton3: TSpeedButton
+        Left = 152
+        Top = 48
+        Width = 113
+        Height = 22
+        Caption = 'Notifications ...'
+        OnClick = SpeedButton3Click
+      end
+      object SpeedButton4: TSpeedButton
+        Left = 152
+        Top = 24
+        Width = 113
+        Height = 22
+        Caption = 'Highlighting ...'
+        OnClick = SpeedButton4Click
+      end
+      object RadioButton4: TRadioButton
+        Left = 16
+        Top = 48
+        Width = 89
+        Height = 17
+        Caption = 'tabs'
+        TabOrder = 0
+      end
+      object RadioButton5: TRadioButton
+        Left = 16
+        Top = 64
+        Width = 89
+        Height = 17
+        Caption = 'buttons'
+        TabOrder = 1
+      end
+      object RadioButton6: TRadioButton
+        Left = 16
+        Top = 80
+        Width = 89
+        Height = 17
+        Caption = 'flat buttons'
+        Checked = True
+        TabOrder = 2
+        TabStop = True
+      end
+      object CheckBox8: TCheckBox
+        Left = 144
+        Top = 104
+        Width = 113
+        Height = 17
+        Caption = 'Enable logging'
+        Checked = True
+        State = cbChecked
+        TabOrder = 3
+      end
+      object CheckBox9: TCheckBox
+        Left = 144
+        Top = 120
+        Width = 137
+        Height = 17
+        Caption = 'Use sound notifications'
+        Checked = True
+        State = cbChecked
+        TabOrder = 4
+      end
+    end
+    object TabSheet5: TTabSheet
+      Caption = 'Interface'
+      ImageIndex = 4
+      object CheckBox1: TCheckBox
+        Left = 8
+        Top = 24
+        Width = 129
+        Height = 17
+        Caption = 'Timestamp events'
+        Checked = True
+        State = cbChecked
+        TabOrder = 0
+      end
+      object CheckBox3: TCheckBox
+        Left = 8
+        Top = 40
+        Width = 137
+        Height = 17
+        Caption = 'Filter join/left messages'
+        TabOrder = 1
+      end
+      object CheckBox4: TCheckBox
+        Left = 8
+        Top = 56
+        Width = 121
+        Height = 17
+        Caption = 'Show country flags'
+        Checked = True
+        State = cbChecked
+        TabOrder = 2
+      end
+      object CheckBox5: TCheckBox
+        Left = 8
+        Top = 72
+        Width = 129
+        Height = 17
+        Caption = 'Mark unknown maps'
+        Checked = True
+        State = cbChecked
+        TabOrder = 3
+      end
+      object CheckBox6: TCheckBox
+        Left = 8
+        Top = 88
+        Width = 257
+        Height = 17
+        Caption = 'Use taskbar button for each form (requires restart)'
+        TabOrder = 4
+      end
+    end
+    object TabSheet4: TTabSheet
+      Caption = 'HTTP'
+      ImageIndex = 4
+      object UseProxyCheckBox: TCheckBox
+        Left = 16
+        Top = 8
+        Width = 97
+        Height = 17
+        Caption = 'Use proxy'
+        Checked = True
+        State = cbChecked
+        TabOrder = 0
+        OnClick = UseProxyCheckBoxClick
+      end
+      object ProxyPanel: TPanel
+        Left = 16
+        Top = 32
+        Width = 249
+        Height = 110
+        TabOrder = 1
+        object Label7: TLabel
+          Left = 8
+          Top = 8
+          Width = 41
+          Height = 13
+          Caption = 'Address:'
+        end
+        object Label8: TLabel
+          Left = 8
+          Top = 32
+          Width = 22
+          Height = 13
+          Caption = 'Port:'
+        end
+        object Label9: TLabel
+          Left = 8
+          Top = 56
+          Width = 51
+          Height = 13
+          Caption = 'Username:'
+        end
+        object Label10: TLabel
+          Left = 8
+          Top = 80
+          Width = 49
+          Height = 13
+          Caption = 'Password:'
+        end
+        object ProxyEdit: TEdit
+          Left = 64
+          Top = 8
+          Width = 177
+          Height = 21
+          TabOrder = 0
+        end
+        object JvProxyPortEdit: TJvValidateEdit
+          Left = 64
+          Top = 32
+          Width = 49
+          Height = 21
+          Alignment = taLeftJustify
+          EditText = '0'
+          TabOrder = 1
+        end
+        object ProxyUserEdit: TEdit
+          Left = 64
+          Top = 56
+          Width = 89
+          Height = 21
+          TabOrder = 2
+        end
+        object ProxyPassEdit: TEdit
+          Left = 64
+          Top = 80
+          Width = 89
+          Height = 21
+          TabOrder = 3
+        end
+      end
+    end
+  end
+  object CancelAndCloseButton: TButton
+    Left = 16
+    Top = 232
+    Width = 289
+    Height = 25
+    Cancel = True
+    Caption = 'Cancel and close'
+    TabOrder = 2
+    OnClick = CancelAndCloseButtonClick
+  end
+  object AddressPopupMenu: TPopupMenu
+    Left = 284
+    Top = 8
+  end
+  object FontDialog1: TFontDialog
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    Options = [fdEffects, fdNoSizeSel, fdNoStyleSel]
+    Left = 252
+    Top = 8
+  end
+end

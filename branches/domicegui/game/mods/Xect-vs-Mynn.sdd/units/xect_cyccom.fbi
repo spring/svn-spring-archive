@@ -1,0 +1,74 @@
+[UNITINFO]
+{
+	Name=Fast Builder Bot;
+	UnitName=xect_cyccom;
+	
+	//    Required Tags
+	BuildCostEnergy=20000;
+	BuildCostMetal=1100;
+	BuildTime=33464;
+	Category=xect bot level2 weapon notair notsub ctrl_x;
+	Description=Advanced Construction/Rez Bot;
+	FootprintX=2;
+	FootprintZ=2;
+	MaxDamage=428;
+	ObjectName=xect_cyccom;
+	Side=Xect;
+	SoundCategory=xcl_tank;
+	TEDClass=kbot;
+	
+	//    Movement
+	BrakeRate=0.8;
+	MovementClass=tanksh2;
+	Acceleration=0.5;
+	CanMove=1;
+	MaxVelocity=2.63;
+	MaxSlope=20;
+	TurnRate=744;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	BuildDistance=190;
+	Builder=1;
+	WorkerTime=760;
+	
+	//    Resources
+	EnergyMake=20;
+	EnergyUse=0;
+	MetalMake=0.5;
+	
+	//    Abilities
+	CanAttack=1;
+	CanCapture=1;
+	CanFly=0;
+	CanStop=1;
+	canresurrect=1;
+	ActivateWhenBuilt=1;
+	
+	//    Sight/Radar
+	SightDistance=435;
+	SonarDistance=0;
+	
+	//    Weapons
+	wpri_badTargetCategory=VTOL;
+	BadTargetCategory=VTOL;
+	ExplodeAs=BIG_UNITEX;
+	SelfDestructAs=BIG_UNIT;
+	NoChaseCategory=VTOL;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=20;
+	
+	//    Misc
+	SmoothAnim=1;
+	Upright=1;
+	HideDamage=1;
+	Buildpic=xect_cyccom.jpg;
+	
+	//    Not Used By TASpring
+}

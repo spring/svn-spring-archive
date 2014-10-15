@@ -1,0 +1,72 @@
+[UNITINFO]
+{
+	Name=Grunt;
+	UnitName=xect_assault;
+	
+	//    Required Tags
+	BuildCostEnergy=635;
+	BuildCostMetal=60;
+	BuildTime=1521;
+	Category=xect troop level1 weapon notair notsub ctrl_t;
+	Description=Assault Troop;
+	FootprintX=1;
+	FootprintZ=1;
+	MaxDamage=263;
+	ObjectName=xect_assault;
+	Side=Xect;
+	SoundCategory=xcl_bot;
+	TEDClass=troop;
+	
+	//    Movement
+	BrakeRate=0.183105469;
+	MovementClass=tanksh2;
+	Acceleration=0.091552734;
+	CanMove=1;
+	MaxVelocity=2.2;
+	MaxSlope=14;
+	TurnRate=1250;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=420;
+	Stealth=1;
+	
+	//    Weapons
+	Weapon1=USA_ASSAULT_GUN;
+	DamageModifier=0.2;
+	ExplodeAs=trooper_death;
+	SelfDestructAs=trooper_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=8;
+	
+	//    Misc
+	Corpse=xect_assault_dead;
+	SmoothAnim=1;
+	Buildpic=xect_assault.jpg;
+	
+	//    Not Used By TASpring
+	italianname=1;
+	canguard=GUARD_NOMOVE;
+	shootme=32768;
+	canreclamate=limit XCLMIS 8;
+}

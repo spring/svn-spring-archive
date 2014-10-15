@@ -1,0 +1,72 @@
+[UNITINFO]
+{
+	Name=Pentiwing;
+	UnitName=mynn_fighter;
+	
+	//    Required Tags
+	BuildCostEnergy=5257;
+	BuildCostMetal=134;
+	BuildTime=12225;
+	Category=mynn vtol ctrl_v level2 weapon  notsub ;
+	Description=Fighter;
+	FootprintX=3;
+	FootprintZ=3;
+	MaxDamage=303;
+	ObjectName=mynn_fighter;
+	Side=Mynn;
+	SoundCategory=mynn_vtol;
+	TEDClass=vtol;
+	
+	//    Movement
+	BrakeRate=7;
+	Acceleration=0.1;
+	CanMove=1;
+	MaxVelocity=10.19;
+	MaxSlope=10;
+	TurnRate=620;
+	
+	//    Airplane Moventment
+	Cruisealt=105;
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyMake=0.7;
+	EnergyStorage=0;
+	EnergyUse=0.7;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=1;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=525;
+	SonarDistance=0;
+	
+	//    Weapons
+	Weapon1=MYNNVTOL_MISSILE;
+	wpri_badTargetCategory=NOTAIR;
+	BadTargetCategory=NOTAIR;
+	DamageModifier=0.84;
+	ExplodeAs=small_death;
+	SelfDestructAs=small_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	SmoothAnim=1;
+	Upright=1;
+	Buildpic=mynn_fighter.jpg;
+	
+	//    Not Used By TASpring
+}

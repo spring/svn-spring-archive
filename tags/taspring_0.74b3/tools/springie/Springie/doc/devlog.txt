@@ -1,0 +1,20 @@
+===============================
+SPRINGIE 0.98
+===============================
+
+- !setgametitle added
+
+
+
+
+* lock game when full and kickspec on
+* kick with reason - stop
+* http://replays.unknown-files.net/bot_upload.php?title=title&description=description
+* ranked servers
+* gui - player list by channel
+* demo upload
+
+
+SELECT gameId, allyNumber, min(victoryTeam) AS vt, min(loseTime) AS lt FROM Games2players  WHERE spectator=0 GROUP BY gameId,allyNumber HAVING lt>0 AND vt=1
+
+SELECT 100*count(*) / (SELECT count(*) FROM Games2players WHERE playerId=g2p.playerId) AS perc, (SELECT count(*) FROM Games2players WHERE playerId=g2p.playerId) AS tot, Players.name FROM Games2players AS g2p JOIN Players ON g2p.playerId = Players.id WHERE spectator=0 AND leaveTime =0 AND (leaveTime < loseTime || dropTime < loseTime) GROUP BY playerId ORDER BY perc DESC ,tot DESC

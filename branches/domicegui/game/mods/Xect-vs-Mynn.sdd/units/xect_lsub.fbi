@@ -1,0 +1,75 @@
+[UNITINFO]
+{
+	Name=Pollywog;
+	UnitName=xect_lsub;
+	
+	//    Required Tags
+	BuildCostEnergy=3481;
+	BuildCostMetal=1001;
+	BuildTime=9007;
+	Category=xect underwater level2 torp weapon notair;
+	Description=Defense Sub;
+	FootprintX=2;
+	FootprintZ=2;
+	MaxDamage=3033;
+	ObjectName=xect_lsub;
+	Side=Xect;
+	SoundCategory=mynn_sub;
+	TEDClass=water;
+	
+	//    Movement
+	BrakeRate=0.36;
+	MovementClass=BOATd3;
+	Acceleration=0.2;
+	CanMove=1;
+	MaxVelocity=1.52;
+	TurnRate=230;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyMake=0.5;
+	EnergyStorage=0;
+	EnergyUse=0.5;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	Floater=1;
+	ActivateWhenBuilt=1;
+	
+	//    Sight/Radar
+	SightDistance=225;
+	SonarDistance=250;
+	
+	//    Weapons
+	Weapon1=MYNN_TORPEDO;
+	wpri_badTargetCategory=VTOL;
+	BadTargetCategory=VTOL;
+	DamageModifier=1.87;
+	ExplodeAs=small_death;
+	SelfDestructAs=small_death;
+	NoChaseCategory=VTOL;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MinWaterDepth=15;
+	Waterline=15;
+	
+	//    Misc
+	Corpse=xect_asub_dead;
+	SmoothAnim=1;
+	Upright=1;
+	Buildpic=mynn_lsub.jpg;
+	
+	//    Not Used By TASpring
+}

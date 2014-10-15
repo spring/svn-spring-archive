@@ -1,0 +1,201 @@
+Callins
+-------
+
+- cmd_ANYTHING(args) return dontLetLobbyHandleIt : boolean
+	ANYTHING can be anything you want, then when typing "/ANYTHING args" in the lobby the function will be trigerred
+- in_PROTOCOLCMD(args) return newArgs
+	PROTOCOLCMD can be any of the incoming protocol command : SAID, SAIDEX ...
+	args can be automaticaly splitted : in_ADDUSER(username,country,cpu) or in_ADDUSER(username,otherargs)
+	you can update the arguments and return them
+	returning False will not let the lobby handle the message
+	see the protocol documentation for more information
+- in2_PROTOCOLCMD(args)
+	same as above but is triggered when the lobby has handled the command
+- out_PROTOCOLCMD(args) return newArgs
+	PROTOCOLCMD can be any of the outgoing protocol command : SAY, SAYEX ...
+	see the protocol documentation for more information
+- all_in(args) return newArgs
+- all_in2(args) return newArgs
+- all_out(args)	return newArgs
+- onLoggedIn
+- onDisconnect
+- onLogin
+- onConnected
+- onClose
+- onSettingsChanged
+- onGroupsChanged
+- onMapsReloaded
+- onReplaysReloaded
+- onModsReloaded
+- onURLClick(channel,url) return dontLetLobbyHandleIt : boolean
+- onChatDblClick(channel,charPos,line) return dontLetLobbyHandleIt : boolean
+- onStartSpring(args) return newArgs : string
+- onBackFromGame
+- onDownloadRapidStart(formName,rapidName) return Cancel : boolan
+- onDownloadModStart(formName,modHash,modName) return Cancel : boolean
+- onDownloadMapStart(formName,mapHash,mapName) return Cancel : boolean
+- onDownloadEngineStart(formName,engineName,engineVersion) return Cancel : boolean
+- onWidgetListRefreshed
+- onWidgetInstalledOrUpdated(widgetId,widgetUpdated)
+- onWidgetUninstalled(widgetId)
+- timer_NBSECONDSINTERVAL()
+	NBSECONDSINTERVAL is a parameter for a 2 second interval timer add a "timer_2()" function to you script.
+
+
+Callback class
+--------------
+
+callout :
+
+- GetVersion: string
+- Print(string) thread safe debug print
+- Disconnect
+- ExitLobby
+- GetBattles
+- GetGroups
+- SetGroups(dict)
+	The group 'Users' can be a User dict with user names as keys (like the one returned by GetGroups), or a user name list.
+- GetMaps
+- GetMods
+- GetMyUser
+- GetUsers
+- GetReplays
+- GetCurrentBattle
+- GetServers
+- SetServers(dict)
+- SendProtocol(data)
+- HandleProtocol(data)
+- ProcessCommand(command, fromBattleScreen)
+	Process a command like if it was typed by the user (ex: /ignore nickname).
+	fromBattleScreen tell the lobby if the commande was issued in the battle screen.
+- LoadScripts
+- PerformConnected
+- PerformDisconnected
+- ReloadScript(scriptname)
+- ReloadScripts
+- ShowDebugWindow
+- SocketConnect(ip,port)
+- HostBattle(nbPlayers, RankLimit, ModName, Description, Password, UDPHostPort, NatTraversal) return true if success
+- JoinBattle(BattleId,password,joinAsSpec)
+- HostReplay(replayFile, nbPlayers, RankLimit, Description, Password, UDPHostPort, NatTraversal) return true if success
+- LeaveBattle
+- StartBattle
+- SetMyReadyStatus(IAmReady: Boolean): DidItWorked : Boolean
+- SetMyBattleStatus(Spec: boolean)
+- ChangeMap(mapName)
+- DownloadMap(mapName,callBackArgs,callBackModuleName,callBackFunctionName)
+  DownloadMap2(mapName,callBackArgs,callBackFunction)
+	The progress in % is returned as first argument added to the argsTuple.
+	Progress = -1 : download complete
+	Progress = -2 : download failed (file not found, SD not launched etc)
+	Progress = -3 : download canceled
+	
+	callBackFunction return Cancel : boolean
+- DownloadMod(modName,callBackArgs,callBackModuleName,callBackFunctionName)
+  DownloadMod2(modName,callBackArgs,callBackFunction)
+	Same as DownloadMap
+- DownloadRapid(rapidName,callBackArgs,callBackModuleName,callBackFunctionName)
+  DownloadRapid2(rapidName,callBackArgs,callBackFunction)
+	Same as DownloadMap
+- DownloadEngine(engineName,engineVersion,callBackArgs,callBackModuleName,callBackFunctionName)
+  DownloadEngine2(engineName,engineVersion,callBackArgs,callBackFunction)
+	Same as DownloadMap
+- ListRapidTags(callBackArgs,callBackModuleName,callBackFunctionName)
+  ListRapidTags2(callBackArgs,callBackFunction)
+	Threaded function retreiving the Rapid tags. When the download is finished, it calls the callback function and insert the tags list as first argument
+- GetSpringExe 
+	return the full spring exe path
+- GetSettings
+- SetSettings(settings)
+- RefreshWidgetList
+	Asynchronous widget list refresh (if you want to do something after the list is refreshed do it in the onWidgetListRefreshed event)
+- GetWidgets
+	The widget list must be refreshed at least once before (either by the user or by RefreshWidgetList)
+- InstallOrUpdateWidget(id): Boolean
+	Asynchronous widget installation or update (if you want to do something after the widget is installed do it in the onWidgetInstalledOrUpdated event)
+	
+	return false if the id is not found in the widget list
+- UninstallWidget(id): Boolean
+	Asynchronous widget uninstallation (if you want to do something after the widget uninstallation do it in the onWidgetUninstalled event)
+	
+	return false if the id is not found in the widget list
+
+GUI Class
+---------
+
+menuName = [Char (returning Channel,line text, char position in the line, selected text), HostBattle, Options, Help, HelpWiki, HelpDownload, BattleItem (returning the BattleId), PlayerItem (Returning the Player Name), PlayerItemModeration (Returning the Player Name), BattlePlayerItem (Returning the Player Name), BattleMinimap, BattleAdmin, BattleAdminBalance, BattleAdminRankLimit, BattleLadder, ReplayItem (Returning the Replay index)] 
+
+- AddItemToMenu(menuName/SubmenuId,name,argsTuple,callbackModuleName,callbackFunctionName,caption) return itemId
+  AddItemToMenu2(argsTuple,callBackFunction,menuName/SubmenuId,name,caption) return itemId
+	The selected item id is returned as first argument added to the argsTuple.
+	
+- AddSubmenuToMenu(menuName/SubmenuId,name,caption) return SubmenuId
+- AddSeparatorToMenu(menuName/SubmenuId,name) return SeparatorId
+- SetMenuItemState(id,checked,enabled)
+- RemoveFromMenu(id)
+	Id can be an itemId or a SubmenuId or a SeparatorId.
+	
+- DisplayNotification(title, msg, argsTuple, onClickModuleName, onClickFunctionName, displayTime)
+  DisplayNotification2(argsTuple, onClickFunction, title, msg, displayTime)
+	Display a notification and handle its OnClick event
+	displayTime in ms
+- DisplaySimpleNotification(title, msg, displayTime)
+- GetControlProperties(controlName,controlClassTypePropertyPath)
+- SetControlProperties(controlName,controlClassTypePropertyPath, properties)
+- AddControl(name, parent, className)
+	classname = [TDockPanel, TImage, TTntScrollBox ,TWebBrowserWrapper ,TSpTBXDock, TSpTBXMultiDock, TSpTBXToolbar, TSpTBXDockablePanel, TSpTBXTabSet, TSpTBXTabControl, TSpTBXStatusBar, TSpTBXLabel, TSpTBXCheckBox, TSpTBXRadioButton, TSpTBXProgressBar, TSpTBXTrackBar, TSpTBXSplitter, TSpTBXPanel, TSpTBXGroupBox, TSpTBXRadioGroup, TSpTBXEdit,TSpTBXSpinEdit, TSpTBXComboBox,TSpTBXListBox, TSpTBXCheckListBox, TExRichEdit, TImage32, TSpTBXButton, TSpTBXColorEdit, TSpTBXColorListBox, TSpTBXFontComboBox, TTntMemo]
+- DeleteControl(name)	
+- AddTab(caption, name, TabsPanelName)
+- AddForm(name, caption, borderStyle (0->5),isDockableForm)
+      0: bsNone
+      1: bsSingle
+      2: bsSizeable
+      3: bsDialog
+      4: bsToolWindow
+      5: bsSizeToolWin
+- GetColors
+- GetRichEditList
+- AddToRichEdit(textbox, msg, color)
+- AddDropDownButton(caption, buttonName, menuName, parent)
+	Adds a button with a drop down menu. You can handle the menu with the AddItemToMenu etc functions with 'Parent.menuName' for menu id. If the drop down menu contains only one item, then clicking on the button will execute that item and no menu will be displayed.
+- StackLayoutChanges(True/False)
+	Save layout changes (add control, change control properties) in the CustomizeGUI editor stack. (So saving new profiles will include theses changes)
+- AddOrReplaceIconList(name, iconsDict)
+	replace the default icons with
+		name == 'rank','connectionstate','playerstate','syncstate','battlestate','readystate','laddercup','arrow'
+	or add new icon list, use SetPlayerIconId to set the icon id to a player
+	iconsDictExample = {0:{'File':'filepath.bmp/jpg/png', 'Name':'Rank1', 'MaskColor':16777215}, 1:{'File':'filepath.bmp/jpg/png', 'Name':'Rank2', 'MaskColor':16777215} ...}
+- SetPlayerIconId(playerNick,iconTypeName,iconId)
+- AddEvent(control, event, callbackModuleName, callbackFunctionName)
+  AddEvent2(control, event, callbackFunction)
+	Event fully handled :
+		TWebBrowserBeforeNavigate2(Sender,PostData,TargetFrameName,URL)
+		TNotifyEvent(Sender)
+		TMouseEvent(Sender,Button,Shift,X,Y)
+		TMouseMoveEvent(Sender,Shift,X,Y)
+		TKeyEvent(Sender,Shift,Key)
+		TKeyPressEvent(Sender,Key)
+	Default event handler : TEvent(Sender)
+- SetBattleVisible(battleId, visible)
+	allow a script to hide a battle even if the filters show it
+- SetUserDisplayName(userId, displayName)
+	change the user display name
+- ExecMethod(componentName,methodName,argumentList)
+	allow you to execute a published method (mostly control events functions)
+	check the TASClient sources to get the list of functions (ex: ExecMethod('MainForm','mnuPlaynowClick',()) )
+- ManualDock(component, dockDest)
+- SynchronizedUpdate(callbackModuleName,callbackFunctionName,arguments)
+  SynchronizedUpdate2(callbackFunction,arguments)
+	gui is not thread safe, using it in a thread will result in a dead lock, if you need to update gui items, put everything in a function and call it using this method from your thread.
+
+
+TODO :
+------
+
+callout :
+
+- GetFilters 
+- SetFilters(filters,presetname)
+- GetPresetList
+
+- GetUsersOfflineData 

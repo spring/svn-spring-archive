@@ -1,0 +1,65 @@
+[UNITINFO]
+{
+	Name=Energizer;
+	UnitName=mynn_plasma;
+	
+	//    Required Tags
+	BuildCostEnergy=7299;
+	BuildCostMetal=2031;
+	BuildTime=18819;
+	Category=mynn level2 strategic weapon notair notsub;
+	Description=Plasma Battery;
+	FootprintX=4;
+	FootprintZ=4;
+	MaxDamage=6222;
+	ObjectName=mynn_plasma;
+	Side=Mynn;
+	SoundCategory=mynn_guard;
+	TEDClass=fort;
+	
+	//    Movement
+	MaxSlope=10;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=oooo;
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=200;
+	EnergyUse=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=525;
+	
+	//    Weapons
+	Weapon1=MYNFIXED_GUN;
+	wpri_badTargetCategory=VTOL;
+	BadTargetCategory=VTOL;
+	DamageModifier=3.85;
+	ExplodeAs=small_death;
+	SelfDestructAs=small_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	Corpse=mynn_plasma_dead;
+	SmoothAnim=1;
+	Buildpic=mynn_plasma.jpg;
+	
+	//    Not Used By TASpring
+}

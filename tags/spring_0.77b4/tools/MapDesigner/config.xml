@@ -1,0 +1,61 @@
+<root>
+
+<client>
+	<display width="1024" height="768" />
+	<map defaultwidth="1025" defaultheight="1025" />
+	<heightmap defaultfilename="heightmap.bmp" minheight="-50" maxheight="300" />
+	<slopemap defaultfilename="slopemap.bmp" exportmaxslope="0.5" >
+		<movementareas comment="-1 means infinite. valid colors are red,green, blue" >
+			<movementarea name="extreme" maxslope="-1" color="red"/>
+			<movementarea name="infantry" maxslope="0.33" color="blue"/>
+			<movementarea name="vehicle" maxslope="0.08" color="green"/>
+		</movementareas>
+	</slopemap>
+	<movement translatespeed="8" rotatespeed="0.3"/>
+	<heightediting speed="0.6" defaultbrushsize="20" />
+	<keymappings description="keyboard mappings">
+    <keyreference>
+You can select a key value from any of the following values:
+Available keys are:
+a-z, 1-9, f1, f9,
+uparrow, leftarrow, rightarrow, downarrow,
+spacebar, shift, alt, ctrl, delete, enter, backspace, tab
+leftmousebutton,rightmousebutton,middlemousebutton
+You can add combos by separating them by a single hyphen, eg "shift-escape"
+"none" means no keys are held down, useful for mouse scroll zoom in for example (just mouse scroll button moves)
+    </keyreference>
+    <key command="quit" keycode="shift-escape"/>
+    <key command="quit" keycode="q"/>
+    
+    <key command="saveheightmap" keycode="ctrl-s"/>
+    <key command="loadheightmap" keycode="ctrl-l"/>
+    <key command="saveslopemap" keycode="ctrl-f2"/>
+
+	<key command="toggleslopemap" keycode="f2"/>
+
+		<key command="increaseheight" keycode="leftmousebutton"/>
+	  <key command="decreaseheight" keycode="rightmousebutton"/>
+
+		<key command="painttexture" keycode="leftmousebutton"/>
+		<key command="erasetexture" keycode="rightmousebutton"/>
+
+		<key command="addfeature" keycode="leftmousebutton"/>
+		<key command="removefeature" keycode="rightmousebutton"/>
+
+		<key command="cameratranslate" keycode="j"  />
+	  <key command="cameratranslate" keycode="middlemousebutton" />
+	  <key command="camerazoom" keycode="none" />
+		<key command="cameraorbit" keycode="ctrl" />
+  </keymappings>
+  <mousemoveconfigs>
+  <mousemovereference>
+  valid values for vertical,horizontal and zoom are: mouseupdown, mousesideways and mousescroll
+  </mousemovereference>
+     <mousemove name="cameratranslate" vertical="mouseupdown" horizontal="mousesideways" zoom="mousescroll" />
+	  <mousemove name="camerazoom" vertical="mousescroll" />
+	  <mousemove name="cameraorbit" vertical="mousescroll" horizontal="mousesideways"  invertvertical="yes" />
+  </mousemoveconfigs>
+</client>
+<config debuglevel="3">
+</config>
+</root>

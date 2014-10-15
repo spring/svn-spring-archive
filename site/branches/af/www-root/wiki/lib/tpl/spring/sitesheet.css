@@ -1,0 +1,61 @@
+.SSmainContent {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	color: #000000;
+	background-color: #FFFFFF;
+	background-position: center;
+	overflow: auto;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: 1px solid #000000;
+	z-index: 10;
+	padding-top: 15px;
+	padding-right: 5px;
+	padding-bottom: 15px;
+	padding-left: 5px;
+}
+
+.SSheader {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #FFFFFF;
+	float: none;
+	/*height:100px;*/
+	background-position: 0px 0px;
+	padding: 10px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+	background-repeat: no-repeat;
+}
+
+.SSheader,a{
+	/
+	color:#FFFFFF;
+}
+
+body {
+	background-color: #6fa5dd;
+	margin: 0px;
+	width: 100%;
+	background-image: url(/tpl/corner.jpg);
+	background-repeat: no-repeat;
+}
+
+body,td,th {
+	color: #FFFFFF;
+	font-size: 14px;
+}
+
+a:link {
+	color: #FFCC00;
+}
+
+.style1 {
+	font-size: 36px
+}

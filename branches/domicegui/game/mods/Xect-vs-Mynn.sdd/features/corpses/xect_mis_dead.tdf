@@ -1,0 +1,37 @@
+[xect_mis_dead]
+	{
+	world=All Worlds;
+	description=Dead Structure;
+	category=xect_corpses;
+	object=xect_mis_dead;
+	featuredead=xect_mis_heap;
+	footprintx=4;
+	footprintz=4;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=210;
+	damage=600;
+	reclaimable=1;
+	featurereclamate=oilspill2;
+	seqnamereclamate=tree1reclamate;
+	}
+
+[xect_mis_heap]
+	{
+	world=All Worlds;
+	description=Dead Structure;
+	category=xect_heaps;
+	object=1x1rub;
+	footprintx=4;
+	footprintz=4;
+	height=4;
+	blocking=0;
+	hitdensity=100;
+	metal=105;
+	damage=600;
+	reclaimable=1;
+
+	featurereclamate=oilspill2;
+	seqnamereclamate=tree1reclamate;
+	}

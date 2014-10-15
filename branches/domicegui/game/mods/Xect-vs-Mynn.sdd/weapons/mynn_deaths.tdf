@@ -1,0 +1,229 @@
+[grah_death]
+	{
+	id=238;
+	name=a bugger's death;
+	rendertype=4;
+	ballistic=1;
+	turret=1;
+
+	reloadtime=1;
+	range=50;
+	weaponvelocity=100;
+	areaofeffect=50;
+	soundstart=gradie;
+	soundhit=gradie;
+	soundwater=aliendeathwater;
+	explosiongaf=mynnfx;
+	explosionart=bugger_boom;
+	waterexplosiongaf=fx;
+	waterexplosionart=h2o;
+
+	[damage]
+		{
+		default=2;
+		}
+	}
+
+[trooper_death]
+	{
+	id=241;
+	rendertype=4;
+	ballistic=1;
+	turret=1;
+
+	range=100;
+	reloadtime=3;
+	weaponvelocity=100;
+	areaofeffect=100;
+	soundstart=death_trooper1;
+	soundhit=death_trooper1;
+	
+	explosiongaf=mynnfx;
+	explosionart=cyborg_boom;
+
+	waterexplosiongaf=mynnfx;
+	waterexplosionart=cyborg_boom;
+
+	shakemagnitude=0;
+	shakeduration=0;
+
+	[damage]
+		{
+		default=0;
+		}
+	}
+
+[rsu_death]
+	{
+	id=249;
+	rendertype=4;
+	ballistic=1;
+	turret=1;
+
+	range=100;
+	reloadtime=3;
+	weaponvelocity=100;
+	areaofeffect=100;
+	soundstart=death_rsu1;
+	soundhit=death_rsu1;
+	
+	explosiongaf=mynnfx;
+	explosionart=rsu_boom;
+
+	waterexplosiongaf=mynnfx;
+	waterexplosionart=rsu_boom;
+
+	shakemagnitude=0;
+	shakeduration=0;
+
+	[damage]
+		{
+		default=50;
+		}
+	}
+
+[crawler_death]
+	{
+	id=251;
+	rendertype=4;
+	ballistic=1;
+	turret=1;
+
+	range=100;
+	reloadtime=3;
+	weaponvelocity=100;
+	areaofeffect=100;
+	soundstart=exp01;
+	soundhit=exp01;
+	
+	explosiongaf=mynnfx;
+	explosionart=wave_boom;
+
+	waterexplosiongaf=mynnfx;
+	waterexplosionart=wave_boom;
+
+	shakemagnitude=0;
+	shakeduration=0;
+
+	[damage]
+		{
+		default=50;
+		}
+	}
+
+[crawler_death2]
+	{
+	id=247;
+	rendertype=4;
+	ballistic=1;
+	turret=1;
+
+	range=75;
+	reloadtime=3;
+	weaponvelocity=100;
+	areaofeffect=100;
+	soundstart=death_rsu1;
+	soundhit=death_rsu1;
+	
+	explosiongaf=mynnfx;
+	explosionart=purple_boom2;
+
+	waterexplosiongaf=mynnfx;
+	waterexplosionart=purple_boom2;
+
+	shakemagnitude=0;
+	shakeduration=0;
+
+	[damage]
+		{
+		default=35;
+		}
+	}
+
+[small_death]
+	{
+	id=255;
+	rendertype=4;
+	ballistic=1;
+	turret=1;
+
+	range=100;
+	reloadtime=3;
+	weaponvelocity=100;
+	areaofeffect=100;
+	soundstart=death_rsu1;
+	soundhit=death_rsu1;
+	
+	explosiongaf=mynnfx;
+	explosionart=xboom;
+
+	waterexplosiongaf=mynnfx;
+	waterexplosionart=xboom;
+
+	shakemagnitude=0;
+	shakeduration=0;
+
+	[damage]
+		{
+		default=75;
+		}
+	}
+	
+[blue_death]
+	{
+	id=254;
+	rendertype=4;
+	ballistic=1;
+	turret=1;
+
+	range=300;
+	reloadtime=3;
+	weaponvelocity=100;
+	areaofeffect=425;
+	soundstart=exp02;
+	soundhit=exp02;
+	
+	explosiongaf=mynnfx;
+	explosionart=purple_boom;
+
+	waterexplosiongaf=mynnfx;
+	waterexplosionart=purple_boom;
+
+	shakemagnitude=20;
+	shakeduration=1.5;
+
+	[damage]
+		{
+		default=3600;
+		}
+	}
+
+[commander_death]
+	{
+	id=239;
+	rendertype=4;
+	ballistic=1;
+	turret=1;
+
+	range=400;
+	reloadtime=3;
+	weaponvelocity=100;
+	areaofeffect=825;
+	soundstart=exp02;
+	soundhit=exp02;
+	
+	explosiongaf=mynnfx;
+	explosionart=purple_boom;
+
+	waterexplosiongaf=mynnfx;
+	waterexplosionart=purple_boom;
+
+	shakemagnitude=26;
+	shakeduration=2;
+
+	[damage]
+		{
+		default=9999;
+		}
+	}
+	

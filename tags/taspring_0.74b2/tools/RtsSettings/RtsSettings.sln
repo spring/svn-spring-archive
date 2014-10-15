@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RtsSettings", "RtsSettings.vcproj", "{BFE32844-5824-4BCD-A97D-117C869AFDAB}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{BFE32844-5824-4BCD-A97D-117C869AFDAB}.Debug.ActiveCfg = Debug|Win32
+		{BFE32844-5824-4BCD-A97D-117C869AFDAB}.Debug.Build.0 = Debug|Win32
+		{BFE32844-5824-4BCD-A97D-117C869AFDAB}.Release.ActiveCfg = Release|Win32
+		{BFE32844-5824-4BCD-A97D-117C869AFDAB}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

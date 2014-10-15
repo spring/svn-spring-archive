@@ -1,0 +1,61 @@
+[UNITINFO]
+{
+	Name=Bot Plant;
+	UnitName=xect_mthlab;
+	
+	//    Required Tags
+	BuildCostEnergy=1200;
+	BuildCostMetal=700;
+	BuildTime=3460;
+	Category=xect PLANT ctrl_f level1 noweapon notair notsub ;
+	Description=Produces Bots;
+	FootprintX=6;
+	FootprintZ=4;
+	MaxDamage=1676;
+	ObjectName=xect_mthlab;
+	Side=Xect;
+	SoundCategory=xcllab;
+	TEDClass=PLANT;
+	
+	//    Movement
+	CanMove=1;
+	MaxSlope=10;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=oooooo occcco occcco occcco;
+	
+	//    Construction
+	Builder=1;
+	WorkerTime=100;
+	
+	//    Resources
+	EnergyStorage=100;
+	EnergyUse=0;
+	MetalStorage=100;
+	
+	//    Abilities
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=300;
+	
+	//    Weapons
+	ExplodeAs=LARGE_BUILDINGEX;
+	SelfDestructAs=LARGE_BUILDING;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	Corpse=xect_mthlab_dead;
+	SmoothAnim=1;
+	Buildpic=xect_mthlab.jpg;
+	
+	//    Not Used By TASpring
+}

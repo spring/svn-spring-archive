@@ -1,0 +1,178 @@
+
+#include "StdAfx.h"
+#include "LogOutput.h"
+#include <cstdarg>
+#include <fstream>
+#include <string.h>
+#include <boost/thread/recursive_mutex.hpp>
+
+
+#ifdef _MSC_VER
+#include <windows.h>
+#endif
+
+static std::ofstream* filelog = 0;
+static bool initialized = false;
+static bool stdoutDebug = false;
+CLogOutput logOutput;
+static boost::recursive_mutex tempstrMutex;
+static std::string tempstr;
+
+static const int bufferSize = 2048;
+
+CLogOutput::CLogOutput()
+{
+	assert(this == &logOutput);
+	assert(!filelog); // multiple infologs can't exist together!
+}
+
+CLogOutput::~CLogOutput()
+{
+	End();
+}
+
+void CLogOutput::End()
+{
+	delete filelog;
+	filelog = 0;
+}
+
+void CLogOutput::SetMirrorToStdout(bool value)
+{
+	stdoutDebug = value;
+}
+
+void CLogOutput::Output(int priority, const char *str)
+{
+	if (!initialized) {
+		filelog = new std::ofstream("infolog.txt");
+		initialized = true;
+	}
+
+	// Output to subscribers
+	for(std::vector<ILogSubscriber*>::iterator lsi=subscribers.begin();lsi!=subscribers.end();++lsi)
+		(*lsi)->NotifyLogMsg(priority, str);
+
+	int nl = strlen(str) - 1;
+
+#ifdef _MSC_VER
+	OutputDebugString(str);
+	if (nl < 0 || str[nl] != '\n')
+		OutputDebugString("\n");
+#endif
+
+	if (filelog) {
+		(*filelog) << str;
+		if (nl < 0 || str[nl] != '\n')
+			(*filelog) << "\n";
+		filelog->flush();
+	}
+
+	if (stdoutDebug) {
+		fputs(str, stdout);
+		if (nl < 0 || str[nl] != '\n') {
+			putchar('\n');
+		}
+		fflush(stdout);
+	}
+}
+
+void CLogOutput::SetLastMsgPos(float3 pos)
+{
+	for(std::vector<ILogSubscriber*>::iterator lsi=subscribers.begin();lsi!=subscribers.end();++lsi)
+		(*lsi)->SetLastMsgPos(pos);
+}
+
+void CLogOutput::AddSubscriber(ILogSubscriber* ls)
+{
+	subscribers.push_back(ls);
+}
+
+void CLogOutput::RemoveAllSubscribers()
+{
+	subscribers.clear();
+}
+
+void CLogOutput::RemoveSubscriber(ILogSubscriber *ls)
+{
+	subscribers.erase(std::find(subscribers.begin(),subscribers.end(),ls));
+}
+
+// ----------------------------------------------------------------------
+// Printing functions
+// ----------------------------------------------------------------------
+
+void CLogOutput::Print(int priority, const char *fmt, ...)
+{
+	char text[bufferSize];
+	va_list	ap;
+
+	va_start(ap, fmt);
+	VSNPRINTF(text, sizeof(text), fmt, ap);
+	va_end(ap);
+
+	Output (priority,text);
+}
+
+void CLogOutput::Print(const char *fmt, ...)
+{
+	char text[bufferSize];
+	va_list	ap;	
+
+	va_start(ap, fmt);
+	VSNPRINTF(text, sizeof(text), fmt, ap);
+	va_end(ap);
+
+	Output(0, text);
+}
+
+void CLogOutput::Print(const std::string& text)
+{
+	Output(0, text.c_str());
+}
+
+
+void CLogOutput::Print(int priority, const std::string& text)
+{
+	Output(priority, text.c_str());
+}
+
+
+CLogOutput& CLogOutput::operator<< (const int i)
+{
+	char t[50];
+	sprintf(t,"%d ",i);
+	boost::recursive_mutex::scoped_lock scoped_lock(tempstrMutex);
+	tempstr += t;
+	return *this;
+}
+
+
+CLogOutput& CLogOutput::operator<< (const float f)
+{
+	char t[50];
+	sprintf(t,"%f ",f);
+	boost::recursive_mutex::scoped_lock scoped_lock(tempstrMutex);
+	tempstr += t;
+	return *this;
+}
+
+CLogOutput& CLogOutput::operator<< (const float3 f)
+{
+	return *this << f.x << " " << f.y << " " << f.z;
+}
+
+CLogOutput& CLogOutput::operator<< (const char* c)
+{
+	boost::recursive_mutex::scoped_lock scoped_lock(tempstrMutex);
+
+	for(int a=0;c[a];a++) {
+		if (c[a] == '\n') {
+			Output(0, tempstr.c_str());
+			tempstr.clear();
+			break;
+		} else 
+			tempstr += c[a];
+	}
+	return *this;
+}

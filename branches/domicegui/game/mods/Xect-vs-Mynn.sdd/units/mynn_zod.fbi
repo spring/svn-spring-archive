@@ -1,0 +1,71 @@
+[UNITINFO]
+{
+	Name=Zod;
+	UnitName=mynn_zod;
+	
+	//    Required Tags
+	BuildCostEnergy=5531;
+	BuildCostMetal=63;
+	BuildTime=12784;
+	Category=mynn rsu weapon level2 notair notsub kamikaze;
+	Description=Mobile Bomb Robot;
+	FootprintX=1;
+	FootprintZ=1;
+	MaxDamage=11;
+	ObjectName=mynn_zod;
+	Side=Mynn;
+	SoundCategory=fire_trp;
+	TEDClass=rsu;
+	
+	//    Movement
+	BrakeRate=0.12;
+	MovementClass=tankds2;
+	Acceleration=0.1;
+	CanMove=1;
+	MaxVelocity=4.44;
+	MaxSlope=32;
+	TurnRate=1370;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyMake=0.1;
+	EnergyStorage=0;
+	EnergyUse=0.1;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	Kamikaze=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=150;
+	
+	//    Weapons
+	wpri_badTargetCategory=VTOL;
+	BadTargetCategory=VTOL;
+	DamageModifier=0.590299076739918;
+	ExplodeAs=blue_death;
+	SelfDestructAs=blue_death;
+	NoChaseCategory=VTOL;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=112;
+	
+	//    Misc
+	SmoothAnim=1;
+	Buildpic=mynn_zod.jpg;
+	
+	//    Not Used By TASpring
+}

@@ -1,0 +1,40 @@
+[mynn_asub_dead]
+	{
+	world=All Worlds;
+	description=Sunk Sub;
+	category=mynn_e_corpses;
+	object=mynn_asub_dead;
+	featuredead=mynn_asub_heap;
+	footprintx=2;
+	footprintz=2;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=1078;
+	damage=380;
+	reclaimable=1;
+	featurereclamate=oilspill2;
+        seqnamereclamate=tree1reclamate;
+	}
+
+[mynn_asub_heap]
+	{
+	world=All Worlds;
+	description=Sunk Sub;
+	category=mynn_e_heaps;
+	object=2x2rub;
+	footprintx=2;
+	footprintz=2;
+	height=4;
+	blocking=0;
+	hitdensity=100;
+	metal=760;
+	damage=240;
+	reclaimable=1;
+
+	featurereclamate=oilspill1;
+	seqnamereclamate=tree1reclamate;
+	}
+
+
+

@@ -1,0 +1,50 @@
+- The banner will still need some more work.
+	Get someone to make new and better images.
+
+- Getting the text final and translated.
+	Get people excited about translating the site.
+	Getting started and Player Guide need work.
+	
+- New video's for the features
+	Need more (google video) vids.
+
+- Screenshots
+	Need a few high res good looking pic from several mods.
+	Make pic's fade?
+	Lightbox?
+	"Click on the picture to close it." text more clearly visable.
+
+- About page
+	Credits need to be written. (Tobi?)
+
+- Translation system
+	Make wiki and messageboard pages "remember" language choice from menu.
+	UTF-8 and really old browsers..
+	Messageboard PhpBB2 header encoding.
+
+
+========== FOR THE FUTURE ===========
+
+- Language menu won't display correctly in Opera - it's functional.
+
+- News system
+	Build a RSS feader
+
+- Translation system.
+	Use versions. (also optimize site_language here)
+	Check username/password.
+	Make it possible to remove strings with "development" language.
+	Prevent resubmit with page refresh last stage of translation.php
+	Expand and optimize the site_language class some more. (replace method "check_section_available" with "available_sections" same with "check_language_available"?)
+	Install PHPBB language files. (After upgrade to PHPBB3)
+	Wiki localizations?
+
+- Theme support working across the board
+	Some javascript in header.
+	Some CSS definitions are still inside the HTML.
+	*!Lots!* of duplicate CSS definitions in CSS files.
+	Get people excited about making theme's for mods.
+
+- Let the site know if it's dev. or prod. env.
+	Translations only in dev. env?
+	Sync with svn only in dev. env?

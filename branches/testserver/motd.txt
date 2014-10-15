@@ -1,0 +1,17 @@
+Welcome on the test server of the Spring project!
+
+Weekly test game time is Wednesday, 20:00 UTC. Visit
+http://www.timeanddate.com/worldclock/ to convert this
+into your local time.
+
+Be sure to file bugs and especially regressions in our bug
+tracking system: http://spring.clan-sy.com/mantis
+Do not forget to include the Spring revision number!
+
+A regression is a bug that was not present in an earlier
+build in a feature that was present in the earlier build.
+In other words, it worked before, but is broken now.
+
+Enjoy your stay, and thanks for your testing efforts!
+
+-- The Spring Team

@@ -1,0 +1,39 @@
+[xect_usa_lab_dead]
+	{
+	world=All Worlds;
+	description=Dead Structure;
+	category=xect_corpses;
+	object=xect_usa_lab_dead;
+	featuredead=xect_usa_lab_heap;
+	footprintx=3;
+	footprintz=2;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=631;
+	energy=0;
+	damage=1345;
+	reclaimable=1;
+	featurereclamate=smudge01;
+        seqnamereclamate=tree1reclamate;
+	}
+
+[xect_usa_lab_heap]
+	{
+	world=All Worlds;
+	description=Dead Structure;
+	category=xect_heaps;
+	object=xect_usa_lab_dead;
+	footprintx=3;
+	footprintz=2;
+	height=4;
+	blocking=0;
+	hitdensity=100;
+	metal=213;
+	energy=0;
+	damage=672;
+	reclaimable=1;
+
+	featurereclamate=smudge01;
+        seqnamereclamate=tree1reclamate;
+	}

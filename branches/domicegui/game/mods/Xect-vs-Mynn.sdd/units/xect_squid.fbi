@@ -1,0 +1,74 @@
+[UNITINFO]
+{
+	Name=Squid;
+	UnitName=xect_squid;
+	
+	//    Required Tags
+	BuildCostEnergy=3865;
+	BuildCostMetal=1340;
+	BuildTime=10230;
+	Category=xect underwater level2 torp weapon notair;
+	Description=Paralyzer Sub;
+	FootprintX=3;
+	FootprintZ=3;
+	MaxDamage=3815;
+	ObjectName=xect_squid;
+	Side=Xect;
+	SoundCategory=mynn_sub;
+	TEDClass=water;
+	
+	//    Movement
+	BrakeRate=1.06;
+	MovementClass=BOATd3;
+	Acceleration=0.05;
+	CanMove=1;
+	MaxVelocity=1.42;
+	TurnRate=722;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyMake=0.5;
+	EnergyStorage=0;
+	EnergyUse=0.5;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	Floater=1;
+	
+	//    Sight/Radar
+	SightDistance=225;
+	SonarDistance=325;
+	
+	//    Weapons
+	Weapon1=MYNN_SQUID_TORPEDO;
+	wpri_badTargetCategory=VTOL;
+	BadTargetCategory=VTOL;
+	DamageModifier=2.28;
+	ExplodeAs=rsu_death;
+	SelfDestructAs=rsu_death;
+	NoChaseCategory=VTOL;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MinWaterDepth=15;
+	Waterline=15;
+	
+	//    Misc
+	Corpse=xect_squid_dead;
+	SmoothAnim=1;
+	Upright=1;
+	Buildpic=mynn_squid.jpg;
+	
+	//    Not Used By TASpring
+}

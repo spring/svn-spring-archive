@@ -1,0 +1,37 @@
+[mynn_war_dead]
+	{
+	world=All Worlds;
+	description=Crushed Crawler;
+	category=mynn_e_corpses;
+	object=mynn_war_dead;
+	featuredead=mynn_war_heap;
+	footprintx=2;
+	footprintz=2;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=262;
+	damage=680;
+	reclaimable=1;
+	featurereclamate=oilspill2;
+        seqnamereclamate=tree1reclamate;
+	}
+
+[mynn_war_heap]
+	{
+	world=All Worlds;
+	description=Crushed Crawler;
+	category=mynn_e_heaps;
+	object=2x2rub;
+	footprintx=2;
+	footprintz=2;
+	height=4;
+	blocking=0;
+	hitdensity=100;
+	metal=179;
+	damage=340;
+	reclaimable=1;
+
+	featurereclamate=oilspill2;
+	seqnamereclamate=tree1reclamate;
+	}

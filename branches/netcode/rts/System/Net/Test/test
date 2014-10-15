@@ -1,0 +1,16 @@
+#!/bin/sh
+
+set -e
+
+bin=./test.bin
+input=input.tar
+output=output.tar
+
+gcc ../*.cpp *.cpp -o ${bin} `sdl-config --cflags --libs` -lboost_thread -ggdb3
+
+[ -f ${input} ] || tar cf ${input} ../../../../rts
+cat ${input} | ${bin} &
+sleep 2
+$bin localhost 8452 > ${output} 2>/dev/null
+sleep 2
+cmp -s ${input} ${output} && echo TEST PASSED || echo TEST FAILED

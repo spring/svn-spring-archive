@@ -1,0 +1,69 @@
+[UNITINFO]
+{
+	Name=Legend;
+	UnitName=mynn_bomber;
+	
+	//    Required Tags
+	BuildCostEnergy=4982;
+	BuildCostMetal=113;
+	BuildTime=11572;
+	Category=mynn vtol ctrl_v level1 weapon bomb notsub ;
+	Description=Jet Bomber;
+	FootprintX=3;
+	FootprintZ=3;
+	MaxDamage=265;
+	ObjectName=mynn_bomber;
+	Side=Mynn;
+	SoundCategory=mynn_vtol;
+	TEDClass=vtol;
+	
+	//    Movement
+	BrakeRate=1.2;
+	Acceleration=0.07;
+	CanMove=1;
+	MaxVelocity=10.6;
+	MaxSlope=10;
+	TurnRate=385;
+	
+	//    Airplane Moventment
+	Cruisealt=185;
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyMake=0.9;
+	EnergyStorage=0;
+	EnergyUse=0.9;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=1;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=525;
+	
+	//    Weapons
+	Weapon1=MYNNBOMB;
+	DamageModifier=0.75;
+	ExplodeAs=small_death;
+	SelfDestructAs=small_death;
+	NoChaseCategory=UNDERWATER;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	SmoothAnim=1;
+	Buildpic=mynn_bomber.jpg;
+	
+	//    Not Used By TASpring
+}

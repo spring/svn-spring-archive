@@ -1,0 +1,37 @@
+[xect_gam_dead]
+	{
+	world=All Worlds;
+	description=Carnage;
+	category=xect_corpses;
+	object=xect_gam_dead;
+	featuredead=xect_gam_heap;
+	footprintx=2;
+	footprintz=2;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=2114;
+	damage=1680;
+	reclaimable=1;
+	featurereclamate=oilspill1;
+        seqnamereclamate=tree1reclamate;
+	}
+
+[xect_gam_heap]
+	{
+	world=All Worlds;
+	description=Carnage;
+	category=xect_heaps;
+	object=3x3rub;
+	footprintx=2;
+	footprintz=2;
+	height=4;
+	blocking=0;
+	hitdensity=100;
+	metal=1079;
+	damage=1240;
+	reclaimable=1;
+
+	featurereclamate=oilspill1;
+	seqnamereclamate=tree1reclamate;
+	}

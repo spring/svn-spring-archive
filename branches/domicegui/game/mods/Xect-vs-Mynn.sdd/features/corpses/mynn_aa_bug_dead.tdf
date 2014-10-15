@@ -1,0 +1,37 @@
+[mynn_aa_bug_dead]
+	{
+	world=All Worlds;
+	description=Squashed Bugger;
+	category=mynn_e_corpses;
+	object=mynn_aa_bug_dead;
+	featuredead=grapoop;
+	footprintx=2;
+	footprintz=2;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=48;
+	damage=380;
+	reclaimable=1;
+	featurereclamate=grapoop;
+        seqnamereclamate=tree1reclamate;
+	}
+
+[mynn_aa_bug_heap]
+	{
+	world=All Worlds;
+	description=Squashed Bugger;
+	category=mynn_e_heaps;
+	object=mynn_aa_bug_dead;
+	footprintx=2;
+	footprintz=2;
+	height=4;
+	blocking=0;
+	hitdensity=100;
+	metal=30;
+	damage=240;
+	reclaimable=1;
+
+	featurereclamate=grapoop;
+	seqnamereclamate=tree1reclamate;
+	}

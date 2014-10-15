@@ -1,0 +1,5 @@
+AuthType Basic
+AuthName "Software update in progress" 
+AuthUserFile /var/wwwroot/temp.txt
+Require valid-user 
+Options Indexes

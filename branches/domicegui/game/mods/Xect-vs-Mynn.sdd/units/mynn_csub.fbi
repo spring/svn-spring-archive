@@ -1,0 +1,69 @@
+[UNITINFO]
+{
+	Name=Builder Submarine;
+	UnitName=mynn_csub;
+	
+	//    Required Tags
+	BuildCostEnergy=4811;
+	BuildCostMetal=390;
+	BuildTime=11455;
+	Category=mynn underwater level1 constr noweapon notair ctrl_b;
+	Description=Builds Water Structures;
+	FootprintX=4;
+	FootprintZ=4;
+	MaxDamage=1767;
+	ObjectName=mynn_csub;
+	Side=Mynn;
+	SoundCategory=mynn_sub;
+	TEDClass=SHIP;
+	
+	//    Movement
+	BrakeRate=0.2;
+	MovementClass=BOATd6;
+	Acceleration=0.04;
+	CanMove=1;
+	MaxVelocity=2.31;
+	TurnRate=256;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	BuildDistance=80;
+	Builder=1;
+	WorkerTime=225;
+	
+	//    Resources
+	EnergyMake=12.4;
+	EnergyStorage=100;
+	EnergyUse=1.6;
+	MetalMake=0.9;
+	MetalStorage=100;
+	
+	//    Abilities
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=180;
+	SonarDistance=500;
+	
+	//    Weapons
+	ExplodeAs=small_death;
+	SelfDestructAs=small_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MinWaterDepth=20;
+	Waterline=20;
+	
+	//    Misc
+	Corpse=mynn_csub_dead;
+	SmoothAnim=1;
+	Buildpic=mynn_csub.jpg;
+	
+	//    Not Used By TASpring
+}

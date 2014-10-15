@@ -1,0 +1,5 @@
+018 REMOVEUSER unknown user name
+056 LEFT user not in channel
+104 CLIENTSTATUS unknown user name
+144 JOINED unknown channel
+149 ADDUSER user id already in use

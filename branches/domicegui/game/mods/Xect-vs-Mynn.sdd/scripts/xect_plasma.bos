@@ -1,0 +1,469 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  hip_joint, hip, rthigh_joint, rthigh, rleg_joint, rleg, rfoot_joint,
+       rfoot, lthigh_joint, lthigh, lleg_joint, lleg, lfoot_joint, lfoot, torso_joint,
+       collar, neck, chest, ribs, shoulders, launchers, rflare, lflare,
+       rarm_joint, rarm, rwrist_joint, rwrist, rhand_joint, rhand, larm_joint, larm,
+       lwrist_joint, lwrist, lhand_joint, lhand, pack, tubes, bothead, tophead,
+       visor, head_joint;
+
+static-var  bMoving, bAiming, Static_Var_3, gun_1, Static_Var_5,
+            Static_Var_6;
+
+// Signal definitions
+#define SIG_AIM				4
+
+walk(Func_Var_1)
+{
+	if( bMoving == 1 )
+	{
+		turn hip_joint to y-axis <15.> speed <145.>;
+		turn lthigh_joint to x-axis <-35.> speed <145.>;
+		turn lleg_joint to x-axis <-25.> speed <145.>;
+		turn lfoot_joint to x-axis <-15.> speed <145.>;
+		turn rthigh_joint to x-axis <35.> speed <145.>;
+		turn rleg_joint to x-axis <25.> speed <145.>;
+		turn rfoot_joint to x-axis <15.> speed <145.>;
+		wait-for-turn hip_joint around x-axis;
+		wait-for-turn lthigh_joint around x-axis;
+		wait-for-turn lleg_joint around x-axis;
+		wait-for-turn rthigh_joint around x-axis;
+		wait-for-turn rleg_joint around x-axis;
+	}
+	if( Func_Var_1 == 1 )
+	{
+		turn larm_joint to x-axis <-35.> speed <145.>;
+		turn lwrist_joint to x-axis <0.> speed <145.>;
+		turn rarm_joint to x-axis <35.> speed <145.>;
+		turn rwrist_joint to x-axis <-75.> speed <145.>;
+	}
+	if( bMoving == 1 )
+	{
+		turn hip_joint to y-axis <0.> speed <145.>;
+		turn lthigh_joint to x-axis <0.> speed <145.>;
+		turn lleg_joint to x-axis <0.> speed <145.>;
+		turn lfoot_joint to x-axis <0.> speed <145.>;
+		turn rthigh_joint to x-axis <0.> speed <145.>;
+		turn rleg_joint to x-axis <0.> speed <145.>;
+		turn rfoot_joint to x-axis <0.> speed <145.>;
+	}
+	if( bMoving == 1 )
+	{
+		turn hip_joint to y-axis <0.> speed <145.>;
+		turn lthigh_joint to x-axis <35.> speed <145.>;
+		turn lleg_joint to x-axis <25.> speed <145.>;
+		turn lfoot_joint to x-axis <15.> speed <145.>;
+		turn rthigh_joint to x-axis <-35.> speed <145.>;
+		turn rleg_joint to x-axis <-25.> speed <145.>;
+		turn rfoot_joint to x-axis <-15.> speed <145.>;
+		turn torso_joint to y-axis <10.> speed <25.>;
+		turn torso_joint to z-axis <-5.> speed <25.>;
+		turn torso_joint to x-axis <5.> speed <60.>;
+		turn hip_joint to z-axis <3.> speed <50.>;
+		wait-for-turn hip_joint around x-axis;
+		wait-for-turn lthigh_joint around x-axis;
+		wait-for-turn lleg_joint around x-axis;
+		wait-for-turn rthigh_joint around x-axis;
+		wait-for-turn rleg_joint around x-axis;
+	}
+	if( Func_Var_1 == 1 )
+	{
+		turn larm_joint to x-axis <35.> speed <145.>;
+		turn lwrist_joint to x-axis <-75.> speed <145.>;
+		turn rarm_joint to x-axis <-35.> speed <145.>;
+		turn rwrist_joint to x-axis <0.> speed <145.>;
+	}
+	if( bMoving == 1 )
+	{
+		turn torso_joint to x-axis <-5.> speed <25.>;
+		turn torso_joint to y-axis <-10.> speed <25.>;
+		turn torso_joint to z-axis <5.> speed <25.>;
+		turn hip_joint to z-axis <-3.> speed <50.>;
+	}
+	if( bMoving == 1 )
+	{
+		turn hip_joint to y-axis <0.> speed <145.>;
+		turn lthigh_joint to x-axis <0.> speed <145.>;
+		turn lleg_joint to x-axis <0.> speed <145.>;
+		turn lfoot_joint to x-axis <0.> speed <145.>;
+		turn rthigh_joint to x-axis <0.> speed <145.>;
+		turn rleg_joint to x-axis <0.> speed <145.>;
+		turn rfoot_joint to x-axis <0.> speed <145.>;
+	}
+}
+
+relax()
+{
+	while( Static_Var_5 )
+	{
+		if( Static_Var_5 )
+		{
+			turn larm_joint to x-axis <75.> speed <15.>;
+		}
+		if( Static_Var_5 )
+		{
+			turn larm_joint to z-axis <0.> speed <15.>;
+		}
+		if( Static_Var_5 )
+		{
+			turn rarm_joint to x-axis <90.> speed <15.>;
+		}
+		if( Static_Var_5 )
+		{
+			turn rarm_joint to z-axis <0.> speed <15.>;
+		}
+		if( Static_Var_5 )
+		{
+			turn head_joint to y-axis <-35.> speed <30.>;
+		}
+		if( Static_Var_5 )
+		{
+			turn head_joint to x-axis <-45.> speed <30.>;
+		}
+		if( Static_Var_5 )
+		{
+			turn torso_joint to x-axis <-30.> speed <30.>;
+		}
+		if( Static_Var_5 )
+		{
+			wait-for-turn head_joint around y-axis;
+		}
+		if( Static_Var_5 )
+		{
+			turn torso_joint to y-axis <-35.> speed <15.>;
+		}
+		if( Static_Var_5 )
+		{
+			turn torso_joint to z-axis <-10.> speed <15.>;
+		}
+		if( Static_Var_5 )
+		{
+			turn lthigh_joint to x-axis <-10.> speed <15.>;
+		}
+		if( Static_Var_5 )
+		{
+			turn lthigh_joint to y-axis <10.> speed <15.>;
+		}
+		if( Static_Var_5 )
+		{
+			turn rthigh_joint to x-axis <0.> speed <15.>;
+		}
+		if( Static_Var_5 )
+		{
+			turn rthigh_joint to y-axis <-10.> speed <15.>;
+		}
+		if( Static_Var_5 )
+		{
+			turn lleg_joint to x-axis <10.> speed <15.>;
+		}
+		if( Static_Var_5 )
+		{
+			turn rleg_joint to x-axis <0.> speed <15.>;
+		}
+		if( Static_Var_5 )
+		{
+			wait-for-turn torso_joint around y-axis;
+		}
+		if( Static_Var_5 )
+		{
+			wait-for-turn larm_joint around x-axis;
+		}
+		if( Static_Var_5 )
+		{
+			wait-for-turn rarm_joint around x-axis;
+		}
+		if( Static_Var_5 )
+		{
+			turn head_joint to y-axis <35.> speed <30.>;
+		}
+		if( Static_Var_5 )
+		{
+			turn head_joint to x-axis <-45.> speed <30.>;
+		}
+		if( Static_Var_5 )
+		{
+			turn torso_joint to x-axis <-30.> speed <30.>;
+		}
+		if( Static_Var_5 )
+		{
+			wait-for-turn head_joint around y-axis;
+		}
+		if( Static_Var_5 )
+		{
+			turn torso_joint to z-axis <10.> speed <15.>;
+		}
+		if( Static_Var_5 )
+		{
+			turn lthigh_joint to x-axis <0.> speed <15.>;
+		}
+		if( Static_Var_5 )
+		{
+			turn lthigh_joint to y-axis <-10.> speed <15.>;
+		}
+		if( Static_Var_5 )
+		{
+			turn rthigh_joint to x-axis <-30.> speed <15.>;
+		}
+		if( Static_Var_5 )
+		{
+			turn rthigh_joint to y-axis <-10.> speed <15.>;
+		}
+		if( Static_Var_5 )
+		{
+			turn lleg_joint to x-axis <0.> speed <15.>;
+		}
+		if( Static_Var_5 )
+		{
+			turn rleg_joint to x-axis <10.> speed <15.>;
+		}
+		if( Static_Var_5 )
+		{
+			turn rarm_joint to x-axis <75.> speed <15.>;
+		}
+		if( Static_Var_5 )
+		{
+			wait-for-turn torso_joint around y-axis;
+		}
+		if( Static_Var_5 )
+		{
+			wait-for-turn larm_joint around x-axis;
+		}
+		if( Static_Var_5 )
+		{
+			wait-for-turn rarm_joint around x-axis;
+		}
+	}
+}
+
+
+MotionControl(moving, aiming, justmoved)
+{
+	var Func_Var_4;
+	justmoved = TRUE;
+	Func_Var_4 = 0;
+	while( TRUE )
+	{
+		moving = bMoving;
+		aiming = bAiming;
+		if( moving )
+		{
+			if( aiming )
+			{
+				Static_Var_3 = 1;
+				Static_Var_5 = 0;
+				Func_Var_4 = 0;
+			}
+			if( !aiming )
+			{
+				Static_Var_3 = 0;
+				Static_Var_5 = 0;
+				Func_Var_4 = 1;
+			}
+			call-script walk(Func_Var_4);
+			justmoved = TRUE;
+		}
+		if( !moving )
+		{
+			Static_Var_3 = 1;
+			if( justmoved )
+			{
+				if( !aiming )
+				{
+					sleep 2000;
+					Static_Var_5 = 1;
+					start-script relax();
+				}
+				turn rthigh_joint to x-axis <0.> speed <200.>;
+				turn rleg_joint to x-axis <0.> speed <200.>;
+				turn rfoot_joint to x-axis <0.> speed <200.>;
+				turn lthigh_joint to x-axis <0.> speed <200.>;
+				turn lleg_joint to x-axis <0.> speed <200.>;
+				turn lfoot_joint to x-axis <0.> speed <200.>;
+				justmoved = FALSE;
+			}
+			sleep 200;
+		}
+	}
+}
+
+
+Create()
+{
+	bMoving = FALSE;
+	bAiming = FALSE;
+	Static_Var_3 = 1;
+	Static_Var_5 = 1;
+	start-script MotionControl();
+	gun_1 = 0;
+}
+
+
+
+StartMoving()
+{
+	bMoving = TRUE;
+}
+
+StopMoving()
+{
+	bMoving = FALSE;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = 0;
+}
+
+FirePrimary()
+{
+	if( gun_1 == 0 )
+	{
+		turn torso_joint to y-axis <-35.> speed <310.>;
+		gun_1 = hip_joint;
+		sleep 20;
+		wait-for-turn torso_joint around y-axis;
+		turn torso_joint to z-axis <0.> speed <30.>;
+		return (0);
+	}
+	if( gun_1 == 1 )
+	{
+		turn torso_joint to y-axis <35.> speed <310.>;
+		gun_1 = 0;
+		sleep 20;
+		wait-for-turn torso_joint around y-axis;
+		turn torso_joint to z-axis <0.> speed <30.>;
+		return (0);
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = rflare;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = lflare;
+	}
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = rflare;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = lflare;
+	}
+}
+
+reset()
+{
+	sleep 2000;
+	move hip_joint to y-axis [0.] speed [200.];
+	move torso_joint to y-axis [0.] speed [200.];
+	move hip_joint to z-axis [0.] speed [200.];
+	move torso_joint to z-axis [0.] speed [200.];
+	turn head_joint to z-axis <0.> speed <200.>;
+	turn hip_joint to z-axis <0.> speed <200.>;
+	turn torso_joint to z-axis <0.> speed <200.>;
+	turn rarm_joint to z-axis <0.> speed <200.>;
+	turn larm_joint to z-axis <0.> speed <200.>;
+	turn rwrist_joint to z-axis <0.> speed <200.>;
+	turn lwrist_joint to z-axis <0.> speed <200.>;
+	turn rhand_joint to z-axis <0.> speed <200.>;
+	turn lhand_joint to z-axis <0.> speed <200.>;
+	turn rthigh_joint to z-axis <0.> speed <200.>;
+	turn rleg_joint to z-axis <0.> speed <200.>;
+	turn rfoot_joint to z-axis <0.> speed <200.>;
+	turn lthigh_joint to z-axis <0.> speed <200.>;
+	turn lleg_joint to z-axis <0.> speed <200.>;
+	turn lfoot_joint to z-axis <0.> speed <200.>;
+	turn head_joint to y-axis <0.> speed <200.>;
+	turn hip_joint to y-axis <0.> speed <200.>;
+	turn torso_joint to y-axis <0.> speed <200.>;
+	turn rarm_joint to y-axis <0.> speed <200.>;
+	turn larm_joint to y-axis <0.> speed <200.>;
+	turn rwrist_joint to y-axis <0.> speed <200.>;
+	turn lwrist_joint to y-axis <0.> speed <200.>;
+	turn rhand_joint to y-axis <0.> speed <200.>;
+	turn lhand_joint to y-axis <0.> speed <200.>;
+	turn rthigh_joint to y-axis <0.> speed <200.>;
+	turn rleg_joint to y-axis <0.> speed <200.>;
+	turn rfoot_joint to y-axis <0.> speed <200.>;
+	turn lthigh_joint to y-axis <0.> speed <200.>;
+	turn lleg_joint to y-axis <0.> speed <200.>;
+	turn lfoot_joint to y-axis <0.> speed <200.>;
+	turn head_joint to x-axis <0.> speed <200.>;
+	turn hip_joint to x-axis <0.> speed <200.>;
+	turn torso_joint to x-axis <0.> speed <200.>;
+	turn rarm_joint to x-axis <0.> speed <200.>;
+	turn larm_joint to x-axis <0.> speed <200.>;
+	turn rwrist_joint to x-axis <0.> speed <200.>;
+	turn lwrist_joint to x-axis <0.> speed <200.>;
+	turn rhand_joint to x-axis <0.> speed <200.>;
+	turn lhand_joint to x-axis <0.> speed <200.>;
+	turn rthigh_joint to x-axis <0.> speed <200.>;
+	turn rleg_joint to x-axis <0.> speed <200.>;
+	turn rfoot_joint to x-axis <0.> speed <200.>;
+	turn lthigh_joint to x-axis <0.> speed <200.>;
+	turn lleg_joint to x-axis <0.> speed <200.>;
+	turn lfoot_joint to x-axis <0.> speed <200.>;
+	bAiming = FALSE;
+	Static_Var_5 = 1;
+	start-script relax();
+}
+
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	bAiming = TRUE;
+	Static_Var_5 = 0;
+	while( !Static_Var_3 )
+	{
+		sleep 100;
+	}
+	Static_Var_6 = 0 - pitch;
+	turn torso_joint to y-axis heading speed <135.>;
+	turn torso_joint to x-axis Static_Var_6 speed <135.>;
+	turn head_joint to y-axis heading speed <185.>;
+	turn head_joint to x-axis Static_Var_6 speed <175.>;
+	wait-for-turn torso_joint around y-axis;
+	wait-for-turn torso_joint around x-axis;
+	start-script reset();
+	return (1);
+}
+
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode chest type BITMAPONLY | BITMAP1;
+		return (0);
+	}
+	if( severity <= 100 )
+	{
+		corpsetype = 2;
+		explode chest type BITMAPONLY | BITMAP1;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode chest type BITMAPONLY | BITMAP1;
+		return (0);
+	}
+	corpsetype = 3;
+	explode chest type BITMAPONLY | BITMAP1;
+	return (0);
+}

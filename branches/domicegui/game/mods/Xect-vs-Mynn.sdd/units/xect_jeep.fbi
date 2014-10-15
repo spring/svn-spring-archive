@@ -1,0 +1,65 @@
+[UNITINFO]
+{
+	Name=Jeep;
+	UnitName=xect_jeep;
+	
+	//    Required Tags
+	BuildCostEnergy=2000;
+	BuildCostMetal=165;
+	BuildTime=4765;
+	Category=xect TANK level1 weapon notair notsub ctrl_v;
+	Description=Construction Vehicle;
+	FootprintX=2;
+	FootprintZ=2;
+	MaxDamage=758;
+	ObjectName=xect_jeep;
+	Side=Xect;
+	SoundCategory=xcl_tank;
+	TEDClass=TANK;
+	
+	//    Movement
+	BrakeRate=0.004;
+	MovementClass=tanksh2;
+	Acceleration=0.014;
+	CanMove=1;
+	MaxVelocity=2.3;
+	MaxSlope=20;
+	TurnRate=350;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	BuildDistance=65;
+	Builder=1;
+	WorkerTime=100;
+	
+	//    Resources
+	EnergyStorage=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=300;
+	
+	//    Weapons
+	ExplodeAs=SMALL_UNITEX;
+	SelfDestructAs=SMALL_UNIT;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=10;
+	
+	//    Misc
+	Corpse=xect_jeep_dead;
+	SmoothAnim=1;
+	Buildpic=xect_jeep.jpg;
+	
+	//    Not Used By TASpring
+}

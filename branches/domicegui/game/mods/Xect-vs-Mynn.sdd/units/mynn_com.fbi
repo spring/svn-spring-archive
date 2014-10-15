@@ -1,0 +1,80 @@
+[UNITINFO]
+{
+	Name=Mynn Commander;
+	UnitName=mynn_com;
+	
+	//    Required Tags
+	BuildCostEnergy=3000;
+	BuildCostMetal=1500;
+	BuildTime=8400;
+	Category=mynn commander level10 weapon notair notsub ctrl_c;
+	Description=Mynn Commander;
+	FootprintX=2;
+	FootprintZ=2;
+	MaxDamage=3531;
+	ObjectName=mynn_com;
+	Side=Mynn;
+	SoundCategory=rac_trp;
+	TEDClass=commander;
+	
+	//    Movement
+	BrakeRate=0.3;
+	MovementClass=tankds2;
+	Acceleration=0.15;
+	CanMove=1;
+	MaxVelocity=1.26;
+	MaxSlope=20;
+	TurnRate=1044;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	BuildDistance=60;
+	Builder=1;
+	WorkerTime=300;
+	
+	//    Resources
+	EnergyMake=50;
+	EnergyUse=0;
+	MetalMake=2;
+	
+	//    Abilities
+	CanAttack=1;
+	candgun=1;
+	CanCapture=1;
+	CanFly=0;
+	CanStop=1;
+	ActivateWhenBuilt=1;
+	
+	//    Sight/Radar
+	RadarDistance=400;
+	SightDistance=435;
+	SonarDistance=400;
+	CloakCost=200;
+	CloakCostMoving=1000;
+	
+	//    Weapons
+	Weapon1=MYNN_GLADLAS;
+	Weapon3=MYNN_DISINTEGRATOR_BLAST;
+	wpri_badTargetCategory=VTOL;
+	BadTargetCategory=VTOL;
+	DamageModifier=2.12;
+	ExplodeAs=commander_death;
+	SelfDestructAs=commander_death;
+	NoChaseCategory=VTOL;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=35;
+	
+	//    Misc
+	SmoothAnim=1;
+	Upright=1;
+	HideDamage=1;
+	Buildpic=mynn_com.jpg;
+	
+	//    Not Used By TASpring
+}

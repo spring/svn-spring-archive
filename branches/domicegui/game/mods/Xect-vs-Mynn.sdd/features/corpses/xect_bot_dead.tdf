@@ -1,0 +1,38 @@
+[xect_bot_dead]
+	{
+	world=All Worlds;
+	description=Destroyed Robot;
+	category=xect_corpses;
+	object=xect_bot_dead;
+	featuredead=xect_bot_heap;
+	footprintx=2;
+	footprintz=2;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=2440;
+	energy=2440;
+	damage=1550;
+	reclaimable=1;
+	featurereclamate=smudge01;
+        seqnamereclamate=tree1reclamate;
+	}
+
+[xect_bot_heap]
+	{
+	world=All Worlds;
+	description=Destroyed Robot;
+	category=xect_heaps;
+	object=2x2a;
+	footprintx=2;
+	footprintz=2;
+	height=4;
+	blocking=0;
+	hitdensity=100;
+	metal=1220;
+	energy=1220;
+	damage=780;
+	reclaimable=1;
+	featurereclamate=smudge01;
+	seqnamereclamate=tree1reclamate;
+	}

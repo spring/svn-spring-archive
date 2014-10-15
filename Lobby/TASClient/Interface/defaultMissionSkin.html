@@ -1,0 +1,28 @@
+<html>
+<head>
+	<script type="text/javascript" src="../default.js"></script>
+	<style type="text/css">
+		@import "../default.css";
+
+		a img{
+			border: 0;
+		}
+	</style>
+</head>
+<body>
+	<img src="..\images\background.jpg" style="height:100%;position: absolute; top:0;left:0;z-index:-1"  />
+	<div id="bar" style="position:absolute;left:10%;top:0;width:80%;height:100%;filter : alpha(opacity=44);background-color: black"></div>
+	<div style="border: 0;position:absolute;left:10%;top:0;width:80%;height:100%;">
+		<div id="briefing" style="margin: 20px;width: 100%;height: 20px;overflow: auto;padding: 10px;color: #ffa573">
+			[CampaignContent]
+		</div>
+		<div class="footer">
+			<a href="lobby:back" class="button" style="float: left;" onmouseover="sendData('playsound:button.wav');">Back</a>
+			<a href="lobby:startmission:" class="button" style="float: right;margin-right:20px;" onmouseover="sendData('playsound:button.wav');">START</a>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	document.getElementById('briefing').style.height = document.getElementById('bar').style.pixelHeight - 45 + 'px';
+</script>

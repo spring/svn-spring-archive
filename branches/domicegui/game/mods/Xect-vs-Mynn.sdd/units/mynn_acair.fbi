@@ -1,0 +1,68 @@
+[UNITINFO]
+{
+	Name=Advanced Construction Aircraft;
+	UnitName=mynn_acair;
+	
+	//    Required Tags
+	BuildCostEnergy=12127;
+	BuildCostMetal=245;
+	BuildTime=28137;
+	Category=mynn vtol ctrl_v level2 constr noweapon notsub ctrl_b;
+	Description=Builds Advanced Structures;
+	FootprintX=2;
+	FootprintZ=2;
+	MaxDamage=490;
+	ObjectName=mynn_acair;
+	Side=Mynn;
+	SoundCategory=mynn_vtol;
+	TEDClass=cnstr;
+	
+	//    Movement
+	BrakeRate=0.005;
+	Acceleration=0.07;
+	CanMove=1;
+	MaxVelocity=11.01;
+	MaxSlope=20;
+	TurnRate=1000;
+	
+	//    Airplane Moventment
+	Cruisealt=35;
+	
+	//    Buildings
+	
+	//    Construction
+	BuildDistance=35;
+	Builder=1;
+	WorkerTime=80;
+	
+	//    Resources
+	EnergyMake=28;
+	EnergyStorage=30;
+	EnergyUse=0.6;
+	MetalMake=0.5;
+	MetalStorage=30;
+	
+	//    Abilities
+	CanFly=1;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=20;
+	SightDistance=375;
+	
+	//    Weapons
+	ExplodeAs=rsu_death;
+	SelfDestructAs=rsu_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=12;
+	
+	//    Misc
+	SmoothAnim=1;
+	Buildpic=mynn_acair.jpg;
+	
+	//    Not Used By TASpring
+	firestandorders=20;
+}

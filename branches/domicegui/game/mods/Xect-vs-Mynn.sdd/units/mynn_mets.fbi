@@ -1,0 +1,60 @@
+[UNITINFO]
+{
+	Name=Metal Storage;
+	UnitName=mynn_mets;
+	
+	//    Required Tags
+	BuildCostEnergy=535;
+	BuildCostMetal=305;
+	BuildTime=1536;
+	Category=mynn metal level1 noweapon  notair notsub storage;
+	Description=Increases Metal Storage;
+	FootprintX=4;
+	FootprintZ=4;
+	MaxDamage=736;
+	ObjectName=mynn_mets;
+	Side=Mynn;
+	SoundCategory=mynn_mstore;
+	TEDClass=metal;
+	
+	//    Movement
+	MaxSlope=10;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=oooooooooooooooo;
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=0;
+	EnergyUse=0;
+	MetalStorage=3000;
+	
+	//    Abilities
+	CanFly=0;
+	ActivateWhenBuilt=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=315;
+	
+	//    Weapons
+	ExplodeAs=rsu_death;
+	SelfDestructAs=rsu_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	Corpse=mynn_mets_dead;
+	SmoothAnim=1;
+	Buildpic=mynn_mets.jpg;
+	
+	//    Not Used By TASpring
+}

@@ -1,0 +1,70 @@
+[UNITINFO]
+{
+	Name=Arch;
+	UnitName=xect_bats;
+	
+	//    Required Tags
+	BuildCostEnergy=12285;
+	BuildCostMetal=2113;
+	BuildTime=30369;
+	Category=xect SHIP level2 weapon notair notsub ;
+	Description=Battle HydroCruiser;
+	FootprintX=4;
+	FootprintZ=4;
+	MaxDamage=7598;
+	ObjectName=xect_bats;
+	Side=Xect;
+	SoundCategory=mynn_ship;
+	TEDClass=SHIP;
+	
+	//    Movement
+	BrakeRate=0.018310547;
+	MovementClass=BOATd6;
+	Acceleration=0.009155273;
+	CanMove=1;
+	MaxVelocity=1.8;
+	TurnRate=108;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyMake=0.9;
+	EnergyStorage=0;
+	EnergyUse=0.9;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	Floater=1;
+	
+	//    Sight/Radar
+	RadarDistance=1050;
+	SightDistance=338;
+	
+	//    Weapons
+	Weapon1=MYNN_BATSLASER;
+	wsec_badTargetCategory=NOTAIR;
+	DamageModifier=5.09;
+	ExplodeAs=crawler_death;
+	SelfDestructAs=crawler_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MinWaterDepth=12;
+	
+	//    Misc
+	Corpse=xect_bats_dead;
+	SmoothAnim=1;
+	Buildpic=mynn_bats.jpg;
+	
+	//    Not Used By TASpring
+}

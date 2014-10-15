@@ -1,0 +1,7 @@
+The long term plan is something along the lines of set up a site "framework" where the spring community is "split"* into gamers
+and developers and then gamers in the "new casual gamers" that drop by and like to see the screenshots and the "hardcore RTS gamers"
+that like to have a league, clan support etc. And the developers in "code dev's" and "content dev's".
+
+* Split as in one overall site that is heavily interlinked betweens the sections
+but still with distinct parts so that an UpSpring coder won't have to read about who is the new KoAA in the league.
+And non-developers won't disrupt technical discussions between developers with uninformed opinions and feature requests.

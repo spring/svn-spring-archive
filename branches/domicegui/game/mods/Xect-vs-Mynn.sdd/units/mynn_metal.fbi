@@ -1,0 +1,62 @@
+[UNITINFO]
+{
+	Name=Metal Extractor;
+	UnitName=mynn_metal;
+	
+	//    Required Tags
+	BuildCostEnergy=500;
+	BuildCostMetal=50;
+	BuildTime=1200;
+	Category=mynn metal extractor level1 noweapon notair notsub ;
+	Description=Extracts Metal;
+	FootprintX=3;
+	FootprintZ=3;
+	MaxDamage=214;
+	ObjectName=mynn_metal;
+	Side=Mynn;
+	SoundCategory=mynn_ext;
+	TEDClass=metal;
+	
+	//    Movement
+	MaxSlope=10;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=ooooooooo;
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=0;
+	EnergyUse=3;
+	ExtractsMetal=0.001;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanFly=0;
+	OnOffable=1;
+	ActivateWhenBuilt=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=315;
+	
+	//    Weapons
+	ExplodeAs=small_death;
+	SelfDestructAs=small_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	Corpse=mynn_metal_dead;
+	SmoothAnim=1;
+	Buildpic=mynn_metal.jpg;
+	
+	//    Not Used By TASpring
+}

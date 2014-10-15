@@ -1,0 +1,11 @@
+[MOD] 
+{
+  Name=Xect vs. Mynn v0.6.3; 
+  Description=Xect vs. Mynn, a free Spring mod based on XenoTA, a TA mod by Xenoclone; 
+  URL=http://www.ta-spring.com/mods/xectvsmynn/; 
+  ModType=1;
+
+  NumDependencies=2;
+  Depend0=springbitmaps_v061.sdz;
+  Depend1=springdecals_v062.sdz;
+}

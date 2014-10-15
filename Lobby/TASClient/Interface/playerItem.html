@@ -1,0 +1,55 @@
+<tr id="PlayerLine">
+	<td>[PlayerName]</td>
+	<td>
+		<select id="team[PlayerId]" onchange="sendData('changeteam:[PlayerId]:'+getSelectedValue('team[PlayerId]'));selectedTeamList[[PlayerId]-1] = getSelectedValue('team[PlayerId]');selectTeams();">
+			<option value="0">1</option>
+			<option value="1">2</option>
+			<option value="2">3</option>
+			<option value="3">4</option>
+			<option value="4">5</option>
+			<option value="5">6</option>
+			<option value="6">7</option>
+			<option value="7">8</option>
+			<option value="8">9</option>
+			<option value="9">10</option>
+			<option value="10">11</option>
+			<option value="11">12</option>
+			<option value="12">13</option>
+			<option value="13">14</option>
+			<option value="14">15</option>
+			<option value="15">16</option>
+		</select>
+	</td>
+	<td>
+		<select id="side[PlayerId]" onchange="sendData('changeside:[PlayerId]:'+getSelectedValue('side[PlayerId]'));selectedSideList[[PlayerId]-1] = getSelectedValue('side[PlayerId]');selectSides();">
+			[SideList]
+		</select>
+	</td>
+	<td>
+		<div id="handicapContainer[PlayerId]">
+	</td>
+	<td>&nbsp;</td>
+</tr>
+<script type="text/javascript">
+	function handicapSpinChanged[PlayerId](sender, newVal)
+	{
+		sendData('changehandicap:[PlayerId]:'+newVal);
+		handicapSpinBoxCtrl[PlayerId].SetCurrentValue(newVal);
+	}
+
+	var handicapSpinCtrl[PlayerId] = new SpinControl();
+	handicapSpinCtrl[PlayerId].SetMaxValue(100);
+	handicapSpinCtrl[PlayerId].SetMinValue(0);
+	handicapSpinCtrl[PlayerId].SetIncrement(1);
+	handicapSpinCtrl[PlayerId].SetCurrentValue([Handicap]);
+	handicapSpinCtrl[PlayerId].GetAccelerationCollection().Add(new SpinControlAcceleration(1, 500));
+	handicapSpinCtrl[PlayerId].GetAccelerationCollection().Add(new SpinControlAcceleration(10, 1750));
+	handicapSpinCtrl[PlayerId].AttachValueChangedListener(handicapSpinChanged[PlayerId]);
+	document.getElementById('handicapContainer[PlayerId]').appendChild(handicapSpinCtrl[PlayerId].GetContainer());
+	handicapSpinCtrl[PlayerId].StartListening();
+
+	idList.push([PlayerId]);
+	selectedSideList.push([SelectedSide]);
+	selectedIdList.push([SelectedId]);
+	selectedTeamList.push([SelectedTeam]);
+</script>

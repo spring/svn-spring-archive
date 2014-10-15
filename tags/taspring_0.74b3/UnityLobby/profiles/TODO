@@ -1,0 +1,4 @@
+# TODO
+
+# Add Code in Profile.py to parse setup.ini
+# And use for automatic profile setup if profiles == 0

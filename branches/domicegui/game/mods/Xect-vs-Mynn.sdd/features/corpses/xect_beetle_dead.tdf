@@ -1,0 +1,38 @@
+[xect_beetle_dead]
+	{
+	world=All Worlds;
+	description=Carnage;
+	category=xect_corpses;
+	object=xect_beetle_dead;
+	featuredead=xect_beetle_heap;
+	footprintx=2;
+	footprintz=2;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=1355;
+	energy=47;
+	damage=325;
+	reclaimable=1;
+	featurereclamate=gutscar;
+        seqnamereclamate=tree1reclamate;
+	}
+
+[xect_beetle_heap]
+	{
+	world=All Worlds;
+	description=Carnage;
+	category=xect_heaps;
+	object=xect_beetle_dead;
+	footprintx=2;
+	footprintz=2;
+	height=4;
+	blocking=0;
+	hitdensity=100;
+	metal=322;
+	energy=61;
+	damage=162;
+	reclaimable=1;
+	featurereclamate=gutscar;
+	seqnamereclamate=tree1reclamate;
+	}

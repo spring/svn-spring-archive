@@ -1,0 +1,37 @@
+[xect_wind_dead]
+	{
+	world=All Worlds;
+	description=Dead Structure;
+	category=xect_corpses;
+	object=xect_wind_dead.s3o;
+	featuredead=xect_wind_heap;
+	footprintx=2;
+	footprintz=2;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=8;
+	damage=80;
+	reclaimable=1;
+	featurereclamate=oilspill1;
+        seqnamereclamate=tree1reclamate;
+	}
+
+[xect_wind_heap]
+	{
+	world=All Worlds;
+	description=Dead Structure;
+	category=heaps;
+	object=2x2rub;
+	footprintx=2;
+	footprintz=2;
+	height=4;
+	blocking=0;
+	hitdensity=100;
+	metal=2;
+	damage=40;
+	reclaimable=1;
+
+	featurereclamate=oilspill1;
+	seqnamereclamate=tree1reclamate;
+	}

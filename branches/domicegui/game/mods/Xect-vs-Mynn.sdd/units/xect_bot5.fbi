@@ -1,0 +1,70 @@
+[UNITINFO]
+{
+	Name=XCL-05;
+	UnitName=xect_bot5;
+	
+	//    Required Tags
+	BuildCostEnergy=4220;
+	BuildCostMetal=500;
+	BuildTime=10206;
+	Category=xect bot level1 weapon notair notsub ctrl_x ;
+	Description=Long Range XBot;
+	FootprintX=2;
+	FootprintZ=2;
+	MaxDamage=2036;
+	ObjectName=xect_bot5;
+	Side=Xect;
+	SoundCategory=xcl_bot;
+	TEDClass=bot;
+	
+	//    Movement
+	BrakeRate=0.19;
+	MovementClass=tanksh2;
+	Acceleration=0.15;
+	CanMove=1;
+	MaxVelocity=2.04;
+	MaxSlope=35;
+	TurnRate=100;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=300;
+	
+	//    Weapons
+	Weapon1=XCL_LONG;
+	wpri_badTargetCategory=VTOL;
+	BadTargetCategory=VTOL;
+	DamageModifier=1.45;
+	ExplodeAs=SMALL_UNITEX;
+	SelfDestructAs=SMALL_UNIT;
+	NoChaseCategory=VTOL;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=10;
+	
+	//    Misc
+	Corpse=xect_bot5_dead;
+	SmoothAnim=1;
+	Buildpic=xect_bot5.jpg;
+	
+	//    Not Used By TASpring
+}

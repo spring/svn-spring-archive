@@ -1,0 +1,17 @@
+[xect_enes_dead]
+	{
+	world=All Worlds;
+	description=Wreckage;
+	category=xect_corpses;
+	object=xect_enes_dead;
+	footprintx=5;
+	footprintz=5;
+	height=4;
+	blocking=0;
+	hitdensity=110;
+	metal=493;
+	damage=600;
+	reclaimable=1;
+	featurereclamate=smudge01;
+	seqnamereclamate=tree1reclamate;
+	}

@@ -1,0 +1,40 @@
+[mynn_amet_dead]
+	{
+	world=All Worlds;
+	description=Dead Structure;
+	category=mynn_e_corpses;
+	object=mynn_amet_dead;
+	featuredead=mynn_amet_heap;
+	footprintx=2;
+	footprintz=2;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=38;
+	damage=80;
+	reclaimable=1;
+	featurereclamate=oilspill1;
+        seqnamereclamate=tree1reclamate;
+	}
+
+[mynn_amet_heap]
+	{
+	world=All Worlds;
+	description=Dead Structure;
+	category=mynn_e_heaps;
+	object=2x2rub;
+	footprintx=2;
+	footprintz=2;
+	height=4;
+	blocking=0;
+	hitdensity=100;
+	metal=22;
+	damage=40;
+	reclaimable=1;
+
+	featurereclamate=oilspill2;
+	seqnamereclamate=tree1reclamate;
+	}
+
+
+

@@ -1,0 +1,41 @@
+[xect_smasher_dead]
+	{
+	world=All Worlds;
+	description=Wreckage;
+	category=xect_corpses;
+	object=xect_smasher_dead.s3o;
+	featuredead=xect_smasher_heap;
+	footprintx=5;
+	footprintz=5;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=1500;
+	energy=0;
+	damage=1500;
+	reclaimable=1;
+	featurereclamate=smudge01;
+        seqnamereclamate=tree1reclamate;
+	}
+
+[xect_smasher_heap]
+	{
+	world=All Worlds;
+	description=Wreckage;
+	category=heaps;
+	object=5x5b;
+	footprintx=5;
+	footprintz=5;
+	height=4;
+	blocking=0;
+	hitdensity=100;
+	metal=750;
+	energy=0;
+	damage=750;
+	reclaimable=1;
+	featurereclamate=smudge01;
+	seqnamereclamate=tree1reclamate;
+	}
+
+
+

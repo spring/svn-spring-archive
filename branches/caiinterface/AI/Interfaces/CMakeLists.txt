@@ -1,0 +1,128 @@
+### AI Interfaces
+
+add_definitions(-DBUILDING_AI_INTERFACE)
+
+set(AI_INTERFACES_SRC "${CMAKE_SOURCE_DIR}/AI/Interfaces")
+set(AI_INTERFACES_DATA "${DATADIR}/AI/Interfaces")
+IF (UNIX)
+	set(SHELL_EXEC_POSTFIX "sh")
+ELSE (UNIX)
+	set(SHELL_EXEC_POSTFIX "bat")
+ENDIF(UNIX)
+
+#set(AIINTERFACE_FIND_QUIETLY True)
+
+
+# C & C++ AI Interface
+set(C_AIINTERFACE_SRC "${AI_INTERFACES_SRC}/C")
+if (EXISTS ${C_AIINTERFACE_SRC})
+	set(C_AIINTERFACE_VERS "UNKNOWN_VERSION")
+	if (EXISTS ${C_AIINTERFACE_SRC}/VERSION)
+		file(STRINGS "${C_AIINTERFACE_SRC}/VERSION" C_AIINTERFACE_VERS LIMIT_COUNT 1)
+	endif (EXISTS ${C_AIINTERFACE_SRC}/VERSION)
+	#set(C_AIINTERFACE_TARGET "C-${C_AIINTERFACE_VERS}")
+	set(C_AIINTERFACE_TARGET "C")
+	set(C_AIINTERFACE_DATA_DIR ${AI_INTERFACES_DATA}/C/${C_AIINTERFACE_VERS})
+	if (NOT AIINTERFACE_FIND_QUIETLY)
+		message(STATUS "Found AI Interface: C ${C_AIINTERFACE_VERS}")
+	endif (NOT AIINTERFACE_FIND_QUIETLY)
+
+	# install data files
+	install(DIRECTORY "${C_AIINTERFACE_SRC}/data/"
+			DESTINATION "${C_AIINTERFACE_DATA_DIR}" PATTERN ".svn" EXCLUDE)
+
+	aux_source_directory(${C_AIINTERFACE_SRC} cAIInterface)
+	list (APPEND cAIInterface ${CMAKE_SOURCE_DIR}/rts/System/Platform/SharedLib)
+	if (UNIX)
+		list (APPEND cAIInterface ${CMAKE_SOURCE_DIR}/rts/System/Platform/Linux/SoLib)
+	else (UNIX)
+		list (APPEND cAIInterface ${CMAKE_SOURCE_DIR}/rts/System/Platform/Win/DllLib)
+	endif (UNIX)
+	add_library(${C_AIINTERFACE_TARGET} MODULE ${cAIInterface} ${aienv}) # ${errorhandler})
+	install(TARGETS ${C_AIINTERFACE_TARGET} DESTINATION ${C_AIINTERFACE_DATA_DIR})
+endif (EXISTS ${C_AIINTERFACE_SRC})
+
+
+# Java AI Interface
+if (NOT JAVA_FOUND)
+	set(JAVA_FIND_QUIETLY ${AIINTERFACE_FIND_QUIETLY})
+	FIND_PACKAGE(JAVA) # Note: this is not the CMake builtin FindJava
+endif (NOT JAVA_FOUND)
+#message(STATUS "Interface JAVA_FOUND: ${JAVA_FOUND}")
+#message(STATUS "Interface JAVA_NOT_FOUND: ${JAVA_NOT_FOUND}")
+#message(STATUS "JAVA_RUNTIME ${JAVA_RUNTIME}")
+#message(STATUS "JAVA_COMPILE ${JAVA_COMPILE}")
+#message(STATUS "JAVA_ARCHIVE ${JAVA_ARCHIVE}")
+IF (MINGW)
+	set (JAVA_JVM_LIBRARY jvm)
+	set (JNI_FOUND TRUE)
+ELSE (MINGW)
+	FIND_PACKAGE(JNI)
+	if (JAVA_INCLUDE_PATH)
+		set (JNI_FOUND TRUE)
+		include_directories(${JAVA_INCLUDE_PATH} ${JAVA_INCLUDE_PATH2} ${JNI_INCLUDE_DIRS})
+		#link_directories(${JAVA_JVM_LIBRARY})
+		#message("JAVA_JVM_LIBRARY ${JAVA_JVM_LIBRARY}")
+		#message("JAVA_JVM_LIB_PATH ${JAVA_JVM_LIB_PATH}")
+		#message("JNI_LIBRARIES ${JNI_LIBRARIES}")
+	else (JAVA_INCLUDE_PATH)
+		set (JNI_FOUND FALSE)
+		message ("No Java includes found -> Java AI Interface will not be built")
+	endif (JAVA_INCLUDE_PATH)
+ENDIF (MINGW)
+#message(STATUS "Interface JNI_FOUND: ${JNI_FOUND}")
+set(Java_AIINTERFACE_SRC "${AI_INTERFACES_SRC}/Java")
+if (JNI_FOUND AND JAVA_FOUND AND EXISTS ${Java_AIINTERFACE_SRC} AND EXISTS ${Java_AIINTERFACE_SRC}/bin)
+	set(Java_AIINTERFACE_VERS "UNKNOWN_VERSION")
+	if (EXISTS ${Java_AIINTERFACE_SRC}/VERSION)
+		file(STRINGS "${Java_AIINTERFACE_SRC}/VERSION" Java_AIINTERFACE_VERS LIMIT_COUNT 1)
+	endif (EXISTS ${Java_AIINTERFACE_SRC}/VERSION)
+	#set(Java_AIINTERFACE_TARGET "Java-${Java_AIINTERFACE_VERS}")
+	set(Java_AIINTERFACE_TARGET "Java")
+	set(Java_AIINTERFACE_DATA_DIR ${AI_INTERFACES_DATA}/Java/${Java_AIINTERFACE_VERS})
+	#set(Java_AIINTERFACE_PKG "com.clan_sy.spring.ai")
+	set(Java_AIINTERFACE_PKG "com/clan_sy/spring/ai")
+	set(Java_AIINTERFACE_PKG_FIRST_PART "com")
+	set(Java_AIINTERFACE_CLASSPATH ".:${PATH_DELIM}${Java_AIINTERFACE_SRC}/data/jlib/jna/jna.jar${PATH_DELIM}${Java_AIINTERFACE_SRC}/data/jlib/vecmath.jar")
+	if (NOT AIINTERFACE_FIND_QUIETLY)
+		message(STATUS "Found AI Interface: Java ${Java_AIINTERFACE_VERS}")
+	endif (NOT AIINTERFACE_FIND_QUIETLY)
+
+	# install data files
+	install(DIRECTORY "${Java_AIINTERFACE_SRC}/data/"
+			DESTINATION "${Java_AIINTERFACE_DATA_DIR}" PATTERN ".svn" EXCLUDE)
+
+	# handle native part
+	aux_source_directory(${Java_AIINTERFACE_SRC} javaAIInterface)
+	add_library(${Java_AIINTERFACE_TARGET} MODULE ${javaAIInterface} ${aienv})
+	target_link_libraries(${Java_AIINTERFACE_TARGET} ${JAVA_JVM_LIBRARY})
+	install(TARGETS ${Java_AIINTERFACE_TARGET} DESTINATION ${Java_AIINTERFACE_DATA_DIR})
+	INCLUDE_DIRECTORIES(BEFORE ${CMAKE_SOURCE_DIR}/rts/lib/streflop)
+	TARGET_LINK_LIBRARIES(${Java_AIINTERFACE_TARGET} streflop)
+	set_target_properties(${Java_AIINTERFACE_TARGET} PROPERTIES COMPILE_FLAGS "-DSTREFLOP_SSE")
+
+	# handle Java part
+	file(REMOVE_RECURSE "${Java_AIINTERFACE_SRC}/build")
+	file(MAKE_DIRECTORY "${Java_AIINTERFACE_SRC}/build")
+	file(GLOB_RECURSE Java_AIINTERFACE_JAVA_SOURCES RELATIVE "${Java_AIINTERFACE_SRC}/java/src" FOLLOW_SYMLINKS "${Java_AIINTERFACE_SRC}/java/src/*.java")
+	add_custom_command(TARGET ${Java_AIINTERFACE_TARGET} POST_BUILD
+		COMMAND "${Java_AIINTERFACE_SRC}/bin/java_generateWrappers.${SHELL_EXEC_POSTFIX}" ARGS "${Java_AIINTERFACE_VERS}"
+		WORKING_DIRECTORY "${Java_AIINTERFACE_SRC}/bin"
+		COMMENT "  Generating Java source files ..." VERBATIM)
+	add_custom_command(TARGET ${Java_AIINTERFACE_TARGET} POST_BUILD
+		COMMAND "${JAVA_COMPILE}" "-cp" "${Java_AIINTERFACE_CLASSPATH}" "-d" "${Java_AIINTERFACE_SRC}/build" ${Java_AIINTERFACE_JAVA_SOURCES}
+		WORKING_DIRECTORY "${Java_AIINTERFACE_SRC}/java/src"
+		COMMENT "  Compiling Java sources ..." VERBATIM)
+	add_custom_command(TARGET ${Java_AIINTERFACE_TARGET} POST_BUILD
+		COMMAND "${JAVA_ARCHIVE}" "cmf" "${Java_AIINTERFACE_SRC}/java/src/manifest.mf" "${Java_AIINTERFACE_SRC}/interface.jar" "-C" "${Java_AIINTERFACE_SRC}/build" "${Java_AIINTERFACE_PKG_FIRST_PART}"
+		WORKING_DIRECTORY "${Java_AIINTERFACE_SRC}/bin"
+		COMMENT "  Creating Java library interface.jar ..." VERBATIM)
+	add_custom_command(TARGET ${Java_AIINTERFACE_TARGET} POST_BUILD
+		COMMAND "${JAVA_ARCHIVE}" "cf" "${Java_AIINTERFACE_SRC}/interface-src.jar" "-C" "${Java_AIINTERFACE_SRC}/java/src" "${Java_AIINTERFACE_PKG_FIRST_PART}"
+		WORKING_DIRECTORY "${Java_AIINTERFACE_SRC}/bin"
+		COMMENT "  Creating Java library interface-src.jar ..." VERBATIM)
+	install(FILES ${Java_AIINTERFACE_SRC}/interface.jar DESTINATION ${Java_AIINTERFACE_DATA_DIR})
+	install(FILES ${Java_AIINTERFACE_SRC}/interface-src.jar DESTINATION ${Java_AIINTERFACE_DATA_DIR}/jlib)
+	#install(DIRECTORY ${Java_AIINTERFACE_SRC}/jlib/ DESTINATION ${Java_AIINTERFACE_DATA_DIR}/jlib FILES_MATCHING PATTERN "*.jar")
+endif (JNI_FOUND AND JAVA_FOUND AND EXISTS ${Java_AIINTERFACE_SRC} AND EXISTS ${Java_AIINTERFACE_SRC}/bin)
+

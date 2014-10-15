@@ -1,0 +1,74 @@
+[UNITINFO]
+{
+	Name=Frog;
+	UnitName=mynn_asub;
+	
+	//    Required Tags
+	BuildCostEnergy=6181;
+	BuildCostMetal=1122;
+	BuildTime=15338;
+	Category=mynn underwater level2 torp weapon notair;
+	Description=Sub Killer;
+	FootprintX=3;
+	FootprintZ=3;
+	MaxDamage=3963;
+	ObjectName=mynn_asub;
+	Side=Mynn;
+	SoundCategory=mynn_sub;
+	TEDClass=water;
+	
+	//    Movement
+	BrakeRate=0.36;
+	MovementClass=BOATd3;
+	Acceleration=0.2;
+	CanMove=1;
+	MaxVelocity=1.77;
+	TurnRate=340;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyMake=0.5;
+	EnergyStorage=0;
+	EnergyUse=0.5;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	ActivateWhenBuilt=1;
+	
+	//    Sight/Radar
+	SightDistance=225;
+	SonarDistance=489;
+	
+	//    Weapons
+	Weapon1=MYNN_TORPEDO;
+	wpri_badTargetCategory=VTOL;
+	BadTargetCategory=VTOL;
+	DamageModifier=2.63;
+	ExplodeAs=small_death;
+	SelfDestructAs=small_death;
+	NoChaseCategory=VTOL;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MinWaterDepth=15;
+	Waterline=20;
+	
+	//    Misc
+	Corpse=mynn_asub_dead;
+	SmoothAnim=1;
+	Upright=1;
+	Buildpic=mynn_asub.jpg;
+	
+	//    Not Used By TASpring
+}

@@ -1,0 +1,38 @@
+[xect_troop_dead]
+	{
+	world=All Worlds;
+	description=Carnage;
+	category=xect_corpses;
+	object=xect_troop_dead;
+	featuredead=xect_troop_heap;
+	footprintx=1;
+	footprintz=1;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=231;
+	energy=17;
+	damage=480;
+	reclaimable=1;
+	featurereclamate=gutscar;
+        seqnamereclamate=tree1reclamate;
+	}
+
+[xect_troop_heap]
+	{
+	world=All Worlds;
+	description=Carnage;
+	category=xect_heaps;
+	object=xect_troop_dead;
+	footprintx=1;
+	footprintz=1;
+	height=4;
+	blocking=0;
+	hitdensity=100;
+	metal=73;
+	energy=6;
+	damage=240;
+	reclaimable=1;
+	featurereclamate=gutscar;
+	seqnamereclamate=tree1reclamate;
+	}

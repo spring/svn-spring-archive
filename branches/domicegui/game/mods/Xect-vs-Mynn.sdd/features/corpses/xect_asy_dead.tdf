@@ -1,0 +1,17 @@
+[xect_asy_dead]
+	{
+	world=All Worlds;
+	description=Dead Structure;
+	category=xect_corpses;
+	object=xect_asy_dead;
+	footprintx=5;
+	footprintz=5;
+	height=4;
+	blocking=0;
+	hitdensity=350;
+	metal=450;
+	damage=1500;
+	reclaimable=1;
+	featurereclamate=oilspill1;
+	seqnamereclamate=tree1reclamate;
+	}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GUILayout >
+        <Window Type="TaharezLook/FrameWindow" Name="TooltipConsole.Window" >
+            <Property Name="Text" >Tooltip Console</Property>
+            <Property Name="TitlebarFont" Value="DejaVuSans-10" />
+            <Property Name="TitlebarEnabled" Value="True" />
+            <Property Name="UnifiedAreaRect" Value="{{0,10},{0,500},{0,260},{0,590}}" />
+            <Property Name="CloseButtonEnabled" Value="False" />
+            <AutoWindow NameSuffix="__auto_titlebar__" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" >Tooltip Console</Property>
+            </AutoWindow>
+            <AutoWindow NameSuffix="__auto_closebutton__" >
+                <Property Name="Visible" Value="False" />
+                <Property Name="Disabled" Value="True" />
+            </AutoWindow>
+            <Window Type="TaharezLook/StaticText" Name="TooltipConsole.Label" >
+                <Property Name="Text">TEST</Property>
+		<Property Name="Font" Value="DejaVuSans-6"/>
+                <Property Name="FrameEnabled" Value="False" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,5},{0,20},{0.0,40},{0.0,30}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+                <AutoWindow NameSuffix="__auto_hscrollbar__" >
+                    <AutoWindow NameSuffix="__auto_incbtn__" />
+                    <AutoWindow NameSuffix="__auto_decbtn__" />
+                    <AutoWindow NameSuffix="__auto_thumb__" />
+                </AutoWindow>
+                <AutoWindow NameSuffix="__auto_vscrollbar__" >
+                    <AutoWindow NameSuffix="__auto_incbtn__" />
+                    <AutoWindow NameSuffix="__auto_decbtn__" />
+                    <AutoWindow NameSuffix="__auto_thumb__" />
+                </AutoWindow>
+            </Window>
+        </Window>
+</GUILayout>

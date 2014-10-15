@@ -1,0 +1,38 @@
+[xect_plasma_dead]
+	{
+	world=All Worlds;
+	description=Carnage;
+	category=xect_corpses;
+	object=xect_plasma_dead;
+	featuredead=xect_plasma_heap;
+	footprintx=1;
+	footprintz=1;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=99;
+	energy=7;
+	damage=162;
+	reclaimable=1;
+	featurereclamate=bloodscar1;
+      	seqnamereclamate=tree1reclamate;
+	}
+
+[xect_plasma_heap]
+	{
+	world=All Worlds;
+	description=Carnage;
+	category=xect_heaps;
+	object=xect_plasma_dead;
+	footprintx=1;
+	footprintz=1;
+	height=4;
+	blocking=0;
+	hitdensity=100;
+	metal=12;
+	energy=4;
+	damage=81;
+	reclaimable=1;
+	featurereclamate=bloodscar1;
+      	seqnamereclamate=tree1reclamate;
+	}

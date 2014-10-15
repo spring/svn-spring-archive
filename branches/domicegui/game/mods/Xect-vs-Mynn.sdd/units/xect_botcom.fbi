@@ -1,0 +1,71 @@
+[UNITINFO]
+{
+	Name=Regal;
+	UnitName=xect_botcom;
+	
+	//    Required Tags
+	BuildCostEnergy=4026;
+	BuildCostMetal=1255;
+	BuildTime=10515;
+	Category=xect bot level1 weapon notair notsub ctrl_x;
+	Description=Attack X-bot;
+	FootprintX=6;
+	FootprintZ=6;
+	MaxDamage=3702;
+	ObjectName=xect_botcom;
+	Side=Xect;
+	SoundCategory=xcl_bot;
+	TEDClass=bot;
+	
+	//    Movement
+	BrakeRate=0.8;
+	MovementClass=tanksh2;
+	Acceleration=0.5;
+	CanMove=1;
+	MaxVelocity=1.47;
+	MaxSlope=20;
+	TurnRate=644;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyUse=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	ActivateWhenBuilt=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=435;
+	SonarDistance=0;
+	
+	//    Weapons
+	Weapon1=USA_BCANNON;
+	wpri_badTargetCategory=VTOL;
+	BadTargetCategory=VTOL;
+	DamageModifier=2.25;
+	ExplodeAs=BIG_UNITEX;
+	SelfDestructAs=BIG_UNIT;
+	NoChaseCategory=VTOL;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=35;
+	
+	//    Misc
+	SmoothAnim=1;
+	Upright=1;
+	Buildpic=xect_botcom.jpg;
+	
+	//    Not Used By TASpring
+}

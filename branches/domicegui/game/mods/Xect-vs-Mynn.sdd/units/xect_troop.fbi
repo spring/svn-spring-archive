@@ -1,0 +1,67 @@
+[UNITINFO]
+{
+	Name=Crab;
+	UnitName=xect_troop;
+	
+	//    Required Tags
+	BuildCostEnergy=2400;
+	BuildCostMetal=270;
+	BuildTime=5790;
+	Category=xect troop level1 weapon notair notsub ctrl_t;
+	Description=Infantry Bot;
+	FootprintX=1;
+	FootprintZ=1;
+	MaxDamage=1119;
+	ObjectName=xect_troop;
+	Side=Xect;
+	SoundCategory=kaj_ground;
+	TEDClass=troop;
+	
+	//    Movement
+	BrakeRate=0.183105469;
+	MovementClass=tanksh2;
+	Acceleration=0.091552734;
+	CanMove=1;
+	MaxVelocity=2.07;
+	MaxSlope=15;
+	TurnRate=800;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=420;
+	
+	//    Weapons
+	Weapon1=KAJ_EMG;
+	DamageModifier=0.8;
+	ExplodeAs=bug_death;
+	SelfDestructAs=bug_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=5;
+	
+	//    Misc
+	Corpse=xect_troop_dead;
+	SmoothAnim=1;
+	Buildpic=xect_troop.jpg;
+	
+	//    Not Used By TASpring
+}

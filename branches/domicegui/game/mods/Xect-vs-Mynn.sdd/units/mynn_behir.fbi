@@ -1,0 +1,73 @@
+[UNITINFO]
+{
+	Name=Behir;
+	UnitName=mynn_behir;
+	
+	//    Required Tags
+	BuildCostEnergy=8146;
+	BuildCostMetal=878;
+	BuildTime=19614;
+	Category=mynn rsu level2 noweapon notair notsub ;
+	Description=Lightning Bot;
+	FootprintX=2;
+	FootprintZ=2;
+	MaxDamage=3690;
+	ObjectName=mynn_behir;
+	Side=Mynn;
+	SoundCategory=fire_trp;
+	TEDClass=rsu;
+	
+	//    Movement
+	BrakeRate=0.15;
+	MovementClass=TANKHOVER3;
+	Acceleration=0.04;
+	CanMove=1;
+	MaxVelocity=2.1;
+	MaxSlope=14;
+	TurnRate=300;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyMake=0.4;
+	EnergyStorage=650;
+	EnergyUse=1.1;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=600;
+	SightDistance=908;
+	
+	//    Weapons
+	Weapon1=LIGHTNINGX;
+	wpri_badTargetCategory=VTOL;
+	BadTargetCategory=VTOL;
+	DamageModifier=2.67;
+	ExplodeAs=rsu_death;
+	SelfDestructAs=rsu_death;
+	NoChaseCategory=VTOL;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=12;
+	
+	//    Misc
+	Corpse=mynn_behir_dead;
+	SmoothAnim=1;
+	Upright=1;
+	Buildpic=mynn_behir.jpg;
+	
+	//    Not Used By TASpring
+}

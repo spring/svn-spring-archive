@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GUILayout >
+    <Window Type="DefaultWindow" Name="Root" >
+        <Property Name="InheritsAlpha" Value="False" />
+        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+        <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+        <Window Type="TaharezLook/FrameWindow" Name="ResourceBar.Window" >
+            <Property Name="Text" >Resources</Property>
+            <Property Name="TitlebarFont" Value="Commonwealth-10" />
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="TitlebarEnabled" Value="True" />
+            <Property Name="UnifiedAreaRect" Value="{{0.0624999,0},{0.0145835,0},{0.992187,0},{0.139583,0}}" />
+            <Property Name="CloseButtonEnabled" Value="False" />
+            <AutoWindow NameSuffix="__auto_titlebar__" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="Text" >Resources</Property>
+            </AutoWindow>
+            <AutoWindow NameSuffix="__auto_closebutton__" >
+                <Property Name="Visible" Value="False" />
+                <Property Name="Disabled" Value="True" />
+            </AutoWindow>
+            <Window Type="TaharezLook/StaticText" Name="ResourceBar.Metal.Label" >
+                <Property Name="Text" >METAL:</Property>
+                <Property Name="FrameEnabled" Value="False" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.0176471,0},{0.45993,0},{0.0878152,0},{0.858867,0}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+                <AutoWindow NameSuffix="__auto_hscrollbar__" >
+                    <AutoWindow NameSuffix="__auto_incbtn__" />
+                    <AutoWindow NameSuffix="__auto_decbtn__" />
+                    <AutoWindow NameSuffix="__auto_thumb__" />
+                </AutoWindow>
+                <AutoWindow NameSuffix="__auto_vscrollbar__" >
+                    <AutoWindow NameSuffix="__auto_incbtn__" />
+                    <AutoWindow NameSuffix="__auto_decbtn__" />
+                    <AutoWindow NameSuffix="__auto_thumb__" />
+                </AutoWindow>
+            </Window>
+            <Window Type="TaharezLook/ProgressBar" Name="ResourceBar.Metal.Status" >
+                <Property Name="StepSize" Value="0.01" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="CurrentProgress" Value="0" />
+                <Property Name="UnifiedAreaRect" Value="{{0.082353,0},{0.500001,0},{0.473529,0},{0.800003,0}}" />
+                <Window Type="TaharezLook/HorizontalScrollbar" Name="ResourceBar.Metal.Slider" >
+                    <Property Name="PageSize" Value="0" />
+                    <Property Name="StepSize" Value="1" />
+                    <Property Name="OverlapSize" Value="0" />
+                    <Property Name="DocumentSize" Value="1" />
+                    <Property Name="ScrollPosition" Value="0" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                    <AutoWindow NameSuffix="__auto_incbtn__" />
+                    <AutoWindow NameSuffix="__auto_decbtn__" />
+                    <AutoWindow NameSuffix="__auto_thumb__" />
+                </Window>
+            </Window>
+        </Window>
+    </Window>
+</GUILayout>

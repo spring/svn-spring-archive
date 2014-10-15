@@ -1,0 +1,3 @@
+
+"./pango-basic-fc.dll" BasicScriptEngineFc PangoEngineShape PangoRenderFc armenian:* bopomofo:* cherokee:* coptic:* cyrillic:* deseret:* ethiopic:* georgian:* gothic:* greek:* han:* hiragana:* katakana:* latin:* ogham:* old-italic:* runic:* canadian-aboriginal:* yi:* braille:* cypriot:* limbu:* osmanya:* shavian:* linear-b:* ugaritic:* common:
+"./pango-basic-win32.dll" BasicScriptEngineWin32 PangoEngineShape PangoRenderWin32 common:

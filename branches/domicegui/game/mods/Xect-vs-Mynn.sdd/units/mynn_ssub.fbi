@@ -1,0 +1,70 @@
+[UNITINFO]
+{
+	Name=Tadpole;
+	UnitName=mynn_ssub;
+	
+	//    Required Tags
+	BuildCostEnergy=835;
+	BuildCostMetal=98;
+	BuildTime=2019;
+	Category=mynn underwater level2 torp weapon notair;
+	Description=Scout Sub;
+	FootprintX=3;
+	FootprintZ=3;
+	MaxDamage=400;
+	ObjectName=mynn_ssub;
+	Side=Mynn;
+	SoundCategory=mynn_sub;
+	TEDClass=water;
+	
+	//    Movement
+	BrakeRate=1.36;
+	MovementClass=BOATd3;
+	Acceleration=0.05;
+	CanMove=1;
+	MaxVelocity=2.04;
+	TurnRate=622;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyMake=0.5;
+	EnergyStorage=0;
+	EnergyUse=0.5;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	SightDistance=225;
+	SonarDistance=489;
+	
+	//    Weapons
+	wpri_badTargetCategory=VTOL;
+	BadTargetCategory=VTOL;
+	ExplodeAs=rsu_death;
+	SelfDestructAs=rsu_death;
+	NoChaseCategory=VTOL;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MinWaterDepth=15;
+	Waterline=20;
+	
+	//    Misc
+	Corpse=mynn_ssub_dead;
+	SmoothAnim=1;
+	Upright=1;
+	Buildpic=mynn_ssub.jpg;
+	
+	//    Not Used By TASpring
+}

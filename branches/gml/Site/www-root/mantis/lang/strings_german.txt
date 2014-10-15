@@ -1,0 +1,7 @@
+
+$s_after = 'Nach';
+$s_on_or_after = 'Ab';
+
+# wiki related strings
+$s_wiki = 'Wiki';
+?>

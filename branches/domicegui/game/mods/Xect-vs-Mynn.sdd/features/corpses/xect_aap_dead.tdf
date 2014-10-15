@@ -1,0 +1,40 @@
+[xect_aap_dead]
+	{
+	world=All Worlds;
+	description=Wreckage;
+	category=xect_corpses;
+	featuredead=xect_aap_heap;
+        object=xect_aap_dead;
+	footprintx=2;
+	footprintz=2;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=1731;
+	damage=680;
+	reclaimable=1;
+	featurereclamate=smudge01;
+	seqnamereclamate=tree1reclamate;
+	}
+
+[xect_aap_heap]
+	{
+	world=All Worlds;
+	description=Wreckage;
+	category=xect_heaps;
+	object=2x2a;
+	footprintx=2;
+	footprintz=2;
+	height=4;
+	blocking=0;
+	hitdensity=100;
+	metal=786;
+	damage=450;
+	reclaimable=1;
+
+	featurereclamate=smudge01;
+	seqnamereclamate=tree1reclamate;
+	}
+
+
+

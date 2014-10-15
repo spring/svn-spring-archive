@@ -1,0 +1,44 @@
+[mynn_disintegrator_blast]
+	{
+	id=248;
+	name=blast missile;
+	rendertype=1;
+	lineofsight=1;
+	turret=1;
+
+	model=blastmis;
+
+	range=320;
+	reloadtime=1.25;
+	weapontimer=4;
+	energypershot=100;
+	weaponvelocity=100;
+	areaofeffect=48;
+	soundtrigger=1;
+	soundstart=com_mis;
+	soundhit=bmexp;
+	firestarter=70;
+	beamweapon=1;
+	smokedelay=.1;
+	smoketrail=1;
+	tolerance=9000;
+	commandfire=1;
+	noexplode=1;
+
+	explosiongaf=mynnfx;
+	explosionart=xboom;
+
+	waterexplosiongaf=mynnfx;
+	waterexplosionart=h2o_boom;
+
+	lavaexplosiongaf=mynnfx;
+	lavaexplosionart=xboom;
+
+	startsmoke=1;
+	soundstart=comgunstart;
+	soundhit=mhit1;
+	[damage]
+		{
+		default=500;//3200;
+		}
+	}

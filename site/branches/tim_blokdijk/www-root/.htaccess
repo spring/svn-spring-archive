@@ -1,0 +1,4 @@
+Options +MultiViews
+MultiviewsMatch Handlers Filters
+LanguagePriority en nl de fr ca cs da el eo es et he hr it ja ko ltz nn no pl pt pt-BR ru sv zh-CN zh-TW
+ForceLanguagePriority Prefer Fallback

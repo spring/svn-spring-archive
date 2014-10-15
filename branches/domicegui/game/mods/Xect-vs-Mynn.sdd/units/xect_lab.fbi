@@ -1,0 +1,61 @@
+[UNITINFO]
+{
+	Name=Aircraft Plant;
+	UnitName=xect_lab;
+	
+	//    Required Tags
+	BuildCostEnergy=1100;
+	BuildCostMetal=1000;
+	BuildTime=3530;
+	Category=xect PLANT ctrl_l level1 noweapon notair notsub ;
+	Description=Produces Aircraft;
+	FootprintX=6;
+	FootprintZ=6;
+	MaxDamage=2065;
+	ObjectName=xect_lab;
+	Side=Xect;
+	SoundCategory=xcllab;
+	TEDClass=PLANT;
+	
+	//    Movement
+	CanMove=1;
+	MaxSlope=10;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap= cccccc cccccc cccccc cccccc cccccc cccccc;
+	
+	//    Construction
+	Builder=1;
+	WorkerTime=100;
+	
+	//    Resources
+	EnergyStorage=0;
+	EnergyUse=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=150;
+	
+	//    Weapons
+	ExplodeAs=LARGE_BUILDINGEX;
+	SelfDestructAs=LARGE_BUILDING;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	Corpse=xect_lab_dead;
+	SmoothAnim=1;
+	Buildpic=xect_lab.jpg;
+	
+	//    Not Used By TASpring
+}

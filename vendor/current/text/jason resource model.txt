@@ -1,0 +1,14 @@
+Right then, the resource model…
+
+So far we have the game centered around mines. These burrow into the ground to extract resources from the planet. A simple mine, which burrowed to a shallow depth, would not produce much material. As the game progresses, you can set the mine to start burrowing deeper and deeper, increasing material production. However, having one huge mine that gives you all your resources will be a good target for the enemy. You would have two options here – (i) to build a very heavy defence around one or two deep mines or (ii) build lots of shallow mines in different places.
+
+Mines will supply material to reasonably close buildings, each building increasing the mine’s AoE in turn, so you could start spreading your base outwards. Any mines located distantly would have to use convoys to get material back to base.
+
+I think this model compensates for most styles of play. You could either build around one deep mine (requiring no management of convoys, but giving your base a weak point, which requires defence), or you could build several shallow mines (removing any major weak point from your base, but requiring more management). Or you could build several small bases, around several small mines. Or several small bases around one deep mine. Or several deep mines supplying one base. Etc.
+
+In addition this model would let two mines ‘attached’ to a base produce a combined material supply to the whole base area – much like the combined AoE idea a couple of you mentioned.
+
+Then throw in the various weaponry you can mount on mines, and the underground units that can attack the mineshaft…
+
+There would be much scope for strategy here, and we’re still messing around with the details. It seems to work (for now). If you could point out any obvious flaws it would be much appreciated!
+

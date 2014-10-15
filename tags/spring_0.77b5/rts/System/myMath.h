@@ -1,0 +1,122 @@
+#ifndef MYMATH_H
+#define MYMATH_H
+
+#include "Game/GlobalConstants.h"
+#include "Vec2.h"
+#include "float3.h"
+
+#define MaxByAbs(a,b) (abs((a)) > abs((b))) ? (a) : (b);
+
+#define SHORTINT_MAXVALUE 32768
+
+#define HEADING_CHECKSUM_1024 0x617a9968
+#define HEADING_CHECKSUM_4096 0x3d51b476
+#define NUM_HEADINGS 4096
+
+#if (NUM_HEADINGS == 1024)
+#  define HEADING_CHECKSUM	HEADING_CHECKSUM_1024
+#elif (NUM_HEADINGS == 4096)
+#  define HEADING_CHECKSUM	HEADING_CHECKSUM_4096
+#else
+#  error "HEADING_CHECKSUM not set, invalid NUM_HEADINGS?"
+#endif
+
+extern float2 headingToVectorTable[NUM_HEADINGS];
+
+inline short int GetHeadingFromFacing(int facing)
+{
+	switch (facing) {
+		case 0: return 0;		// south
+		case 1: return 16384;	// east
+		case 2: return  32767;	// north == -32768
+		case 3: return -16384;	// west
+		default: return 0;
+	}
+}
+
+inline short int GetHeadingFromVector(float dx, float dz)
+{
+	float h = 0.0f;
+	if (dz != 0.0f) {
+		float d = dx / dz;
+
+		if (d > 1.0f) {
+			h = (PI * 0.5f) - d / (d * d + 0.28f);
+		} else if (d < -1) {
+			h = -(PI * 0.5f) - d / (d * d + 0.28f);
+		} else {
+			h = d / (1.0f + 0.28f * d * d);
+		}
+
+		if (dz < 0.0f) {
+			if (dx > 0.0f)
+				h += PI;
+			else
+				h -= PI;
+		}
+	} else {
+		if (dx > 0.0f)
+			h = PI * 0.5f;
+		else
+			h = -PI * 0.5f;
+	}
+
+	h *= SHORTINT_MAXVALUE / PI;
+
+	// Prevents h from going beyond SHORTINT_MAXVALUE.
+	// If h goes beyond SHORTINT_MAXVALUE, the following
+	// conversion to a short int crashes.
+	// if (h > SHORTINT_MAXVALUE) h = SHORTINT_MAXVALUE;
+	// return (short int) h;
+
+	int ih = (int) h;
+	if (ih == -SHORTINT_MAXVALUE) {
+		// ih represents due-north, but modulo operation
+		// would cause it to wrap around from -32768 to 0
+		// which means due-south
+		ih += 1;
+	}
+	ih %= SHORTINT_MAXVALUE;
+	return (short int) ih;
+}
+
+struct shortint2 {
+	short int x, y;
+};
+
+// vec should be normalized
+inline shortint2 GetHAndPFromVector(const float3& vec)
+{
+	shortint2 ret;
+
+	// Prevents ret.y from going beyond SHORTINT_MAXVALUE.
+	// If h goes beyond SHORTINT_MAXVALUE, the following
+	// conversion to a short int crashes.
+	//this change destroys the whole meaning with using short ints....
+	int iy = (int) (streflop::asin(vec.y) * (SHORTINT_MAXVALUE / PI));
+	iy %= SHORTINT_MAXVALUE;
+	ret.y = (short int) iy;
+	ret.x = GetHeadingFromVector(vec.x, vec.z);
+	return ret;
+}
+
+inline float3 GetVectorFromHeading(short int heading)
+{
+	float2 v = headingToVectorTable[heading / ((SHORTINT_MAXVALUE/NUM_HEADINGS) * 2) + NUM_HEADINGS/2];
+	return float3(v.x, 0.0f, v.y);
+}
+
+float3 GetVectorFromHAndPExact(short int heading,short int pitch);
+
+inline float3 CalcBeizer(float i, const float3& p1, const float3& p2, const float3& p3, const float3& p4)
+{
+	float ni=1-i;
+
+	float3 res((p1 * ni * ni * ni) + (p2 * 3 * i * ni * ni) + (p3 * 3 * i * i * ni) + (p4 * i * i * i));
+	return res;
+}
+
+float LinePointDist(const float3& l1, const float3& l2, const float3& p);
+float3 ClosestPointOnLine(const float3& l1, const float3& l2, const float3& p);
+
+#endif /* MYMATH_H */

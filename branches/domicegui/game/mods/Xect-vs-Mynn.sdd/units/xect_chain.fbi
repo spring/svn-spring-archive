@@ -1,0 +1,67 @@
+[UNITINFO]
+{
+	Name=Drill;
+	UnitName=xect_chain;
+	
+	//    Required Tags
+	BuildCostEnergy=950;
+	BuildCostMetal=87;
+	BuildTime=2272;
+	Category=xect TANK level1 weapon notair notsub ctrl_v;
+	Description=Chain Gun Tank;
+	FootprintX=1;
+	FootprintZ=1;
+	MaxDamage=386;
+	ObjectName=xect_chain;
+	Side=Xect;
+	SoundCategory=xcl_tank;
+	TEDClass=TANK;
+	
+	//    Movement
+	BrakeRate=0.004;
+	MovementClass=tanksh2;
+	Acceleration=0.014;
+	CanMove=1;
+	MaxVelocity=2.22;
+	MaxSlope=12;
+	TurnRate=320;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=375;
+	
+	//    Weapons
+	Weapon1=USA_ASSAULT_GUN;
+	DamageModifier=0.29;
+	ExplodeAs=SMALL_UNITEX;
+	SelfDestructAs=SMALL_UNIT;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=12;
+	
+	//    Misc
+	Corpse=xect_chain_dead;
+	SmoothAnim=1;
+	Buildpic=xect_chain.jpg;
+	
+	//    Not Used By TASpring
+}

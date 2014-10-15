@@ -1,0 +1,60 @@
+[UNITINFO]
+{
+	Name=Wind Turbine;
+	UnitName=xect_wind;
+	
+	//    Required Tags
+	BuildCostEnergy=500;
+	BuildCostMetal=50;
+	BuildTime=1200;
+	Category=xect energy level1 noweapon notair notsub ;
+	Description=Converts Wind to Energy;
+	FootprintX=4;
+	FootprintZ=4;
+	MaxDamage=156;
+	ObjectName=xect_wind;
+	Side=Xect;
+	SoundCategory=mynn_wind;
+	TEDClass=energy;
+	
+	//    Movement
+	MaxSlope=10;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=ooooooooo;
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=0;
+	EnergyUse=0;
+	MetalStorage=0;
+	WindGenerator=30;
+	
+	//    Abilities
+	CanFly=0;
+	ActivateWhenBuilt=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=315;
+	
+	//    Weapons
+	ExplodeAs=small_death;
+	SelfDestructAs=small_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	SmoothAnim=1;
+	Buildpic=xect_wind.jpg;
+	
+	//    Not Used By TASpring
+}

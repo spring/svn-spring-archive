@@ -1,0 +1,58 @@
+<html>
+<head>
+	<script type="text/javascript" src="default.js"></script>
+	<script type="text/javascript">
+		currentOpacityFadeOff = 100;
+
+		function resizeBar(){
+			x = document.getElementById('bar');
+			if (getPercentValue(x.style.width) > 26) {
+				x.style.width = (getPercentValue(x.style.width) - 4) + '%';
+				x.style.left = (getPercentValue(x.style.left) + 0.82) + '%'
+				setTimeout("resizeBar()",40);
+			}else{
+				sendData('back');
+			}
+		}
+
+		function fadeOff(){
+			sendData('back');
+			/*currentOpacityFadeOff = currentOpacityFadeOff - 25;
+			document.getElementById('contentBlock').style.filter = "alpha(opacity="+currentOpacityFadeOff+")";
+			if (currentOpacityFadeOff > 0) {
+				setTimeout("fadeOff()",40);
+			}else{
+				document.getElementById('contentBlock').style.visibility = 'hidden';
+				resizeBar();
+			}*/
+		}
+	</script>
+	<style type="text/css">
+		@import "default.css";
+
+		a img{
+			border: 0;
+		}
+	</style>
+</head>
+<body style="background-color: #[clBtnFace]" onload="selectOption('SkinList','[SelectedSkin]');">
+	<img src="images\background.jpg" style="height:100%;position: absolute; top:0;left:0;z-index:-1"  />
+	<div id="bar" style="position:absolute;left:10%;top:0;width:80%;height:100%;filter : alpha(opacity=44);background-color: black"></div>
+	<div id="contentBlock" style="border: 0;position:absolute;left:10%;top:0;width:80%;height:100%;">
+		<div style="margin:10px 10px 20px 10px;">
+			<h1>Settings</h1>
+		</div>
+		<div style="margin:10px">
+			<form method="POST" action="url" enctype="x-www-form-urlencoded">
+				<div style="margin-bottom: 10px">Game settings : <a href="lobby:gamesettings" class="button" onmouseover="sendData('playsound:button.wav');">Open</a></div>
+				<div style="margin-top:10px">
+					Player name :<input type="text" value="[PlayerName]" name="PlayerName" id="PlayerNameInput" size="15"/>
+				</div>
+			</form>
+		</div>
+		<div class="footer">
+			<a href="#" class="button" style="float: left;" onmouseover="sendData('playsound:button.wav');" onclick="sendData('changemyname:'+getElementById('PlayerNameInput').value);fadeOff();">Return to main menu</a>
+		</div>
+	</div>
+</body>
+</html>

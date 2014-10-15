@@ -1,0 +1,9 @@
+- OnOff1, OnOff2: JvLED component (see JVCL)
+- locked.bmp, unlocked.bmp: taken from http://dean.edwards.name/base/ide/style/icons/16x16/
+  (slightly modified)
+
+Notes:
+- NoPreview.bmp: text was drawn using font 'Helvetica', bold, size 11.
+- x.bmp (1 <= x <= 10): 'Helvetica', bold, size 10.
+
+See "! readme !.txt" for credits for specific graphics.

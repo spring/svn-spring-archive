@@ -1,0 +1,95 @@
+.spinInput, .spinContainer
+{
+  /* Change this to modify the default spin control background color*/
+  background-color: transparent;
+  border: 1px solid #6c4a36;
+  margin: 1px;
+  padding: 0;
+}
+
+.spinBox .spinInput, .spinBox .spinContainer
+{
+  border: 1px solid black;
+}
+
+.spinContainer
+{
+  font-size: 0px;
+  height: 18px;
+}
+
+.spinInput
+{
+  float:left;
+  top: 1px;
+  left: 2px;
+  height: 17px;
+  border: 0px;
+  /* Change this to modify the default spin control font, font color, and font size*/
+  color: #6c4a36;
+  font-size: 9pt;
+  font-family: Arial;
+}
+
+.spinBox .spinInput
+{
+  color: black;
+  border: 0px;
+}
+
+.spinUpBtn, .spinUpBtnHover, .spinUpBtnPress, .spinDownBtn, .spinDownBtnHover, .spinDownBtnPress
+{
+  float:left;
+  width: 15px;
+  height: 8px;
+  right: 2px;
+  background-image: url('spin_control_buttons.gif');
+  background-repeat: no-repeat;
+  /* Change this to modify the default button color*/
+  background-color: #000000;
+}
+
+.spinBox .spinUpBtn, .spinBox .spinUpBtnHover, .spinBox .spinUpBtnPress, .spinBox .spinDownBtn, .spinBox .spinDownBtnHover, .spinBox .spinDownBtnPress
+{
+  background-image: url('spin_control_buttons_box.gif');
+}
+
+.spinUpBtn, .spinUpBtnHover, .spinUpBtnPress
+{
+  top: 2px;
+}
+
+.spinDownBtn, .spinDownBtnHover, .spinDownBtnPress
+{
+  top: 10px;
+}
+
+.spinUpBtn
+{
+  background-position:0px 0px;
+}
+
+.spinUpBtnHover
+{
+  background-position:0px -16px;
+}
+
+.spinUpBtnPress
+{
+  background-position:0px -32px;
+}
+
+.spinDownBtn
+{
+  background-position:0px -8px;
+}
+
+.spinDownBtnHover
+{
+  background-position:0px -24px;
+}
+
+.spinDownBtnPress
+{
+  background-position:0px -40px;
+}

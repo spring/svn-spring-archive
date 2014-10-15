@@ -1,0 +1,63 @@
+[greenrubble]
+	{
+	world=all worlds;
+	description=Charred Dirt;
+	category=blood;
+	animating=0;
+	footprintx=2;
+	footprintz=2;
+	height=0;
+	filename=oilspill;
+	seqname=greenrubbleshad;
+	seqnameshad=greenrubbleshad;
+	featuredead=greenrubble;
+	energy=10;
+
+	seqnameburn=oilburn;
+	burnmin=5;
+	burnmax=15;
+	sparktime=5;
+	spreadchance=30;
+	burnweapon=OilBurn;
+
+	animtrans=0;
+	shadtrans=1;
+	flamable=1;
+	reclaimable=0;
+	reproduce=0;
+	reproducearea=6;
+	hitdensity=10;
+	blocking=0;
+	}
+
+[greenrubbleshad]
+	{
+	world=all worlds;
+	description=Charred Dirt;
+	category=blood;
+	animating=0;
+	footprintx=2;
+	footprintz=2;
+	height=0;
+	filename=oilspill;
+	seqname=greenrubbleshad;
+	seqnameshad=greenrubbleshad;
+	featuredead=greenrubble;
+	energy=10;
+
+	seqnameburn=oilburn;
+	burnmin=5;
+	burnmax=15;
+	sparktime=5;
+	spreadchance=30;
+	burnweapon=OilBurn;
+
+	animtrans=0;
+	shadtrans=1;
+	flamable=1;
+	reclaimable=0;
+	reproduce=0;
+	reproducearea=6;
+	hitdensity=10;
+	blocking=0;
+	}

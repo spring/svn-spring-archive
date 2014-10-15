@@ -1,0 +1,42 @@
+<html>
+<head>
+	<script type="text/javascript" src="default.js"></script>
+	<style type="text/css">
+		@import "default.css";
+
+		a img{
+			border: 0;
+		}
+	</style>
+</head>
+<body style="background-color: #[clBtnFace]">
+	<img src="images\background.jpg" style="height:100%;position: absolute; top:0;left:0;z-index:-1"  />
+	<div id="bar" style="position:absolute;left:10%;top:0;width:80%;height:100%;filter : alpha(opacity=44);background-color: black"></div>
+	<div style="border: 0;position:absolute;left:10%;top:0;width:80%;height:100%;margin:0;padding:0;">
+		<table cellspacing="5" cellpadding="0" style="height:100%;width: 100%">
+			<tr>
+				<td style="height; 30px">
+					<a href="lobby:localfile:skirmish.html" class="button" onmouseover="sendData('playsound:button.wav');" style="float: left">Cancel</a>
+					<a href="lobby:sortmapsby:name" style="float: right" class="sortType" id="SortByName">Sort by name</a><a href="lobby:sortmapsby:size" style="float: right" class="sortType" id="SortBySize">Sort by size</a><br/>
+				</td>
+			</tr>
+			<tr>
+				<td style="height:100%;">
+					<div style="height:100%;width:100%;overflow: auto;">
+					[MAPLIST]
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
+
+<script type="text/javascript">
+	if ('[MAPSORT]' == 'size') {
+		document.getElementById('SortBySize').className = 'sortTypeSelected';
+	}
+	if ('[MAPSORT]' == 'name') {
+		document.getElementById('SortByName').className = 'sortTypeSelected';
+	}
+</script>

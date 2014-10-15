@@ -1,0 +1,14 @@
+[oilburn]
+	{
+	id=250;
+	name=burning oil;
+	unitsonly=1;
+
+	areaofeffect=48;
+	edgeeffectiveness=0.5;
+
+	[damage]
+		{
+		default=75;
+		}
+	}

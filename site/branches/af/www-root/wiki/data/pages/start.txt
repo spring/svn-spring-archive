@@ -1,0 +1,31 @@
+~~NOCACHE~~
+~~NOTOC~~
+====== Spring Engine Site ======
+
+
+This is a blank page I created because this site doesnt have a so much as a front-page at the moment
+
+Somebody should really go and use those funky html and php tags to completely redo this page using fancy css and div containers so it doesn't look like a bog standard wiki page!
+
+[[moomins]] <- random wiki page to test the rss feeds for recent changes
+
+
+===== Damn you competitions =====
+
+Competition is nasty roadblock, must crush entrants with their pretty but nonfunctional websites
+
+TODO: Schedule anvil drops
+
+
+===== Compatibility =====
+
+This site is working fine under safari for windows, safari for ipods, IE7, and Firefox 2+3
+
+
+===== Forum rss feed =====
+
+{{rss>/forums/rss.php?f=2}}
+
+===== Recent wiki changes =====
+
+{{rss>/wiki/feed.php}}

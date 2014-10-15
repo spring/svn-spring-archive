@@ -1,0 +1,54 @@
+
+##1#To make new boxes when you are hosting, you can use the Auto-boxing options (right click on the minimap), or draw them yourself. To draw a box, simply hold SHIFT and then draw it on the minimap. You can also move it with CTRL + Drag.
+##2#The 'Lineage' Game end condition is an improved 'Game ends if commander dies'. If your commander dies, every units you've made will explode. So you can't share units just before your commander dies.
+##1#To kick, change the color, change the team or change every players parameters when you are hosting a battle, use the Players context menu : right click on someone in the Battle Window players list.
+##1#To make your hosting experience easier, you can use the Admin menu. You can save the boxes for the current map, they will be reloaded each time you will load the map. You can fix the colors to have different colors for every players. You can balance the teams ...
+##2#Pick a team, an id, a color and a side, or check the Spectator option, then click on 'Im ready'.
+##1#To delete a box, move your mouse cursor over a box and then hit the "Delete" key. You can also change the number of a box by moving your mouse cursor over a box and hit one of the number key : 1 2 ...
+##1#You can pick your map using the 'More maps' button next to the minimap or using the down arrow button next to 'More maps'. The map list window display more informations like the minimap or the size.
+##0#If you want to see the whole server player list, switch to the $local tab.
+##0#If you want to join a new channel type : /j #channel_name
+##0#If you want to rename your account, type : /rename new_name
+##0#If you want to play competitive games, you can join or host Ladder battles. Each game you win increase your rating points,and each game you loose decrease it. The three best players of each ladder (with at least 15 players and 45 battles) have a cup before their name in the lobby. You can have more than one cup.
+##0#You can make groups of players. Players in a group are highlighted in the player list with the group's color. You can sort the players by group. Few options are available per groups (highlight battles, auto-kick, notify when hosting ...) . To add someone to a group, right click on his nick and use the 'Add to group' menu. You can manage the groups (enable or disable an option, delete a group etc) with the Manage Group Window (right click on any player nick then 'Manage group'). The manage goup window is also available in the Options -> Programs -> Manage groups.
+##0#You can right click on a player name in the chat to display the Player context menu. You can also double-click on it to open a private chat tab.
+##0#In a ladder battle, you can use the bottom right button of the Battle Window to read the ladder rules, refresh the ranks and cups or refresh the available maps.
+##0#You can filter the battles to only see the battles you like. To display the filter panel, use bottom up arrow in the Main Window. You can save your filters in a preset and switch from one preset to another by selecting it in the preset list.
+##0#You can change the font name and colors in the Options -> Programs -> Colors and Font.
+##0#You can mark the unknown map and mods with a special colors in the battle list : Options -> Interface -> Mark unknown maps/mods
+##0#You can hide the 'Quick join panel' between the chat and the battle list: Options -> Interface -> Display Quickjoin panel
+##0#You can disable SpringDownloader in Options -> Program -> Enable Spring Downloader
+##0#You can add notifications (Options -> Program -> Notifications) when a player join a channel, a player join the battle you are participating in, a player join a battle you are hosting, a player changes his status to in-battle, a player host a battle with a specified mod.
+##0#You can switch between the Main Window and the Battle Window with the F2 key.
+##2#You can see units names and icons in the disable tab of the Battle Window (but loading will be a bit slower) : Options -> Interface -> Load units icons and names when joining
+##0#You can auto complete name with the TAB key, by default it will auto complete the name using the complete list of players, but you can check the Program -> Interface -> Auto-completion from current channel's players list option.
+##0#You can add commands te be executed when logging in : Options -> Server -> Performs
+##0#Every battle you play is recorded in Spring\Demos\ . Open the Replays Window to list them.
+##4#You can filter the displayed replays with the top down arrow. You can rate the replay, add comments or delete it.
+##0#You can move the column of the Main Window's Battle list, the Battle Window's Player list or the Replay List by dragging them to left or right.
+##0#You can rate your maps and add comments to it in the Map List Window : 'More maps' in the Battle Window next to the minimap.
+##0#You can disable all notifications in the state menu : Down arrow next to the top left login button of the Main Window.
+##0#You can highlight specific words and get notifications when they are found : Options -> Program -> Highlighting
+##0#You can host replays to share your battle experiences or make a battle debriefing with your friends : Host battle -> Host replay.
+##0#If the chat logging is enabled (Options -> Program -> Enable logging), every message in every channel or private chat will be saved in Spring\lobby\logs.
+##0#You can resize the top panel in the Battle Window to get a bigger minimap. You can also respect or not the minimap ratio : right click on it and enable/disable the 'Keep Ratio'.
+##4#To delete multiple replays, you can use the filters to only display the ones you want to remove (eg: replays with file size < 20kB) and then use the 'Delete all visible' button.
+##4#To change the replay's grade and/or comment, use the 'Save' button after the changes are made.
+##4#The green players in the list are the winners.
+
+The winning team is only stored in the replay if you got the battle end statistics page. The players statistics are only stored if the player didn't leave before the end of the game.
+##0#You can double click on a map name (eg: double click on the map_name.smf when someone suggests a map) in the chat to load it if you are hosting or not in a battle.
+##1#If you join an autohost which is not detected, you can show the autohost interface using the /isspadsautohost if it's a spads autohost or /isspringieautohost for springie. You can also disable the autohost interface with /isntautohost.
+##1#You can switch from the normal 3d minimap view to the metal/ressources map view with the F4 key.
+##1#You can move around the 3d minimap using by dragging with the middle button of your mouse or with both left and right buttons.
+##0#You can move panels and setup your custom interface layout when the panels are not locked (Options -> panels locked). You can also use the layout scripts to get more complex layout options. If your user interface layout is broken, you can reset it : Options -> Reset layout. You can also save your custom layouts.
+##1#You can disable the minimaps cache loading at start to lower the TASClient memory usage. You can also disable the Units icons loading when joining a game to speed the loading up and lower the memory usage. Disabling the heightmap and ressourcesmap loading will also speed up the game joining and lower the memory usage.
+##0#You can move the columns in the battle list and battle room player list.
+##0#You can list the server channels with the /list or /channels command.
+##1#You can right click on the team/id text box to get a one click selection context menu with all possible values.
+##0#You can force a game to start, either to start the game if someone is not ready, or to join a game which is already launched but not started (players are still not ready or are waiting for every one to finish loading).
+##0#You can save your filters settings to a preset and switch from one preset to another in one click. In the "Quick join panel", you can setup the "Play now" and "Spectate now" to auto join battles that fit a list of filters preset with priority and sorting options.
+##0#If you never use the $local player list, you can uncheck the "Sort the $local player list" options (Options -> Lobby options -> Interface) to save cpu usage.
+##0#You can make the lobby ask you if you want to keep and/or upload replays after each game (Options -> Lobby options -> Interface -> Ask what to do with replay after each battle)
+##0#You can auto join a channel at start (Right click on the chat -> Auto join). You can also open a chat logs using the same context menu.
+##0#You can make different spring settings profile, and switch from one to another using the Battleroom Spring settings button. To change the spring settings profiles go to Options->Lobby options->Program->Spring settings profiles.

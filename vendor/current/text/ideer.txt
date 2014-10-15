@@ -1,0 +1,192 @@
+- Nyckelord
+   - Easy to learn. Hard to master.
+   - When realism and fun clash, fun wins  (Sid Meyer)
+- 3D...normalt arbetar man dock top-down
+- Mousewheel zoomar ut/in
+- Så lite mikrostyrning som möjligt....
+- I rpincip ska alla enheter byggas upp av moduler
+- Man ska själv kunna programmera styrprogram till ens enheter 
+ (förutsatt att de har en controldatormodul)
+- Ska tex kunna köpa olika snabba processorer till ens enheter
+  och olika bra radars osv...
+- Supply line concept
+- Vrak som i TA
+- Ska kunna välja om man ska eller inte ska kunna köra unitprogram som inte den andra spelaren har...
+- Olika nivå av delegering...dvs en enhet kan vara ledare för andra...ger man en order till en ledare så kan den i sin tur ge olika order till andra
+- Definera program för olika "roller". Tex kan  "minläggare" vara en roll.
+  Att ha en roll innebär att man måset inplementera ett visst/vissa interface, tex MineLayer
+  Programmeringen av en roll ska gå att göra oavsett om det är en vehichle eller kbot-minläggare, bara de implementerar MineLayer-interfacet.
+- Olika game modes förutom vanliga där man bara ska vinna...domination, capture the flag, först att bygga en viss byggnad, först att nå ett visst antal enheter osv
+- Vore trevligt om allt utanför själva motorn är som moduler som kan pluggas in och ut i runtime. 
+- Måste gå att kunna interagera i runtime med enheter och motorn via någon konsoll eller så (om man utvecklar)
+- Kunna borra ner metalextraktorer olika djupt (?). Medan man borrar så producerar inte extractorn någon metall.
+  Dessutom kostar det energi att borra.
+- Bygga metallextractors varsomhelst...dvs inga särskilda metallpatchar. Marken är olika resursrik på olika ställen. Något måste
+  dock göra så man inte kan bygga hur tätt som helst. Kanske en extractor "suger ut" resurserna inom en viss radie eller så.
+  Om två gruvors utsugninsradie överlappar kommer de få dela på inkomsten för den överlappande arean.
+- Radioaktivitet i marken som påverkar olika enehter/instrument
+- Kanske annat namn än "metall" eftersom man utvinner det lite varsomhelst.
+- Alternativ resursmodell:
+   - Energi och metall som i TA
+   - Metallextractorer (byggs av byggenehter)...samlar in själva metallen (måste hämtas med harvester eller pipeline dock)
+   - Harvesters (hämtar metallen från extractor)
+   - Pipelines (transportera automatiskt, dras under jorden (blir som TA ungefär)
+   - Metal makers (som i TA)
+- Unit energy (se Jason RTS diskussion)
+  - Metall behövs för att BYGGA saker. Energy behövs för att enheter och byggnader ska FUNGERA.
+    Olika enheter/byggnader drar olika mycket energy. Dels beroende på vad det är för enhet/byggnad 
+    och vad de har för bygghastighet men också beroende på vad de bygger förstås. 
+  - Se "unit energy.txt"
+  - Generatorer och batterier (som är inbyggda i enheten).
+  - Vissa enehter förbrukar massa energi, vissa inget alls. Vissa producerar energi.
+  - Visa unit energy innuti health baren...det blir som två bars i en. De enheter som inte kan gå back
+    i unit energy (som aldrig förbrukar mer än de producerar) kommer ju alltid att ha en full 
+    unit energy bar (så det kommer mer se ut om en bakrundsfärg som är kanske mörkblå istället
+    för svart som i TA)
+- Skilj på mjuk och hårdvara i enheter osv (i princip de flesta spelobjekt). Hårdvaran definerar grundläggande logik
+  och vilka förutsättningar som gäller för enheten. Hårdvaran skrivs i en DLL (alltså direkt i C++).
+  Mjukvaran är programmet som styr enheten givet den hårdvara som finns tillgänglig
+- En viss hårdvara (tex en tank) ska kunna använda andra hårdvaror (moduler typ radar osv).
+- Ska även gå att skriva reglerkod i skriptspråk. Om DLL eller skriptspråk används ska vara transparent.
+  Via skriptspråket har man dock inte tillgång till lika mycket som i C++ (av förklariga skäl).
+- Ska gå att konfigurera i princop allt...tangenter, gränssnitt osv osv
+- Konfigurerbart gränssnitt:
+   - Baserat på olika HUD:ar som kan...
+     - Slås på/av på enkelt
+     - Göras transparenta eller inte
+     - Placeras på godtyckligt ställe på skärmen
+     - Utclickning av mönster/rader som med nya recordern (Tahoook)
+   - Kunna knyta musknappar och tangentbordsknappar/kombinationer till godtyckliga funktioner. Dessa "funktioner" ska
+     även kunna aktiveras på andra sätt...detta kan generaliseras till att ett "event" kan utlösa att en "funktion" körs
+   - Konsoll
+   - Vore trevligt om man kunde lägga upp "shortcuts" till byggmenyer på någon "toolbar" någonstans på skärmen.
+     Alltså så man slipper markera en enhet/byggnad för att få upp byggmenyn. På så viss kan man tex köa
+     upp 100 flashar till i en fabrik i sin hembas trots att man behåller fokus (skärmbilden) i fiendebasen.
+     Att klicka på shortcutten blir precis som att klicka på enheten/byggnaden. På samma sätt man kunna
+     knyta tangentbordsshortcuts till en viss enhet/byggnad (som i TA).
+   - Möjlighet till oändligt antal shortcuts (inte bara Ctrl-0 till 9 som i TA) 
+- Försök att eftersträva komplexitet utan att det blir svårt att använda
+  Jämför tex med att suga vrak och stenar i TA. Nybörjare tänker inte ens på att de finns
+  där och man klarar sig utan dom under inlärningsperioden. Men för att bli bättre måste
+  man lära sig att suga osv.. :-)
+- Varje enhet ska kunna ha olika pansar på olika delar av kroppen. T.ex. skulle man kunna ha en mycket kraftfull
+  tank (typ Goliath) men som är långsam och svänger långsamt. Om den hade starkast pansar i fronten och aningens
+  svagare pansar på sidorna och mycket svagare bakpå och svagt ovanifrån (bomber!) och underifrån (minor!)
+  skulle anfallaren behöva tänka till mer när han attackerar och försvareren måste tänka på understöd osv
+  för de långsamma tanksen. Pansaret skulle kunna defineras i hårdvarudefinitionen av enheten (DLL).
+- Vore kanske coolt om man kunde bygga olika satelliter som hamnar i rymden (syns inte på kartan)...tex
+   - Övervakningssatellit: Kan ta spionbilder. Kan fotografera kartan om man spelar unmapped tex
+   - Doomsdaysatellit: Kan skicka ond laser ner på kartan 
+   - osv...
+- Värme kanske ska kunna spela roll...tex värmesökande missiler osv...
+- Radarstörare
+- Dag/natt cykler
+   - Kanske man ska kunna ställa in hur snabba cyklerna ska vara (och/eller att det beror på kartan)
+   - Vissa vapen fungerar sämre i mörker så man blir mer beroende av olika sensorer osv.
+   - Värmesökande saker.
+- Temperatur ska kunna spela roll....olika varmt på olika delar av kartan och beroende på tid på dygnet
+- Olika radioaktivitet på oliak delar av kartan som kan påverka saker och ting...
+- Satsa mycket på lagsamarbete...
+  - Delad whiteboard, markers osv som i recordern
+  - Delad los
+  - Ev. kunna styra varandras enheter, dvs man delar på alla enheter...kan ju bli problem om spelare A
+    ger en order till en enhet och spelare B ändrar den sedan osv...men det borde ju gå att se vad
+    enheten har för order osv. Dessutom skulle man kunna låsa vissa enheter som man inte tillåter
+    att ens allierade styr.
+  - Delade resurser
+  - Stöd i spelet för klaner (?). Kanske att man kan ha egna skins/ikoner kanske?
+- Vissa enheter kan ha specialresurser typ ammo. Får dock inte innebära massa mikromanagment
+- Samma koncept som TA med fabriker, byggenheter osv. 
+- Samma koncept som TA med tech trees...typ level 1 och 2 och sedan eventuella specialgrejor typ Krogoth Gantry
+  - Mycket viktigt att spelaren ställs inför många och viktiga beslut för vilken väg han ska välja. VAD han ska bygga och NÄR (och VAR)
+- Försök att förhindra att extrem rushning på något vis så det blir ungefär som i TA. Kanske en commander som i TA
+  med d-gun vore bra. Däremot är inte commanderns explosion bra.
+- Nanolathe som i TA. Åtminstonde får inte enheterna bara "poppa" upp brevid fabriken. Det måste synas när de byggs i fabrikerna
+  och man måste kunna skjuta dom som i TA
+- Kunna skjuta på saker som byggs som i TA. Blir inga vrak som i TA.
+- Man ska kunna göra förskrivna macros ("plans") för att styra sina byggenheter osv (så att man kan ge en order typ "Bygg bas av typen 3". 
+  Eller egentligen ingår det i unitskript/programmeringen som nämndes tidigare
+- Terräng
+  - Deformerbar. Inte så viktigt dock. Får inte bli så att nästan hela terrängen plattas till efter att spelet
+    staras. Måste krävas någon mer. Ska krävas rätt så mycker mer för att deformera berg än gräs.
+    Kanske byggbilar ska kunna höja/sänka landskapet.
+  - Försök få till mer höjdskillnader (eller snarare möjlighet till det).
+  - Underlaget ska spela större roll för framkomlighet osv. Typ sumpmark, snö, asfalt, klippigt osv ska göra
+    att olika enheter tar sig fram olika bra.
+  - Måste finnas träd, stenar och annat "krafs"...får itne vara som ett polerat parkettgolv som det är i 
+    många RTS
+- Möjlighet att placera ut övervakningskameror vars bilder man kan ha overlayat i små/stora fönster på spelplanen (precis
+  som med övriga HUDs)
+- Formationer
+- Kanske ha olika orderhierarkier. Alltså man kan ha en ledare för en grupp enheter. Ger man en viss order till ledaren
+  försöker denna ge lämpliga order till enheterna i gruppen för att genomföra ordern. Sedan kan man ha en ledare för 
+  flera gruppledare osv. Chain of command. Frågan är om det tillför något? Kanske om man kunde tillverka olika typer av 
+  ledare för att minsa på mikromanagment...tex skulle en "Assault Leader" kunna se till med automatik att supportenheter
+  håller sig längst bak osv.
+- Regelfiler för matcher liknande de som vi planerade för Maximal Kaboom. Dvs man ska kunna definera vilka regler
+  (dvs vilka units som ska vara enablade/disablade, unit limits, start resurser osv) via definitionsfiler
+  som kan använda sig av arv osv.
+- Gränssnitt mot externa applikationer så man kan tillverka gaming services osv. Dels ska man kunna erhålla information medan
+  man spelar, dels ska man kunna få resultat och statistik osv.
+- Smart unit AI. Tex skulle ett transportflygplan (som bara kan lyfta en enhet) kunna ha en order typ "Transport"
+  som om man gav den till flera enheter samtidigt på något vis och markerar var de ska lastas av skulle den
+  lyfta varje enhet en och en tills alla var över. Man skulle itne behöva välja load, move, unload, move, load, osv 
+  manuellt för varje enhet som ska transporteras.
+- Konverterare mellan resurstyper typ metal makers bör finnas
+- Storage och excess bör vara som i TA
+- Kunna köa upp vilka enheter som ska byggas som i TA och som med recordern (+100 enherer)...och oändligt antal
+  Bör också gå att skjuta in order efter den som utförs/den enheten som byggs för tillfället
+- Kunan spela in/upp matcher (recorder/replayer). Borde kunna använda samma dataström som för att skicka TV-data (se nästa punkt)
+- Möjlighet till multiwatch (typ Unreal TV) via en broadcasting server. Dvs spelinfon skickas till servern
+  som sedan broadcastar till massor med klienter utan att belasta spelet.
+- Olika bra radars...vissa kanske ska kunna identifiera enheter också (så man ser namnet om man håller musen över motsvarande prick åå minimappen)
+- Ska kunna starta spelet med förbyggd bas, olika resurser osv. Kanske man kan få en viss mängd "pengar" att
+  köpa startenheter för (antingen interaktivt inne i spelet när det startar eller via någon textfil med basdefinition)
+- Stora konfigurationsmöjligheter i Battle Room, tex:
+   - Startpositioner
+     - Steg 1. Definera var startpos ligger på olika sätt:
+       - Enligt de pos som är definerade i kartfilen. Kan givetvis vara fler än antalet spelare i battle room.
+       - Enligt de positioner som gamehosten klickar ut (helt valfritt). Kan klicka ut fler än antalet spelare.
+       - Enligt de positioner som alla spelare klickar ut (alla får välja varsin)
+     - Steg 2. Välja vilken spelare som får vilken startpos
+       - Slumpvis. Som random i TA.
+       - Enligt hostens önskemål
+       - Spelarna väljer själva.
+   - Välja karta
+      - Man skulle kunna ranka de kartor man har för att snabbt kunna hitta de kartor de flesta gillar
+        Man gör en gemensam rankinglista och sedan kan man tex slumpa ut en karta bland de 10 första.
+   - Skicka kartor mellan spelarna
+- Idé angående resurser (förmodligen inte så bra men skadar inte att ta upp den här ändå):
+  Om man har något sorts pipeliningsystem (kanske inte fysiska pipelines så men...) skulle man kunna ha olika
+  "resursområden". Tex om man bbygger en minibas en bit utanför sin ordinarie bas vars extractors inte är
+  kopplade till huvudbasens pipeliningsystem så kommer den basen att ha sina egna resurser att leva på.
+  Dvs man kanske har +6/+500 i minibasen men +30/+3000 i huvudbasen. Först när de två resurssystemen kopplas ihop
+  så  får fabriker i båda områdena tillgång till +36/+3500
+- Veteransystem, kanske som i TA men kanske även något förfinat. Dvs man ska försöka se efter sina veteranenheter
+  lite bättre.
+- MÅste vara tydligt, minst lika tydligt
+- Kanske vore trevligt med någon sorts resurs..eller typ träd eller nått som finns från början på kartan när
+  man startar som ger en liten inkomst (väldigt liten sådan) på samma sätt som en metalextractor (eller 
+  vindsnurra eller...). Men det ska också gå att reclaima den för att få en engångssumma. Tex skulle
+  något speciellt träd ge +0.3/+25 (metall/energi) men typ 100/1000 om man suger upp den.
+- Försök förhindra att det ska löna sig att bygga 100 samsons i en grupp (dvs kvantitet på bekostnad
+  av kvalitet, främst pga att det inte kräver något micromanagment). Kanske genom att lvl2 är bättre
+  än i vad de är i OTA. Kanske som i XTA.
+- Bygga broar
+- Kanske metall och energi som i TA men också en 3:e, ej oändlig, resurs typ plutonium. Kan användas
+  i tungre vapen typ nukes.
+- Enhetstyper ungefär som i TA: kbots (manövererar bra, inte så snabba), vehicles (snabbare), air, sea, hover osv...
+- Kanske en speciell typ: "informationsbyggnader/enheter". Kan bygga avancerade radars, targeting faciolity 
+  och kanske en "Information Cache" som Jason beskrev det i new RTS tråden...
+- Vissa enheter/byggnader skulle kunna ha energisköldar. De drar givetvis energi. Har man ingen energi så...
+- Skippa single player. Istället skulle man kunna ha något som 
+  man kan kalla "training" (skirmish) där man kan switcha mellan två modes (med en enkel knapptryckning) inne i spelet.
+   - En mode där man kan bygga enheter direkt (typ instabuild cheat i TA) för att sätta upp spelplanen.
+     Spelplanen ska även kunna sparas så man kan ge en "utmaning" till andra.
+   - En mode där man spelar som vanligt.
+   - På detta sätt kan sätta upp olika scenarior som man vill testa. Tex hur 10 samsons mot 10 flash
+   - Krävs iofs en AI-spelare om man vill kunna testa "lokalt".
+- Ska enheter fungera sämre när de är skadade? Typ att en kanon slutar funka eller att en enhet inte
+  rör sig lika fort?
+- Olika blåsigt på olika delar av kartan. Tex skulle det kunna blåsa mer på bergen. 
+  Projektiler (tex motsv BB skott) ska kunna påverkas av vindens styrka och riktning. 

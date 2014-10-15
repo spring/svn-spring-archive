@@ -1,0 +1,146 @@
+#define TA			// This is a TA script
+
+
+
+piece   base, rflare, lflare, bar, turret, rwake, lwake, engine,
+       rbar, lbar, rgun, lgun, flash, hull, engines;
+
+static-var  gun_1;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_MOVE			8
+#define SMOKEPIECE 	base
+#include "sfxtype.h"
+#include "exptype.h"
+#include "smokeunit.h"
+
+Create()
+{
+	start-script SmokeUnit();
+	gun_1 = rflare;
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	while( TRUE )
+	{
+		emit-sfx 2 from rwake;
+		emit-sfx 2 from lwake;
+		sleep 300;
+	}
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret to y-axis heading speed <1.>;
+	turn bar to x-axis <-1.> - pitch speed <1.>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn bar around x-axis;
+	return (1);
+}
+
+FirePrimary()
+{
+	if( gun_1 == 0 )
+	{
+		turn bar to x-axis <-1.> speed <1.>;
+		turn engine to x-axis <-1.> speed <1.>;
+		move rbar to z-axis [-1.] speed [1.];
+		wait-for-move rbar along x-axis;
+		turn engine to x-axis <1.> speed <1.>;
+		turn bar to x-axis <1.> speed <1.>;
+		move rbar to z-axis [-1.] speed [1.];
+		wait-for-move rbar along x-axis;
+		turn engine to x-axis <-1.> speed <1.>;
+		turn bar to x-axis <-1.> speed <1.>;
+		gun_1 = lflare;
+		return (0);
+	}
+	if( gun_1 == 1 )
+	{
+		turn bar to x-axis <-1.> speed <1.>;
+		turn engine to x-axis <-1.> speed <1.>;
+		move lbar to z-axis [-1.] speed [1.];
+		wait-for-move lbar along x-axis;
+		turn engine to x-axis <1.> speed <1.>;
+		turn bar to x-axis <1.> speed <1.>;
+		move lbar to z-axis [-1.] speed [1.];
+		wait-for-move lbar along x-axis;
+		turn engine to x-axis <-1.> speed <1.>;
+		turn bar to x-axis <-1.> speed <1.>;
+		gun_1 = rflare;
+		return (0);
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = rgun;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = lgun;
+	}
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = rflare;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = lflare;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	hide flash;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode bar type SHATTER;
+		explode hull type SHATTER;
+		explode engines type SHATTER;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode bar type SHATTER;
+		explode hull type SHATTER;
+		explode engines type SHATTER;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode bar type SHATTER;
+		explode hull type SHATTER;
+		explode engines type SHATTER;
+		return (0);
+	}
+	corpsetype = 3;
+	explode bar type SHATTER;
+	explode hull type SHATTER;
+	explode engines type SHATTER;
+}

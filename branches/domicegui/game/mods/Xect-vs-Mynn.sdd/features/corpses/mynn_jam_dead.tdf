@@ -1,0 +1,37 @@
+[mynn_jam_dead]
+	{
+	world=All Worlds;
+	description=Trashed Robot;
+	category=mynn_e_corpses;
+	featuredead=mynn_jam_heap;
+        object=mynn_jam_dead;
+	footprintx=2;
+	footprintz=2;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=40;
+	damage=280;
+	reclaimable=1;
+	featurereclamate=oilspill2;
+	seqnamereclamate=tree1reclamate;
+	}
+
+[mynn_jam_heap]
+	{
+	world=All Worlds;
+	description=Trashed Robot;
+	category=mynn_e_heaps;
+	object=1x1rub;
+	footprintx=2;
+	footprintz=2;
+	height=4;
+	blocking=0;
+	hitdensity=100;
+	metal=20;
+	damage=450;
+	reclaimable=1;
+
+	featurereclamate=oilspill2;
+	seqnamereclamate=tree1reclamate;
+	}

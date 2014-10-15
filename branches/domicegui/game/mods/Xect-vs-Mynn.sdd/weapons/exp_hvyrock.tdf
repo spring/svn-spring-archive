@@ -1,0 +1,49 @@
+[exp_heavyrocket]
+	{
+	id=256
+	name=heavy multi-launch rockets;
+	rendertype=1;
+	lineofsight=1;
+	turret=1;
+
+	model=exphvyrock;
+
+	range=1200;
+	reloadtime=18;
+	weapontimer=6;
+	weaponvelocity=300;
+	startvelocity=100;
+	weaponacceleration=120;
+	areaofeffect=80;
+	metalpershot=0;
+	burst=6;
+	burstrate=0.3;
+	trajectoryheight=1;
+	wobble=14000;
+	turnrate=4000;
+	edgeeffectiveness=0.75;
+
+	soundstart=ravenhvyrock;
+	soundhit=rockhit;
+
+	firestarter=70;
+	smokedelay=.1;
+	selfprop=1;
+	smoketrail=1;
+
+	explosiongaf=fx;
+	explosionart=explode3;
+
+	waterexplosiongaf=fx;
+	waterexplosionart=h2o;
+
+	lavaexplosiongaf=fx;
+	lavaexplosionart=lavasplash;
+
+	startsmoke=1;
+
+	[damage]
+		{
+		default=100;
+		}
+	}

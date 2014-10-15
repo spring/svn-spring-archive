@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<project name="MapDesigner" default="build" basedir=".">
+  <property name="outdirectory" value="../../build-out/MapDesigner-net-2.0" if="${framework::get-target-framework()=='net-2.0'}" />
+  <property name="outdirectory" value="../../build-out/MapDesigner-mono-2.0" if="${framework::get-target-framework()=='mono-2.0'}" />
+  <property name="sourcepath" value="../.." />
+  <property name="librarypath" value="../../Libraries" />
+
+   <target name="clean">
+			<delete failonerror="false">
+				<fileset basedir="${outdirectory}">
+					<include name="*" />
+				</fileset>
+			</delete>
+   </target>
+
+   <target name="build">
+   
+        <copy todir="${outdirectory}">
+            <fileset basedir="${librarypath}">
+                <include name="*"/>
+            </fileset>
+        </copy>
+        <copy todir="${outdirectory}" if="${platform::is-win32()}">
+            <fileset basedir="${librarypath}/win32">
+                <include name="*"/>
+            </fileset>
+        </copy>
+        <copy todir="${outdirectory}" if="${framework::get-target-framework()=='net-2.0'}">
+            <fileset basedir="${librarypath}/gtk-net-2.0">
+                <include name="*"/>
+            </fileset>
+        </copy>
+        <copy todir="${outdirectory}">
+            <fileset basedir="${sourcepath}">
+                <include name="MapDesigner.glade"/>
+                <include name="config.xml"/>
+            </fileset>
+        </copy>
+        <mkdir dir="${outdirectory}/objects3d" />
+        <mkdir dir="${outdirectory}/unittextures" />
+        <mkdir dir="${outdirectory}/maps" />
+        <mkdir dir="${outdirectory}/plugins" />
+        <mkdir dir="${outdirectory}/cache" />
+        
+      <csc target="exe" output="${outdirectory}/MapDesigner.exe" debug="true">
+          <references>
+              <include name="${outdirectory}/Tao.DevIl.dll"/>
+              <include name="${outdirectory}/Tao.OpenGl.dll"/>
+              <include name="${outdirectory}/Tao.OpenGl.ExtensionLoader.dll"/>
+              <include name="${outdirectory}/Tao.OpenGl.Glu.dll"/>
+              <include name="${outdirectory}/Tao.FreeGlut.dll"/>
+              <include name="${outdirectory}/Tao.Sdl.dll"/>
+              
+              <include name="${outdirectory}/SdlDotNet.dll"/>
+              
+              <include name="${outdirectory}/atk-sharp.dll" if="${framework::get-target-framework()=='net-2.0'}" />
+              <include name="${outdirectory}/gdk-sharp.dll" if="${framework::get-target-framework()=='net-2.0'}"/>
+              <include name="${outdirectory}/glade-sharp.dll" if="${framework::get-target-framework()=='net-2.0'}"/>
+              <include name="${outdirectory}/glib-sharp.dll" if="${framework::get-target-framework()=='net-2.0'}"/>
+              <include name="${outdirectory}/gtk-sharp.dll" if="${framework::get-target-framework()=='net-2.0'}"/>
+          </references>
+          <pkg-references>
+                    <package name="gtk-sharp-2.0" unless="${framework::get-target-framework()=='net-2.0'}" />
+                    <package name="glade-sharp-2.0" unless="${framework::get-target-framework()=='net-2.0'}" />
+          </pkg-references>
+          <sources>
+            <include name="${sourcepath}/PluginsLoader.cs" />
+            <include name="${sourcepath}/MapDesigner.cs" />
+            <include name="${sourcepath}/EntryPoint.cs" />
+            <include name="${sourcepath}/BasicTypes/Vector3.cs" />
+            <include name="${sourcepath}/BasicTypes/Vector2.cs" />
+            <include name="${sourcepath}/BasicTypes/Plane.cs" />
+            <include name="${sourcepath}/BasicTypes/Axis.cs" />
+            <include name="${sourcepath}/BasicTypes/Color.cs" />
+            <include name="${sourcepath}/BasicTypes/Rot.cs" />
+            <include name="${sourcepath}/HelperClasses/Arguments.cs" />
+            <include name="${sourcepath}/HelperClasses/LogFile.cs" />
+            <include name="${sourcepath}/HelperClasses/TdfParser.cs" />
+            <include name="${sourcepath}/HelperClasses/XmlHelper.cs" />
+            <include name="${sourcepath}/HelperClasses/Image.cs" />
+            <include name="${sourcepath}/HelperClasses/mvMath.cs" />
+            <include name="${sourcepath}/HelperClasses/MyRand.cs" />
+            <include name="${sourcepath}/HelperClasses/TimeKeeper.cs" />
+            <include name="${sourcepath}/HelperClasses/Diag.cs" />
+            <include name="${sourcepath}/HelperClasses/Config.cs" />
+            <include name="${sourcepath}/HelperClasses/EnvironmentHelper.cs" />
+            <include name="${sourcepath}/KeyAndMouse/KeyFilterSdlConfigMappings.cs" />
+            <include name="${sourcepath}/KeyAndMouse/IKeyFilterConfigMappings.cs" />
+            <include name="${sourcepath}/KeyAndMouse/KeyFilterSdlKeyCache.cs" />
+            <include name="${sourcepath}/KeyAndMouse/MouseFilterSdlMouseCache.cs" />
+            <include name="${sourcepath}/KeyAndMouse/IMouseFilterMouseCache.cs" />
+            <include name="${sourcepath}/KeyAndMouse/MouseFilterMouseCacheFactory.cs" />
+            <include name="${sourcepath}/KeyAndMouse/MouseMoveConfigMappings.cs" />
+            <include name="${sourcepath}/KeyAndMouse/KeyFilterConfigMappingsFactory.cs" />
+            <include name="${sourcepath}/MovementAndEditing/Camera.cs" />
+            <include name="${sourcepath}/MovementAndEditing/CurrentEditSpot.cs" />
+            <include name="${sourcepath}/MovementAndEditing/CurrentEditBrush.cs" />
+            <include name="${sourcepath}/MovementAndEditing/EditingHelper.cs" />
+            <include name="${sourcepath}/MovementAndEditing/QuitHandler.cs" />
+            <include name="${sourcepath}/MovementAndEditing/EditController.cs" />
+            <include name="${sourcepath}/MovementAndEditing/BrushShapes/BrushShapeController.cs" />
+            <include name="${sourcepath}/MovementAndEditing/BrushShapes/IBrushShape.cs" />
+            <include name="${sourcepath}/MovementAndEditing/BrushShapes/RoundBrush.cs" />
+            <include name="${sourcepath}/MovementAndEditing/BrushShapes/SquareBrush.cs" />
+            <include name="${sourcepath}/MovementAndEditing/BrushEffects/FixedHeight.cs" />
+            <include name="${sourcepath}/MovementAndEditing/BrushEffects/AddFeature.cs" />
+            <include name="${sourcepath}/MovementAndEditing/BrushEffects/RaiseLower.cs" />
+            <include name="${sourcepath}/MovementAndEditing/BrushEffects/PaintTexture.cs" />
+            <include name="${sourcepath}/MovementAndEditing/BrushEffects/BrushEffectController.cs" />
+            <include name="${sourcepath}/MovementAndEditing/BrushEffects/Flatten.cs" />
+            <include name="${sourcepath}/MovementAndEditing/BrushEffects/IBrushEffect.cs" />
+            <include name="${sourcepath}/Rendering/IGraphicsHelper.cs" />
+            <include name="${sourcepath}/Rendering/ITexture.cs" />
+            <include name="${sourcepath}/Rendering/IGraphicsHelperFactory.cs" />
+            <include name="${sourcepath}/Rendering/GraphicsHelperFactory.cs" />
+            <include name="${sourcepath}/Rendering/RendererSdl.cs" />
+            <include name="${sourcepath}/Rendering/GraphicsHelperGl.cs" />
+            <include name="${sourcepath}/Rendering/RenderableHeightMap.cs" />
+            <include name="${sourcepath}/Rendering/IRenderer.cs" />
+            <include name="${sourcepath}/Rendering/GlTexture.cs" />
+            <include name="${sourcepath}/Rendering/DrawAxes.cs" />
+            <include name="${sourcepath}/Rendering/FrustrumCulling.cs" />
+            <include name="${sourcepath}/Rendering/GlTextureCombine.cs" />
+            <include name="${sourcepath}/Rendering/MapTextureStage.cs" />
+            <include name="${sourcepath}/Rendering/Terrain.cs" />
+            <include name="${sourcepath}/Rendering/UnitPart.cs" />
+            <include name="${sourcepath}/Rendering/RenderableWater.cs" />
+            <include name="${sourcepath}/Rendering/RendererTextureStage.cs" />
+            <include name="${sourcepath}/Rendering/RendererPass.cs" />
+            <include name="${sourcepath}/Rendering/RenderableS3o.cs" />
+            <include name="${sourcepath}/Rendering/RenderableAllFeatures.cs" />
+            <include name="${sourcepath}/Rendering/Primitives.cs" />
+            <include name="${sourcepath}/Rendering/Vertex.cs" />
+            <include name="${sourcepath}/Rendering/Unit.cs" />
+            <include name="${sourcepath}/Rendering/RendererFactory.cs" />
+            <include name="${sourcepath}/Rendering/RenderableMinimap.cs" />
+            <include name="${sourcepath}/Rendering/DisplayGeometryFactory.cs" />
+            <include name="${sourcepath}/Rendering/IDisplayGeometry.cs" />
+            <include name="${sourcepath}/Rendering/DisplayGeometryWindows.cs" />
+            <include name="${sourcepath}/Rendering/DisplayGeometryX11.cs" />
+            <include name="${sourcepath}/MathGlCs/GLVector.cs" />
+            <include name="${sourcepath}/MathGlCs/GLMatrix.cs" />
+            <include name="${sourcepath}/plugins/TestPlugin/TestPlugin.cs" />
+            <include name="${sourcepath}/Persistence/Sm3Persistence.cs" />
+            <include name="${sourcepath}/Persistence/HeightMapPersistence.cs" />
+            <include name="${sourcepath}/Persistence/SlopeMapPersistence.cs" />
+            <include name="${sourcepath}/Persistence/UnitPicCreator.cs" />
+            <include name="${sourcepath}/Persistence/S3oLoader.cs" />
+            <include name="${sourcepath}/Persistence/FeaturePersistence.cs" />
+            <include name="${sourcepath}/Persistence/ExportAsSingleTexture.cs" />
+            <include name="${sourcepath}/Persistence/UnitCache.cs" />
+            <include name="${sourcepath}/UI/MainUI.cs" />
+            <include name="${sourcepath}/UI/EmergencyDialog.cs" />
+            <include name="${sourcepath}/UI/Framerate.cs" />
+            <include name="${sourcepath}/UI/DialogHelpers.cs" />
+            <include name="${sourcepath}/UI/Dialogs/MainUIWindow.cs" />
+            <include name="${sourcepath}/UI/Dialogs/MapSizeDialog.cs" />
+            <include name="${sourcepath}/UI/Dialogs/HeightScaleDialog.cs" />
+            <include name="${sourcepath}/UI/Dialogs/FeaturesDialog.cs" />
+            <include name="${sourcepath}/UI/Dialogs/LodDialog.cs" />
+            <include name="${sourcepath}/Mapping/SlopeMap.cs" />
+         </sources>
+      </csc>
+    </target>      
+</project>

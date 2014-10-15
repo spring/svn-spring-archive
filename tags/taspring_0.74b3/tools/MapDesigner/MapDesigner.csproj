@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{220A7BAA-E6C7-4BEE-9A0A-82905D164F85}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MapDesigner</RootNamespace>
+    <AssemblyName>MapDesigner</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>build-out\MapDesigner-net-2.0\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>.\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Compile Include="BasicTypes\Axis.cs" />
+    <Compile Include="BasicTypes\Color.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasicTypes\Plane.cs" />
+    <Compile Include="BasicTypes\Rot.cs" />
+    <Compile Include="BasicTypes\Vector2.cs" />
+    <Compile Include="BasicTypes\Vector3.cs" />
+    <Compile Include="EntryPoint.cs" />
+    <Compile Include="HelperClasses\EnvironmentHelper.cs" />
+    <Compile Include="HelperClasses\Image.cs" />
+    <Compile Include="HelperClasses\LogFile.cs" />
+    <Compile Include="MovementAndEditing\BrushEffects\AddFeature.cs" />
+    <Compile Include="MovementAndEditing\BrushEffects\BrushEffectController.cs" />
+    <Compile Include="MovementAndEditing\BrushEffects\Flatten.cs" />
+    <Compile Include="MovementAndEditing\BrushEffects\IBrushEffect.cs" />
+    <Compile Include="MovementAndEditing\BrushEffects\PaintTexture.cs" />
+    <Compile Include="MovementAndEditing\BrushEffects\RaiseLower.cs" />
+    <Compile Include="MovementAndEditing\BrushEffects\FixedHeight.cs" />
+    <Compile Include="MovementAndEditing\BrushShapes\BrushShapeController.cs" />
+    <Compile Include="MovementAndEditing\BrushShapes\IBrushShape.cs" />
+    <Compile Include="MovementAndEditing\BrushShapes\RoundBrush.cs" />
+    <Compile Include="MovementAndEditing\BrushShapes\SquareBrush.cs" />
+    <Compile Include="MovementAndEditing\CurrentEditBrush.cs" />
+    <Compile Include="MovementAndEditing\EditingHelper.cs" />
+    <Compile Include="MovementAndEditing\EditController.cs" />
+    <Compile Include="Persistence\ExportAsSingleTexture.cs" />
+    <Compile Include="Persistence\FeaturePersistence.cs" />
+    <Compile Include="Persistence\S3oLoader.cs" />
+    <Compile Include="Persistence\Sm3Persistence.cs" />
+    <Compile Include="Persistence\UnitCache.cs" />
+    <Compile Include="Rendering\DisplayGeometryFactory.cs" />
+    <Compile Include="Rendering\DisplayGeometryX11.cs" />
+    <Compile Include="Rendering\GlTexture.cs" />
+    <Compile Include="Rendering\GlTextureCombine.cs" />
+    <Compile Include="HelperClasses\Arguments.cs" />
+    <Compile Include="HelperClasses\Config.cs" />
+    <Compile Include="HelperClasses\mvMath.cs" />
+    <Compile Include="HelperClasses\MyRand.cs" />
+    <Compile Include="HelperClasses\Diag.cs" />
+    <Compile Include="HelperClasses\TimeKeeper.cs" />
+    <Compile Include="HelperClasses\XmlHelper.cs" />
+    <Compile Include="KeyAndMouse\IKeyFilterConfigMappings.cs" />
+    <Compile Include="KeyAndMouse\IMouseFilterMouseCache.cs" />
+    <Compile Include="KeyAndMouse\KeyFilterConfigMappingsFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="KeyAndMouse\KeyFilterSdlConfigMappings.cs" />
+    <Compile Include="KeyAndMouse\KeyFilterSdlKeyCache.cs" />
+    <Compile Include="KeyAndMouse\MouseFilterMouseCacheFactory.cs" />
+    <Compile Include="KeyAndMouse\MouseFilterSdlMouseCache.cs" />
+    <Compile Include="KeyAndMouse\MouseMoveConfigMappings.cs" />
+    <Compile Include="MapDesigner.cs" />
+    <Compile Include="Mapping\SlopeMap.cs" />
+    <Compile Include="MathGlCs\GLMatrix.cs" />
+    <Compile Include="MathGlCs\GLVector.cs" />
+    <Compile Include="MovementAndEditing\Camera.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MovementAndEditing\QuitHandler.cs" />
+    <Compile Include="Persistence\HeightMapPersistence.cs" />
+    <Compile Include="Persistence\SlopeMapPersistence.cs" />
+    <Compile Include="PluginsLoader.cs" />
+    <Compile Include="MovementAndEditing\CurrentEditSpot.cs" />
+    <Compile Include="Rendering\DrawAxes.cs" />
+    <Compile Include="Rendering\IDisplayGeometry.cs" />
+    <Compile Include="Rendering\ITexture.cs" />
+    <Compile Include="Rendering\MapTextureStage.cs" />
+    <Compile Include="Rendering\Primitives.cs" />
+    <Compile Include="Rendering\RenderableAllFeatures.cs" />
+    <Compile Include="Rendering\RenderableMinimap.cs" />
+    <Compile Include="Rendering\RenderableS3o.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rendering\RenderableWater.cs" />
+    <Compile Include="Rendering\RendererPass.cs" />
+    <Compile Include="Rendering\RendererTextureStage.cs" />
+    <Compile Include="Rendering\Terrain.cs" />
+    <Compile Include="Persistence\UnitPicCreator.cs" />
+    <Compile Include="Rendering\Unit.cs" />
+    <Compile Include="Rendering\UnitPart.cs" />
+    <Compile Include="Rendering\Vertex.cs" />
+    <Compile Include="Rendering\DisplayGeometryWindows.cs" />
+    <Compile Include="UI\DialogHelpers.cs" />
+    <Compile Include="UI\Dialogs\FeaturesDialog.cs" />
+    <Compile Include="UI\Dialogs\HeightScaleDialog.cs" />
+    <Compile Include="UI\Dialogs\LodDialog.cs" />
+    <Compile Include="UI\Dialogs\MainUIWindow.cs" />
+    <Compile Include="UI\Dialogs\MapSizeDialog.cs" />
+    <Compile Include="UI\EmergencyDialog.cs" />
+    <Compile Include="UI\Framerate.cs" />
+    <Compile Include="Rendering\FrustrumCulling.cs" />
+    <Compile Include="Rendering\GraphicsHelperFactory.cs" />
+    <Compile Include="Rendering\GraphicsHelperGl.cs" />
+    <Compile Include="Rendering\IGraphicsHelper.cs" />
+    <Compile Include="Rendering\IGraphicsHelperFactory.cs" />
+    <Compile Include="Rendering\IRenderer.cs" />
+    <Compile Include="Rendering\RenderableHeightMap.cs" />
+    <Compile Include="Rendering\RendererFactory.cs" />
+    <Compile Include="Rendering\RendererSdl.cs" />
+    <Compile Include="HelperClasses\TdfParser.cs" />
+    <Compile Include="UI\MainUI.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="atk-sharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\atk-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="gdk-sharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\gdk-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="glade-sharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\glade-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="glib-sharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\glib-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="gtk-sharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\gtk-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SdlDotNet, Version=4.0.2.0, Culture=neutral, PublicKeyToken=26ad4f7e10c61408">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\SdlDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.XML" />
+    <Reference Include="Tao.DevIl, Version=1.6.7.0, Culture=neutral, PublicKeyToken=7ec4053013524957">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Tao.DevIl.dll</HintPath>
+    </Reference>
+    <Reference Include="Tao.FreeGlut, Version=2.2.0.0, Culture=neutral, PublicKeyToken=6e602a6ad6c0d06d" />
+    <Reference Include="Tao.OpenGl, Version=0.0.0.0, Culture=neutral, PublicKeyToken=1ca010269a4501ef">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Tao.OpenGl.dll</HintPath>
+    </Reference>
+    <Reference Include="Tao.OpenGl.ExtensionLoader, Version=1.5.0.3, Culture=neutral, PublicKeyToken=aaade445f4a3f192">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Tao.OpenGl.ExtensionLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="Tao.OpenGl.Glu, Version=1.5.0.3, Culture=neutral, PublicKeyToken=3661ea75021374b5">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Tao.OpenGl.Glu.dll</HintPath>
+    </Reference>
+    <Reference Include="Tao.Sdl, Version=1.2.11.1, Culture=neutral, PublicKeyToken=9c7a200e36c0094e, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Changes.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Todo.txt" />
+  </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>copy /y $(ProjectDir)MapDesigner.glade . &gt;postbuildcopy.log
+copy /y $(ProjectDir)Config.xml . &gt;&gt;postbuildcopy.log
+
+</PostBuildEvent>
+    <PreBuildEvent>xcopy /d /y $(ProjectDir)Libraries . &gt;prebuildcopy.log
+xcopy /d /y $(ProjectDir)Libraries\win32 . &gt;&gt;prebuildcopy.log
+xcopy /d /y $(ProjectDir)Libraries\gtk-net-2.0 . &gt;&gt;prebuildcopy.log
+</PreBuildEvent>
+  </PropertyGroup>
+</Project>

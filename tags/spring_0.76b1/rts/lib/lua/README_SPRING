@@ -1,0 +1,36 @@
+
+Lua-5.1.2 source code modifications:
+
+  1. Applied the pushhstring patch
+
+  2. Moved the following headers from src/ into include/:
+     - lua.h
+     - lualib.h
+     - lauxlib.h
+     - luaconf.h
+
+  3. Added the include/LuaInclude.h header
+
+  4. Made the following adjustments in luaconf.h:
+
+     //SPRING#undef LUA_COMPAT_GETN
+     #define LUA_COMPAT_GETN
+
+     //SPRING#define LUA_NUMBER_DOUBLE
+     //SPRING#define LUA_NUMBER  double
+     #undef LUA_NUMBER_DOUBLE
+     #define LUA_NUMBER  float                                               
+
+  5. Moved the *.c files to *.cpp for C++ compilation
+
+  6. Swapped <math.h> includes with "float3.h" includes  (for streflop) 
+
+  6. GZIP'ed the following files:
+     doc/*
+     etc/*
+     test/*
+     src/lua.c
+     src/luac.c
+
+  7. Changed the return type of lua_toboolean from int to bool to prevent
+     compiler performance warnings on Visual Studio 2005.

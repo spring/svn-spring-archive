@@ -1,0 +1,73 @@
+[UNITINFO]
+{
+	Name=Predator;
+	UnitName=xect_pred;
+	
+	//    Required Tags
+	BuildCostEnergy=2257;
+	BuildCostMetal=394;
+	BuildTime=5585;
+	Category=xect vtol ctrl_f level2 weapon  notsub ;
+	Description=Precision Bomber;
+	FootprintX=3;
+	FootprintZ=3;
+	MaxDamage=469;
+	ObjectName=xect_pred;
+	Side=Xect;
+	SoundCategory=xcl_bot;
+	TEDClass=vtol;
+	
+	//    Movement
+	BrakeRate=1;
+	Acceleration=0.15;
+	CanMove=1;
+	MaxVelocity=5.37;
+	MaxSlope=10;
+	TurnRate=600;
+	
+	//    Airplane Moventment
+	Cruisealt=205;
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyMake=0.7;
+	EnergyStorage=0;
+	EnergyUse=0.7;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=1;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=638;
+	SonarDistance=0;
+	
+	//    Weapons
+	Weapon1=STREAM;
+	wpri_badTargetCategory=NOTAIR;
+	BadTargetCategory=NOTAIR;
+	DamageModifier=0.94;
+	ExplodeAs=BIG_UNITEX;
+	HoverAttack=1;
+	SelfDestructAs=BIG_UNIT;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	SmoothAnim=1;
+	Upright=1;
+	Buildpic=xect_pred.jpg;
+	
+	//    Not Used By TASpring
+}

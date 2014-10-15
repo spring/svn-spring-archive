@@ -1,0 +1,62 @@
+[UNITINFO]
+{
+	Name=Shipyard;
+	UnitName=xect_sy;
+	
+	//    Required Tags
+	BuildCostEnergy=775;
+	BuildCostMetal=615;
+	BuildTime=2398;
+	Category=xect PLANT ctrl_f level1 noweapon notair notsub ;
+	Description=Produces Ships;
+	FootprintX=8;
+	FootprintZ=8;
+	MaxDamage=1329;
+	ObjectName=xect_sy;
+	Side=Xect;
+	SoundCategory=mynn_sy;
+	TEDClass=PLANT;
+	
+	//    Movement
+	CanMove=1;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=wCCCCCCw CCCCCCCC CCCCCCCC CCCCCCCC CCCCCCCC CCCCCCCC CCCCCCCC wCCCCCCw;
+	
+	//    Construction
+	Builder=1;
+	WorkerTime=100;
+	
+	//    Resources
+	EnergyStorage=100;
+	EnergyUse=0;
+	MetalMake=0.5;
+	MetalStorage=100;
+	
+	//    Abilities
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=318;
+	
+	//    Weapons
+	ExplodeAs=crawler_death;
+	SelfDestructAs=crawler_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MinWaterDepth=30;
+	Waterline=1;
+	
+	//    Misc
+	Corpse=xect_sy_dead;
+	SmoothAnim=1;
+	Buildpic=xect_sy.jpg;
+	
+	//    Not Used By TASpring
+}

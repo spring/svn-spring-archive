@@ -1,0 +1,84 @@
+Next release:
+- added MapDesigner.exe date/time to crashdump info
+
+0.7:
+- replaced DevIl.Net with Tao.DevIl. Mono builds correctly now
+- added placeholder DisplayGeometryX11 so may build on linux
+- buildtree directory layout modified
+- added custom BrushEffect architecture
+- added custom BrushShape architecture
+- added square brush
+- added fixed-height brush
+- round and square brushes now render themselves over map
+- added core-size to round brush
+
+Release 0.6:
+- Added support for plugins.  Add plugins to "plugins" directory.  Plugins are library assemblies containing class with 
+  same name as assembly, minus extension, with instance method "Load"
+
+Release 0.5:
+- attempting to load an s3o without the textures present should bring up an informative warning message with the path of the missing texture
+- increased logging in crashdump file
+- added jpeg62.dll to distribution
+- added level of detail dialog box, to adjust render quality vs framerate
+- added export to blended texture function
+- added minimap
+- added normals to minimap
+- added minimap caching
+- added camera marker to minimap
+- added editspot marker to minimap
+- added camera rotate (ctrl + move mouse sideways by default)
+
+Release 0.4:
+- added feature editing
+- removed try..catch around mainloop.  Prefer crashbug message, which at least will be sent to me
+
+Release 0.3d (3rd December 2006):
+- changed xscale and yscale from 1 to 8.  This corrects the map area.
+- Whakamatunga_Riri.sm3 can now be loaded from inside any directory called "Maps", even if the directory is not a direct subdirectory of MapDesigner
+- added try...catch around mainloop; should silently catch most exceptions, log to console, then continue
+- default texture is white
+- Add Texture Stage will create a new texture stage of type "Blend"
+- It's no longer possible to remove all texture stages
+- Errors reading numbers from config.xml will now generate warning messages rather than crashing MapDesigner
+- Locale forced to en-gb, so floats in the config.xml will need a decimal separator of ".", rather than changing from country to country
+
+Release 0.3c (1st December 2006):
+- crashdump added
+- issue with editing height near East or South side of map corrected
+- issue with editing splat blend texture near East or South side of map corrected
+- file dialog defaults to maps subdirectory
+
+Release 0.3b (1st December 2006):
+- window height and width read from config.xml "display" section at startup
+- file dialog remembers last folder
+- tilesize for new texture stages defaults to 50
+- first texture stage selected by default
+- "invert" option added to mouse move configs
+- default config file now has ctrl + scroll wheel rotating in same sense as Spring
+- zoom moved from cameratranslate to camerazoom
+- default config set so rotating scroll wheel zooms camera, in line with Spring
+
+Release 0.3 (1st December 2006):
+- added smooth shaded normals (reduce patchwork appearance)
+- cache normals (higher framerate)
+- added water
+- added texture loading
+- added texture splatting
+- added sm3 loader
+- added texture blend editing
+- supports load/saving heightmaps using any DevIL-compatible format (eg JPG)
+- slopemaps can be exported using any DevIL-compatible format
+
+Release 0.2
+- added frustrum culling
+- edit ball always looks same size on screen
+- improved normal self-consistency, to remove cross-hatching appearance
+- corrected a crash-bug when loading a heightmap
+- improved level of detail engine
+- added UI, including file load/save dialog boxes
+- added flatten brush
+- added slider to change brushsize
+- added coloring to slopemap: green = vehicles(< 0.08 ), blue = infantry (< 0.33 ), red = extreme
+- corrected bitmap size on save (used to add an extra pixel to width and height)
+- corrected scaling on heightmap save, to normalize to minheight and maxheight

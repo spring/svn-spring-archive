@@ -1,0 +1,8 @@
+WikiMedia:
+Spring skin with site header integrated.
+
+PHPBB:
+subSilver template with site header integrated.
+
+Mantis:
+Mantis instalation is not included in SVN at this moment.

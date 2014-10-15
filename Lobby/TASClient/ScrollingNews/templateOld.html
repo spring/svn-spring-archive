@@ -1,0 +1,129 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<STYLE type="text/css">
+			a, a:visited {
+				color: #e1ce70;
+				text-decoration: none;
+				font-family: Arial;
+				font-size: 12px;
+				font-weight: bold;
+			}
+			a:hover {
+				text-decoration: none;
+				font-family: Arial;
+				font-size: 12px;
+				font-weight: bold;
+			}
+			
+			.news{
+				background-image: url('newsItemBg.png');
+				margin-right:10px;
+				float: left;
+				height: 28px;
+			}
+			.newsContent{
+				background-image: url('newsItemLeftBg.png');
+				background-repeat: no-repeat;
+				height: 28px;
+				padding: 6px;
+				float: left;
+			}
+			.newsRightBorder{
+				background-image: url('newsItemRightBg.png');
+				background-repeat: no-repeat;
+				height: 28px;
+				width: 1px;
+				float: left;
+			}
+			a:hover .news{
+				background-image: url('newsItemSelBg.png');
+				margin-right:10px;
+				float: left;
+				height: 28px;
+			}
+			a:hover .newsContent{
+				background-image: url('newsItemSelLeftBg.png');
+				background-repeat: no-repeat;
+				height: 28px;
+				padding: 6px;
+				float: left;
+			}
+			a:hover .newsRightBorder{
+				background-image: url('newsItemSelRightBg.png');
+				background-repeat: no-repeat;
+				height: 28px;
+				width: 1px;
+				float: left;
+			}
+			#scrollingDiv{
+				position: absolute;
+				left: -50px;
+				top: 0;
+				height: 27px;
+				margin: 4px;
+				background-color: black;
+				background-image: url('bg.png');
+				overflow: hidden;
+				width: 100000px;
+			}
+			.content{
+				float: left;
+				width: 0px;
+			}
+			#debug{
+				position: absolute;
+				top: 30px;
+				left: 0;
+				background-color: red;
+			}
+		</STYLE>
+		<script type="text/javascript">
+			pos = 0;
+			scrollingEnabled = true;
+			function debug(msg){
+				document.getElementById('debug').innerHTML = msg;
+			}
+			function moveScrollingDiv(){
+				pos = pos - 1;
+				content1Width = document.getElementById('content1').offsetWidth;
+				if(pos <= -content1Width){
+					pos=0;
+				}
+				document.getElementById('scrollingDiv').style.left = pos+"px";
+				if(scrollingEnabled){
+					timer = setTimeout("moveScrollingDiv()",20);
+				}
+			}
+			function stopScrolling(){
+				clearTimeout(timer);
+				scrollingEnabled = false;
+			}
+			function goScrolling(){
+				scrollingEnabled = true;
+				timer = setTimeout("moveScrollingDiv()",20);
+			}
+			function init(){
+				document.getElementById('content1').style.width = "auto";
+				content1Width = document.getElementById('content1').offsetWidth;
+				
+				nbSupContent = Math.floor(screen.width/content1Width)+1;
+				for(i=2;i<=1+nbSupContent;i++){
+					document.getElementById('scrollingDiv').innerHTML = document.getElementById('scrollingDiv').innerHTML + '<div id="content'+i+'" class="content"></div>'
+					document.getElementById('content'+i).style.width = "auto";
+					document.getElementById('content'+i).innerHTML = document.getElementById('content1').innerHTML;
+				}
+				setTimeout("moveScrollingDiv()",20);
+			}
+		</script>
+	</head>
+	<body style="padding: 0;margin: 0;background-color: black;width: 100000px" onload="init()">
+		<div id="scrollingDiv" onmouseover="stopScrolling();" onmouseout="goScrolling();">
+			<div id="content1" class="content">
+[newsItems]
+			</div>
+		</div>
+		<div id="debug">
+		</div>
+	</body>
+</html>

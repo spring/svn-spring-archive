@@ -1,0 +1,63 @@
+[UNITINFO]
+{
+	Name=Umbrella;
+	UnitName=mynn_anti;
+	
+	//    Required Tags
+	BuildCostEnergy=87600;
+	BuildCostMetal=1502;
+	BuildTime=202982;
+	Category=mynn special defensive weapon level3 notair notsub ;
+	Description=Anti-missile Defense System;
+	FootprintX=4;
+	FootprintZ=4;
+	MaxDamage=11650;
+	ObjectName=mynn_anti;
+	Side=Mynn;
+	SoundCategory=mynn_fusion;
+	TEDClass=fort;
+	
+	//    Movement
+	MaxSlope=10;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=ooooooooo;
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=0;
+	EnergyUse=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanFly=0;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=263;
+	
+	//    Weapons
+	Weapon1=MYNN_AMD_ROCKET;
+	wpri_badTargetCategory=NOTAIR;
+	BadTargetCategory=NOTAIR;
+	DamageModifier=11.47;
+	ExplodeAs=blue_death;
+	SelfDestructAs=blue_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	Corpse=mynn_anti_dead;
+	SmoothAnim=1;
+	Buildpic=mynn_anti.jpg;
+	
+	//    Not Used By TASpring
+}

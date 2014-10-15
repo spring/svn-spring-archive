@@ -1,0 +1,67 @@
+[UNITINFO]
+{
+	Name=Tiger;
+	UnitName=xect_tankd;
+	
+	//    Required Tags
+	BuildCostEnergy=1940;
+	BuildCostMetal=194;
+	BuildTime=4656;
+	Category=xect TANK level1 weapon notair notsub ctrl_v;
+	Description=Assault Tank;
+	FootprintX=1;
+	FootprintZ=1;
+	MaxDamage=836;
+	ObjectName=xect_tankd;
+	Side=Xect;
+	SoundCategory=xcl_tank;
+	TEDClass=TANK;
+	
+	//    Movement
+	BrakeRate=0.005;
+	MovementClass=tanksh2;
+	Acceleration=0.019;
+	CanMove=1;
+	MaxVelocity=2.15;
+	MaxSlope=15;
+	TurnRate=450;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=338;
+	
+	//    Weapons
+	Weapon1=USA_LIGHTCANNON2;
+	DamageModifier=0.61;
+	ExplodeAs=SMALL_UNITEX;
+	SelfDestructAs=SMALL_UNIT;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=10;
+	
+	//    Misc
+	Corpse=xect_tankd_dead;
+	SmoothAnim=1;
+	Buildpic=xect_tankd.jpg;
+	
+	//    Not Used By TASpring
+}

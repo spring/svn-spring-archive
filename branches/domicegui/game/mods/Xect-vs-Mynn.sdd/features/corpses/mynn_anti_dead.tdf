@@ -1,0 +1,38 @@
+[mynn_anti_dead]
+	{
+	world=All Worlds;
+	description=Dead Structure;
+	category=mynn_e_corpses;
+	object=mynn_anti_dead;
+	featuredead=mynn_anti_heap;
+	footprintx=5;
+	footprintz=6;
+	height=40;
+	blocking=1;
+	hitdensity=100;
+	metal=964;
+	damage=2002;
+	reclaimable=1;
+	featurereclamate=oilspill1;
+	seqnamereclamate=tree1reclamate;
+	}
+
+
+[mynn_anti_heap]
+	{
+	world=All Worlds;
+	description=Dead Structure;
+	category=mynn_e_heaps;
+	object=3x3rub;
+	footprintx=5;
+	footprintz=5;
+	height=4;
+	blocking=0;
+	hitdensity=100;
+	metal=582;
+	damage=2152;
+	reclaimable=1;
+
+	featurereclamate=oilspill2;
+	seqnamereclamate=tree1reclamate;
+	}

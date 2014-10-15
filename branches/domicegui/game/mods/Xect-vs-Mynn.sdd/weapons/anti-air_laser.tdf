@@ -1,0 +1,42 @@
+[anti-air_laser]
+	{
+	id=175;
+	name=anti-air laser;
+	rendertype=0;
+	lineofsight=1;
+	turret=1;
+	beamlaser=1;
+	beamtime=0.1;
+
+	range=1000;//700;
+	reloadtime=0.1;//5;
+	energypershot=30;//800;
+	weaponvelocity=900;
+	areaofeffect=8;
+	//accuracy=100;
+	targetmoveerror=0.5;
+
+	soundstart=annigun1;
+	soundhit=xplolrg1;
+
+	firestarter=90;
+	beamweapon=1;
+	color=144;	
+	color2=217;
+
+	tolerance=500;
+
+	explosiongaf=fx;
+	explosionart=explode5;
+
+	waterexplosiongaf=fx;
+	waterexplosionart=h2oboom1;
+
+	lavaexplosiongaf=fx;
+	lavaexplosionart=lavasplashsm;
+	guidance=1;
+	[damage]
+		{
+		default=10;
+		}
+	}

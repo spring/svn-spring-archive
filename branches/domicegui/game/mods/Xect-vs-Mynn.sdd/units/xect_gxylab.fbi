@@ -1,0 +1,61 @@
+[UNITINFO]
+{
+	Name=Advanced Bot Lab;
+	UnitName=xect_gxylab;
+	
+	//    Required Tags
+	BuildCostEnergy=3100;
+	BuildCostMetal=2100;
+	BuildTime=9230;
+	Category=xect PLANT ctrl_f level1 noweapon notair notsub ;
+	Description=Builds Advanced Bots;
+	FootprintX=7;
+	FootprintZ=6;
+	MaxDamage=4782;
+	ObjectName=xect_gxylab;
+	Side=Xect;
+	SoundCategory=xcllab;
+	TEDClass=PLANT;
+	
+	//    Movement
+	CanMove=1;
+	MaxSlope=10;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=ooooooo ooooooo occccco ccccccc ccccccc oocccoo;
+	
+	//    Construction
+	Builder=1;
+	WorkerTime=200;
+	
+	//    Resources
+	EnergyStorage=200;
+	EnergyUse=0;
+	MetalStorage=200;
+	
+	//    Abilities
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=345;
+	
+	//    Weapons
+	ExplodeAs=LARGE_BUILDINGEX;
+	SelfDestructAs=LARGE_BUILDING;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	Corpse=xect_gxylab_dead;
+	SmoothAnim=1;
+	Buildpic=xect_gxylab.jpg;
+	
+	//    Not Used By TASpring
+}

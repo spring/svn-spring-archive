@@ -1,0 +1,38 @@
+[xect_tankd_dead]
+	{
+	world=All Worlds;
+	description=Wreckage;
+	category=xect_corpses;
+	object=xect_tankd_dead;
+	featuredead=xect_tankd_heap;
+	footprintx=1;
+	footprintz=1;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=183;
+	energy=0;
+	damage=700;
+	reclaimable=1;
+	featurereclamate=smudge01;
+        seqnamereclamate=tree1reclamate;
+	}
+
+[xect_tankd_heap]
+	{
+	world=All Worlds;
+	description=Wreckage;
+	category=usa_heaps;
+	object=1x1a;
+	footprintx=1;
+	footprintz=1;
+	height=4;
+	blocking=0;
+	hitdensity=100;
+	metal=62;
+	energy=0;
+	damage=350;
+	reclaimable=1;
+	featurereclamate=smudge01;
+	seqnamereclamate=tree1reclamate;
+	}

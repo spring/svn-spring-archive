@@ -1,0 +1,67 @@
+[UNITINFO]
+{
+	Name=Paladin;
+	UnitName=xect_tankb;
+	
+	//    Required Tags
+	BuildCostEnergy=2975;
+	BuildCostMetal=500;
+	BuildTime=7343;
+	Category=xect TANK level1 weapon notair notsub ctrl_v;
+	Description=Artillery Tank;
+	FootprintX=2;
+	FootprintZ=2;
+	MaxDamage=1812;
+	ObjectName=xect_tankb;
+	Side=Xect;
+	SoundCategory=xcl_tank;
+	TEDClass=TANK;
+	
+	//    Movement
+	BrakeRate=0.004;
+	MovementClass=tanksh2;
+	Acceleration=0.014;
+	CanMove=1;
+	MaxVelocity=1.81;
+	MaxSlope=12;
+	TurnRate=280;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=375;
+	
+	//    Weapons
+	Weapon1=KAJ_EMG;
+	DamageModifier=1.22;
+	ExplodeAs=SMALL_UNITEX;
+	SelfDestructAs=SMALL_UNIT;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=12;
+	
+	//    Misc
+	Corpse=xect_tankb_dead;
+	SmoothAnim=1;
+	Buildpic=xect_tankb.jpg;
+	
+	//    Not Used By TASpring
+}

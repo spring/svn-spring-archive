@@ -1,0 +1,69 @@
+[UNITINFO]
+{
+	Name=Advanced Construction Ship;
+	UnitName=xect_acship;
+	
+	//    Required Tags
+	BuildCostEnergy=2375;
+	BuildCostMetal=260;
+	BuildTime=5723;
+	Category=xect SHIP level1 constr noweapon notair notsub ctrl_b;
+	Description= ;
+	FootprintX=4;
+	FootprintZ=4;
+	MaxDamage=1071;
+	ObjectName=xect_acship;
+	Side=Xect;
+	SoundCategory=mynn_ship;
+	TEDClass=cnstr;
+	
+	//    Movement
+	BrakeRate=0.042;
+	MovementClass=BOATs4;
+	Acceleration=0.008;
+	CanMove=1;
+	MaxVelocity=2.09;
+	TurnRate=205;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	BuildDistance=60;
+	Builder=1;
+	WorkerTime=125;
+	
+	//    Resources
+	EnergyMake=7;
+	EnergyStorage=50;
+	EnergyUse=0.1;
+	MetalMake=0.3;
+	MetalStorage=50;
+	
+	//    Abilities
+	CanFly=0;
+	CanStop=1;
+	Floater=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=330;
+	SonarDistance=0;
+	
+	//    Weapons
+	ExplodeAs=rsu_death;
+	SelfDestructAs=rsu_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MinWaterDepth=18;
+	
+	//    Misc
+	Corpse=xect_acship_dead;
+	SmoothAnim=1;
+	Buildpic=mynn_acship.jpg;
+	
+	//    Not Used By TASpring
+}

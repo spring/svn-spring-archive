@@ -1,0 +1,224 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  flare, torso, wheel, bar, gut, head, flash;
+
+static-var  bMoving, bAiming, Static_Var_3, spray;
+
+// Signal definitions
+#define SIG_AIM				4
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from torso;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+	return (0);
+	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
+}
+
+Walk()
+{
+	if( moving )
+	{
+		spin wheel around x-axis speed <105.> accelerate <125.>;
+	}
+}
+
+MotionControl(moving, aiming, justmoved)
+{
+
+call-script Walk();
+//	justmoved = TRUE;
+//	while( TRUE )
+//	{
+//		moving = bMoving;
+//		aiming = bAiming;
+//		if( moving )
+//		{
+//			if( aiming )
+//			{
+//				Static_Var_3 = 1;
+//				call-script Walk();
+//			}
+//			if( !aiming )
+//			{
+//				Static_Var_3 = 0;
+//				call-script Walk();
+//			}
+//			justmoved = TRUE;
+//		}
+//		if( !moving )
+//		{
+//			Static_Var_3 = 1;
+//			if( justmoved )
+//			{
+//				stop-spin wheel around x-axis decelerate <165.>;
+//				if( !aiming )
+//				{
+//					turn torso to y-axis <0.> speed <90.>;
+//				}
+//				justmoved = FALSE;
+//			}
+//			sleep 100;
+//		}
+//	}
+}
+
+Create()
+{
+	hide flash;
+	bMoving = FALSE;
+	bAiming = FALSE;
+	Static_Var_3 = 1;
+	start-script SmokeUnit();
+	start-script MotionControl();
+}
+
+StartMoving()
+{
+	bMoving = TRUE;
+}
+
+StopMoving()
+{
+	bMoving = FALSE;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = 1;
+}
+
+RestoreAfterDelay()
+{
+	sleep 2250;
+	turn torso to y-axis <0.> speed <90.>;
+	turn head to x-axis <0.> speed <90.>;
+	bAiming = FALSE;
+	set INBUILDSTANCE to 0;
+}
+
+QueryNanoPiece(piecenum)
+{
+	piecenum = flare;
+	spray = !spray;
+}
+
+StartBuilding(Func_Var_1, Func_Var_2)
+{
+	call-script RestoreAfterDelay();
+	bAiming = TRUE;
+	while( !Static_Var_3 )
+	{
+		sleep 100;
+	}
+	turn torso to y-axis Func_Var_1 speed <80.>;
+	wait-for-turn torso around y-axis;
+	set INBUILDSTANCE to 1;
+}
+
+TargetCleared(Func_Var_1)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	call-script RestoreAfterDelay();
+}
+
+StopBuilding()
+{
+	set INBUILDSTANCE to 0;
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	bAiming = FALSE;
+	call-script RestoreAfterDelay();
+}
+
+FirePrimary()
+{
+	sleep 200;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = gut;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+AimPrimary(heading, pitch)
+{
+	sleep 150;
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	bAiming = TRUE;
+	while( !Static_Var_3 )
+	{
+		sleep 100;
+	}
+	turn torso to y-axis heading speed <45.>;
+	wait-for-turn torso around y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireTertiary()
+{
+	show flash;
+	turn torso to x-axis <-65.> speed <125.>;
+	sleep 200;
+	hide flash;
+	turn torso to x-axis <0.> speed <55.>;
+}
+
+AimFromTertiaary(Func_Var_1)
+{
+	Func_Var_1 = 5;
+}
+
+QueryTertiary(piecenum)
+{
+	piecenum = flare;
+}
+
+AimTertiary(heading, pitch)
+{
+	sleep 150;
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	bAiming = TRUE;
+	while( !Static_Var_3 )
+	{
+		sleep 100;
+	}
+	turn torso to y-axis heading speed <45.>;
+	wait-for-turn torso around y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}

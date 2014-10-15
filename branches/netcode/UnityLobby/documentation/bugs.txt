@@ -1,0 +1,34 @@
+BUGS
+Things todo if u got free time.
+Plently of things todo aswell as Lobby Protocol Code.
+
+Hosting Battles 
+			Need a Better Way to pick a Mod when hosting a Battle. ( Yes i consider this a UI Bug )
+
+Battle Lobby Code
+			Add handling if user aborts entering password for joining a Battle
+		 	Needs to updated to prevent user from changing Mod
+			Check if player == Host for mouse popup menu in Player List & for changing Maps
+			Need Better Way to Display Spectators  ( Maybe see about Lighter Text in Player List )
+			Updated Player || Map Info ( Not hard todo)
+
+Lobby Code
+			Doesnt have exception handly if Lobby Server is stopped / restarted & Server itself can still be pinged.
+
+			Reallly Realllly Need a Timer Class (threaded) with exception handling so easy to get usefull debugging info.
+				Instead of current ulgy solution of adding exception handling to each    def foo:
+					Whoever codes this is my personnaly hero. Spend more time figuring whats going wrong, than actually coding app.
+
+			Some Server Exceptions in Lobby.py isnt tied into UI yet.
+
+Config Code
+			Needs a rewrite to support xml file. To easy to lose track off option changes. A xml file support would solve this problem.
+
+Setup Code
+			Finish off code for automatic profile setup. I.E skeleton file for setup for Linux Packages for spring. So when user first runs UnityLobby,
+				with no console switch it will use skeletion file to create first profile.
+			
+			Cleanup Code .springrc nolonger is created by unitsync & empty. Remove excess code that checks for this.
+
+Graphics
+			Fix up Lobby Rankings to .png with transparency to avoid the white rough outlines. Currently files is just my quick & dirty altering image.

@@ -1,0 +1,69 @@
+Some cool scrolling credits like in a movie.<BR>
+<BR>
+<BR>
+<H2>Spring 0.75b2</H2> (bugfix release)<BR>
+<BR>
+<B>Lead Developer</B> Tobi Vollebregt<BR>
+<H2>Spring 0.75b1</H2><BR>
+<BR>
+<B>Lead Developer</B> Tobi Vollebregt<BR>
+<H2>Spring 0.74b3</H2> (bugfix release)<BR>
+<BR>
+<B>Lead Developer</B> YeHa (real name?)<BR>
+<H2>Spring 0.74b2</H2> (bugfix release)<BR>
+<BR>
+<B>Lead Developer</B> YeHa (real name?)<BR>
+<H2>Spring 0.74b1</H2><BR>
+<BR>
+<B>Lead Developer</B> YeHa (real name?)<BR>
+<H2>Spring 0.73b1</H2><BR>
+<BR>
+<B>Lead Developer</B> Jelmer Cnossen<BR>
+<BR>
+0.72b1<BR>
+<BR>
+0.71b1<BR>
+<BR>
+0.70b3<BR>
+<BR>
+0.70b2<BR>
+<BR>
+0.70b1<BR>
+<BR>
+0.67b3<BR>
+<BR>
+0.67b2<BR>
+<BR>
+0.67b1<BR>
+<BR>
+0.66b1<BR>
+<BR>
+0.65b2<BR>
+<BR>
+0.65b1<BR>
+<BR>
+0.64b1<BR>
+<BR>
+0.63b2<BR>
+<BR>
+0.63b1<BR>
+<BR>
+0.62b1<BR>
+<BR>
+0.61b2<BR>
+<BR>
+0.61b1<BR>
+<BR>
+0.60b1<BR>
+<BR>
+0.51b1<BR>
+<BR>
+0.50b2<BR>
+<BR>
+0.50b1<BR>
+<BR>
+0.41b1<BR>
+<BR>
+0.40b2<BR>
+<BR>
+First public release<BR>

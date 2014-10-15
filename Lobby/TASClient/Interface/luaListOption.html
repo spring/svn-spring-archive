@@ -1,0 +1,13 @@
+<div class="luaOptionContainer">
+	<span class="luaOptionName">[luaOptionName] :</span>
+	<select id="luaOption[luaOptionId]" onchange="sendData('changeluaoption:[luaOptionId]:'+getSelectedValue('luaOption[luaOptionId]'));">
+		[luaOptionList]
+	</select>
+	<div class="luaOptionDescription">
+		[luaOptionDescription]
+	</div>
+</div>
+<script type="text/javascript">
+	LuaListOptionList.push('luaOption[luaOptionId]');
+	selectedLuaOptionList.push('[luaOptionValue]');
+</script>

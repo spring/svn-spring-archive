@@ -1,0 +1,39 @@
+[xect_bow_dead]
+	{
+	world=All Worlds;
+	description=Carnage;
+	category=xect_corpses;
+	object=xect_bow_dead;
+	featuredead=xect_bow_heap;
+	footprintx=2;
+	footprintz=2;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=79;
+	energy=13;
+	damage=50;
+	reclaimable=1;
+	featurereclamate=smudge01;
+	seqnamereclamate=tree1reclamate;
+	}
+
+[xect_bow_heap]
+	{
+	world=All Worlds;
+	description=Carnage;
+	category=xect_heaps;
+	object=2x2a;
+	footprintx=2;
+	footprintz=2;
+	height=4;
+	blocking=0;
+	hitdensity=100;
+	metal=34;
+	energy=3;
+	damage=25;
+	reclaimable=1;
+
+	featurereclamate=smudge01;
+	seqnamereclamate=tree1reclamate;
+	}

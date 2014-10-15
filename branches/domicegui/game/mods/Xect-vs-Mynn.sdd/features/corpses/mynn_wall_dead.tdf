@@ -1,0 +1,44 @@
+[DragonsNeck_mynn_e]
+	{
+	world=allworld;
+	description=Upgraded Carbon Barrier;
+	category=dragonteeth;
+	object=mynn_wall;
+	footprintx=2;
+	footprintz=2;
+	height=64;
+	blocking=1;
+	hitdensity=100;
+	metal=25;
+	damage=5800;
+	reclaimable=1;
+	autoreclaimable=0;
+	featurereclamate=oilspill2;
+	featuredead=RockNeckmynn_e;
+	seqnamereclamate=tree1reclamate;
+	}
+[RockNeckmynn_e]
+	{
+	world=greenworld;
+	description=Upgraded Carbon Barrier;
+	category=rocks;
+	animating=0;
+	footprintx=2;
+	footprintz=2;
+	height=20;
+	filename=oilspill;
+	seqname=greenrubbleshad;
+	seqnameshad=greenrubbleshad;
+	seqnamereclamate=rock04brec;
+	metal=25;
+
+	featurereclamate=greenrubbleshad;
+	featuredead=greenrubble;
+
+	animtrans=0;
+	shadtrans=1;
+	reclaimable=1;
+	blocking=1;
+	hitdensity=100;
+	damage=2000;
+	}

@@ -1,0 +1,69 @@
+[UNITINFO]
+{
+	Name=Houdini;
+	UnitName=mynn_jam;
+	
+	//    Required Tags
+	BuildCostEnergy=1553;
+	BuildCostMetal=65;
+	BuildTime=3637;
+	Category=mynn rsu level2 weapon notair notsub ;
+	Description=Radar Blocking Bot;
+	FootprintX=1;
+	FootprintZ=1;
+	MaxDamage=329;
+	ObjectName=mynn_jam;
+	Side=Mynn;
+	SoundCategory=fire_trp;
+	TEDClass=rsu;
+	
+	//    Movement
+	BrakeRate=0.12;
+	MovementClass=tanksh2;
+	Acceleration=0.1;
+	CanMove=1;
+	MaxVelocity=2.88;
+	MaxSlope=20;
+	TurnRate=945;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyMake=15;
+	EnergyStorage=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanFly=0;
+	CanStop=1;
+	OnOffable=1;
+	ActivateWhenBuilt=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	RadarDistanceJam=475;
+	SightDistance=353;
+	
+	//    Weapons
+	ExplodeAs=small_death;
+	SelfDestructAs=small_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=112;
+	
+	//    Misc
+	Corpse=mynn_jam_dead;
+	SmoothAnim=1;
+	Upright=1;
+	Buildpic=mynn_jam.jpg;
+	
+	//    Not Used By TASpring
+}

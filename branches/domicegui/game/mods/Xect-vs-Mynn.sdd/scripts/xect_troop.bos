@@ -1,0 +1,407 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, hip_joint, hip, torso, torso_joint, eye, rshoulder_joint, rends,
+       rbicep, rarm_joint, rgun, rshield, rflare, lshoulder_joint, lends, lbicep,
+       larm_joint, lgun, lshield, lflare, lfleg_joint, lflegm, lffoot_joint, lffoot,
+       rfleg_joint, rflegm, rffoot_joint, rffoot, lbleg_joint, lblegm, lbfoot_joint, lbfoot,
+       rbleg_joint, rblegm, rbfoot_joint, rbfoot;
+
+static-var  bMoving, bAiming, Static_Var_3, Static_Var_4, gun_1,
+            Static_Var_6, Static_Var_7;
+
+// Signal definitions
+#define SIG_AIM				4
+
+
+
+
+armoroff()
+{
+	Static_Var_7 = 1;
+	set ARMORED to 0;
+	move torso_joint to y-axis [0.] speed [50.];
+	wait-for-move torso_joint along y-axis;
+	sleep 10;
+}
+
+walk(Func_Var_1)
+{
+	if( bMoving == 1 )
+	{
+		turn rbleg_joint to x-axis <-15.> speed <200.>;
+		turn rbleg_joint to y-axis <0.> speed <200.>;
+		turn rbleg_joint to z-axis <-15.> speed <200.>;
+	}
+	if( bMoving == 1 )
+	{
+		turn rfleg_joint to x-axis <0.> speed <200.>;
+		turn rfleg_joint to y-axis <35.> speed <200.>;
+		turn rfleg_joint to z-axis <0.> speed <200.>;
+	}
+	if( bMoving == 1 )
+	{
+		turn lbleg_joint to x-axis <0.> speed <200.>;
+		turn lbleg_joint to y-axis <35.> speed <200.>;
+		turn lbleg_joint to z-axis <0.> speed <200.>;
+	}
+	if( bMoving == 1 )
+	{
+		turn lfleg_joint to x-axis <-15.> speed <200.>;
+		turn lfleg_joint to y-axis <0.> speed <200.>;
+		turn lfleg_joint to z-axis <-15.> speed <200.>;
+	}
+	if( bMoving == 1 )
+	{
+		sleep 100;
+	}
+	if( bMoving == 1 )
+	{
+		turn rbleg_joint to x-axis <0.> speed <200.>;
+		turn rbleg_joint to y-axis <-35.> speed <200.>;
+		turn rbleg_joint to z-axis <0.> speed <200.>;
+	}
+	if( bMoving == 1 )
+	{
+		turn rfleg_joint to x-axis <15.> speed <200.>;
+		turn rfleg_joint to y-axis <0.> speed <200.>;
+		turn rfleg_joint to z-axis <15.> speed <200.>;
+	}
+	if( bMoving == 1 )
+	{
+		turn lbleg_joint to x-axis <15.> speed <200.>;
+		turn lbleg_joint to y-axis <0.> speed <200.>;
+		turn lbleg_joint to z-axis <15.> speed <200.>;
+	}
+	if( bMoving == 1 )
+	{
+		turn lfleg_joint to x-axis <0.> speed <200.>;
+		turn lfleg_joint to y-axis <-35.> speed <200.>;
+		turn lfleg_joint to z-axis <0.> speed <200.>;
+	}
+	if( bMoving == 1 )
+	{
+		sleep 100;
+	}
+	if( bMoving == 1 )
+	{
+		turn rbleg_joint to x-axis <15.> speed <200.>;
+		turn rbleg_joint to y-axis <0.> speed <200.>;
+		turn rbleg_joint to z-axis <15.> speed <200.>;
+	}
+	if( bMoving == 1 )
+	{
+		turn rfleg_joint to x-axis <0.> speed <200.>;
+		turn rfleg_joint to y-axis <-35.> speed <200.>;
+		turn rfleg_joint to z-axis <0.> speed <200.>;
+	}
+	if( bMoving == 1 )
+	{
+		turn lbleg_joint to x-axis <0.> speed <200.>;
+		turn lbleg_joint to y-axis <-35.> speed <200.>;
+		turn lbleg_joint to z-axis <0.> speed <200.>;
+	}
+	if( bMoving == 1 )
+	{
+		turn lfleg_joint to x-axis <15.> speed <200.>;
+		turn lfleg_joint to y-axis <0.> speed <200.>;
+		turn lfleg_joint to z-axis <15.> speed <200.>;
+	}
+	if( bMoving == 1 )
+	{
+		sleep 100;
+	}
+	if( bMoving == 1 )
+	{
+		turn rbleg_joint to x-axis <0.> speed <200.>;
+		turn rbleg_joint to y-axis <35.> speed <200.>;
+		turn rbleg_joint to z-axis <0.> speed <200.>;
+	}
+	if( bMoving == 1 )
+	{
+		turn rfleg_joint to x-axis <-15.> speed <200.>;
+		turn rfleg_joint to y-axis <0.> speed <200.>;
+		turn rfleg_joint to z-axis <-15.> speed <200.>;
+	}
+	if( bMoving == 1 )
+	{
+		turn lbleg_joint to x-axis <-15.> speed <200.>;
+		turn lbleg_joint to y-axis <0.> speed <200.>;
+		turn lbleg_joint to z-axis <-15.> speed <200.>;
+	}
+	if( bMoving == 1 )
+	{
+		turn lfleg_joint to x-axis <0.> speed <200.>;
+		turn lfleg_joint to y-axis <35.> speed <200.>;
+		turn lfleg_joint to z-axis <0.> speed <200.>;
+	}
+	if( bMoving == 1 )
+	{
+		sleep 100;
+	}
+}
+
+relax()
+{
+	if( Static_Var_7 == 1 )
+	{
+		Static_Var_7 = 0;
+		Static_Var_4 = 0;
+		set ARMORED to 1;
+		bAiming = FALSE;
+		turn torso_joint to y-axis <0.> speed <185.>;
+		turn torso_joint to x-axis <0.> speed <185.>;
+		turn torso_joint to z-axis <0.> speed <185.>;
+		turn larm_joint to y-axis <90.> speed <185.>;
+		turn rarm_joint to y-axis <-90.> speed <185.>;
+		turn lshoulder_joint to x-axis <90.> speed <185.>;
+		turn rshoulder_joint to x-axis <90.> speed <185.>;
+		wait-for-turn rshoulder_joint around y-axis;
+		wait-for-turn lshoulder_joint around y-axis;
+		move torso_joint to y-axis [-1.] speed [25.];
+	}
+}
+
+StartMoving()
+{
+	call-script armoroff();
+	bMoving = TRUE;
+	Static_Var_4 = 0;
+}
+
+StopMoving()
+{
+	bMoving = FALSE;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+FirePrimary()
+{
+	if( Static_Var_7 == 1 )
+	{
+		if( gun_1 == 0 )
+		{
+			move rgun to x-axis [-1.] speed [75.];
+			wait-for-move rgun along x-axis;
+			turn rshoulder_joint to y-axis <15.> speed <75.>;
+			wait-for-turn rshoulder_joint around y-axis;
+			move rgun to x-axis [0.] speed [10.];
+			turn rshoulder_joint to y-axis <0.> speed <45.>;
+			wait-for-turn rshoulder_joint around y-axis;
+			sleep 100;
+			gun_1 = 1;
+			return (0);
+		}
+		if( gun_1 == 1 )
+		{
+			move lgun to x-axis [-1.] speed [75.];
+			wait-for-move lgun along x-axis;
+			turn lshoulder_joint to y-axis <-15.> speed <75.>;
+			wait-for-turn lshoulder_joint around y-axis;
+			move lgun to x-axis [0.] speed [10.];
+			turn lshoulder_joint to y-axis <0.> speed <45.>;
+			wait-for-turn lshoulder_joint around y-axis;
+			sleep 100;
+			gun_1 = 0;
+			return (0);
+		}
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	if( Static_Var_7 == 1 )
+	{
+		if( gun_1 == 0 )
+		{
+			piecenum = rflare;
+		}
+		if( gun_1 == 1 )
+		{
+			piecenum = lflare;
+		}
+	}
+}
+
+QueryPrimary(piecenum)
+{
+	if( Static_Var_7 == 1 )
+	{
+		if( gun_1 == 0 )
+		{
+			piecenum = rflare;
+		}
+		if( gun_1 == 1 )
+		{
+			piecenum = lflare;
+		}
+	}
+}
+
+reset()
+{
+	sleep 200;
+	turn rbleg_joint to x-axis <0.> speed <200.>;
+	turn rbleg_joint to y-axis <0.> speed <200.>;
+	turn rbleg_joint to z-axis <0.> speed <200.>;
+	turn rfleg_joint to x-axis <0.> speed <200.>;
+	turn rfleg_joint to y-axis <0.> speed <200.>;
+	turn rfleg_joint to z-axis <0.> speed <200.>;
+	turn lbleg_joint to x-axis <0.> speed <200.>;
+	turn lbleg_joint to y-axis <0.> speed <200.>;
+	turn lbleg_joint to z-axis <0.> speed <200.>;
+	turn lfleg_joint to x-axis <0.> speed <200.>;
+	turn lfleg_joint to y-axis <0.> speed <200.>;
+	turn lfleg_joint to z-axis <0.> speed <200.>;
+	turn torso_joint to y-axis <0.> speed <185.>;
+	turn torso_joint to z-axis <0.> speed <185.>;
+	wait-for-turn rbleg_joint around x-axis;
+	wait-for-turn rbleg_joint around y-axis;
+	wait-for-turn rbleg_joint around z-axis;
+	wait-for-turn rfleg_joint around x-axis;
+	wait-for-turn rfleg_joint around y-axis;
+	wait-for-turn rfleg_joint around z-axis;
+	wait-for-turn lbleg_joint around x-axis;
+	wait-for-turn lbleg_joint around y-axis;
+	wait-for-turn lbleg_joint around z-axis;
+	wait-for-turn lfleg_joint around x-axis;
+	wait-for-turn lfleg_joint around y-axis;
+	wait-for-turn lfleg_joint around z-axis;
+	bAiming = FALSE;
+	Static_Var_7 = 1;
+	Static_Var_4 = 1;
+	sleep 100;
+	start-script relax();
+}
+
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	bAiming = TRUE;
+	Static_Var_4 = 0;
+	while( !Static_Var_3 )
+	{
+		sleep 10;
+	}
+	call-script armoroff();
+	Static_Var_6 = 0 - pitch;
+	turn torso_joint to y-axis heading speed <185.>;
+	turn torso_joint to z-axis Static_Var_6 speed <185.>;
+	turn larm_joint to y-axis <90.> speed <185.>;
+	turn rarm_joint to y-axis <-90.> speed <185.>;
+	turn lshoulder_joint to x-axis <0.> speed <185.>;
+	turn rshoulder_joint to x-axis <0.> speed <185.>;
+	wait-for-turn torso_joint around y-axis;
+	wait-for-turn torso_joint around z-axis;
+	wait-for-turn rarm_joint around y-axis;
+	wait-for-turn larm_joint around y-axis;
+	wait-for-turn rshoulder_joint around x-axis;
+	wait-for-turn lshoulder_joint around x-axis;
+	start-script reset();
+	return (Static_Var_7);
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode torso type BITMAPONLY | BITMAP1;
+		return (0);
+	}
+	if( severity <= 100 )
+	{
+		corpsetype = 2;
+		explode torso type BITMAPONLY | BITMAP1;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode torso type BITMAPONLY | BITMAP1;
+		return (0);
+	}
+	corpsetype = 3;
+	explode torso type BITMAPONLY | BITMAP1;
+	return (0);
+}
+
+MotionControl(moving, aiming, justmoved)
+{
+	var Func_Var_4;
+	justmoved = TRUE;
+	Func_Var_4 = 0;
+	while( TRUE )
+	{
+		moving = bMoving;
+		aiming = bAiming;
+		if( moving )
+		{
+			if( aiming )
+			{
+				Static_Var_3 = 1;
+				Static_Var_4 = 0;
+				Func_Var_4 = 0;
+			}
+			if( !aiming )
+			{
+				Static_Var_3 = 0;
+				Static_Var_4 = 0;
+				Func_Var_4 = 1;
+			}
+			call-script walk(Func_Var_4);
+			justmoved = TRUE;
+		}
+		if( !moving )
+		{
+			Static_Var_3 = 1;
+			if( justmoved )
+			{
+				if( !aiming )
+				{
+					sleep 200;
+					Static_Var_4 = Static_Var_7;
+					start-script relax();
+				}
+				turn rbleg_joint to x-axis <0.> speed <200.>;
+				turn rbleg_joint to y-axis <0.> speed <200.>;
+				turn rbleg_joint to z-axis <0.> speed <200.>;
+				turn rfleg_joint to x-axis <0.> speed <200.>;
+				turn rfleg_joint to y-axis <0.> speed <200.>;
+				turn rfleg_joint to z-axis <0.> speed <200.>;
+				turn lbleg_joint to x-axis <0.> speed <200.>;
+				turn lbleg_joint to y-axis <0.> speed <200.>;
+				turn lbleg_joint to z-axis <0.> speed <200.>;
+				turn lfleg_joint to x-axis <0.> speed <200.>;
+				turn lfleg_joint to y-axis <0.> speed <200.>;
+				turn lfleg_joint to z-axis <0.> speed <200.>;
+				justmoved = FALSE;
+			}
+			sleep 200;
+		}
+	}
+}
+
+
+
+Create()
+{
+	bMoving = FALSE;
+	bAiming = FALSE;
+	Static_Var_3 = 1;
+	Static_Var_7 = 1;
+	gun_1 = base;
+	Static_Var_4 = 1;
+	Static_Var_6 = 0;
+	turn larm_joint to y-axis <90.> speed <185.>;
+	turn rarm_joint to y-axis <-90.> speed <185.>;
+	start-script MotionControl();
+}

@@ -1,0 +1,60 @@
+[UNITINFO]
+{
+	Name=Geothermal Plant;
+	UnitName=xect_geo;
+	
+	//    Required Tags
+	BuildCostEnergy=9200;
+	BuildCostMetal=500;
+	BuildTime=21660;
+	Category=xect energy level2 noweapon notair notsub ;
+	Description=Extracts Geothermal Energy;
+	FootprintX=3;
+	FootprintZ=3;
+	MaxDamage=235;
+	ObjectName=xect_geo;
+	Side=Xect;
+	SoundCategory=xcllab;
+	TEDClass=metal;
+	
+	//    Movement
+	MaxSlope=10;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=GGGGGGGGG;
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyMake=250;
+	EnergyStorage=0;
+	EnergyUse=3;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanFly=0;
+	ActivateWhenBuilt=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=150;
+	
+	//    Weapons
+	ExplodeAs=LARGE_BUILDINGEX;
+	SelfDestructAs=NUCLEAR_MISSILE;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	SmoothAnim=1;
+	Buildpic=xect_geo.jpg;
+	
+	//    Not Used By TASpring
+}

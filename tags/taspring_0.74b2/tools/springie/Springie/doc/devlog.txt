@@ -1,0 +1,18 @@
+===============================
+SPRINGIE 0.94b
+===============================
+
+- updated for new lobby protocol version released by Betalord.  Central server now doesnt send player IP by default, this means that smurfs service is now less powerfull. Also only servers with Gargamel mode enabled will be able to ban by IP address. Those servers will appear as using NAT traversal method in server list. Gargamel mode servers will still report IP of users to central server for smurfs, but only players who join server.  
+
+- fixed map change bug (springie didnt reflect map change in status bar and didnt advertise new maplink). This fix also fixed missing *locked* and *unlocked* chat messages from springie.
+
+- springie now reports player ranks to central server (it displays it in smurfs command now)
+
+
+* kick with reason - stop
+* http://replays.unknown-files.net/bot_upload.php?title=title&description=description
+
+
+SELECT gameId, allyNumber, min(victoryTeam) AS vt, min(loseTime) AS lt FROM Games2players  WHERE spectator=0 GROUP BY gameId,allyNumber HAVING lt>0 AND vt=1
+
+SELECT 100*count(*) / (SELECT count(*) FROM Games2players WHERE playerId=g2p.playerId) AS perc, (SELECT count(*) FROM Games2players WHERE playerId=g2p.playerId) AS tot, Players.name FROM Games2players AS g2p JOIN Players ON g2p.playerId = Players.id WHERE spectator=0 AND leaveTime =0 AND (leaveTime < loseTime || dropTime < loseTime) GROUP BY playerId ORDER BY perc DESC ,tot DESC

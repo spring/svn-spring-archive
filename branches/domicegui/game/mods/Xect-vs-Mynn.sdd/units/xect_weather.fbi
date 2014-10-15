@@ -1,0 +1,73 @@
+[UNITINFO]
+{
+	Name=Buddha;
+	UnitName=xect_weather;
+	
+	//    Required Tags
+	BuildCostEnergy=3900;
+	BuildCostMetal=690;
+	BuildTime=9660;
+	Category=xect mut level2 weapon notair notsub ctrl_x;
+	Description=Lightning Bot;
+	FootprintX=1;
+	FootprintZ=1;
+	MaxDamage=2458;
+	ObjectName=xect_weather;
+	Side=Xect;
+	SoundCategory=mth_sold;
+	TEDClass=kbot;
+	
+	//    Movement
+	BrakeRate=0.3;
+	MovementClass=TANKds2;
+	Acceleration=0.15;
+	CanMove=1;
+	MaxVelocity=1.78;
+	MaxSlope=35;
+	TurnRate=750;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	BuildDistance=30;
+	Builder=1;
+	WorkerTime=50;
+	
+	//    Resources
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	ActivateWhenBuilt=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=450;
+	SonarDistance=0;
+	
+	//    Weapons
+	Weapon1=FLAME_BALLS;
+	Weapon3=XLIGHTNING;
+	wpri_badTargetCategory=VTOL;
+	BadTargetCategory=VTOL;
+	DamageModifier=1.64;
+	ExplodeAs=MTHBOMB_BLAST;
+	SelfDestructAs=MTHBOMB_BLAST;
+	NoChaseCategory=VTOL;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	SmoothAnim=1;
+	Upright=1;
+	HideDamage=1;
+	Buildpic=xect_weather.jpg;
+	
+	//    Not Used By TASpring
+}

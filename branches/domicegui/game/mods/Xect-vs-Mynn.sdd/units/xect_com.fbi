@@ -1,0 +1,80 @@
+[UNITINFO]
+{
+	Name=Xect Commander;
+	UnitName=xect_com;
+	
+	//    Required Tags
+	BuildCostEnergy=1700;
+	BuildCostMetal=1700;
+	BuildTime=5610;
+	Category=xect commander level10 weapon notair notsub ctrl_c;
+	Description= ;
+	FootprintX=2;
+	FootprintZ=2;
+	MaxDamage=3151;
+	ObjectName=xect_com;
+	Side=Xect;
+	SoundCategory=commander;
+	TEDClass=commander;
+	
+	//    Movement
+	BrakeRate=0.3;
+	MovementClass=tankds2;
+	Acceleration=0.15;
+	CanMove=1;
+	MaxVelocity=1;
+	MaxSlope=15;
+	TurnRate=500;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	BuildDistance=170;
+	Builder=1;
+	WorkerTime=300;
+	
+	//    Resources
+	EnergyMake=50;
+	EnergyUse=0;
+	MetalMake=1.8;
+	
+	//    Abilities
+	CanAttack=1;
+	candgun=1;
+	CanCapture=1;
+	CanFly=0;
+	CanStop=1;
+	ActivateWhenBuilt=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=450;
+	SonarDistance=0;
+	CloakCost=20;
+	CloakCostMoving=100;
+	
+	//    Weapons
+	Weapon1=XCLCOM_LASER;
+	Weapon3=MYNN_DISINTEGRATOR_BLAST;
+	wpri_badTargetCategory=VTOL;
+	BadTargetCategory=VTOL;
+	DamageModifier=1.7;
+	ExplodeAs=commander_death;
+	SelfDestructAs=commander_death;
+	NoChaseCategory=VTOL;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=35;
+	
+	//    Misc
+	SmoothAnim=1;
+	HideDamage=1;
+	Commander=1;
+	Buildpic=xect_com.jpg;
+	
+	//    Not Used By TASpring
+}

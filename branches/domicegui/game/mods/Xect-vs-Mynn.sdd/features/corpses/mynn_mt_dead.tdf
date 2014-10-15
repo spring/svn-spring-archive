@@ -1,0 +1,17 @@
+[mynn_mt_dead]
+	{
+	world=All Worlds;
+	description=Dead Structure;
+	category=mynn_e_corpses;
+	object=mynn_mt_dead;
+	footprintx=5;
+	footprintz=5;
+	height=4;
+	blocking=0;
+	hitdensity=100;
+	metal=110;
+	damage=700;
+	reclaimable=1;
+	featurereclamate=oilspill2;
+	seqnamereclamate=tree1reclamate;
+	}

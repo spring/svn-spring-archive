@@ -1,0 +1,19 @@
+[grapoop]
+	{
+	world=all worlds;
+	description=Bugger Guts;
+	category=blood;
+	animating=0;
+	footprintx=2;
+	footprintz=2;
+	height=0;
+	filename=grapoop;
+	seqname=grapoop;
+	seqnameshad=;
+	featuredead=grapoop;
+	animtrans=0;
+	shadtrans=1;
+	blocking=0;
+	hitdensity=100;
+	damage=20000;
+	}

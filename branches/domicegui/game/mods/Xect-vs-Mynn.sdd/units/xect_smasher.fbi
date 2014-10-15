@@ -1,0 +1,73 @@
+[UNITINFO]
+{
+	Name=Smasher;
+	UnitName=xect_smasher;
+	
+	//    Required Tags
+	BuildCostEnergy=2000;
+	BuildCostMetal=1000;
+	BuildTime=5600;
+	Category=xect TANK level2 weapon notair notsub ctrl_v;
+	Description=Multi-turret Anti-air Tank;
+	FootprintX=5;
+	FootprintZ=5;
+	MaxDamage=2520;
+	ObjectName=xect_smasher.s3o;
+	Side=Xect;
+	SoundCategory=xcl_tank;
+	TEDClass=TANK;
+	
+	//    Movement
+	BrakeRate=0.005;
+	MovementClass=tanksh2;
+	Acceleration=0.019;
+	CanMove=1;
+	MaxVelocity=1.26;
+	MaxSlope=15;
+	TurnRate=450;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=338;
+	
+	//    Weapons
+	Weapon1=USA_BCANNON;
+	Weapon2=GAMERA_FLAMETHROWER;
+	Weapon3=anti-air_laser;
+	Weapon4=anti-air_laser;
+	Weapon5=anti-air_laser;
+	Weapon6=anti-air_laser;
+	DamageModifier=1.41;
+	ExplodeAs=BIG_UNITEX;
+	SelfDestructAs=BIG_UNIT;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=10;
+	
+	//    Misc
+	Corpse=xect_smasher_dead;
+	SmoothAnim=1;
+	Upright=1;
+	Buildpic=xect_smasher.jpg;
+	
+	//    Not Used By TASpring
+}

@@ -1,0 +1,62 @@
+[UNITINFO]
+{
+	Name=Aircraft Plant;
+	UnitName=mynn_ap;
+	
+	//    Required Tags
+	BuildCostEnergy=1400;
+	BuildCostMetal=870;
+	BuildTime=4090;
+	Category=mynn PLANT level1 noweapon notair notsub ctrl_f;
+	Description=Produces Aircraft;
+	FootprintX=7;
+	FootprintZ=7;
+	MaxDamage=2039;
+	ObjectName=mynn_ap;
+	Side=Mynn;
+	SoundCategory=mynn_plant;
+	TEDClass=PLANT;
+	
+	//    Movement
+	CanMove=1;
+	MaxSlope=10;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=ooooooo ooccccoo occccco occccco occccco occccco occccco ;
+	
+	//    Construction
+	Builder=1;
+	WorkerTime=120;
+	
+	//    Resources
+	EnergyStorage=100;
+	EnergyUse=0;
+	MetalStorage=100;
+	
+	//    Abilities
+	CanFly=0;
+	CanStop=1;
+	ActivateWhenBuilt=0;
+	
+	//    Sight/Radar
+	RadarDistance=500;
+	SightDistance=338;
+	
+	//    Weapons
+	ExplodeAs=crawler_death;
+	SelfDestructAs=crawler_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	Corpse=mynn_ap_dead;
+	SmoothAnim=1;
+	Buildpic=mynn_ap.jpg;
+	
+	//    Not Used By TASpring
+}

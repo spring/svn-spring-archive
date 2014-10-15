@@ -1,0 +1,40 @@
+[xect_mthmex_dead]
+	{
+	world=All Worlds;
+	description=Wreckage;
+	category=xect_corpses;
+	object=xect_mthmex_dead;
+	featuredead=xect_mthmex_heap;
+	footprintx=3;
+	footprintz=3;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=631;
+	energy=0;
+	damage=1345;
+	reclaimable=1;
+	featurereclamate=smudge01;
+	seqnamereclamate=tree1reclamate;
+	}
+
+
+[xect_mthmex_heap]
+	{
+	world=All Worlds;
+	description=Wreckage;
+	category=xect_heaps;
+	object=5x5b;
+	footprintx=3;
+	footprintz=3;
+	height=4;
+	blocking=0;
+	hitdensity=100;
+	metal=327;
+	energy=0;
+	damage=675;
+	reclaimable=1;
+
+	featurereclamate=smudge01;
+	seqnamereclamate=tree1reclamate;
+	}

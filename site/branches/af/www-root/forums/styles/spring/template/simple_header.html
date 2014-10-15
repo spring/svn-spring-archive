@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}" xml:lang="{S_USER_LANG}">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset={S_CONTENT_ENCODING}" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="{S_USER_LANG}" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="copyright" content="2002-2006 phpBB Group" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+{META}
+<title>{SITENAME} &bull; <!-- IF S_IN_MCP -->{L_MCP} &bull; <!-- ELSEIF S_IN_UCP -->{L_UCP} &bull; <!-- ENDIF -->{PAGE_TITLE}</title>
+<style type="text/css">
+<!--
+/* TODO move to seperate stylesheet */
+.SSmainContent {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	color: #000000;
+	background-color: #FFFFFF;
+	background-position: center;
+	overflow: auto;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: 1px solid #000000;
+	z-index: 10;
+	padding-top: 15px;
+	padding-right: 5px;
+	padding-bottom: 15px;
+	padding-left: 5px;
+}
+.SSheader {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #FFFFFF;
+	float: none;
+	/*height:100px;*/
+	background-position: 0px 0px;
+	padding: 10px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+	background-repeat: no-repeat;
+}/*8*/
+body {
+	background-color: #6fa5dd;
+	margin: 0px;
+	width: 100%;
+	background-image: url(/tpl/corner.jpg);
+	background-repeat: no-repeat;
+}
+body,td,th {
+	color: #FFFFFF;
+	font-size: 14px;
+}
+a:link {
+	color: #FFCC00;
+}
+.style1 {font-size: 36px}
+
+-->
+</style>
+<script type="text/javascript">
+// <![CDATA[
+
+	var onload_functions = new Array();
+	var onunload_functions = new Array();
+
+	/**
+	* New function for handling multiple calls to window.onload and window.unload by pentapenguin
+	*/
+	window.onload = function()
+	{
+		for (var i = 0; i < onload_functions.length; i++)
+		{
+			eval(onload_functions[i]);
+		}
+	}
+
+	window.onunload = function()
+	{
+		for (var i = 0; i < onunload_functions.length; i++)
+		{
+			eval(onunload_functions[i]);
+		}
+	}
+
+// ]]>
+</script>
+<script type="text/javascript" src="{T_TEMPLATE_PATH}/styleswitcher.js"></script>
+
+<link href="{T_THEME_PATH}/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" />
+<link href="{T_STYLESHEET_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
+
+<link href="{T_THEME_PATH}/normal.css" rel="alternate stylesheet" type="text/css" title="A" />
+<link href="{T_THEME_PATH}/medium.css" rel="alternate stylesheet" type="text/css" title="A+" />
+<link href="{T_THEME_PATH}/large.css" rel="alternate stylesheet" type="text/css" title="A++" />
+
+<!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
+	<link href="{T_THEME_PATH}/bidi.css" rel="stylesheet" type="text/css" media="screen, projection" />
+<!-- ENDIF -->
+
+<!-- DEFINE $POPUP = 1 -->
+
+</head>
+
+<body <?php  /*id="phpbb" */ ?> class="{S_CONTENT_DIRECTION}">
+
+<?php
+require('../../../../wrapper_top.php');
+?>
+<div id="simple-wrap">
+	<a id="top" name="top" accesskey="t"></a>
+	<div id="page-body">

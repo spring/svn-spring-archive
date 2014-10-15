@@ -1,0 +1,17 @@
+[mynn_adar_dead]
+	{
+	world=All Worlds;
+	description=Dead Structure;
+	category=mynn_e_corpses;
+	object=mynn_adar_dead;
+	footprintx=5;
+	footprintz=5;
+	height=4;
+	blocking=0;
+	hitdensity=70;
+	metal=120;
+	damage=400;
+	reclaimable=1;
+	featurereclamate=oilspill2;
+	seqnamereclamate=tree1reclamate;
+	}

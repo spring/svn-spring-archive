@@ -1,0 +1,21 @@
+===============================
+SPRINGIE 1.x?
+===============================
+* added !notify command - notified user when game ends
+* added perform list (can be part of preset), enables you to set mod options or boxes in easy way
+* added option to allow people join while in game
+* uf linked changed to jobjol site
+* ladder updated to new site
+ 
+
+===============
+TODO
+===============
+* CAutohostInterface or full dedicated server support - done in the previous version
+* fix linux compatibility
+* http://replays.unknown-files.net/bot_upload.php?title=title&description=description
+* gui - add player lists by channel
+* demo upload
+* kick with reason - stop
+* reenable alternative way to determine that game has ended (people in lobby not in game)
+* autoconnect to backup

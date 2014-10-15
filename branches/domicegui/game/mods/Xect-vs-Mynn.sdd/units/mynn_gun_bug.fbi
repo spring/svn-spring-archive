@@ -1,0 +1,71 @@
+[UNITINFO]
+{
+	Name=Ogre;
+	UnitName=mynn_gun_bug;
+	
+	//    Required Tags
+	BuildCostEnergy=1214;
+	BuildCostMetal=135;
+	BuildTime=2927;
+	Category=rac bugger level1 weapon notair notsub ctrl_w ;
+	Description=Gun-Slinging Bot;
+	FootprintX=2;
+	FootprintZ=2;
+	MaxDamage=561;
+	ObjectName=mynn_gun_bug;
+	Side=Mynn;
+	SoundCategory=grah_trp;
+	TEDClass=bugger;
+	
+	//    Movement
+	BrakeRate=0.19;
+	MovementClass=tanksh2;
+	Acceleration=0.15;
+	CanMove=1;
+	MaxVelocity=2.08;
+	MaxSlope=20;
+	TurnRate=1120;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=390;
+	
+	//    Weapons
+	Weapon1=OGRE_GUNS;
+	wpri_badTargetCategory=VTOL;
+	BadTargetCategory=VTOL;
+	DamageModifier=0.4;
+	ExplodeAs=grah_death;
+	SelfDestructAs=grah_death;
+	NoChaseCategory=VTOL;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=20;
+	
+	//    Misc
+	Corpse=mynn_gun_bug_dead;
+	SmoothAnim=1;
+	Upright=1;
+	Buildpic=mynn_gun_bug.jpg;
+	
+	//    Not Used By TASpring
+}

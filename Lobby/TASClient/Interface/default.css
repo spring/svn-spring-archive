@@ -1,0 +1,166 @@
+body {
+	width: 100%;
+	height: 100%;
+}
+
+body, div {
+	scrollbar-base-color: #2B1D15;
+	scrollbar-arrow-color: #6c4a36;
+	scrollbar-3dlight-color: #2B1D15;
+	scrollbar-darkshadow-color: #2B1D15;
+	scrollbar-face-color: #2B1D15;
+	scrollbar-highlight-color: #6c4a36;
+	scrollbar-shadow-color: #6c4a36;
+}
+
+a,a:active, a:visited, a:hover{
+	text-decoration: none;
+	cursor: default;
+	color: #a26949;
+}
+
+a:hover{
+	color: #ffa573;
+}
+
+ul {
+	text-decoration: none;
+	list-style-type: none ;
+}
+
+li {
+	margin: 10px;
+}
+
+body {
+	overflow: hidden;
+	font-family: arial, verdana,sans-serif;
+	margin:0;
+	padding:0;
+	color: #a26949;
+	background-color: #4f3526;
+}
+
+form {
+	margin: 0;
+	padding:0;
+}
+
+h1 {
+	font-size: 3em;
+	font-style: italic;
+}
+
+div.footer {
+	position: absolute;
+	left: 0;
+	top: 100%;
+	width: 100%;
+	margin-top: -35px;
+	height: 35px;
+	margin-left:10px;
+}
+
+.luaOptionContainer {
+	margin-bottom: 15px;
+}
+
+.luaOptionDescription {
+	padding-left:20px;
+}
+
+.luaOptionName {
+	font-weight:bold;
+}
+
+select {
+	background-color: #2B1D15;
+	color: #6c4a36;
+}
+option {
+	background-color: #ffa573;
+	color: black;
+}
+
+input {
+	background-color:transparent;
+	border:1px solid #a26949;
+	color: #a26949;
+}
+
+input[type=radio],input[type=checkbox] {
+background-color:transparent;
+border:none;
+}
+
+.button {
+	border: 2px solid #a26949;
+	color: #a26949;
+	margin: 2px;
+	padding: 2px;
+}
+
+.button:hover {
+	border: 2px solid #ffa573;
+	color: #ffa573;
+	margin: 2px;
+	padding: 2px;
+	top: 2px;
+}
+
+.mapItem{
+	border: 1px solid #6c4a36;
+	color: #6c4a36;
+	width:400px;
+	height:180px;
+	margin:10px;
+	padding:10px;
+	float: left;
+	overflow: hidden;
+}
+a:hover .mapItem{
+	border: 1px solid #ffa573;
+}
+.mapMinimap{
+	margin-right: 15px;
+}
+.mapName{
+	font-weight: bold;
+}
+a:hover .mapName{
+	color: #ffa573;
+}
+.mapDescription{
+
+}
+.mapTidalStrength{
+
+}
+.mapGravity{
+
+}
+.mapExtractorRadius{
+
+}
+.mapWind{
+
+}
+.mapSize{
+
+}
+.mapPosCount{
+	visibility: hidden;
+}
+
+.sortType {
+	color: #6c4a36;
+	padding: 5px;
+}
+.sortType:hover {
+	color: #ffa573;
+	padding: 5px;
+}
+.sortTypeSelected {
+	color: #ffa573;
+	padding: 5px;
+}

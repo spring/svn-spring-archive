@@ -1,0 +1,26 @@
+<div class="luaOptionContainer">
+	<div style="width:90%;">
+		<span class="luaOptionName" style="float:left">[luaOptionName] :</span>
+		<div id="spin[luaOptionId]" style="float:left"></div>
+	</div>
+	<script type="text/javascript">
+		function spinChanged[luaOptionId](sender, newVal)
+		{
+			sendData('changeluaoption:[luaOptionId]:'+newVal);
+		}
+
+		var spinCtrl[luaOptionId] = new SpinControl();
+		spinCtrl[luaOptionId].SetMaxValue([luaOptionMaxValue]);
+		spinCtrl[luaOptionId].SetMinValue([luaOptionMinValue]);
+		spinCtrl[luaOptionId].SetIncrement([luaOptionStep]);
+		spinCtrl[luaOptionId].SetCurrentValue([luaOptionValue]);
+		spinCtrl[luaOptionId].GetAccelerationCollection().Add(new SpinControlAcceleration([luaOptionStep], 500));
+		spinCtrl[luaOptionId].GetAccelerationCollection().Add(new SpinControlAcceleration([luaOptionStep]*10, 1750));
+		spinCtrl[luaOptionId].AttachValueChangedListener(spinChanged[luaOptionId]);
+		document.getElementById('spin[luaOptionId]').appendChild(spinCtrl[luaOptionId].GetContainer());
+		spinCtrl[luaOptionId].StartListening();
+	</script>
+	<div class="luaOptionDescription">
+		[luaOptionDescription]
+	</div>
+</div>

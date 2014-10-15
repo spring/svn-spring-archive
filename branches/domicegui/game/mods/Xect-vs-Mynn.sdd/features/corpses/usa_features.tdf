@@ -1,0 +1,60 @@
+[bloodscar1]
+	{
+	world=all worlds;
+	description=Troop Blood;
+	category=blood;
+	animating=0;
+	footprintx=2;
+	footprintz=2;
+	height=0;
+	filename=bloodground;
+	seqname=bloodgr1;
+	seqnameshad=;
+	featuredead=bloodscar1;
+	animtrans=0;
+	shadtrans=1;
+	blocking=0;
+	hitdensity=100;
+	damage=20000;
+	}
+
+[bloodscar2]
+	{
+	world=all worlds;
+	description=Troop Blood;
+	category=blood;
+	animating=0;
+	footprintx=2;
+	footprintz=2;
+	height=0;
+	filename=bloodground;
+	seqname=bloodgr2;
+	seqnameshad=;
+	featuredead=bloodscar2;
+	animtrans=0;
+	shadtrans=1;
+	blocking=0;
+	hitdensity=100;
+	damage=20000;
+	}
+
+[bloodscar3]
+	{
+	world=all worlds;
+	description=Troop Blood;
+	category=blood;
+	animating=0;
+	footprintx=2;
+	footprintz=2;
+	height=0;
+	filename=bloodground;
+	seqname=bloodgr3;
+	seqnameshad=;
+	featuredead=bloodscar3;
+	animtrans=0;
+	shadtrans=1;
+	blocking=0;
+	hitdensity=100;
+	damage=20000;
+	}
+

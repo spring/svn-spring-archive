@@ -1,0 +1,15 @@
+//
+// Using the built-in defaults
+//
+// Somebody needs to document the new key binding mechanism...
+// (it'll get done once the new code is a little closer to final)
+//
+// try:
+//   .bind <keyset> <action>
+//   .cmd keydebug
+//   .cmd keyload
+//   .cmd keysave
+//   .cmd keysyms
+//   .cmd keycodes
+//   .cmd keyprint
+//

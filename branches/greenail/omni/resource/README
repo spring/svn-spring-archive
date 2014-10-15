@@ -1,0 +1,9 @@
+This folder is for resource files, whether it be for sound, images, or other media.
+
+All of the files in this folder (except for the src folder) are used in some way by SpringClient.py during run-time.  At some point, this may change, but at the current time it is not problematic.  It also allows users to edit the various media files to their liking and post their changes on the forums.
+
+NOTE: The "resource" folder needs to be in the same directory as SpringClient.py for the program to run correctly.
+
+
+
+SPECIAL THANKS TO NEUTRALIZE FOR MOST OF THE ICONS AND IMAGES IN THIS DIRECTORY!

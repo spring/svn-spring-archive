@@ -1,0 +1,5 @@
+connect WAVE Sounds/Connected.wav
+disconnect WAVE Sounds/Disconnected.wav
+battle WAVE Sounds/Battle.wav
+ring WAVE Sounds/Ring.wav
+notify WAVE Sounds/Notify.wav

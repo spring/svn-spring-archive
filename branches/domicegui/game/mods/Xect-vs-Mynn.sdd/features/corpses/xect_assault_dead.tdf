@@ -1,0 +1,38 @@
+[xect_assault_dead]
+	{
+	world=All Worlds;
+	description=Carnage;
+	category=xect_corpses;
+	object=xect_assault_dead;
+	featuredead=xect_assault_heap;
+	footprintx=2;
+	footprintz=2;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=55;
+	energy=14;
+	damage=110;
+	reclaimable=1;
+	featurereclamate=bloodscar2;
+      	seqnamereclamate=tree1reclamate;
+	}
+
+[xect_assault_heap]
+	{
+	world=All Worlds;
+	description=Carnage;
+	category=xect_heaps;
+	object=xect_assault_dead;
+	footprintx=2;
+	footprintz=2;
+	height=4;
+	blocking=0;
+	hitdensity=100;
+	metal=15;
+	energy=7;
+	damage=55;
+	reclaimable=1;
+	featurereclamate=bloodscar2;
+      	seqnamereclamate=tree1reclamate;
+	}

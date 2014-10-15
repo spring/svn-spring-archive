@@ -1,0 +1,26 @@
+===============================
+SPRINGIE 0.99
+===============================
+
+- game now auto-starts when AutoLock limit is reached and all ready/teams ok
+- fixed error - autohost with # in title were unable to submit stats
+- removed hole punching (was causing more problems than it solved)
+- fixed annoying repeating dialog popup asking for correct password
+- added automated countdown when asking for new password
+- 64bit Vista compatibility fix
+- automatic map discovery changed to only auto-download new maps when spring is not running
+
+===============
+TODO
+===============
+* independent event when player changes status other then spectating to avoid resending game status
+* kickafk command/timer
+* forcespectator command
+* rename !tempadmin to ruler or dictator or boss or somethign
+* kick with reason - stop
+* http://replays.unknown-files.net/bot_upload.php?title=title&description=description
+* ranked servers
+* gui - add player lists by channel
+* demo upload
+* admins duplication after failed login
+* fix linux compatibility

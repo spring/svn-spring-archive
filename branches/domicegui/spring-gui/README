@@ -1,0 +1,95 @@
+#======================================================
+			To Run
+#======================================================
+
+
+Remove any previous Profiles from older versions
+
+Get unitsync.so / unitsync.dll (windows support still to be coded).
+
+	If u using svn
+		scons configure
+		scons omni
+	Or if u are using gentoo
+		add the useflag omni
+	
+Run script via python /path/to/spring-gui/main.py
+or make file excutable & make a symlink, so u can type spring-gui to start it
+
+Run Program first in console so u can see status of map index. Might take awhile depending on number of maps
+	Will fix asap with GUI progress bar
+
+
+
+
+#======================================================
+			Known Issues
+#======================================================
+
+Map / Mod
+	Yes i really should add code to sort them via Name. Will do in abit just wanted to get this commited. Alot i should do atm
+
+
+Map / Mod Index Update 
+	Still Need to Code in check @ startup to update maps.
+	Also Need to Code in Progress Bar
+	Atm to update map / mod in Profile Window right click & pick to Delete map / map index. This will cause spring-gui to recreate the index file(s)
+
+
+Need to Code Version Check into the new GUI Setup Code again.
+
+
+Still need to Code Adv Setup  i.e for multiple Spring Installs
+	This will be for users with multiple springs installed. i.e it will chdir into datadir for u & then start spring.
+
+
+spring-gui will not work with any svn revision previous to 1799. Due to recent changes to unitsync / multi datadirs. Didnt feel like bloating code to support old / new.
+	U can grab the old spring-gui 3.11 from forums for previous svn checkouts.
+
+
+#======================================================
+			Todo
+#======================================================
+
+
+Modularise the GUI Code alot more
+	The GUI kinda envolved into its current state so it isnt broken up much i.e abit of repeating code, that could reuse
+		Will get it sorted out asap
+
+Finish off Battle section
+	Add icons & rendering for side images (where are default ones stored?)
+	Add icons & rendering for Ready / Waiting / (afk?)
+	Add custom colour select widget
+
+Add Unit Browser
+	i.e use unitsync to browser mod archive grab build icons for units & read .tdf files for unit info
+
+Add Download Maps & Mods
+	Similar setup for Windows lobby client
+	Also add drag & drop support. i.e u drag map / mod into spring-gui window and it will install it into (rw) datadir for user
+	Also trigar map index update when new maps added
+	Add button to manually update map index (background code added. Just need to sort out GUI code
+	Add progress bar for map index update status, so user aware of spring-gui is still working away
+		and hasnt crashed / stalled on them
+
+Add Restricted Units
+	Everything needs to be done :(
+
+Add Lobby Code
+	Grab code from omni for starting point
+		wx.Timer needs to be rewritten in python
+			Basicly a seperate threaded process that loops & excutes a def
+				Used to ping/pong lobby server to keep connection alive
+
+Add Battle Profile Code
+	So u can save previous setups i.e everything (except unit restrictions)
+	Unit Restrictions will be in seperate profile. i.e so u can have a profile that limits nukes & krogoths
+
+Add Windows Support
+	Need to add sys to detect platform script is running
+	And also find location to save files in user directory
+	And finally code to save spring options in registry
+	Working on it next, a kind soul gave me a precompiled unitsync with python bindings for windows.
+	Make Windows Readme with instructions to compile exe from script using pyexe
+
+All above provided noone beats me to coding it / fixing issue :)

@@ -1,0 +1,65 @@
+[UNITINFO]
+{
+	Name=Missile Turret;
+	UnitName=xect_mis;
+	
+	//    Required Tags
+	BuildCostEnergy=1250;
+	BuildCostMetal=125;
+	BuildTime=3000;
+	Category=xect special level1 weapon notair notsub ;
+	Description=Air Defense Emplacement;
+	FootprintX=3;
+	FootprintZ=3;
+	MaxDamage=539;
+	ObjectName=xect_mis;
+	Side=Xect;
+	SoundCategory=xcllab;
+	TEDClass=fort;
+	
+	//    Movement
+	MaxSlope=12;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=ooooooooo;
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=0;
+	EnergyUse=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=5;
+	SightDistance=410;
+	
+	//    Weapons
+	Weapon1=BIGGER_ROCKET;
+	wpri_badTargetCategory=NOTAIR;
+	BadTargetCategory=NOTAIR;
+	DamageModifier=0.4;
+	ExplodeAs=MEDIUM_BUILDINGEX;
+	SelfDestructAs=MEDIUM_BUILDING;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=12;
+	
+	//    Misc
+	Corpse=xect_mis_dead;
+	SmoothAnim=1;
+	Buildpic=xect_mis.jpg;
+	
+	//    Not Used By TASpring
+}

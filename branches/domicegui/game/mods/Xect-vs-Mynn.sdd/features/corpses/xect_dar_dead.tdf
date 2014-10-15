@@ -1,0 +1,17 @@
+[xect_dar_dead]
+	{
+	world=All Worlds;
+	description=Dead Structure;
+	category=xect_corpses;
+	object=xect_dar_dead;
+	footprintx=3;
+	footprintz=3;
+	height=4;
+	blocking=0;
+	hitdensity=70;
+	metal=63;
+	damage=405;
+	reclaimable=1;
+	featurereclamate=oilspill2;
+	seqnamereclamate=tree1reclamate;
+	}

@@ -1,0 +1,11 @@
+- added frustrum culling
+- edit ball always looks same size on screen
+- improved normal self-consistency, to remove cross-hatching appearance
+- corrected a crash-bug when loading a heightmap
+- improved level of detail engine
+- added UI, including file load/save dialog boxes
+- added flatten brush
+- added slider to change brushsize
+- added coloring to slopemap: green = vehicles(< 0.08 ), blue = infantry (< 0.33 ), red = extreme
+- corrected bitmap size on save (used to add an extra pixel to width and height)
+- corrected scaling on heightmap save, to normalize to minheight and maxheight

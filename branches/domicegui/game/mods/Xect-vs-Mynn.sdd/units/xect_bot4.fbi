@@ -1,0 +1,66 @@
+[UNITINFO]
+{
+	Name=XCL-04;
+	UnitName=xect_bot4;
+	
+	//    Required Tags
+	BuildCostEnergy=2300;
+	BuildCostMetal=55;
+	BuildTime=5345;
+	Category=xect vtol level2 constr noweapon notsub ctrl_f;
+	Description=Construction Bot;
+	FootprintX=1;
+	FootprintZ=1;
+	MaxDamage=127;
+	ObjectName=xect_bot4;
+	Side=Xect;
+	SoundCategory=xcl_bot;
+	TEDClass=vtol;
+	
+	//    Movement
+	BrakeRate=1.5;
+	MovementClass=tanksh2;
+	Acceleration=0.1;
+	CanMove=1;
+	MaxVelocity=10.41;
+	MaxSlope=35;
+	TurnRate=350;
+	
+	//    Airplane Moventment
+	Cruisealt=50;
+	
+	//    Buildings
+	
+	//    Construction
+	BuildDistance=20;
+	Builder=1;
+	WorkerTime=40;
+	
+	//    Resources
+	EnergyStorage=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanFly=1;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=375;
+	
+	//    Weapons
+	ExplodeAs=SMALL_UNITEX;
+	SelfDestructAs=SMALL_UNIT;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	SmoothAnim=1;
+	Upright=1;
+	Buildpic=xect_bot4.jpg;
+	
+	//    Not Used By TASpring
+}

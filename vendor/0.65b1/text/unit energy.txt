@@ -1,0 +1,91 @@
+Gnil
+---------------------------------------------------------------------------------
+
+I like that things, in this case metal production, can add up. Just they way several construction vehicles can help each other and speed up the process by working on the same thing. I'd like to see this model beeing used everywhere in the game.
+
+I also want construction units in the game I think. I want to build stuff - how much depends on how "strategic" the battles really can be. In TA a lot of the strategies/tactics are in the the way you build; what, when and where - there are many important decisions to be made.
+
+But of course, battles are more exiting than building, and if the engine is advanced enough (where real physics & terrain really makes a difference) we can have less focus on the building phase!
+
+I've read many complaints like "don't want A, I want B instead". I believe that in many cases it is possible to include both A and B and let the player decide which one to use. Harvesters with defensive weapons or not - you decide. The one with a weapon is of course more expensive but at the same time...well, you get the picture I hope.
+
+Resources...I also think that energy besides metal is a good thing. Energy could be used more extensivly than in TA though, especially for units. Energy is the resource needed for all units/buildings to function (much like in TA) while metal is the raw material needed to build something.
+
+Building something takes metal (raw material) and energy (drained by the builder). Differents units drains a certain amount of energy depending on the actions. Don't leave this out! 
+
+When I said energy could be used more extensivly I meant that maybe the units could be loaded with energy from the start (and can be reloaded later on) but slowly consume their energy. I.e. local energy, not global energy. How fast it is consumed etc is different from unit to unit and what you do with this unit like fire a weapon or just driving on the battlefield. For MOST units you should not need to care about this, i.e. they do not take much enery to use or they just come with a lot of energy from the start or they have a generator strong enough (se below). But for SOME types of units it would be cool. Imagine one of these units running out of energy in the middle of the enemy base...hehe...let's capture the little *******  If a unit runs out of energy it will slowly regain energy through it's generator/engine (se below).
+
+About creating units from MODULES. All modules could have different slots of types. A module could for example have a slot of type A and B. Only modules with slots of type A will fit on the type A slot on the first module and only modules with slots of type B will fit on the type B slot on the first module...um..that sounded more complicated than it really is 
+
+And to integrate the concept of energy I could for example think of the follwing two "resource modules" (besides different legs, armour, weapons, radars etc):
+
+- Generator/Engine that runs on metal (or even a 3rd ressource like fuel? nah...not needed). I.e. the generator converts metal to energy.
+- Battery packs. To store energy. Units could be loaded with energy at creation and/or loaded at some "energy station" in some way that do not require much micromanagment...like just standing nearby.
+
+All the different modules will drain a certain amount of energy when used. You have to design it with metal cost in mind, the energy usage/consumption has to be balanced, the modules has to fit etc.
+
+If you don't want your units to run out of energy, make sure you attach a poweful enough generator to it! Or maybe you want to chance/micromanage and use a smaller, less expensive generator and take the risk of running out of energy. Or maybe don't attach a generator at all - just attach a battery (cheaper than generator) that is loaded with energy at the base and then hope for the best. The combinations are endless and should hopefully make the game more interesting. It should not lead to a lot of micromanagment I hope. What do you think?
+
+
+
+Jason:
+--------------------------------------------------------------------------------
+Concerning resources:
+
+We will implement a second ‘energy’ resource, which is used to power units/buildings (mined material is used to build them, all very similar to TA). Now, I’m not sure about using this energy as a ‘fuel’ for units (i.e. units run on energy which must be replenished back at base once it runs out). There are a whole host of interesting new strategies which this idea throws up, but I won’t mention them since there are some gripes. For instance:
+
+It could get annoying when you’re grouping units together for an attack, since some would be low on energy and others high. If you didn’t check on this, you might find only half your army fighting when you get to the enemy base. This is a consideration that might make the fuel idea overly complex. If there’s any way around it, I’d be glad if somebody could mention it!
+
+
+
+Gnil  posted 08-12-1999 05:53 PM           
+--------------------------------------------------------------------------------
+Hmm, more thoughts about the unit energy as some kind of fuel...
+First of all Jason, keeping track of unit energy shouldn't be much different from keeping track of unit health. Some units in your group can be undamaged while one or two are almost dead. A good player has to be aware about this and take the appropriate actions -retreat with the damaged units etc etc. I mean, keeping track of your units is one of the key strategy elements in battles. Others are taking advantage of the terrain, attacking on several flanks etc.
+
+And since units could be equipped with a generator you shouldn't have to return the to base. And most action like firing a simple weapon doesn't have to take a noticable amount of energy at all. 
+
+The unit energy could be displayed just like the health bars in TA (and I guess there is something similar in your game too). Just put the energy bar just below the health bar. 
+
+And remember that you could design your units so they never runs out of energy no matter what they do. Once again, it is up to the player. I suggest that if any premade units are going to be shipped with the game, most of them should be of this type.
+
+I think you could come up with a lot of cool stuff based on unit energy. I think it would give the game a nice "flow".
+ 
+
+Gnil
+--------------------------------------------------------------------------------
+Exactly, the units don't have to run out of energy (this is the third time I say this I think :-). But I would like to call it UNIT ENERGY since fuel sounds like something that can be depleted and something you have to refill at the base. The unit energy is not just used for driving around on the map - it is just for just about every unit action. Actually it is incorrect in a way to say unit energy either since buildings should work the same way. Buildings are a special form of units - units that are stationary.
+I think shields would fit perfectly into the unit energy concept. It is very simple, if shields are turned on they'll drain a certain amount of energy from the unit. More powerful sheilds will drain more energy.
+
+Doh! I guess I'm not so good at explaining things  In addition, unit energy should be easy to implement.
+
+About the BUILD MENUS. It could work like this: First select a construction vehicle or buildning. Hold down the Space key (or some other key assinged to this action). A build menu in the form of a transparent HUD will pop up with icons showing what can be built. This menu can cover most of the screen and will therefore be able to hold all possible things a unit can build. The menu itself could work similar to the one in TA/TAK. And shorcuts could be assigned to all items in the menu...
+
+
+Balachai
+--------------------------------------------------------------------------------
+
+About unit energy - this can be used for many purposes. Most ground units' internal generation would be sufficient to keep them moving at normal speed. Extra energy would be depleted when they fired, or operated their shields. Each unit would have some internal storage too. If the storage dropped below say 70%, then the sheilds would drop, or it would lower its rate of fire.
+
+If you build a customised ground unit, you might make trade-off here. Put a big gun on a small chassis, and its internal energy generation can't support simultaneous movement and rapid fire. Increase the maximum speed, but it can't sustain that speed indefinitely. YOU have the choice!
+
+Air units should require more energy to move, and have smaller internal storage too. So, it will run out of energy if it does not return to base. Build in unit AI that will override orders to return if its energy will run out. Especially useful for patrol orders - it will periodically return to refuel, then back to patrolling. If you click on an air unit, then move your cursor to the other side of the screen, it should change to an "impossible" signal because that would be out of range.
+
+
+
+Balachai
+----------------------------------------------------------------------------------
+Unit ammo/energy/fuel revisited ...
+Jason can design every unit that comes with the game to never run out of energy. Their internal generation is greater than maximum consumption (moving, shields, weapons etc).
+
+You can play the game straight out of the box, and not be frustrated by running out of fuel or ammo.
+
+But give players the option to configure their own "souped-up" units with bigger guns relative to their internal generation. A unit like this DOES have limited ammo, and requires more attention to keep it operating efficiently.
+
+
+Balachai
+-----------------------------------------------------------------------------------
+
+Another thought on unit energy etc... When a souped-up unit is designed, it should have an option to prioritise multiple drains on its energy. If a scout-unit is running low on energy, it should turn off weapons first, then shields but keep its movement at all costs. Artillery should sacrifice movement, then shields but always keep shooting. I hope that makes sense.
+
+And, I hope you can add individual unit energy storage so that a souped-up unit can fire on all cylinders for a little while, before slowing down and paying the price for its small generator.

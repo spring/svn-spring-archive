@@ -1,0 +1,65 @@
+[UNITINFO]
+{
+	Name=Light Laser Turret;
+	UnitName=mynn_llt;
+	
+	//    Required Tags
+	BuildCostEnergy=2546;
+	BuildCostMetal=262;
+	BuildTime=6118;
+	Category=mynn defensive weapon level1 notair notsub ;
+	Description=Light Laser Turret;
+	FootprintX=3;
+	FootprintZ=3;
+	MaxDamage=1118;
+	ObjectName=mynn_llt;
+	Side=Mynn;
+	SoundCategory=mynn_llt;
+	TEDClass=fort;
+	
+	//    Movement
+	MaxSlope=14;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=oooo;
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=100;
+	EnergyUse=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=570;
+	
+	//    Weapons
+	Weapon1=RAC_LIGHTLASER;
+	wpri_badTargetCategory=VTOL;
+	BadTargetCategory=VTOL;
+	DamageModifier=0.82;
+	ExplodeAs=small_death;
+	SelfDestructAs=small_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	Corpse=mynn_llt_dead;
+	SmoothAnim=1;
+	Buildpic=mynn_llt.jpg;
+	
+	//    Not Used By TASpring
+}

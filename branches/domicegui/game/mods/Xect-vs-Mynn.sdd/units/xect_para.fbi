@@ -1,0 +1,71 @@
+[UNITINFO]
+{
+	Name=Mosquito;
+	UnitName=xect_para;
+	
+	//    Required Tags
+	BuildCostEnergy=3200;
+	BuildCostMetal=194;
+	BuildTime=7554;
+	Category=xect vtol ctrl_v level2 weapon  notsub ctrl_f;
+	Description=Gunship;
+	FootprintX=1;
+	FootprintZ=1;
+	MaxDamage=329;
+	ObjectName=xect_para;
+	Side=Xect;
+	SoundCategory=kaj_para;
+	TEDClass=vtol;
+	
+	//    Movement
+	BrakeRate=0.4;
+	MovementClass=tankds2;
+	Acceleration=0.16;
+	CanMove=1;
+	MaxVelocity=7.64;
+	MaxSlope=35;
+	TurnRate=200;
+	
+	//    Airplane Moventment
+	Cruisealt=50;
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=1;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=413;
+	
+	//    Weapons
+	Weapon1=KAJ_PARA_GUN;
+	wpri_badTargetCategory=VTOL;
+	BadTargetCategory=VTOL;
+	DamageModifier=0.79;
+	ExplodeAs=bug_death;
+	HoverAttack=1;
+	SelfDestructAs=bug_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	SmoothAnim=1;
+	Upright=1;
+	Buildpic=xect_para.jpg;
+	
+	//    Not Used By TASpring
+}

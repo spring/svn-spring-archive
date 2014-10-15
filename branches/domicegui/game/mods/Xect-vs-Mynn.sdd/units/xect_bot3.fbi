@@ -1,0 +1,71 @@
+[UNITINFO]
+{
+	Name=XCL-03;
+	UnitName=xect_bot3;
+	
+	//    Required Tags
+	BuildCostEnergy=3005;
+	BuildCostMetal=205;
+	BuildTime=7117;
+	Category=xect bot level1 weapon notair notsub ctrl_x;
+	Description=Radar/Jammer Bot;
+	FootprintX=1;
+	FootprintZ=1;
+	MaxDamage=1003;
+	ObjectName=xect_bot3;
+	Side=Xect;
+	SoundCategory=xcl_bot;
+	TEDClass=bot;
+	
+	//    Movement
+	BrakeRate=0.183105469;
+	MovementClass=tanksh2;
+	Acceleration=0.091552734;
+	CanMove=1;
+	MaxVelocity=2.45;
+	MaxSlope=10;
+	TurnRate=250;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=0;
+	CanFly=0;
+	CanStop=1;
+	OnOffable=1;
+	ActivateWhenBuilt=1;
+	
+	//    Sight/Radar
+	RadarDistance=800;
+	RadarDistanceJam=490;
+	SightDistance=750;
+	
+	//    Weapons
+	wpri_badTargetCategory=NOTAIR;
+	BadTargetCategory=NOTAIR;
+	DamageModifier=0.784872601127087;
+	ExplodeAs=BIG_UNITEX;
+	SelfDestructAs=BIG_UNIT;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	Corpse=xect_bot3_dead;
+	SmoothAnim=1;
+	Buildpic=xect_bot3.jpg;
+	
+	//    Not Used By TASpring
+}

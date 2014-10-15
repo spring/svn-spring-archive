@@ -1,0 +1,79 @@
+--------------------------------------------------------
+---------Features needed before public release:---------
+
+-Trees 						(SJ) done?
+-New vtol capbility for current planes		(SJ)
+-Better support for >2 players 			(SJ)
+-Better pathfinding/movement 			(k-man)
+-Better ai 					(k-man)
+-TA like hovering aircrafts			(fnord)
+-Correct waterdepth shading 			(yeha)
+-Aircrafts					(Fnord)
+-Better pathfinding 				(Kman)
+-Better unit reactive movement 			(Kman)
+-New maps					(?)
+-New gui					(pius)
+-More new gui					(pius)
+-Gui design					(pius)
+-Master server					(jou)
+-Multiplayer setup client			(jou)
+-Setup client -> spring coupling		(jou)
+-Better mouse drag selection of units		(?)
+
+
+Testing, esp for sync errors			(all?)
+
+
+Done:
+-Tidal not working 					(yeha)
+-Better handling of targets above/below water surface	 (SJ)
+-Reclaim order						 (SJ)
+-Burning Trees						(sj)
+-DGun							(yeha)
+-On/off for mm etc 					(yeha,sj)
+-Alliances 					(SJ)
+
+
+
+
+
+
+--Things that would be very nice to fix
+
+Hotkey selection of units
+Air repair pads
+Resurection units (none exist in xta)
+Paralyze weapons  (none exist in xta)
+Depth charges work as torpedoes
+Better general AI/configurable AI
+
+--------------------------------------------------------
+
+
+--------------------------------------------------------
+---------------------Other features:--------------------
+
+-Nicer selection indicator.
+-Tighter bounding selection primitive for units.
+
+
+Things for far feature:
+	-Multilevel boundingbox collision for units.
+	-Collision with real geometric model of units
+
+
+Ideas for the feature:
+
+--------------------------------------------------------
+
+
+
+--------------------------------------------------------
+--------------------------Other-------------------------
+
+--Thoughts on topics
+(pius) I've implemented selection via a selection class in my GUI (see gui/GUIgame.h:Selector).
+If somebody wants to tackle the better selection stuff, you should wait until the GUI is fully integrated.
+I'm holding back integrating the GUI until my mouselook binding works.
+
+--------------------------------------------------------

@@ -1,0 +1,65 @@
+[UNITINFO]
+{
+	Name=U.H.L.B;
+	UnitName=mynn_ehlt;
+	
+	//    Required Tags
+	BuildCostEnergy=5443;
+	BuildCostMetal=489;
+	BuildTime=13008;
+	Category=mynn defensive weapon level2 notair notsub ;
+	Description= Ultra Heavy Laser Battery;
+	FootprintX=4;
+	FootprintZ=4;
+	MaxDamage=2184;
+	ObjectName=mynn_ehlt;
+	Side=Mynn;
+	SoundCategory=mynn_llt;
+	TEDClass=fort;
+	
+	//    Movement
+	MaxSlope=10;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=oooooooooooooooo;
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=250;
+	EnergyUse=-35;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=525;
+	
+	//    Weapons
+	Weapon1=MYNN_BATSLASER;
+	wpri_badTargetCategory=VTOL;
+	BadTargetCategory=VTOL;
+	DamageModifier=1.63;
+	ExplodeAs=small_death;
+	SelfDestructAs=small_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	Corpse=mynn_ehlt_dead;
+	SmoothAnim=1;
+	Buildpic=mynn_ehlt.jpg;
+	
+	//    Not Used By TASpring
+}

@@ -1,0 +1,236 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_RTSSETTINGS_DIALOG DIALOGEX 0, 0, 480, 338
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Settings"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,423,7,50,16
+    PUSHBUTTON      "Cancel",IDCANCEL,423,25,50,16
+    LTEXT           "Tree view distance",IDC_STATIC,16,15,61,8
+    CONTROL         "",IDC_TreeDist,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,17,27,114,16
+    LTEXT           "600",IDC_STATIC,17,47,13,8
+    LTEXT           "3000",IDC_STATIC,116,45,17,8
+    LTEXT           "Terrain LOD",IDC_STATIC,15,63,39,8
+    CONTROL         "",IDC_TerrLod,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,17,75,114,16
+    LTEXT           "20",IDC_STATIC,17,95,9,8
+    LTEXT           "120",IDC_STATIC,120,92,13,8
+    LTEXT           "Unit LOD distance",IDC_STATIC,17,110,58,8
+    CONTROL         "",IDC_UnitDist,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,19,122,114,16
+    LTEXT           "100",IDC_STATIC,19,142,13,8
+    LTEXT           "600",IDC_STATIC,117,140,13,8
+    LTEXT           "Screen resolution",IDC_STATIC,341,163,56,8
+    COMBOBOX        IDC_ScreenRes,340,176,102,112,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "3D Trees (need Vertex_Program)",IDC_AdvTree,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,159,25,129,16
+    CONTROL         "High Res Clouds (need fragment_program)",IDC_AdvCloud,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,159,46,167,16
+    CONTROL         "Dynamic clouds (slow)",IDC_DynCloud,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,159,65,124,16
+    CONTROL         "Reflective water (fragment_program, slow)",IDC_AdvWater,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,159,86,159,16
+    CONTROL         "Run Fullscreen",IDC_AdvWater3,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,339,231,121,16
+    EDITTEXT        IDC_EDIT1,338,257,65,12,ES_AUTOHSCROLL
+    LTEXT           "Player Name",IDC_STATIC,340,247,41,8
+    CONTROL         "Colorized elevation map",IDC_AdvWater4,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,159,210,126,16
+    LTEXT           "Grass detail",IDC_STATIC,15,155,38,8
+    CONTROL         "",IDC_UnitDist2,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,17,167,114,16
+    LTEXT           "0",IDC_STATIC,21,186,8,8
+    LTEXT           "10",IDC_STATIC,119,185,9,8
+    LTEXT           "Max particles",IDC_STATIC,15,195,43,8
+    CONTROL         "",IDC_UnitDist3,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,17,207,114,16
+    LTEXT           "1000",IDC_STATIC,21,226,18,8
+    LTEXT           "20000",IDC_STATIC,119,225,21,8
+    CONTROL         "Shadows (slow)",IDC_AdvWater5,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,159,104,152,16
+    LTEXT           "Shadow map size",IDC_STATIC,161,127,56,8
+    CONTROL         "",IDC_UnitDist4,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,163,139,114,16
+    LTEXT           "1024",IDC_STATIC,167,158,18,8
+    LTEXT           "2048",IDC_STATIC,265,157,17,8
+    LTEXT           "Max simultaneous sounds",IDC_STATIC,14,241,82,8
+    CONTROL         "",IDC_UnitDist5,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,16,253,114,16
+    LTEXT           "8",IDC_STATIC,20,272,18,8
+    LTEXT           "128",IDC_STATIC,118,271,13,8
+    CONTROL         "Invert mouse",IDC_AdvWater6,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,337,278,128,16
+    EDITTEXT        IDC_EDIT2,340,195,40,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,392,195,40,13,ES_AUTOHSCROLL
+    LTEXT           "x",IDC_STATIC,383,196,8,8
+    CONTROL         "",IDC_UnitDist6,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,15,295,114,16
+    LTEXT           "Off",IDC_STATIC,15,313,18,8
+    LTEXT           "Ground decals",IDC_STATIC,14,284,46,8
+    LTEXT           "Max",IDC_STATIC,117,310,14,8
+    EDITTEXT        IDC_EDIT4,401,214,40,13,ES_AUTOHSCROLL
+    LTEXT           "Display frequency",IDC_STATIC,340,216,58,8
+    CONTROL         "Simplified minimap colors",IDC_AdvWater7,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,159,230,126,16
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "TODO: <Company name>"
+            VALUE "FileDescription", "TODO: <File description>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "RtsSettings.exe"
+            VALUE "LegalCopyright", "TODO: (c) <Company name>.  All rights reserved."
+            VALUE "OriginalFilename", "RtsSettings.exe"
+            VALUE "ProductName", "TODO: <Product name>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_RTSSETTINGS_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 473
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 331
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Swedish resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_SVE)
+#ifdef _WIN32
+LANGUAGE LANG_SWEDISH, SUBLANG_DEFAULT
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Swedish resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

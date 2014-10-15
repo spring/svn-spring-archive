@@ -1,0 +1,5 @@
+platform = 'linux'
+debug = True
+archflags = None
+builddir = None
+cachedir = None

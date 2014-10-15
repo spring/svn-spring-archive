@@ -1,0 +1,29 @@
+[bug_death]
+	{
+	id=243;
+	rendertype=4;
+	ballistic=1;
+	turret=1;
+
+	range=100;
+	reloadtime=3;
+	weaponvelocity=100;
+	areaofeffect=100;
+	soundstart=;
+	soundhit=k_die;
+	
+	explosiongaf=kajfx;
+	explosionart=bug_boom;
+
+	waterexplosiongaf=kajfx;
+	waterexplosionart=bug_boom;
+
+	shakemagnitude=0;
+	shakeduration=0;
+
+	[damage]
+		{
+		default=0;
+		}
+	}
+	

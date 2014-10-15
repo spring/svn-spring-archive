@@ -1,0 +1,71 @@
+[UNITINFO]
+{
+	Name=Elli;
+	UnitName=xect_lbot;
+	
+	//    Required Tags
+	BuildCostEnergy=1210;
+	BuildCostMetal=137;
+	BuildTime=2920;
+	Category=xect bot level1 weapon notair notsub ctrl_x;
+	Description=Artillery XBot;
+	FootprintX=2;
+	FootprintZ=2;
+	MaxDamage=566;
+	ObjectName=xect_lbot;
+	Side=Xect;
+	SoundCategory=xcl_bot;
+	TEDClass=kbot;
+	
+	//    Movement
+	BrakeRate=0.19;
+	MovementClass=tanksh2;
+	Acceleration=0.3;
+	CanMove=1;
+	MaxVelocity=2.07;
+	MaxSlope=20;
+	TurnRate=1120;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=354;
+	
+	//    Weapons
+	Weapon1=XCL_TENTACLE;
+	wpri_badTargetCategory=VTOL;
+	BadTargetCategory=VTOL;
+	DamageModifier=0.41;
+	ExplodeAs=BIG_UNITEX;
+	SelfDestructAs=BIG_UNIT;
+	NoChaseCategory=VTOL;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=20;
+	
+	//    Misc
+	Corpse=xect_lbot_dead;
+	SmoothAnim=1;
+	Upright=1;
+	Buildpic=xect_lbot.jpg;
+	
+	//    Not Used By TASpring
+}

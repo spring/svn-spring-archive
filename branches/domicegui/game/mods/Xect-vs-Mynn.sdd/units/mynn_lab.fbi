@@ -1,0 +1,61 @@
+[UNITINFO]
+{
+	Name=Advanced Bot Plant;
+	UnitName=mynn_lab;
+	
+	//    Required Tags
+	BuildCostEnergy=2730;
+	BuildCostMetal=1805;
+	BuildTime=8084;
+	Category=mynn PLANT ctrl_f level1 noweapon notair notsub ;
+	Description=Produces Bots;
+	FootprintX=6;
+	FootprintZ=6;
+	MaxDamage=4144;
+	ObjectName=mynn_lab;
+	Side=Mynn;
+	SoundCategory=mynn_plant;
+	TEDClass=PLANT;
+	
+	//    Movement
+	CanMove=1;
+	MaxSlope=10;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=ooccoo ooccoo ooccoo ooccoo ooccoo ooccoo;
+	
+	//    Construction
+	Builder=1;
+	WorkerTime=135;
+	
+	//    Resources
+	EnergyStorage=100;
+	EnergyUse=0;
+	MetalStorage=100;
+	
+	//    Abilities
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=335;
+	
+	//    Weapons
+	ExplodeAs=crawler_death;
+	SelfDestructAs=crawler_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	Corpse=mynn_lab_dead;
+	SmoothAnim=1;
+	Buildpic=mynn_lab.jpg;
+	
+	//    Not Used By TASpring
+}

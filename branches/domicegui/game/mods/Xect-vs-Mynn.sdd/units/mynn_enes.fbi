@@ -1,0 +1,60 @@
+[UNITINFO]
+{
+	Name=Energy Storage;
+	UnitName=mynn_enes;
+	
+	//    Required Tags
+	BuildCostEnergy=2430;
+	BuildCostMetal=240;
+	BuildTime=5829;
+	Category=mynn energy level1 noweapon  notair notsub storage;
+	Description=Increases Energy Storage;
+	FootprintX=4;
+	FootprintZ=4;
+	MaxDamage=1038;
+	ObjectName=mynn_enes;
+	Side=Mynn;
+	SoundCategory=mynn_estore;
+	TEDClass=energy;
+	
+	//    Movement
+	MaxSlope=10;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=oooooooo;
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=8000;
+	EnergyUse=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanFly=0;
+	ActivateWhenBuilt=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=315;
+	
+	//    Weapons
+	ExplodeAs=small_death;
+	SelfDestructAs=small_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	Corpse=mynn_enes_dead;
+	SmoothAnim=1;
+	Buildpic=mynn_enes.jpg;
+	
+	//    Not Used By TASpring
+}

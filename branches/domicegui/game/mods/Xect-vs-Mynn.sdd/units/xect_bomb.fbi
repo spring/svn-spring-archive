@@ -1,0 +1,68 @@
+[UNITINFO]
+{
+	Name=Pig;
+	UnitName=xect_bomb;
+	
+	//    Required Tags
+	BuildCostEnergy=3005;
+	BuildCostMetal=245;
+	BuildTime=7157;
+	Category=xect troop level1 weapon notair notsub kamikaze ctrl_m;
+	Description=Level 1 Construction Bot;
+	FootprintX=2;
+	FootprintZ=2;
+	MaxDamage=1130;
+	ObjectName=xect_bomb;
+	Side=Xect;
+	SoundCategory=mth_mec;
+	TEDClass=troop;
+	
+	//    Movement
+	BrakeRate=0.183105469;
+	MovementClass=tanksh2;
+	Acceleration=0.091552734;
+	CanMove=1;
+	MaxVelocity=2.31;
+	MaxSlope=35;
+	TurnRate=600;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	BuildDistance=20;
+	Builder=1;
+	WorkerTime=70;
+	
+	//    Resources
+	EnergyStorage=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	Kamikaze=1;
+	KamikazeDistance=35;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=450;
+	
+	//    Weapons
+	DamageModifier=0.858035547049188;
+	ExplodeAs=MTHBOMB_BLAST;
+	SelfDestructAs=MTHBOMB_BLAST;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=15;
+	
+	//    Misc
+	SmoothAnim=1;
+	Buildpic=xect_bomb.jpg;
+	
+	//    Not Used By TASpring
+}

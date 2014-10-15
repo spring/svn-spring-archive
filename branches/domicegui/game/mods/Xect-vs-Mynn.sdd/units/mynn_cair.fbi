@@ -1,0 +1,67 @@
+[UNITINFO]
+{
+	Name=Construction Aircraft;
+	UnitName=mynn_cair;
+	
+	//    Required Tags
+	BuildCostEnergy=4870;
+	BuildCostMetal=150;
+	BuildTime=11351;
+	Category=mynn vtol ctrl_v level2 constr noweapon notsub ctrl_b;
+	Description=Builds Structures;
+	FootprintX=2;
+	FootprintZ=2;
+	MaxDamage=241;
+	ObjectName=mynn_cair;
+	Side=Mynn;
+	SoundCategory=mynn_vtol;
+	TEDClass=cnstr;
+	
+	//    Movement
+	BrakeRate=0.005;
+	Acceleration=0.7;
+	CanMove=1;
+	MaxVelocity=9.57;
+	MaxSlope=20;
+	TurnRate=1000;
+	
+	//    Airplane Moventment
+	Cruisealt=50;
+	
+	//    Buildings
+	
+	//    Construction
+	BuildDistance=40;
+	Builder=1;
+	WorkerTime=80;
+	
+	//    Resources
+	EnergyMake=22;
+	EnergyStorage=30;
+	EnergyUse=0.6;
+	MetalMake=0.5;
+	MetalStorage=30;
+	
+	//    Abilities
+	CanFly=1;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=20;
+	SightDistance=375;
+	
+	//    Weapons
+	ExplodeAs=small_death;
+	SelfDestructAs=small_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=12;
+	
+	//    Misc
+	SmoothAnim=1;
+	Buildpic=mynn_cair.jpg;
+	
+	//    Not Used By TASpring
+}

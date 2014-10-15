@@ -1,0 +1,176 @@
+[mynn_fi_dead]
+	{
+	world=All Worlds;
+	description=Mutilated Cyborg;
+	category=mynn_e_corpses;
+	object=mynn_fi_trp_dead;
+	featuredead=mynn_fi_heap;
+	footprintx=2;
+	footprintz=2;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=75;
+	damage=125;
+	reclaimable=1;
+	featurereclamate=bloodscar3;
+      	seqnamereclamate=tree1reclamate;
+	}
+
+[mynn_fi_heap]
+	{
+	world=All Worlds;
+	description=Mutilated Cyborg;
+	category=mynn_e_heaps;
+	object=mynn_b_trp_heap;
+	featuredead=bloodscar3;
+	footprintx=2;
+	footprintz=2;
+	height=15;
+	blocking=1;
+	hitdensity=100;
+	metal=28;
+	damage=100;
+	reclaimable=1;
+	featurereclamate=bloodscar3;
+	seqnamereclamate=tree1reclamate;
+	}
+
+[mynn_aa_dead]
+	{
+	world=All Worlds;
+	description=Mutilated Cyborg;
+	category=mynn_e_corpses;
+	object=mynn_aa_trp_dead;
+	featuredead=mynn_aa_heap;
+	footprintx=2;
+	footprintz=2;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=75;
+	damage=125;
+	reclaimable=1;
+	featurereclamate=bloodscar3;
+      	seqnamereclamate=tree1reclamate;
+	}
+
+[mynn_aa_heap]
+	{
+	world=All Worlds;
+	description=Mutilated Cyborg;
+	category=mynn_e_heaps;
+	object=mynn_b_trp_heap;
+	featuredead=bloodscar3;
+	footprintx=2;
+	footprintz=2;
+	height=15;
+	blocking=1;
+	hitdensity=100;
+	metal=28;
+	damage=100;
+	reclaimable=1;
+	featurereclamate=bloodscar3;
+	seqnamereclamate=tree1reclamate;
+	}
+
+
+[mynn_bg_dead]
+	{
+	world=All Worlds;
+	description=Mutilated Cyborg;
+	category=mynn_e_corpses;
+	object=mynn_bg_trp_dead;
+	featuredead=mynn_bg_heap;
+	footprintx=2;
+	footprintz=2;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=175;
+	damage=125;
+	reclaimable=1;
+	featurereclamate=bloodscar1;
+      	seqnamereclamate=tree1reclamate;
+	}
+
+[mynn_bg_heap]
+	{
+	world=All Worlds;
+	description=Mutilated Cyborg;
+	category=mynn_e_heaps;
+	object=mynn_bg_trp_heap;
+	featuredead=bloodscar1;
+	footprintx=2;
+	footprintz=2;
+	height=15;
+	blocking=1;
+	hitdensity=100;
+	metal=28;
+	damage=100;
+	reclaimable=1;
+	featurereclamate=bloodscar1;
+	seqnamereclamate=tree1reclamate;
+	}
+
+
+[bloodscar1]
+	{
+	world=all worlds;
+	description=Cyborg Blood;
+	category=blood;
+	animating=0;
+	footprintx=2;
+	footprintz=2;
+	height=0;
+	filename=bloodground;
+	seqname=bloodgr1;
+	seqnameshad=;
+	featuredead=bloodscar1;
+	animtrans=0;
+	shadtrans=1;
+	blocking=0;
+	hitdensity=100;
+	damage=20000;
+	}
+
+[bloodscar2]
+	{
+	world=all worlds;
+	description=Cyborg Blood;
+	category=blood;
+	animating=0;
+	footprintx=2;
+	footprintz=2;
+	height=0;
+	filename=bloodground;
+	seqname=bloodgr2;
+	seqnameshad=;
+	featuredead=bloodscar2;
+	animtrans=0;
+	shadtrans=1;
+	blocking=0;
+	hitdensity=100;
+	damage=20000;
+	}
+
+[bloodscar3]
+	{
+	world=all worlds;
+	description=Cyborg Blood;
+	category=blood;
+	animating=0;
+	footprintx=2;
+	footprintz=2;
+	height=0;
+	filename=bloodground;
+	seqname=bloodgr3;
+	seqnameshad=;
+	featuredead=bloodscar3;
+	animtrans=0;
+	shadtrans=1;
+	blocking=0;
+	hitdensity=100;
+	damage=20000;
+	}
+

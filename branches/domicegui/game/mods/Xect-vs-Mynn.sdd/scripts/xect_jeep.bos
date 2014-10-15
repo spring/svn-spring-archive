@@ -1,0 +1,113 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, frame, nano_tube, flare, nano_joint, nano_stand, wheel1, wheel2,
+       wheel3, wheel4, wheel_joint1, wheel_joint2, wheel_joint3, wheel_joint4;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	dont-shade frame;
+	Static_Var_1 = 54613;
+	Static_Var_2 = 16383;
+	Static_Var_3 = 16383;
+	start-script SmokeUnit();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+StartBuilding(Func_Var_1, Func_Var_2)
+{
+	turn nano_joint to y-axis Func_Var_1 speed <1.>;
+	wait-for-turn nano_joint around y-axis;
+	set INBUILDSTANCE to 1;
+}
+
+StopBuilding()
+{
+	set INBUILDSTANCE to 0;
+}
+
+QueryNanoPiece(piecenum)
+{
+	piecenum = flare;
+}
+
+StartMoving()
+{
+	spin wheel_joint1 around x-axis speed Static_Var_1 accelerate Static_Var_2;
+	spin wheel_joint2 around x-axis speed Static_Var_1 accelerate Static_Var_2;
+	spin wheel_joint3 around x-axis speed Static_Var_1 accelerate Static_Var_2;
+	spin wheel_joint4 around x-axis speed Static_Var_1 accelerate Static_Var_2;
+}
+
+StopMoving()
+{
+	stop-spin wheel_joint1 around x-axis decelerate Static_Var_3;
+	stop-spin wheel_joint2 around x-axis decelerate Static_Var_3;
+	stop-spin wheel_joint3 around x-axis decelerate Static_Var_3;
+	stop-spin wheel_joint4 around x-axis decelerate Static_Var_3;
+	wait-for-turn wheel_joint1 around x-axis;
+	wait-for-turn wheel_joint2 around x-axis;
+	wait-for-turn wheel_joint3 around x-axis;
+	wait-for-turn wheel_joint4 around x-axis;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode frame type BITMAPONLY | BITMAP1;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode frame type BITMAPONLY | BITMAP1;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode frame type BITMAPONLY | BITMAP1;
+		return (0);
+	}
+	corpsetype = 3;
+	explode frame type BITMAPONLY | BITMAP1;
+	return (0);
+}

@@ -1,0 +1,72 @@
+[UNITINFO]
+{
+	Name=Advanced Construction Bot;
+	UnitName=xect_usacom;
+	
+	//    Required Tags
+	BuildCostEnergy=4100;
+	BuildCostMetal=500;
+	BuildTime=9930;
+	Category=xect bot level10 weapon notair notsub ctrl_x;
+	Description=Builds Advanced Structures;
+	FootprintX=1;
+	FootprintZ=1;
+	MaxDamage=2017;
+	ObjectName=xect_usacom;
+	Side=Xect;
+	SoundCategory=xcl_bot;
+	TEDClass=bot;
+	
+	//    Movement
+	BrakeRate=0.3;
+	MovementClass=TANKds2;
+	Acceleration=0.15;
+	CanMove=1;
+	MaxVelocity=2.02;
+	MaxSlope=15;
+	TurnRate=575;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	BuildDistance=60;
+	Builder=1;
+	WorkerTime=200;
+	
+	//    Resources
+	EnergyMake=0;
+	EnergyUse=0;
+	MetalMake=0;
+	
+	//    Abilities
+	CanAttack=0;
+	CanFly=0;
+	CanStop=1;
+	ActivateWhenBuilt=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=375;
+	SonarDistance=0;
+	
+	//    Weapons
+	wpri_badTargetCategory=VTOL;
+	BadTargetCategory=VTOL;
+	DamageModifier=1.43;
+	ExplodeAs=MTHBOMB_BLAST;
+	SelfDestructAs=MTHBOMB_BLAST;
+	NoChaseCategory=VTOL;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=15;
+	
+	//    Misc
+	SmoothAnim=1;
+	Buildpic=xect_usacom.jpg;
+	
+	//    Not Used By TASpring
+}

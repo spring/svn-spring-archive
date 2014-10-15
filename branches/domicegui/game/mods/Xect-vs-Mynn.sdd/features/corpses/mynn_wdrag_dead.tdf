@@ -1,0 +1,17 @@
+[WaterDragonsTeeth_mynn_e]
+	{
+	world=allworld;
+	description=Floating Carbon Barrier;
+	category=dragonteeth;
+	object=mynn_wdrag;
+	footprintx=2;
+	footprintz=2;
+	height=100;
+	blocking=1;
+	hitdensity=100;
+	metal=16;
+	damage=3200;
+	reclaimable=1;
+	autoreclaimable=0;
+	nodrawundergray=1;
+	}

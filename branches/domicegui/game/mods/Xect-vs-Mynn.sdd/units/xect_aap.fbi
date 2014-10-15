@@ -1,0 +1,61 @@
+[UNITINFO]
+{
+	Name=Advanced Aircraft Plant;
+	UnitName=xect_aap;
+	
+	//    Required Tags
+	BuildCostEnergy=4390;
+	BuildCostMetal=2073;
+	BuildTime=12170;
+	Category=xect PLANT ctrl_f level1 noweapon notair notsub ;
+	Description=Produces Advanced Aircraft;
+	FootprintX=5;
+	FootprintZ=5;
+	MaxDamage=5324;
+	ObjectName=xect_aap;
+	Side=Xect;
+	SoundCategory=xcllab;
+	TEDClass=PLANT;
+	
+	//    Movement
+	CanMove=1;
+	MaxSlope=10;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=ccccccccccccccccccccccccc;
+	
+	//    Construction
+	Builder=1;
+	WorkerTime=200;
+	
+	//    Resources
+	EnergyStorage=100;
+	EnergyUse=0;
+	MetalStorage=100;
+	
+	//    Abilities
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=335;
+	
+	//    Weapons
+	ExplodeAs=LARGE_BUILDINGEX;
+	SelfDestructAs=LARGE_BUILDING;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	Corpse=xect_aap_dead;
+	SmoothAnim=1;
+	Buildpic=xect_aap.jpg;
+	
+	//    Not Used By TASpring
+}

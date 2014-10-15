@@ -1,0 +1,19 @@
+[gutscar]
+	{
+	world=all worlds;
+	description=Bug Guts;
+	category=blood;
+	animating=0;
+	footprintx=2;
+	footprintz=2;
+	height=0;
+	filename=bugguts;
+	seqname=bugguts;
+	seqnameshad=;
+	featuredead=gutscar;
+	animtrans=0;
+	shadtrans=1;
+	blocking=0;
+	hitdensity=100;
+	damage=20000;
+	}

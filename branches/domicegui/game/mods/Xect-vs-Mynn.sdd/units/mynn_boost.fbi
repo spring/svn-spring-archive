@@ -1,0 +1,68 @@
+[UNITINFO]
+{
+	Name=Air Booster;
+	UnitName=mynn_boost;
+	
+	//    Required Tags
+	BuildCostEnergy=2695;
+	BuildCostMetal=115;
+	BuildTime=6314;
+	Category=mynn vtol ctrl_v tport level1 noweapon notsub ;
+	Description=Air Transport Robot;
+	FootprintX=3;
+	FootprintZ=3;
+	MaxDamage=219;
+	ObjectName=mynn_boost;
+	Side=Mynn;
+	SoundCategory=mynn_vtol;
+	TEDClass=vtol;
+	
+	//    Movement
+	BrakeRate=4;
+	Acceleration=0.02;
+	CanMove=1;
+	MaxVelocity=8.59;
+	MaxSlope=10;
+	TurnRate=145;
+	
+	//    Airplane Moventment
+	Cruisealt=80;
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyMake=0.7;
+	EnergyStorage=0;
+	EnergyUse=0.7;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanFly=1;
+	CanStop=1;
+	TransportCapacity=2;
+	TransportSize=2;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=368;
+	
+	//    Weapons
+	ExplodeAs=small_death;
+	SelfDestructAs=small_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	SmoothAnim=1;
+	Buildpic=mynn_boost.jpg;
+	
+	//    Not Used By TASpring
+	firestandorders=20;
+}

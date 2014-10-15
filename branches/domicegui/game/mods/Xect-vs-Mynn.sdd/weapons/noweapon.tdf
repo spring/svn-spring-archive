@@ -1,0 +1,11 @@
+[noweapon]
+	{
+	id=253;
+	name=noweapon;
+	rendertype=0;
+
+	[damage]
+		{
+		default=0;
+		}
+	}

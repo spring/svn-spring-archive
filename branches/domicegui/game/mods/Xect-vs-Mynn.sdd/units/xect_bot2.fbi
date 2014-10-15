@@ -1,0 +1,70 @@
+[UNITINFO]
+{
+	Name=XCL-02;
+	UnitName=xect_bot2;
+	
+	//    Required Tags
+	BuildCostEnergy=1100;
+	BuildCostMetal=152;
+	BuildTime=2682;
+	Category=xect bot level1 weapon notair notsub ctrl_x ;
+	Description=Laser Bot;
+	FootprintX=2;
+	FootprintZ=2;
+	MaxDamage=588;
+	ObjectName=xect_bot2;
+	Side=Xect;
+	SoundCategory=xcl_bot;
+	TEDClass=bot;
+	
+	//    Movement
+	BrakeRate=0.19;
+	MovementClass=tanksh2;
+	Acceleration=0.15;
+	CanMove=1;
+	MaxVelocity=1.93;
+	MaxSlope=10;
+	TurnRate=450;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=375;
+	
+	//    Weapons
+	Weapon1=XCL_SCRAP;
+	wpri_badTargetCategory=VTOL;
+	BadTargetCategory=VTOL;
+	DamageModifier=0.41;
+	ExplodeAs=SMALL_UNITEX;
+	SelfDestructAs=SMALL_UNIT;
+	NoChaseCategory=VTOL;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=10;
+	
+	//    Misc
+	Corpse=xect_bot2_dead;
+	SmoothAnim=1;
+	Buildpic=xect_bot2.jpg;
+	
+	//    Not Used By TASpring
+}

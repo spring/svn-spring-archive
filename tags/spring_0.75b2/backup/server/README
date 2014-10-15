@@ -1,0 +1,13 @@
+The database specified in settings.txt needs a table like this to work. Of
+course, there also needs to exist a user with the correct name, password and
+access rights.
+
+The value lengths are specified as MAXNAME and MAXPASSWD in global.h
+
+DROP TABLE IF EXISTS `srv_user`;
+CREATE TABLE `srv_user` (
+  `Username` char(16) NOT NULL default '',
+  `FormattedName` char(16) NOT NULL default '',
+  `Password` char(16) NOT NULL default '',
+  PRIMARY KEY  (`Username`)
+)

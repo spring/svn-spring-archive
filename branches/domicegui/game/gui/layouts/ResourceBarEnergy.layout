@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GUILayout >	
+	<Window Type="TaharezLook/EnergyResourceBar" Name="ResourceBar.Energy.BarTest" >
+		<Property Name="UnifiedAreaRect" Value="{{0.625,1},{0,2},{1,-1},{0,25}}" />      
+	    <Window Type="TaharezLook/StaticText" Name="ResourceBar.Energy.Income" >
+                <Property Name="Text">0</Property>
+		<Property Name="TextColours" Value="tl:FF00FF00 tr:FF00FF00 bl:FF00FF00 br:FF00FF00"/>
+		<Property Name="Font" Value="DejaVuSans-6"/>
+                <Property Name="FrameEnabled" Value="False" />
+		<Property Name="HorzFormatting" Value="RightAligned" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.0,60},{0.0,-4},{0,102},{0,16}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+            </Window>
+	    <Window Type="TaharezLook/StaticText" Name="ResourceBar.Energy.Expendature" >
+                <Property Name="Text">0</Property>
+		<Property Name="TextColours" Value="tl:FFFF0000 tr:FFFF0000 bl:FFFF0000 br:FFFF0000"/>
+		<Property Name="Font" Value="DejaVuSans-6"/>
+                <Property Name="FrameEnabled" Value="False" />
+		<Property Name="HorzFormatting" Value="RightAligned" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.0,60},{0.0,7},{0.0,102},{0,22}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+            </Window>
+            <Window Type="TaharezLook/ProgressBar" Name="ResourceBar.Energy.Status" >
+                <Property Name="StepSize" Value="0.01" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="CurrentProgress" Value="0" />
+                <Property Name="UnifiedAreaRect" Value="{{0,110},{0,5},{1,-40},{0,12}}" />
+                <Window Type="TaharezLook/HorizontalScrollbar" Name="ResourceBar.Energy.Slider" >
+                    <Property Name="PageSize" Value="0" />
+                    <Property Name="StepSize" Value="1" />
+                    <Property Name="OverlapSize" Value="0" />
+                    <Property Name="DocumentSize" Value="1" />
+                    <Property Name="ScrollPosition" Value="0" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                    <AutoWindow NameSuffix="__auto_incbtn__" />
+                    <AutoWindow NameSuffix="__auto_decbtn__" />
+                    <AutoWindow NameSuffix="__auto_thumb__" />
+                </Window>
+            </Window>
+	    <Window Type="TaharezLook/StaticText" Name="ResourceBar.Energy.Balance" >
+                <Property Name="Text">0</Property>
+		<Property Name="Font" Value="DejaVuSans-10"/>
+		<Property Name="HorzFormatting" Value="RightAligned" />
+                <Property Name="FrameEnabled" Value="False" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,5},{0.0,00},{1,-10},{0,20}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+            </Window>
+	    <Window Type="TaharezLook/StaticText" Name="ResourceBar.Energy.Value" >
+                <Property Name="Text">0</Property>
+		<Property Name="TextColours" Value="tl:FFFFFFFF tr:FFFFFFFF bl:FFCCCCCC br:FFCCCCCC"/>
+		<Property Name="Font" Value="DejaVuSans-6"/>
+                <Property Name="FrameEnabled" Value="False" />
+		<Property Name="HorzFormatting" Value="RightAligned" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.0,9},{0.0,8},{0.0,195},{0,21}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+            </Window>
+	    <Window Type="TaharezLook/StaticText" Name="ResourceBar.Energy.Storage" >
+                <Property Name="Text">0</Property>
+		<Property Name="TextColours" Value="tl:FFFFFFFF tr:FFFFFFFF bl:FFCCCCCC br:FFCCCCCC"/>
+		<Property Name="Font" Value="DejaVuSans-6"/>
+                <Property Name="FrameEnabled" Value="False" />
+		<Property Name="HorzFormatting" Value="RightAligned" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.0,9},{0.0,8},{0.0,260},{0,21}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+            </Window>
+	</Window>
+</GUILayout >

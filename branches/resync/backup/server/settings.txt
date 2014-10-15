@@ -1,0 +1,11 @@
+[Server]
+{
+	[Mysql]
+	{
+		User=taspring;
+		Password=taspring;
+		Database=taspring;
+		UserTable=srv_user;
+	}
+	port=4897;
+}

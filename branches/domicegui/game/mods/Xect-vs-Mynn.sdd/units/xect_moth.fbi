@@ -1,0 +1,66 @@
+[UNITINFO]
+{
+	Name=Moth;
+	UnitName=xect_moth;
+	
+	//    Required Tags
+	BuildCostEnergy=4950;
+	BuildCostMetal=205;
+	BuildTime=11590;
+	Category=xect vtol ctrl_v tport level1 noweapon notsub ctrl_f;
+	Description=Air Transport and Level 2 Constructor;
+	FootprintX=2;
+	FootprintZ=2;
+	MaxDamage=395;
+	ObjectName=xect_moth;
+	Side=Xect;
+	SoundCategory=kaj_para;
+	TEDClass=vtol;
+	
+	//    Movement
+	BrakeRate=4;
+	Acceleration=0.02;
+	CanMove=1;
+	MaxVelocity=8.67;
+	MaxSlope=35;
+	TurnRate=145;
+	
+	//    Airplane Moventment
+	Cruisealt=50;
+	
+	//    Buildings
+	
+	//    Construction
+	BuildDistance=20;
+	Builder=1;
+	WorkerTime=100;
+	
+	//    Resources
+	EnergyStorage=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanFly=1;
+	CanStop=1;
+	TransportCapacity=2;
+	TransportSize=2;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=368;
+	
+	//    Weapons
+	ExplodeAs=bug_death;
+	SelfDestructAs=bug_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	SmoothAnim=1;
+	Buildpic=xect_moth.jpg;
+	
+	//    Not Used By TASpring
+}

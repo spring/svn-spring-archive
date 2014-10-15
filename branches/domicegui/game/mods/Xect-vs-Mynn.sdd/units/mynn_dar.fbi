@@ -1,0 +1,62 @@
+[UNITINFO]
+{
+	Name=Radar;
+	UnitName=mynn_dar;
+	
+	//    Required Tags
+	BuildCostEnergy=950;
+	BuildCostMetal=79;
+	BuildTime=2264;
+	Category=mynn special rad level1 notair notsub ;
+	Description= ;
+	FootprintX=3;
+	FootprintZ=3;
+	MaxDamage=346;
+	ObjectName=mynn_dar;
+	Side=Mynn;
+	SoundCategory=mynn_radar;
+	TEDClass=special;
+	
+	//    Movement
+	MaxSlope=10;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=oooooooooooo;
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyMake=7;
+	EnergyStorage=0;
+	EnergyUse=5;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanFly=0;
+	OnOffable=1;
+	ActivateWhenBuilt=1;
+	
+	//    Sight/Radar
+	RadarDistance=1640;
+	SightDistance=525;
+	
+	//    Weapons
+	ExplodeAs=small_death;
+	SelfDestructAs=small_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	Corpse=mynn_dar_dead;
+	SmoothAnim=1;
+	Buildpic=mynn_dar.jpg;
+	
+	//    Not Used By TASpring
+}

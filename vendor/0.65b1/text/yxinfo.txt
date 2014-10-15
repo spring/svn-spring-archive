@@ -1,0 +1,201 @@
+// Weapon type data
+
+	/* A weapon must fit into one of these basic categories */
+
+// 1) ballistic = Weapon is fired according to a ballistic path using gravity
+
+olika kartor har olika gravitiation. Standard är 112 och anges i pixel/sekundkvadrat
+
+// 2) lineofsight = Weapon is fired in a straight line, gravity does not effect path
+// 3) dropped = Weapon is dropped in order to use it, typically a bomb but could be a chemical
+
+
+// ID is a unique value in the range 0-255 which identifies the weapon
+
+Hack, bör överges för en korrekt objektorientering
+
+// range is in pixels
+// coverage is what the protection umbrella is for weapons that shoot other weapons
+
+Det är diametern på antinukecirklen.
+//cruise =1
+
+för merlraketer, när raketen övergått i horisontell flykt så flyger den fram tills den är inom ca 500-700 pixels från målet, då dyker den
+snett ner. Kan ej användas med track av nån anledning.
+
+// noexplode = No explosion when weapon impacts target
+
+skottet dör inte när det träffar något (mark, feature eller enhet) utan lever tills det timar ut.
+
+// reloadtime = Seconds between shots (floating point allowed)
+// energypershot = Energy consumed per shot, most use none
+// weapontimer = How long weapon is active in seconds (floating point allowed), trajectory weapons use 0 so it is calculated
+
+används på missiler, när weapontimern tar slut så slutar missilens motor att funka och den slutar tracka och faller till marken
+för merlraketer anger weapontimer när raketen ska övergå från vertikal till horisontell flygning.
+
+
+// noautorange = When set the weapon will not detonate at range automatically, used mostly for heavy rockets
+
+Har inte experimenterat med denna tag 
+
+// weaponvelocity = Maximum attainable weapon veolocity in pixels/second
+// weaponacceleration = Expressed in pixels/second/second
+// turnrate = Used for guided weapons, is in angular units (0-64k)/second
+
+går att ha högre turnrate än 64K 
+
+// areaofeffect = The total area that receives that damage, one impact per unit in the area
+// edgeeffectiveness = The percentage (1.0 = 100%) of the damage that is inflicted at the edge of the area of effect.  Used for drop-off
+
+default är 0 tror jag
+
+// turret = Weapon must be deployed from a turret with a 360 deg rotation and pitch
+
+om det är ett tornvapen måste aimxxx(x,y) anropas etc. Annars skjuter vapnet bara rätt fram så länge målet är inom tolerance gränsen
+
+// firestarter = Weapon will cause fires, expressed as a %, where 100% guarantees a fire
+// unitsonly = Weapon will only detonate on enemy units as opposed to obstructing terrain
+// burst = How many repeat times a weapon fires in one burst, ie. Flamethrower
+
+Endast första skottet i en burst är siktat, resten skjuts av i samma riktning. Det är en bugg med burst, det spelas upp n+1 skottljud.
+Det sker ingen firexxx() animimering för burstskotten heller. 
+
+// burstrate = The time delay when in burst mode between events
+
+tid mellan burstskott.. jag kommer inte ihåg säkert, men jag har för mig att en ny salva inte kan skjutas av innan den förra är klar. Det är dock lätt at kolla...
+
+// sprayangle = Maximum deviation from the straight line to the target the weapon strays, used for burst weapons
+
+Buggigt, första skottet i varje burst har sprayangle 0. ej implementerat för dropped vapen och selfprop vapen. Har inte provat
+med beamvapen. 
+
+// randomdecay = Maximum time delta that burst weapon will randomly decay at end of path
+
+för att få till en gradvis förtunning av eldkastarflamman 
+
+// groundbounce = Weapon will not detonate with the ground but instead bounce
+
+Vapnets inkommande vinkel = utgående . för en ballistisk enhet betyder det att skottet studsar längs marken, 
+
+// flighttime = The time the unit will fly for after it enters the second phase of operation, used for starburst missiles
+
+för merlraketer.. anger hur lång tid raketen spinner runt i luften om den missar målet. 
+
+
+// selfprop = Weapon is self propelled with a burn time described by flighttime
+
+de menar "weapontimer"
+
+// twophase = Indicates weapon operates in two phases
+
+hack för merlraketer, inte alls som det anges i weapons.tdf. raketen svänger av mot målet när weapontimern tar slut
+utan denna tag så flyger vapnet rätt upp i luften och faller sen ner till marken när dess weapontimer tar slut. 
+endast implementerat för selfprop vapen om jag minns rätt från mina experiment med en merlubåt :)
+
+
+// vlaunch
+
+vapnet skjuts av rätt upp!
+
+// weapontype2 = Describes another weapon that the weapon turns into in the second phase
+
+obsolet tag tror jag, skulle användas med nuke raketer men det blev ersatt av twophasehacket
+
+// guidance = Indicates that weapon is guided and uses the turn rate above to track enemy unit
+
+anger att enheten kan predicta efter 5 kills. har inte exakt koll på hur det samspelar med tracks=1
+
+// tracks = When set the weapon will track a moving target after a weapon conversion
+
+tracks=1 vapen trackar så fort de skapas. 
+
+// waterweapon = Weapon is meant to travel through water
+
+dvs det detonerar inte när det träffar vattenytan.
+
+// burnblow = Weapon will detonate when it comes to the end of its range
+
+dvs när skottet dör, för ballistiska skott är det när det kommer till målet , för selfprop skott så är det när weapontimern tar slut
+
+// accuracy = Amount of accuracy in 64K deg that weapon is good for, 0=100%
+// tolerance = Amount of accuracy weapon will use when aiming, most are default 0
+
+knepigt att förklara... antag att ett torn siktar, isåfall skjuter det av första skottet när toleranskriteriet är uppfyllt . 
+tornet slutar inte att sikta när det kommer inom toleransgränsen utan det försöker hela tiden sikta mittpå. 
+
+för tornlösa vapen anges det inom vilka vinklar det går att skjuta.
+
+// aimrate = How fast (on average) the weapon aims, in 64K deg / sec.  Used by UnitView.
+
+bogus tag
+
+// startvelocity = Weapon will start at this velocity instead of 0
+// minbarrelangle = The minimum angle (in degrees) the barrels can point, used in ballistic calculations
+
+ballistiska enheter kan inte skjuta med mindre vinkel än 0 pga nån beräkningsbugg
+
+// Special weapon stuff
+// paralyzer = Weapon will stun the enemy for a length of time described in the damage field, time=ticks.
+
+det går 60 ticks på en sekund.
+
+
+// This stuff affects only the visuals of the weapon
+
+// model = 3D model to use as this weapon
+// color = Color of beam weapon from the game palette
+
+för icke3d eller beamvapen anger detta vilken skottanimering man ska ha. uselt hack som gör att man inte kan lägga till
+nya bitmapanimerade skott till TA
+
+// color2 = Color to use on the beam weapon to make better and cooler, CGT
+// smoketrail = Indicates whether or not a weapon will emit a smoke trail
+
+Det är den vita rökpuffsanimeringen som används
+/
+/ smokedelay = Smoke dispersal interval expressed in seconds
+
+// startsmoke = Draw a puff of smoke when the weapon fires
+
+En liten vit puff rök stiger upp...
+
+// endsmoke = Draw a puff of smoke when weapon terminates
+// rendertype = Type of rendering system to use, 3D model, bitmap, etc.
+
+// beamweapon = Weapon is a straight beam weapon like a laser
+// explosiongaf = .GAF file that the explosion art is in
+// explosionart = name of animation sequence for explosion
+// waterexplosiongaf = .GAF file that the water explosion art is in
+// waterexplosionart = name of animation sequence for water explosion
+
+Animeringen som spelas upp när skottet träffar vattnet. obsevera att med waterweapon=0 så kommer
+detta även att vara vapnets detonationsanimering. 
+
+// lavaexplosiongaf=
+// lavaexplosionart=
+
+
+
+// propeller = if the model has a propeller that spins
+
+Snarare om vapnet ska spinna runt när det flyger.. en obsolet tag, borde gå att fixa med cobanimeringar för vapen
+
+// This stuff affects the sounds the weapons make
+
+// soundstart = Sound to make when the weapon fires
+// soundhit = Sound to make when the weapon detonates (if the weapon detonates)
+// soundwater = Sound to make when the weapon hits the water
+// soundtrigger = Make the weapon sound when the weapon fires in burst mode
+
+dvs för varje skott i bursten så får man höra soundstart. observera ljudbuggen i sambannd med burst och soundstart. se burst.
+
+// This stuff affects controlling the weapon
+
+// commandfire = This weapon will need to be expressly fired by the user each and every time it is used
+
+
+// This stuff describes the amount of metal and energy it takes to fire the weapon if applicable
+
+// energy = Amount of energy needed
+// metal = Amount of metal needed

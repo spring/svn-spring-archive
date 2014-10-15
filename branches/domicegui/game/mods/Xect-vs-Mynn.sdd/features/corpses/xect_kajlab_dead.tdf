@@ -1,0 +1,42 @@
+[xect_kajlab_dead]
+	{
+	world=All Worlds;
+	description=Wreckage;
+	category=xect_corpses;
+	object=xect_kajlab_dead;
+	featuredead=xect_kajlab_heap;
+	footprintx=5;
+	footprintz=6;
+	height=40;
+	blocking=1;
+	hitdensity=100;
+	metal=1839;
+	energy=57;
+	damage=2152;
+	reclaimable=1;
+	featurereclamate=gutscar;
+        seqnamereclamate=tree1reclamate;
+	}
+
+[xect_kajlab_heap]
+	{
+	world=All Worlds;
+	description=Wreckage;
+	category=xect_heaps;
+	object=xect_kajlab_dead;
+	footprintx=5;
+	footprintz=5;
+	height=4;
+	blocking=0;
+	hitdensity=100;
+	metal=431;
+	energy=25;
+	damage=2152;
+	reclaimable=1;
+
+	featurereclamate=gutscar;
+        seqnamereclamate=tree1reclamate;
+	}
+
+
+

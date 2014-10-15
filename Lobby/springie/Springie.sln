@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Springie", "Springie\Springie.csproj", "{DD5A4F64-6C82-4F75-9EED-992378EC65FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModInfoBuilder", "ModInfoBuilder\ModInfoBuilder.csproj", "{0E671B78-447F-40DF-A9C6-D9BD2CF7D137}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any cpu = Debug|Any cpu
+		Release|Any cpu = Release|Any cpu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD5A4F64-6C82-4F75-9EED-992378EC65FC}.Debug|Any cpu.ActiveCfg = Debug|x86
+		{DD5A4F64-6C82-4F75-9EED-992378EC65FC}.Debug|Any cpu.Build.0 = Debug|x86
+		{DD5A4F64-6C82-4F75-9EED-992378EC65FC}.Release|Any cpu.ActiveCfg = Release|x86
+		{DD5A4F64-6C82-4F75-9EED-992378EC65FC}.Release|Any cpu.Build.0 = Release|x86
+		{0E671B78-447F-40DF-A9C6-D9BD2CF7D137}.Debug|Any cpu.ActiveCfg = Debug|Any CPU
+		{0E671B78-447F-40DF-A9C6-D9BD2CF7D137}.Debug|Any cpu.Build.0 = Debug|Any CPU
+		{0E671B78-447F-40DF-A9C6-D9BD2CF7D137}.Release|Any cpu.ActiveCfg = Release|Any CPU
+		{0E671B78-447F-40DF-A9C6-D9BD2CF7D137}.Release|Any cpu.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

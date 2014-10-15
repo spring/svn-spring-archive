@@ -1,0 +1,65 @@
+[UNITINFO]
+{
+	Name=Charger;
+	UnitName=xect_bertha;
+	
+	//    Required Tags
+	BuildCostEnergy=9200;
+	BuildCostMetal=1920;
+	BuildTime=23080;
+	Category=xect level3 strategic weapon notair notsub;
+	Description=Plasma Battery;
+	FootprintX=3;
+	FootprintZ=3;
+	MaxDamage=6474;
+	ObjectName=xect_bertha;
+	Side=Xect;
+	SoundCategory=xcllab;
+	TEDClass=fort;
+	
+	//    Movement
+	MaxSlope=10;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=ooooooooo;
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=200;
+	EnergyUse=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=525;
+	
+	//    Weapons
+	Weapon1=MYNFIXED_GUN;
+	wpri_badTargetCategory=VTOL;
+	BadTargetCategory=VTOL;
+	DamageModifier=4.2;
+	ExplodeAs=MEDIUM_BUILDINGEX;
+	SelfDestructAs=MEDIUM_BUILDING;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	Corpse=xect_bertha_dead;
+	SmoothAnim=1;
+	Buildpic=xect_bertha.jpg;
+	
+	//    Not Used By TASpring
+}

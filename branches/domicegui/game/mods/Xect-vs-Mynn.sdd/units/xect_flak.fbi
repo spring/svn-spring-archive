@@ -1,0 +1,63 @@
+[UNITINFO]
+{
+	Name=Flack Turret;
+	UnitName=xect_flak;
+	
+	//    Required Tags
+	BuildCostEnergy=15000;
+	BuildCostMetal=750;
+	BuildTime=35250;
+	Category=xect special level2 weapon notair notsub ;
+	Description=Advanced Air Defense Emplacement;
+	FootprintX=2;
+	FootprintZ=2;
+	MaxDamage=4072;
+	ObjectName=xect_flak;
+	Side=Xect;
+	SoundCategory=xcllab;
+	TEDClass=fort;
+	
+	//    Movement
+	MaxSlope=12;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=ooooooooo;
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=0;
+	EnergyUse=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=5;
+	SightDistance=610;
+	
+	//    Weapons
+	Weapon1=SNAILFLAK_GUN;
+	DamageModifier=3.35;
+	ExplodeAs=MEDIUM_BUILDINGEX;
+	SelfDestructAs=MEDIUM_BUILDING;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=12;
+	
+	//    Misc
+	Corpse=xect_flak_dead;
+	SmoothAnim=1;
+	Buildpic=xect_flak.jpg;
+	
+	//    Not Used By TASpring
+}

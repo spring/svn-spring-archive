@@ -1,0 +1,62 @@
+[UNITINFO]
+{
+	Name=Solar Generator;
+	UnitName=mynn_ener;
+	
+	//    Required Tags
+	BuildCostEnergy=0;
+	BuildCostMetal=150;
+	BuildTime=150;
+	Category=mynn energy level1 noweapon notair notsub ;
+	Description=Creates Energy;
+	FootprintX=5;
+	FootprintZ=5;
+	MaxDamage=500;
+	ObjectName=mynn_ener;
+	Side=Mynn;
+	SoundCategory=mynn_solar;
+	TEDClass=energy;
+	
+	//    Movement
+	MaxSlope=10;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=ooooooooooooooooooooooooooo;
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyMake=0;
+	EnergyStorage=0;
+	EnergyUse=-25;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanFly=0;
+	OnOffable=1;
+	ActivateWhenBuilt=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=315;
+	
+	//    Weapons
+	ExplodeAs=rsu_death;
+	SelfDestructAs=rsu_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	Corpse=mynn_ener_dead;
+	SmoothAnim=1;
+	Buildpic=mynn_ener.jpg;
+	
+	//    Not Used By TASpring
+}

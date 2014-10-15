@@ -1,0 +1,564 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+            "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<link type="text/css" rel="StyleSheet" href="slider/css/winclassic.css" />
+<link type="text/css" rel="StyleSheet" href="spincontrol/style.css" />
+<link type="text/css" rel="StyleSheet" href="default.css" />
+<style type="text/css">
+	.Panel {
+		overflow: hidden;
+		visibility: hidden;
+	}
+
+	#PlayerList {
+		width: 100%;
+	}
+
+	#PlayerList td,#PlayerList th {
+		border-right: 1px solid #6c4a36;
+		text-align: center;
+	}
+
+	#PlayerList th {
+		border-bottom: 1px solid #6c4a36;
+	}
+
+	#PlayerLine td {
+		background-color: black;
+		color: #6c4a36;
+	}
+
+	.cross {
+		width:16px;
+		height: 16px;
+		float: left;
+		filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/cross.png", sizingMethod="scale");
+	}
+
+	a:hover .cross {
+		filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/cross_over.png", sizingMethod="scale");
+	}
+
+	#tabs td {
+		background-color: #6c4a36;
+		margin: 10px;
+		padding: 2px;
+	}
+
+	.tab a, .tab a:active, .tab a:visited {
+		float: left;
+		margin-right: 10px;
+		padding: 4px;
+		background-color: #6c4a36;
+		font-size: 20px;
+		color: black;
+		border: 0;
+	}
+
+	.tab a:hover {
+		background-color: #ffa573;
+		color: black;
+	}
+
+	.tabSelected a, .tabSelected a:active, .tabSelected a:visited, .tabSelected a:hover {
+		float: left;
+		margin-right: 10px;
+		padding: 4px;
+		background-color: #a26949;
+		font-size: 20px;
+		color: black;
+	}
+
+	.boxCross {
+		color: black;
+		text-decoration: none;
+	}
+
+	.boxCross:hover {
+		color: red;
+	}
+
+</style>
+<script type="text/javascript" src="default.js"></script>
+
+<script type="text/javascript">
+	currentOpacityFadeOff = 100;
+
+	function resizeBar(){
+		x = document.getElementById('bar');
+		if (getPercentValue(x.style.width) > 26) {
+			x.style.width = (getPercentValue(x.style.width) - 4) + '%';
+			x.style.left = (getPercentValue(x.style.left) + 0.82) + '%'
+			setTimeout("resizeBar()",40);
+		}else{
+			sendData('modmain');
+		}
+	}
+
+	function fadeOff(){
+		sendData('modmain');
+		/*currentOpacityFadeOff = currentOpacityFadeOff - 25;
+		document.getElementById('tableId').style.filter = "alpha(opacity="+currentOpacityFadeOff+")";
+		if (currentOpacityFadeOff > 0) {
+			setTimeout("fadeOff()",40);
+		}else{
+			document.getElementById('tableId').style.visibility = 'hidden';
+			resizeBar();
+		}*/
+	}
+
+	movingBox = null;
+	startX = 0;
+	startY = 0;
+	lastX = 0;
+	lastY = 0;
+	curBoxId = '';
+	curPlayerId = '';
+	curPlayerUniqueId = '';
+
+
+	function debug(str){
+		document.getElementById('debugspan').innerHTML += '<br/>'+str;
+	}
+
+	function startMovingBox(boxId,playerId,playerUniqueId)
+	{
+		if(!isBoxOutSuspended)
+		{
+			movingBox=document.getElementById(boxId);
+			curBoxId = boxId;
+			curPlayerId = playerId;
+			curPlayerUniqueId = playerUniqueId;
+			movingBox.style.overflow = 'hidden';
+			box.style.width = '26px';
+			box.style.height = '26px'
+		}
+	}
+	function endMovingBox()
+	{
+		if(movingBox != null)
+		{
+			saveParam("box"+curPlayerUniqueId+":"+getPixelValue(movingBox.style.left)+":"+getPixelValue(movingBox.style.top));
+			sendData('changestartpos:'+curPlayerId+':'+(getPixelValue(movingBox.style.left)+(getPixelValue(movingBox.style.width)+2*getPixelValue(movingBox.style.borderWidth))/2)/(getPixelValue(document.getElementById('minimap').style.width))+':'+(getPixelValue(movingBox.style.top)+(getPixelValue(movingBox.style.height)/2+2*getPixelValue(movingBox.style.borderWidth)))/(getPixelValue(document.getElementById('minimap').style.height)));
+		}
+		movingBox=null;
+	}
+	function mouseMove()
+	{
+		x = window.event.clientX;
+		y = window.event.clientY;
+
+		if(movingBox != null && lastX != 0)
+		{
+			maxLeft = getPixelValue(document.getElementById('minimap').style.width)-getPixelValue(movingBox.style.width)-getPixelValue(movingBox.style.borderWidth)*2;
+			maxTop = getPixelValue(document.getElementById('minimap').style.height)-getPixelValue(movingBox.style.height)-getPixelValue(movingBox.style.borderWidth)*2;
+			movingBox.style.left = Math.min(maxLeft,Math.max(0,getPixelValue(movingBox.style.left)+x-lastX))+'px';
+			movingBox.style.top = Math.min(maxTop,Math.max(0,getPixelValue(movingBox.style.top)+y-lastY))+'px';
+		}
+		lastX = x;
+		lastY = y;
+	}
+	function boxOver(boxId){
+		if(movingBox == null)
+		{
+			box = document.getElementById(boxId);
+			box.style.overflow = '';
+			box.style.width = '130px';
+			box.style.height = '136px';
+		}
+	}
+	isBoxOutSuspended = false;
+	function boxOut(boxId){
+		if(!isBoxOutSuspended)
+		{
+			box = document.getElementById(boxId);
+			box.style.overflow = 'hidden';
+			box.style.width = '26px';
+			box.style.height = '26px';
+		}
+	}
+	function switchSuspendBoxOut(){
+		isBoxOutSuspended = !isBoxOutSuspended;
+	}
+	function suspendBoxOut(){
+		isBoxOutSuspended = true;
+	}
+	function enableBoxOut(){
+		isBoxOutSuspended = false;
+	}
+
+	function checkBoxes(){
+		for(i=1;i<=[NbPlayers];i++)
+		{
+			movingBox = document.getElementById('box'+i);
+			curBoxId = 'box'+i;
+			curPlayerId = i;
+			maxLeft = getPixelValue(document.getElementById('minimap').style.width)-getPixelValue(movingBox.style.width)-getPixelValue(movingBox.style.borderWidth)*2;
+			maxTop = getPixelValue(document.getElementById('minimap').style.height)-getPixelValue(movingBox.style.height)-getPixelValue(movingBox.style.borderWidth)*2;
+			movingBox.style.left = Math.min(maxLeft,Math.max(0,getPixelValue(movingBox.style.left)))+'px';
+			movingBox.style.top = Math.min(maxTop,Math.max(0,getPixelValue(movingBox.style.top)))+'px';
+			endMovingBox();
+		}
+	}
+
+	var idList = new Array();
+	var selectedSideList = new Array();
+	var selectedIdList = new Array();
+	var selectedTeamList = new Array();
+	var LuaListOptionList = new Array();
+	var selectedLuaOptionList = new Array();
+
+	function selectSides(){
+		for(i=1;i<=[NbPlayers];i++)
+		{
+			x = document.getElementById('side'+i);
+			if (x != null) {
+				x.selectedIndex = selectedSideList[i-1];
+			}
+			x = document.getElementById('sideBox'+i);
+			if (x != null) {
+				x.selectedIndex = selectedSideList[i-1];
+			}
+		}
+	}
+	function selectIds(){
+		for(i=1;i<=[NbPlayers];i++)
+		{
+			x = document.getElementById('id'+i);
+			if (x != null) {
+				x.selectedIndex = selectedIdList[i-1];
+			}
+			x = document.getElementById('idBox'+i);
+			if (x != null) {
+				x.selectedIndex = selectedIdList[i-1];
+			}
+		}
+	}
+	function selectTeams(){
+		for(i=1;i<=[NbPlayers];i++)
+		{
+			x = document.getElementById('team'+i);
+			if (x != null) {
+				x.selectedIndex = selectedTeamList[i-1];
+			}
+			x = document.getElementById('teamBox'+i);
+			if (x != null) {
+				x.selectedIndex = selectedTeamList[i-1];
+			}
+		}
+	}
+
+	function selectLuaListOptions(){
+		for(i=0;i<LuaListOptionList.length;i++)
+		{
+			selectOption(LuaListOptionList[i],selectedLuaOptionList[i]);
+		}
+	}
+
+	function selecAI(dll){
+		selectOption('aiType',dll);
+	}
+
+	function hideBoxes(){
+		document.getElementById('playerBoxList').style.visibility = 'hidden';
+	}
+
+	function showBoxes(){
+		document.getElementById('playerBoxList').style.visibility = '';
+	}
+
+	function afterLoading(){
+		if('[LOBBY:LOADPARAM:gamemode0:0:firstload]'=='firstload'){
+			sendData('changegamemode:3'); // default start pos : choose
+		}
+		
+		checkBoxes();
+		selectSides();
+		//selectIds();
+		selectTeams();
+		selecAI('[LOBBY:LOADSETTINGS:aiType:0:0]');
+		selectLuaListOptions();
+		if (document.getElementsByName('gamemode')[0].checked) {
+			showBoxes();
+		}else{
+			hideBoxes();
+		}
+	}
+
+	function hidePanel(panelId,tabId){
+		document.getElementById(panelId).style.height = '0';
+		document.getElementById(panelId).style.visibility = 'hidden';
+		document.getElementById(tabId).className = 'tab';
+	}
+
+	function showPanel(panelId,tabId){
+		document.getElementById(panelId).style.visibility = 'visible';
+		document.getElementById(panelId).style.height = '';
+		document.getElementById(tabId).className = 'tabSelected';
+	}
+
+	function switchToPanel(panelId,tabId){
+		hidePanel('GameoptionsPanel','Tab1');
+		hidePanel('MapPanel','Tab2');
+		hidePanel('UnitsPanel','Tab3');
+		hidePanel('ModOptionsPanel','Tab4');
+		hidePanel('AIOptionsPanel','Tab5');
+		hidePanel('MapOptionsPanel','Tab6');
+
+		showPanel(panelId,tabId);
+		saveParam("activePanel:'"+panelId+"','"+tabId+"'");
+	}
+
+	sendData('changeMinimapStartPosSize:12');
+
+	document.onmousemove = mouseMove;
+</script>
+
+<script type="text/javascript" src="slider/js/range.js"></script>
+<script type="text/javascript" src="slider/js/timer.js"></script>
+<script type="text/javascript" src="slider/js/slider.js"></script>
+<script type="text/javascript" src="spincontrol/javascript.js"></script>
+
+</head>
+<body style="width:100%;height:100%; background-color: #4f3526;height:100%" onmouseup="endMovingBox();" onload="afterLoading();">
+	<img src="images\background.jpg" style="height:100%;position: absolute; top:0;left:0;z-index:-1"  />
+	<span style="font-size;40px; color:red;background-color:black;" id="debugspan" style="position: absolute; top:0;left:0;z-index:2000"></span>
+	<div id="bar" style="position:absolute;left:10%;top:0;width:80%;height:100%;filter : alpha(opacity=44);background-color: black"></div>
+		<!--[if IE 7]>
+		<div style="position:absolute;left:0;top:0;width:100%;height:100%;">
+		<![endif]-->
+		<table id="tableId" cellpadding="0" cellspacing="0" style="border: 0;position:absolute;left:10%;top:0;width:80%;height:100%;margin:0;padding:0;">
+			<tr style="height:30px">
+				<td>
+          Current game : [SelectedModName]
+				</td>
+			</tr>
+			<tr id="tabContainer" valign="top">
+				<td style="margin:0;padding:0;">
+					<table id="changeHeight1" cellpadding="0" cellspacing="0" style="border: 0;margin-left: 12px;margin-right: 12px;margin-top: 12px; padding: 0;">
+					<tr valign="bottom"><td>
+						<div id="Tab1" class="tab"><a href="#" onmouseover="sendData('playsound:button.wav');" onclick="switchToPanel('GameoptionsPanel','Tab1');">Game options</a></div>
+						<div id="Tab2" class="tab"><a href="#" onmouseover="sendData('playsound:button.wav');" onclick="switchToPanel('MapPanel','Tab2');">Map</a></div>
+						<div id="Tab3" class="tab"><a href="#" onmouseover="sendData('playsound:button.wav');" onclick="switchToPanel('MapOptionsPanel','Tab3');">Map options</a></div>
+						<div id="Tab4" class="tab"><a href="#" onmouseover="sendData('playsound:button.wav');" onclick="switchToPanel('ModOptionsPanel','Tab4');">Mod options</a></div>
+						<div id="Tab5" class="tab"><a href="#" onmouseover="sendData('playsound:button.wav');" onclick="switchToPanel('AIOptionsPanel','Tab5');">AIs Options</a></div>
+						<div id="Tab6" class="tab"><a href="#" onmouseover="sendData('playsound:button.wav');" onclick="switchToPanel('UnitsPanel','Tab6');">Units</a></div>
+					</td></tr>
+					<tr id="changeHeight2" valign="top"><td style="border: 1px solid #6c4a36;width: 90%;">
+						<div id="MapPanel" class="Panel">
+							<div style="margin: 12px">
+							<a onmouseover="sendData('playsound:button.wav');" href="lobby:localfile:selectmap.html" class="button" id="SelectMapButton">Select map</a>: [SELECTEDMAPNAME]( [MAPWIDTH] x [MAPHEIGHT] )
+							</div>
+							<div id="minimap" style="width:0; height:0;position:relative;margin: 15px;" >
+								<img id="minimapImg" width="10" height="10" src="minimap.bmp"/>
+								<div id="playerBoxList" style="position:absolute;width:98%;height:100%;top:0;left:0">
+								[PlayerBoxList]
+								</div>
+							</div>
+						</div>
+						<div id="GameoptionsPanel" class="Panel">
+							<table id="changeWidth1" cellpadding="0" cellspacing="0" style="border: 0;margin: 10px 10px 0 10px;">
+							<tr>
+								<td>
+									<div style="float:left;">
+										<form method="POST" action="">
+											Start pos : <br/>
+											<input type="radio" name="gamemode" value="0" style="border: 0" onclick="saveParam('gamemode0:checked');saveParam('gamemode1:');saveParam('gamemode2:');sendData('changegamemode:3');showBoxes();" [LOBBY:LOADPARAM:gamemode0:0:checked] /> Choose <br/>
+											<input type="radio" name="gamemode" value="1" style="border: 0" onclick="saveParam('gamemode0:');saveParam('gamemode1:checked');saveParam('gamemode2:');sendData('changegamemode:1');hideBoxes();" [LOBBY:LOADPARAM:gamemode1:0] /> Random <br/>
+											<input type="radio" name="gamemode" value="2" style="border: 0" onclick="saveParam('gamemode0:');saveParam('gamemode1:');saveParam('gamemode2:checked');sendData('changegamemode:0');hideBoxes();" [LOBBY:LOADPARAM:gamemode2:0] /> Fixed <br/>
+											Game type : <br/>
+											[GameEndCond]
+										</form>
+									</div>
+									<div style="float:left;margin-left: 30px;">
+										<div style="float:left;width: 100px;display:[MetalVisible]">
+											<div style="height: 40px;">[MetalCaption] :</div>
+											<div class="slider" id="metal-slider" style="height: 150px">
+												<input class="slider-input" id="metal-slider-input" />
+											</div>
+											<input id="metal-input" maxlength="5" style="width: 40px;" />
+										</div>
+										<div style="float:left;width: 100px;display:[EnergyVisible]">
+											<div style="height: 40px;">[EnergyCaption] :</div>
+											<div class="slider" id="energy-slider" style="height: 150px">
+												<input class="slider-input" id="energy-slider-input" />
+											</div>
+											<input id="energy-input" maxlength="5" style="width: 40px;" />
+										</div>
+										<div style="float:left;width: 80px;display:[UnitsVisible]">
+											<div style="height: 40px;">[UnitsCaption] :</div>
+											<div class="slider" id="units-slider" style="height: 150px">
+												<input class="slider-input" id="units-slider-input" />
+											</div>
+											<input id="units-input" maxlength="4" style="width: 40px;" />
+										</div>
+									<div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div id="playerList" style="margin-top: 20px;overflow-y: auto;overflow-x:hidden">
+										<table id="PlayerList" cellspacing="0" cellpadding="2">
+											<tr>
+												<th width="100">Name</th>
+												<th>Team</th>
+												<th>Side</th>
+												<th>Bonus</th>
+												<th width="150">AI Type</th>
+											</tr>
+											[PlayerList]
+										</table>
+									</div>
+									<div>
+										<form id="addBotForm" style="margin-top: 20px;float:left;" method="POST" action="lobby:addbot" onsubmit="" >
+											Add AI :
+											<select id="aiType" onchange="saveSettings('aiType:'+getSelectedValue('aiType'));">
+												[AILIST]
+											</select>
+										</form>
+										<a onmouseover="sendData('playsound:button.wav');" onclick="document.getElementById('addBotForm').action = 'lobby:addbot:'+getSelectedValue('aiType');document.getElementById('addBotForm').submit();" href="#" style="float:left;margin-top: 20px;" class="button">Add</a>
+									</div>
+								</td>
+							</tr>
+							</table>
+						</div>
+						<div id="UnitsPanel" class="Panel">
+							<div style="margin: 5px;">Disabled units :</div>
+							<div id="unitList" style="margin-left:12px;overflow: auto;border:1px solid;border-color: #6c4a36;">
+								<form action="" method="post">
+									[unitList]
+								</form>
+							</div>
+						</div>
+						<div id="ModOptionsPanel" class="Panel">
+							<div id="modOptions" style="margin:12px;overflow:auto;">
+								<form>
+									[MODOPTIONLIST]
+								</form>
+							</div>
+						</div>
+						<div id="MapOptionsPanel" class="Panel">
+							<div id="mapOptions" style="margin:12px;overflow:auto;">
+								<form>
+									[MAPOPTIONLIST]
+								</form>
+							</div>
+						</div>
+						<div id="AIOptionsPanel" class="Panel">
+							<div id="aiOptions" style="margin:12px;overflow:auto;">
+								<form>
+								[AISOPTIONLIST]
+								</form>
+							</div>
+						</div>
+					</td></tr>
+					</table>
+				</td>
+			</tr>
+			<tr style="height:40px">
+				<td><div style="margin: 5px"><a onclick="sendData('resetparams');fadeOff();" onmouseover="sendData('playsound:button.wav');" href="#" class="button" style="float: left">Return to main menu</a><a onclick="sendData('start');" onmouseover="sendData('playsound:button.wav');" href="#" class="button" style="float:right">START</a</div></td>
+			</tr>
+		</table>
+		<!--[if IE 7]>
+		</div>
+		<![endif]-->
+	<script type="text/javascript">
+		// fix some glitches
+		debug('');
+		
+		// hide the blocks to fix issues on IE6
+		switchToPanel([LOBBY:LOADPARAM:activePanel:0:'GameoptionsPanel','Tab1']);
+
+
+		// resize the minima
+		availableW = (document.getElementById('tableId').style.pixelWidth-54);
+		availableH = document.getElementById('tableId').style.pixelHeight-190;
+
+
+		if(([MAP%WIDTH]/[MAP%HEIGHT]) > (availableW/availableH)){
+			document.getElementById('minimap').style.width = availableW + 'px';
+			document.getElementById('minimap').style.height = availableW*[MAP%HEIGHT]/[MAP%WIDTH] + 'px';
+		}else{
+			document.getElementById('minimap').style.width = availableH*[MAP%WIDTH]/[MAP%HEIGHT] + 'px';
+			document.getElementById('minimap').style.height = availableH + 'px';
+		}
+
+		document.getElementById('minimapImg').width = document.getElementById('minimap').style.pixelWidth;
+		document.getElementById('minimapImg').height = document.getElementById('minimap').style.pixelHeight;
+
+		// resize crappy stuff because % with IE = PHAIL
+		try
+		{
+			document.getElementById('changeHeight1').style.height = document.getElementById('tableId').style.pixelHeight-100 + 'px';
+			document.getElementById('changeHeight2').style.height = document.getElementById('tableId').style.pixelHeight-120 + 'px';
+			document.getElementById('unitList').style.height = document.getElementById('tableId').style.pixelHeight-150 + 'px';
+			document.getElementById('modOptions').style.height = document.getElementById('tableId').style.pixelHeight-144 + 'px';
+			document.getElementById('mapOptions').style.height = document.getElementById('tableId').style.pixelHeight-144 + 'px';
+			document.getElementById('aiOptions').style.height = document.getElementById('tableId').style.pixelHeight-144 + 'px';
+			document.getElementById('playerList').style.height = document.getElementById('tableId').style.pixelHeight-415 + 'px';
+
+			document.getElementById('changeHeight1').style.width = document.getElementById('tableId').style.pixelWidth-24 + 'px';
+			document.getElementById('changeWidth1').style.width = document.getElementById('tableId').style.pixelWidth-48 + 'px';
+			document.getElementById('playerList').style.width = document.getElementById('tableId').style.pixelWidth-48 + 'px';
+			document.getElementById('unitList').style.width = document.getElementById('tableId').style.pixelWidth-60 + 'px';
+			document.getElementById('mapOptions').style.width = document.getElementById('tableId').style.pixelWidth-60 + 'px';
+			document.getElementById('modOptions').style.width = document.getElementById('tableId').style.pixelWidth-60 + 'px';
+			document.getElementById('aiOptions').style.width = document.getElementById('tableId').style.pixelWidth-60 + 'px';
+		}catch(ex){
+		}
+
+		document.getElementById('SelectMapButton').onmouseover();
+		// init code
+		var m = new Slider(document.getElementById("metal-slider"), document.getElementById("metal-slider-input"), "vertical");
+		var e = new Slider(document.getElementById("energy-slider"), document.getElementById("energy-slider-input"), "vertical");
+		var u = new Slider(document.getElementById("units-slider"), document.getElementById("units-slider-input"), "vertical");
+		m.setMaximum([MaxMetal]);
+		e.setMaximum([MaxEnergy]);
+		u.setMaximum([MaxUnits]);
+		
+		m.setMinimum([MinMetal]);
+		e.setMinimum([MinEnergy]);
+		u.setMinimum([MinUnits]);
+
+		var mi = document.getElementById("metal-input");
+		mi.onchange = function () {
+			m.setValue(parseInt(this.value));
+		};
+		m.onchange = function () {
+			mi.value = m.getValue();
+			sendData('changemetal:'+m.getValue());
+
+			if (typeof window.onchange == "function")
+				window.onchange();
+		};
+		var ei = document.getElementById("energy-input");
+		ei.onchange = function () {
+			e.setValue(parseInt(this.value));
+		};
+		e.onchange = function () {
+			ei.value = e.getValue();
+			sendData('changeenergy:'+parseInt(e.getValue()));
+
+			if (typeof window.onchange == "function")
+				window.onchange();
+		};
+		var ui = document.getElementById("units-input");
+		ui.onchange = function () {
+			u.setValue(parseInt(this.value));
+		};
+		u.onchange = function () {
+			ui.value = u.getValue();
+			sendData('changemaxunits:'+parseInt(u.getValue()));
+
+			if (typeof window.onchange == "function")
+				window.onchange();
+		};
+
+		m.setValue([StartMetal]);
+		e.setValue([StartEnergy]);
+		u.setValue([MaxUnits]);
+	</script>
+</body>
+</html>

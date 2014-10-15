@@ -1,0 +1,72 @@
+[UNITINFO]
+{
+	Name=Scout;
+	UnitName=mynn_stank;
+	
+	//    Required Tags
+	BuildCostEnergy=946;
+	BuildCostMetal=47;
+	BuildTime=2223;
+	Category=mynn ppv level1 weapon notair notsub ;
+	Description=Scout Vehicle;
+	FootprintX=2;
+	FootprintZ=2;
+	MaxDamage=255;
+	ObjectName=mynn_stank;
+	Side=Mynn;
+	SoundCategory=mynntank;
+	TEDClass=ppv;
+	
+	//    Movement
+	BrakeRate=0.02;
+	MovementClass=tanksh2;
+	Acceleration=0.017;
+	CanMove=1;
+	MaxVelocity=2.72;
+	MaxSlope=30;
+	TurnRate=475;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyMake=0.5;
+	EnergyStorage=0;
+	EnergyUse=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=338;
+	
+	//    Weapons
+	Weapon1=MYNN_PARALYZER;
+	wpri_badTargetCategory=VTOL;
+	BadTargetCategory=VTOL;
+	DamageModifier=0.21;
+	ExplodeAs=small_death;
+	SelfDestructAs=small_death;
+	NoChaseCategory=VTOL;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=25;
+	
+	//    Misc
+	Corpse=mynn_stank_dead;
+	SmoothAnim=1;
+	Buildpic=mynn_stank.jpg;
+	
+	//    Not Used By TASpring
+}

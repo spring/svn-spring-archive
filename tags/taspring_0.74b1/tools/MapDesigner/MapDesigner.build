@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<project name="MapDesigner" default="build" basedir=".">
+   <target name="build">
+      <gmcs target="exe" output="MapDesigner.exe" debug="true">
+          <sources>
+            <include name="./EntryPoint.cs" />
+            <include name="./MapDesigner.cs" />
+            <include name="./MapDesigner.csproj" />
+            <include name="./MapDesigner.csproj.user" />
+            <include name="./PluginsLoader.cs" />
+            <include name="./BasicTypes/Axis.cs" />
+            <include name="./BasicTypes/Color.cs" />
+            <include name="./BasicTypes/Rot.cs" />
+            <include name="./BasicTypes/Vector2.cs" />
+            <include name="./BasicTypes/Vector3.cs" />
+            <include name="./HelperClasses/Arguments.cs" />
+            <include name="./HelperClasses/Config.cs" />
+            <include name="./HelperClasses/Diag.cs" />
+            <include name="./HelperClasses/MyRand.cs" />
+            <include name="./HelperClasses/TimeKeeper.cs" />
+            <include name="./HelperClasses/XmlHelper.cs" />
+            <include name="./HelperClasses/mvMath.cs" />
+            <include name="./KeyAndMouse/IKeyFilterConfigMappings.cs" />
+            <include name="./KeyAndMouse/IMouseFilterMouseCache.cs" />
+            <include name="./KeyAndMouse/KeyFilterConfigMappingsFactory.cs" />
+            <include name="./KeyAndMouse/KeyFilterSdlConfigMappings.cs" />
+            <include name="./KeyAndMouse/KeyFilterSdlKeyCache.cs" />
+            <include name="./KeyAndMouse/MouseFilterMouseCacheFactory.cs" />
+            <include name="./KeyAndMouse/MouseFilterSdlMouseCache.cs" />
+            <include name="./KeyAndMouse/MouseMoveConfigMappings.cs" />
+            <include name="./MathGlCs/GLMatrix.cs" />
+            <include name="./MathGlCs/GLVector.cs" />
+            <include name="./MovementAndEditing/Camera.cs" />
+            <include name="./MovementAndEditing/HeightEditor.cs" />
+            <include name="./MovementAndEditing/QuitHandler.cs" />
+            <include name="./Persistence/Save.cs" />
+            <include name="./Rendering/CurrentEditSpot.cs" />
+            <include name="./Rendering/DrawAxes.cs" />
+            <include name="./Rendering/DrawGrid.cs" />
+            <include name="./Rendering/GraphicsHelperFactory.cs" />
+            <include name="./Rendering/GraphicsHelperGl.cs" />
+            <include name="./Rendering/IGraphicsHelper.cs" />
+            <include name="./Rendering/IGraphicsHelperFactory.cs" />
+            <include name="./Rendering/IRenderer.cs" />
+            <include name="./Rendering/RendererFactory.cs" />
+            <include name="./Rendering/RendererSdl.cs" />
+            <include name="./UI/TestUI.cs" />
+         </sources>
+      </gmcs>
+    </target>      
+</project>

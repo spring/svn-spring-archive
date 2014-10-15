@@ -1,0 +1,71 @@
+[UNITINFO]
+{
+	Name=Anti-Air Slug;
+	UnitName=mynn_aa_trp;
+	
+	//    Required Tags
+	BuildCostEnergy=14100;
+	BuildCostMetal=750;
+	BuildTime=33180;
+	Category=mynn cyborg level2 weapon notair notsub ctrl_w ;
+	Description=Dual AA Bot;
+	FootprintX=2;
+	FootprintZ=2;
+	MaxDamage=3989;
+	ObjectName=mynn_aa_trp;
+	Side=Mynn;
+	SoundCategory=rac_trp;
+	TEDClass=cyborg;
+	
+	//    Movement
+	BrakeRate=0.19;
+	MovementClass=TANKsh2;
+	Acceleration=0.15;
+	CanMove=1;
+	MaxVelocity=2.66;
+	MaxSlope=20;
+	TurnRate=1120;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyStorage=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanAttack=1;
+	CanFly=0;
+	CanStop=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=428;
+	
+	//    Weapons
+	Weapon1=SNAILFLAK_GUN;
+	wpri_badTargetCategory=VTOL;
+	BadTargetCategory=VTOL;
+	DamageModifier=3.25;
+	ExplodeAs=trooper_death;
+	SelfDestructAs=trooper_death;
+	NoChaseCategory=VTOL;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=20;
+	
+	//    Misc
+	Corpse=mynn_aa_dead;
+	SmoothAnim=1;
+	Upright=1;
+	Buildpic=mynn_aa_trp.jpg;
+	
+	//    Not Used By TASpring
+}

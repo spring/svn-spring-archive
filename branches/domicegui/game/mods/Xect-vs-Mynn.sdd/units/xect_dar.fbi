@@ -1,0 +1,62 @@
+[UNITINFO]
+{
+	Name=Radar;
+	UnitName=xect_dar;
+	
+	//    Required Tags
+	BuildCostEnergy=955;
+	BuildCostMetal=75;
+	BuildTime=2272;
+	Category=xect special rad level1 notair notsub ;
+	Description=Radar Station;
+	FootprintX=3;
+	FootprintZ=3;
+	MaxDamage=335;
+	ObjectName=xect_dar;
+	Side=Xect;
+	SoundCategory=xcllab;
+	TEDClass=special;
+	
+	//    Movement
+	MaxSlope=10;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=oooooooooooo;
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyMake=7;
+	EnergyStorage=0;
+	EnergyUse=5;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanFly=0;
+	OnOffable=1;
+	ActivateWhenBuilt=1;
+	
+	//    Sight/Radar
+	RadarDistance=1620;
+	SightDistance=518;
+	
+	//    Weapons
+	ExplodeAs=small_death;
+	SelfDestructAs=small_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=0;
+	
+	//    Misc
+	Corpse=xect_dar_dead;
+	SmoothAnim=1;
+	Buildpic=xect_dar.jpg;
+	
+	//    Not Used By TASpring
+}

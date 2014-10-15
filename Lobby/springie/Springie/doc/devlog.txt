@@ -1,0 +1,6 @@
+===============
+TODO
+===============
+* gui - add player lists by channel
+* kick with reason - stop
+* autoconnect to backup

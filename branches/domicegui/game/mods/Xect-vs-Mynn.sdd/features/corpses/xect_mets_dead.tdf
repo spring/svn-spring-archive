@@ -1,0 +1,17 @@
+[xect_mets_dead]
+	{
+	world=All Worlds;
+	description=Dead Structure;
+	category=xect_corpses;
+	object=xect_mets_dead;
+	footprintx=5;
+	footprintz=5;
+	height=4;
+	blocking=0;
+	hitdensity=110;
+	metal=165;
+	damage=590;
+	reclaimable=1;
+	featurereclamate=oilspill1;
+	seqnamereclamate=tree1reclamate;
+	}

@@ -1,0 +1,61 @@
+[UNITINFO]
+{
+	Name=Mini Fusion Pod;
+	UnitName=mynn_pod;
+	
+	//    Required Tags
+	BuildCostEnergy=12000;
+	BuildCostMetal=1000;
+	BuildTime=28600;
+	Category=mynn energy level3 noweapon notair notsub ;
+	Description=Produces Energy;
+	FootprintX=3;
+	FootprintZ=3;
+	MaxDamage=1469;
+	ObjectName=mynn_pod;
+	Side=Mynn;
+	SoundCategory=mynn_fusion;
+	TEDClass=energy;
+	
+	//    Movement
+	MaxSlope=10;
+	
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=ooooooooo;
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyMake=300;
+	EnergyStorage=0;
+	EnergyUse=0;
+	MetalStorage=0;
+	
+	//    Abilities
+	CanFly=0;
+	ActivateWhenBuilt=1;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=375;
+	
+	//    Weapons
+	ExplodeAs=blue_death;
+	SelfDestructAs=blue_death;
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=1;
+	
+	//    Misc
+	Corpse=mynn_pod_dead;
+	SmoothAnim=1;
+	Buildpic=mynn_pod.jpg;
+	
+	//    Not Used By TASpring
+}

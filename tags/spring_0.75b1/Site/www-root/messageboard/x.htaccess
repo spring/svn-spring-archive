@@ -1,0 +1,5 @@
+AuthType Basic
+AuthName "Forum update in progress" 
+AuthUserFile d:/wwwroot/temp.txt
+Require valid-user 
+Options Indexes
